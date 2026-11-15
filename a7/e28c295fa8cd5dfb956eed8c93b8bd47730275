@@ -1,0 +1,44 @@
+crates/longshore_common/tests/guard/death.rs
+  s_d194137f52cdf4::t_7ba710f8665404 87-96,234-251
+  s_d194137f52cdf4::t_31889274b4f7ab 252-254
+openspec/changes/update-gcs-xml-coverage/design.md
+  s_d194137f52cdf4::t_13752baf263f72 1-80
+crates/longshore_common/src/io/alloc_guard.rs
+  s_d194137f52cdf4::t_7ba710f8665404 47-51
+openspec/changes/update-gcs-xml-coverage/proposal.md
+  s_d194137f52cdf4::t_13752baf263f72 1-45
+openspec/changes/add-in-tree-crc-kernels/design.md
+  s_d194137f52cdf4::t_f5c0ea1c9b89ff 53-63,87-89
+openspec/changes/add-in-tree-crc-kernels/specs/checksum-kernels/spec.md
+  s_d194137f52cdf4::t_f5c0ea1c9b89ff 48-53,57,59-61
+crates/longshore_s3/tests/store/s3_path_addressing.rs
+  s_d194137f52cdf4::t_8b309a2284618e 11,196-237
+  s_d194137f52cdf4::t_6317d8d82bb5cc 238
+crates/longshore_s3/src/sigv4/tests.rs
+  s_d194137f52cdf4::t_d049a63d4fb25e 76-143
+openspec/changes/update-gcs-xml-coverage/tasks.md
+  s_d194137f52cdf4::t_13752baf263f72 1-23
+openspec/changes/update-gcs-xml-coverage/specs/gcs-store/spec.md
+  s_d194137f52cdf4::t_13752baf263f72 1-54
+openspec/changes/add-in-tree-crc-kernels/tasks.md
+  s_d194137f52cdf4::t_f5c0ea1c9b89ff 17,19,21-23,27-28
+  s_d194137f52cdf4::t_e9e88c052aa17d 24
+bench/results/m24-crc-kernels.md
+  s_d194137f52cdf4::t_0441f3dca1b03a 1-221
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a7e28c295fa8cd5dfb956eed8c93b8bd47730275",
+  "prompts": {},
+  "sessions": {
+    "s_d194137f52cdf4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4c409e72-d9df-455f-9707-d5bb21a259a6",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
