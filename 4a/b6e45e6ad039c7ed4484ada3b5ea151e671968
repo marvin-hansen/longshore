@@ -1,0 +1,298 @@
+crates/longshore_s3/src/s3/outcome.rs
+  s_d194137f52cdf4::t_8e98c44fb3720a 118-119,121-122
+  s_d194137f52cdf4::t_d2b64d81042050 288-293
+  s_d194137f52cdf4::t_7ef3dd34761d62 25-31
+crates/longshore_s3/src/options.rs
+  s_d194137f52cdf4::t_629f55826495f6 50-60,124-125,129-135
+  s_d194137f52cdf4::t_7ef3dd34761d62 22,30,32-33,123
+crates/longshore_http_client/Cargo.toml
+  s_d194137f52cdf4::t_4bb8132f2f58e4 49-52
+  s_d194137f52cdf4::t_9c0e5bc7062c1d 45-48
+  s_d194137f52cdf4::t_36587c36e91291 61-64
+  s_d194137f52cdf4::t_30e63406ce2ad8 57-60
+  s_d194137f52cdf4::t_d8d2af0e9b5c94 53-56
+crates/longshore_s3/src/sigv4.rs
+  s_d194137f52cdf4::t_4bb8132f2f58e4 73-75,80
+crates/longshore_s3/tests/store/s3_retries.rs
+  s_d194137f52cdf4::t_1dce8b27b66920 196-273
+crates/longshore_common/tests/guard/death.rs
+  s_d194137f52cdf4::t_96d7d6db019996 1-231
+crates/longshore_s3/src/s3/object_ops.rs
+  s_d194137f52cdf4::t_2ac60403ad85ca 141-143,155,159
+  s_d194137f52cdf4::t_bbec67ababb39b 139-140
+crates/longshore_common/tests/io/props.rs
+  s_d194137f52cdf4::t_435bf466c8c76b 1-60,66-165
+  s_d194137f52cdf4::t_3b06fa84572fea 61-65
+crates/longshore_crc/tests/checksum/kernels.rs
+  s_d194137f52cdf4::t_80901b94626cba 140-159
+crates/longshore_s3/tests/store/codec_props.rs
+  s_d194137f52cdf4::t_a089e5aba5b090 1-18,20-121,127-179,181,186-222
+  s_d194137f52cdf4::t_e3020d56958b14 180,182-185
+  s_d194137f52cdf4::t_ad91a952f6cd9a 19
+  s_d194137f52cdf4::t_9f1cc6095c6113 122-126
+crates/longshore_tls/Cargo.toml
+  s_d194137f52cdf4::t_830997585ff1e2 41-43
+  s_d194137f52cdf4::t_dc759c315841b6 37-40
+  s_d194137f52cdf4::t_3d6555d9bb0b8e 36,47-50
+crates/longshore_http_client/src/server/objects.rs
+  s_d194137f52cdf4::t_d7d9887de4e960 96-101
+crates/longshore_tls/src/record.rs
+  s_d194137f52cdf4::t_a189e1c9eba1dc 211
+  s_d194137f52cdf4::t_d4bcb4f3b7c3ee 221-225
+  s_d194137f52cdf4::t_a166b10c292f03 87-89
+crates/longshore_http_client/src/server/events.rs
+  s_d194137f52cdf4::t_e67a01335f5a0d 96-103
+crates/longshore_s3/tests/store/common/signing.rs
+  s_d194137f52cdf4::t_b602d16bb92ec3 26-34
+  s_d194137f52cdf4::t_78409a59116d5a 1-25,35-117
+crates/longshore_dns/tests/dns/resolver.rs
+  s_d194137f52cdf4::t_45020b3957f10b 97-103
+crates/longshore_s3/tests/store/s3_multipart_edges.rs
+  s_d194137f52cdf4::t_8f9e2c86422143 92-115
+  s_d194137f52cdf4::t_0c3b0820e904c7 1-91,116-230
+crates/longshore_s3/tests/store/s3_operations.rs
+  s_d194137f52cdf4::t_d0b868542d23ff 158-194
+  s_d194137f52cdf4::t_4878f5ed31f71f 195-235
+crates/longshore_s3/src/sigv4/tests.rs
+  s_d194137f52cdf4::t_389156d99ea320 29-123,129-140
+  s_d194137f52cdf4::t_9f1cc6095c6113 124-128
+crates/longshore_crc/src/lib.rs
+  s_d194137f52cdf4::t_fe17cab69675f8 133
+  s_d194137f52cdf4::t_32c20287d2aef0 132
+crates/longshore_s3/tests/store/s3_retry_props.rs
+  s_d194137f52cdf4::t_ad91a952f6cd9a 84
+  s_d194137f52cdf4::t_5e7bb4f9a227aa 1-29,40,46-83,85-93
+  s_d194137f52cdf4::t_9f1cc6095c6113 30-39,41-45
+crates/longshore_http_client/tests/http/head_edges.rs
+  s_d194137f52cdf4::t_d2b64d81042050 142-148
+  s_d194137f52cdf4::t_4bb8132f2f58e4 1-42,45-85,89-141,149-151,161-241,244-254
+  s_d194137f52cdf4::t_30e63406ce2ad8 43-44,86-88,152-160,242-243
+crates/longshore_http_client/tests/http/https.rs
+  s_d194137f52cdf4::t_85705bcee42b2c 176-202
+  s_d194137f52cdf4::t_8d6e728a70e8d1 614-642,644-645
+  s_d194137f52cdf4::t_d58894b35f406a 407,420
+  s_d194137f52cdf4::t_aa6bae2f937651 421-422,436,438-440
+  s_d194137f52cdf4::t_6e9cdf52095b09 408-409
+  s_d194137f52cdf4::t_c778dc9ad5c1cf 643
+crates/longshore_s3/tests/store/list_props.rs
+  s_d194137f52cdf4::t_9050a27e193c25 44-50,52-56,86-91,125-128,131,136-139,141-145
+crates/longshore_s3/tests/store/s3_checksums.rs
+  s_d194137f52cdf4::t_9050a27e193c25 64-80,110,112-113,133-136,139,141-142
+  s_d194137f52cdf4::t_c8617581e24d05 143-146
+crates/longshore_dns/tests/dns/resolver_segments.rs
+  s_d194137f52cdf4::t_7e33d0617a1a9f 203-278,284-288
+  s_d194137f52cdf4::t_3fe2f6117b4da3 279-283
+crates/longshore_s3/src/s3/types.rs
+  s_d194137f52cdf4::t_6b5d83b98c1d6e 237,266
+  s_d194137f52cdf4::t_2ac60403ad85ca 238-265
+crates/longshore_s3/tests/store/common/parts.rs
+  s_d194137f52cdf4::t_63d5336e66360b 1-90
+crates/longshore_s3/tests/store/gcs_hash_sim.rs
+  s_d194137f52cdf4::t_9f1cc6095c6113 90
+  s_d194137f52cdf4::t_f6ab4a15e4c2e5 117-121,123
+  s_d194137f52cdf4::t_d8d2af0e9b5c94 1-89,91-116,122,124-125
+crates/longshore_dns/src/codec/tests.rs
+  s_d194137f52cdf4::t_e9bb0fc32786a3 190-191
+crates/longshore_http_client/tests/http/framing_edges.rs
+  s_d194137f52cdf4::t_d8d2af0e9b5c94 1-157,160-179,184-185,190-198,203-242,247,252-285
+  s_d194137f52cdf4::t_30e63406ce2ad8 158-159,180-183,186-189,199-202,243,246,248-251
+  s_d194137f52cdf4::t_8bcea736872be5 244-245
+crates/longshore_s3/src/list/tests.rs
+  s_d194137f52cdf4::t_f254818bdc1e05 173-226,231-262
+  s_d194137f52cdf4::t_bbec67ababb39b 227-230
+crates/longshore_s3/tests/store/doc_props.rs
+  s_d194137f52cdf4::t_99b06c03c0d15e 1-189,206-211,216-262,267-287
+  s_d194137f52cdf4::t_9f1cc6095c6113 190-205,212-215,263-266
+crates/longshore_common/tests/sim/faults.rs
+  s_d194137f52cdf4::t_945003f455d9a2 79-80
+  s_d194137f52cdf4::t_310f80a3cb8ebc 1-78,81-120
+crates/longshore_s3/tests/store/s3_transport.rs
+  s_d194137f52cdf4::t_f13069dd1f5cb4 1-125,128,133-141,143-147,152,170-179,190-203
+  s_d194137f52cdf4::t_9f1cc6095c6113 180-189
+  s_d194137f52cdf4::t_b56dbe873ebbe3 126-127,129-132,142,148-151,153-169
+crates/longshore_common/src/io/tests.rs
+  s_d194137f52cdf4::t_5ebb3e1e28edff 56-100
+crates/longshore_s3/src/erase/tests.rs
+  s_d194137f52cdf4::t_f254818bdc1e05 82-141
+crates/longshore_s3/tests/store/s3_path_addressing.rs
+  s_d194137f52cdf4::t_4878f5ed31f71f 292-306
+  s_d194137f52cdf4::t_6b5d83b98c1d6e 150-157,162,167-169,174-184,189-194
+  s_d194137f52cdf4::t_36587c36e91291 158-161,163-166,170-173,185-188
+crates/longshore_s3/src/presign/tests.rs
+  s_d194137f52cdf4::t_4803837a1ec1ae 152-224,226
+  s_d194137f52cdf4::t_9f1cc6095c6113 225
+crates/longshore_http_client/src/client.rs
+  s_d194137f52cdf4::t_d2b64d81042050 378-391
+crates/longshore_dns/tests/dns/resolver_props.rs
+  s_d194137f52cdf4::t_3fe2f6117b4da3 55-62,68-72,86-89
+  s_d194137f52cdf4::t_bd166bf10f9c45 1-54,63-67,73-85,90-124
+crates/longshore_crc/src/keys_tests.rs
+  s_d194137f52cdf4::t_97c653425260db 1-98
+crates/longshore_dns/Cargo.toml
+  s_d194137f52cdf4::t_78f621ecb8b88f 27-38
+crates/longshore_dns/tests/dns/resolver_forged.rs
+  s_d194137f52cdf4::t_f224e84138c69e 1-34,40-114
+  s_d194137f52cdf4::t_a11522e11ee33b 35-39
+crates/longshore_crc/tests/checksum/props.rs
+  s_d194137f52cdf4::t_2d5aaeb28742ca 62-96
+crates/longshore_http_client/tests/http/requests.rs
+  s_d194137f52cdf4::t_4878f5ed31f71f 72-100,105-106,110,112-114,116
+  s_d194137f52cdf4::t_ed85c7ec30d5e0 66-71,101-104,107-109,111,115,117-123
+crates/longshore_http_client/src/client/request.rs
+  s_d194137f52cdf4::t_40f6b7026ac150 74-78
+crates/longshore_http_client/src/head.rs
+  s_d194137f52cdf4::t_d2b64d81042050 69-78
+crates/longshore_common/tests/sim/sockets.rs
+  s_d194137f52cdf4::t_f3fcec10de4d9f 251-254,256,262,264-269
+  s_d194137f52cdf4::t_453a14128eb00f 323
+  s_d194137f52cdf4::t_3fe2f6117b4da3 213-217
+  s_d194137f52cdf4::t_b9a2c5a920e834 1-32,36-212,218-250,255,257-261,263,270-322,324
+  s_d194137f52cdf4::t_d8de3472c3d9f9 33-35
+crates/longshore_http_client/tests/http/framing.rs
+  s_d194137f52cdf4::t_6e9cdf52095b09 414-416
+  s_d194137f52cdf4::t_d58894b35f406a 190-191
+crates/longshore_dns/tests/dns/common/mod.rs
+  s_d194137f52cdf4::t_050ee0d5fad24f 193-196,203
+  s_d194137f52cdf4::t_c46b216bb68e7f 121-123
+  s_d194137f52cdf4::t_e081732c32e191 54-94
+  s_d194137f52cdf4::t_b0512f1bea812f 135-147
+crates/longshore_http_client/tests/http/server_refusals.rs
+  s_d194137f52cdf4::t_36587c36e91291 1-162
+crates/longshore_s3/tests/store/sigv4_props.rs
+  s_d194137f52cdf4::t_92f42b51c16634 104-110
+  s_d194137f52cdf4::t_fb677c64cfe8ab 1-103,111,113-135,148-224
+  s_d194137f52cdf4::t_9f1cc6095c6113 136-147
+  s_d194137f52cdf4::t_ad91a952f6cd9a 112
+crates/longshore_s3/tests/store/common/mod.rs
+  s_d194137f52cdf4::t_b602d16bb92ec3 21
+  s_d194137f52cdf4::t_78409a59116d5a 80-82
+  s_d194137f52cdf4::t_63d5336e66360b 20
+crates/longshore_tls/tests/tls/record.rs
+  s_d194137f52cdf4::t_45fea6e53258af 332-337
+crates/longshore_http_client/src/server.rs
+  s_d194137f52cdf4::t_e67a01335f5a0d 28-32,201,364-369
+  s_d194137f52cdf4::t_78409a59116d5a 13,303
+  s_d194137f52cdf4::t_f845561f33d51e 370-371
+crates/longshore_http_client/tests/http/pool.rs
+  s_d194137f52cdf4::t_d58894b35f406a 218-227,232-234,268
+  s_d194137f52cdf4::t_06b5f4c8fe371d 275-312
+  s_d194137f52cdf4::t_aa6bae2f937651 228-231,269-270
+crates/longshore_s3/Cargo.toml
+  s_d194137f52cdf4::t_fb677c64cfe8ab 72,120,136,147-150
+  s_d194137f52cdf4::t_a089e5aba5b090 73-76
+  s_d194137f52cdf4::t_d8d2af0e9b5c94 81-83
+  s_d194137f52cdf4::t_99b06c03c0d15e 77-80
+  s_d194137f52cdf4::t_5e7bb4f9a227aa 137-140
+  s_d194137f52cdf4::t_f13069dd1f5cb4 141-143
+  s_d194137f52cdf4::t_8f07b50fe512de 121-123
+crates/longshore_s3/tests/store/s3_multipart.rs
+  s_d194137f52cdf4::t_63d5336e66360b 10,12
+crates/longshore_http_client/tests/http/pool_edges.rs
+  s_d194137f52cdf4::t_30e63406ce2ad8 1-233
+crates/longshore_dns/src/resolver.rs
+  s_d194137f52cdf4::t_7ef3dd34761d62 55,58,158-173
+  s_d194137f52cdf4::t_30c69e397f0c33 280-284
+  s_d194137f52cdf4::t_268fb7c91269dc 54,57
+crates/longshore_tls/tests/tls/handshake_errors.rs
+  s_d194137f52cdf4::t_04fab6a2fb325e 125
+  s_d194137f52cdf4::t_999fb3872f737c 1-101,103-124,126-134
+  s_d194137f52cdf4::t_3fe2f6117b4da3 102
+crates/longshore_dns/tests/dns/codec_props.rs
+  s_d194137f52cdf4::t_3fe2f6117b4da3 150-153,157-160,282,296-301
+  s_d194137f52cdf4::t_671fda6fef91d0 114-149,154-156,161-281,283-295,302-304
+crates/longshore_http_client/tests/http/common/mod.rs
+  s_d194137f52cdf4::t_d8d2af0e9b5c94 216-332
+crates/longshore_http_client/tests/http/head_props.rs
+  s_d194137f52cdf4::t_36587c36e91291 172-220
+crates/longshore_common/tests/sim/echo.rs
+  s_d194137f52cdf4::t_a4ed5c84af59f3 93-94,96
+crates/longshore_common/Cargo.toml
+  s_d194137f52cdf4::t_18c81a49ff262d 23-27
+  s_d194137f52cdf4::t_57ed30f1a808c7 30-31
+  s_d194137f52cdf4::t_cbcf7518fe6818 29,36-43
+  s_d194137f52cdf4::t_701a24c7b480c8 28
+crates/longshore_s3/tests/store/s3_conditional.rs
+  s_d194137f52cdf4::t_1dce8b27b66920 195-245
+crates/longshore_tls/tests/tls/record_edges.rs
+  s_d194137f52cdf4::t_6e7719c1174c27 1-28,32-42,44-77,82-113,118-190,192-193
+  s_d194137f52cdf4::t_3fe2f6117b4da3 29-31,43,78-81,114-117,191
+crates/longshore_tls/tests/tls/handshake.rs
+  s_d194137f52cdf4::t_d5b531d5804061 187-217
+  s_d194137f52cdf4::t_94c0968a206695 34-43,48
+  s_d194137f52cdf4::t_316d53de8c183b 95-98
+crates/longshore_s3/src/options/tests.rs
+  s_d194137f52cdf4::t_629f55826495f6 80-85,90-92,102-106
+  s_d194137f52cdf4::t_8f9e2c86422143 68-79,86-89,93-101,107-173
+crates/longshore_s3/tests/store/gcs_sim.rs
+  s_d194137f52cdf4::t_195309b3a3b438 10-11
+  s_d194137f52cdf4::t_9f1cc6095c6113 204-210,218-223,231
+crates/longshore_s3/tests/store/s3_listing.rs
+  s_d194137f52cdf4::t_9f1cc6095c6113 268-271
+  s_d194137f52cdf4::t_4878f5ed31f71f 253-267,272
+crates/longshore_common/src/io/alloc_guard.rs
+  s_d194137f52cdf4::t_acde4ef3ade799 75-85
+  s_d194137f52cdf4::t_178b57794341d3 94-95
+  s_d194137f52cdf4::t_ee7374cc0adc88 44-48
+crates/longshore_dns/tests/dns/resolver_edges.rs
+  s_d194137f52cdf4::t_4ca284924d8737 128-138,143-166
+  s_d194137f52cdf4::t_3fe2f6117b4da3 71,112-115,175-181
+  s_d194137f52cdf4::t_30c69e397f0c33 139-142
+  s_d194137f52cdf4::t_8f9e2c86422143 186-214
+  s_d194137f52cdf4::t_cfccc4f8ee4dd2 1-70,72-111,116-127,167-174,182-185,215-255
+crates/longshore_dns/src/codec.rs
+  s_d194137f52cdf4::t_6706498c7e667c 295
+  s_d194137f52cdf4::t_0b4aab80c78752 294
+crates/longshore_dns/src/codec/limit_tests.rs
+  s_d194137f52cdf4::t_78ed0e9670ffcd 1-42,48-111,118-248
+  s_d194137f52cdf4::t_3fe2f6117b4da3 43-47,112-117
+crates/longshore_crc/src/tests.rs
+  s_d194137f52cdf4::t_3cbeb00417d97b 49-84
+crates/longshore_s3/src/retry/tests.rs
+  s_d194137f52cdf4::t_251c3e76a32a15 17-61,105-110,112-113
+  s_d194137f52cdf4::t_39b34105960d49 111,114-115
+crates/longshore_s3/tests/store/gcs_world.rs
+  s_d194137f52cdf4::t_195309b3a3b438 1-173
+crates/longshore_tls/tests/tls/interop.rs
+  s_d194137f52cdf4::t_bcd7adbf7240ee 1-57,61-181,185-227,232-238
+  s_d194137f52cdf4::t_3fe2f6117b4da3 58-60,182-184,228-231
+crates/longshore_s3/tests/store/s3_object_ops.rs
+  s_d194137f52cdf4::t_1dce8b27b66920 317-356
+crates/longshore_s3/src/creds/tests.rs
+  s_d194137f52cdf4::t_9f1cc6095c6113 153,178-180,188-189
+  s_d194137f52cdf4::t_f254818bdc1e05 139-152,154-177,181-187,190-214
+crates/longshore_s3/tests/store/sigv4_suite.rs
+  s_d194137f52cdf4::t_c6c34d0e2ed750 32-42,138-142,149-162
+  s_d194137f52cdf4::t_846b0a9dfcca67 163
+crates/longshore_http_client/tests/http/chunked_props.rs
+  s_d194137f52cdf4::t_9c0e5bc7062c1d 1-176
+crates/longshore_s3/src/sharedkey/tests.rs
+  s_d194137f52cdf4::t_2df18d896fba5b 170-242
+Cargo.lock
+  s_d01344e9cd4060::t_516bd47625fbfb 171,173,540,542,550,552,664
+Cargo.toml
+  s_d01344e9cd4060::t_65eed6ec1020db 21,30,36-37,41,44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4ab6e45e6ad039c7ed4484ada3b5ea151e671968",
+  "prompts": {},
+  "sessions": {
+    "s_d01344e9cd4060": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a6963d5bc5a2ac8c2",
+        "model": "unknown"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    },
+    "s_d194137f52cdf4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4c409e72-d9df-455f-9707-d5bb21a259a6",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
