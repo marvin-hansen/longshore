@@ -1,0 +1,116 @@
+crates/longshore_s3/src/s3/exact.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 1-414
+openspec/changes/add-reported-operations/proposal.md
+  s_d194137f52cdf4::t_8356f63ecfffda 1-41
+crates/longshore_http_client/tests/http/failures.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 157-159
+crates/longshore_s3/src/s3/submit.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 50,70-75,276
+crates/longshore_http_client/src/server/transport.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 123
+crates/longshore-bench/src/bin/client_s3.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 8-21,38-41,63-68,71-72,89-91,135-142,172-184,197-204,215,224-241,244-249,256-257,273-280,312,316-318,331,335-337
+crates/longshore_s3/src/sigv4.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 99-104,169-200,202
+crates/longshore_s3/src/lib.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 17
+crates/longshore_s3/tests/store/common/mod.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 41,72
+bench/results/m23-soak-faults.txt
+  s_d194137f52cdf4::t_8356f63ecfffda 1-872
+bench/results/m23-soak-progress.txt
+  s_d194137f52cdf4::t_8356f63ecfffda 1-481
+openspec/changes/add-reported-operations/specs/reported-operations/spec.md
+  s_d194137f52cdf4::t_8356f63ecfffda 1-97
+crates/longshore-bench/src/bin/client_s3/multipart.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 1-108
+crates/longshore_s3/Cargo.toml
+  s_d194137f52cdf4::t_8356f63ecfffda 48-51,116-118
+  s_d194137f52cdf4::t_80dc5ea2b2decf 119
+crates/longshore-bench/src/bin/http_uring/linux.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 73,88,110,124
+crates/longshore_http_client/src/client/request.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 68,143
+crates/longshore_s3/src/client/worker.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 190-201,245-251
+crates/longshore-bench/src/bin/client_uring/exact.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 1-145
+crates/longshore_http_client/src/client/events.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 239-240,243-244,246-316,318
+crates/longshore_http_client/src/server.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 156-157,170-171,206-211,222-223,267,279,318-320
+crates/longshore_s3/src/client.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 42-46,52,61,67,78-79,349-350
+crates/longshore_s3/tests/store/s3_exact.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 1-547
+crates/longshore-bench/src/bin/http_uring/throughput.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 44,49,177
+crates/longshore-bench/examples/tls_probe.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 84
+crates/longshore_s3/src/client/pending.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 119-127
+bench/results/m23-client-eight-hours.jsonl
+  s_d194137f52cdf4::t_8356f63ecfffda 1-5
+crates/longshore_s3/examples/verified_write.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 1-151
+crates/longshore_s3/src/s3/types.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 10,26-32,154-156,202-203,241-242
+crates/longshore_s3/src/s3.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 7-8,20,39-49,142-145,186,235-236,376,405
+crates/longshore-bench/src/bin/http_uring/sink.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 12,16
+crates/longshore_s3/tests/client/exact.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 1-194
+crates/longshore_s3/src/client/threads.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 283-284
+README.md
+  s_d194137f52cdf4::t_8356f63ecfffda 44,207-208,223-294,322-323,450-456,577,580,603-612
+crates/longshore_s3/src/s3/object_ops.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 220
+crates/longshore_http_client/src/server/objects.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 181-184,186,199-202,209-211,213,222
+crates/longshore_s3/src/client/lane.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 10,13,51-54,78-85
+crates/longshore_s3/src/s3/outcome.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 16,19-21
+crates/longshore_http_client/src/server/events.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 41-44,46
+openspec/changes/add-reported-operations/tasks.md
+  s_d194137f52cdf4::t_8356f63ecfffda 1-22
+crates/longshore_http_client/src/client/response.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 62,68,87
+crates/longshore_s3/src/report.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 1-265
+bench/results/m23-client-eight-hours.md
+  s_d194137f52cdf4::t_8356f63ecfffda 1-49
+crates/longshore_http_client/src/client.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 122-125,197-198,282
+crates/longshore_s3/src/report/tests.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 1-70
+crates/longshore-bench/examples/ktls_probe.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 126,135
+crates/longshore_s3/src/client/exact.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 1-154
+crates/longshore_s3/src/s3/attempt.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 8,14-16,34,150-159,205-215,280-282,310
+crates/longshore_http_client/src/server/identity.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 1-198
+crates/longshore-bench/src/bin/client_uring.rs
+  s_d194137f52cdf4::t_8356f63ecfffda 13-14,22-25,100-102,283-284,395
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dae87b98c869ac9edf04718ed9bde1b47fbb551e",
+  "prompts": {},
+  "sessions": {
+    "s_d194137f52cdf4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4c409e72-d9df-455f-9707-d5bb21a259a6",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
