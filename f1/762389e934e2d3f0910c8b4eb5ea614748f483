@@ -1,0 +1,41 @@
+crates/longshore-bench/benches/checksums.rs
+  s_d194137f52cdf4::t_4db8c980e0af99 128-129,132
+crates/longshore_crc/src/aarch64.rs
+  s_d194137f52cdf4::t_fd758c07d3b6a2 92-93,108,116-117,122-123
+  s_d194137f52cdf4::t_571a9822f8de99 8,84
+openspec/changes/add-in-tree-crc-kernels/design.md
+  s_d194137f52cdf4::t_96ff4b3adb3aab 81-83
+bench/results/m23-crc-kernels.md
+  s_d194137f52cdf4::t_96ff4b3adb3aab 1-93,99,101,113-114,118-121,123
+  s_d194137f52cdf4::t_e6dec2363610ac 94-98,100,102-112,115-117,122
+crates/longshore_crc/src/fold.rs
+  s_d194137f52cdf4::t_2bf83b2d1ca4e2 206,286-287
+  s_d194137f52cdf4::t_571a9822f8de99 45-64,66,68-100,103-109,112-113,117-123,125-130,132-133,135,141,143,145-156,182,240,280-285,291-295,297,301-304,306-307,309,312,315,317,321-323,325,328-329,334-335,338,343-345,353,357,359
+  s_d194137f52cdf4::t_0fe3fb4f27dd7f 142,144,181,185,204
+  s_d194137f52cdf4::t_b8cd14cb62d57a 157-177,179-180,183-184,186-191,193-203,205
+  s_d194137f52cdf4::t_4db8c980e0af99 178,192
+  s_d194137f52cdf4::t_c38814c0e31d9f 207
+openspec/changes/add-in-tree-crc-kernels/tasks.md
+  s_d194137f52cdf4::t_96ff4b3adb3aab 17,19-20,27
+  s_d194137f52cdf4::t_e6dec2363610ac 21-22
+crates/longshore_crc/src/x86_64.rs
+  s_d194137f52cdf4::t_4d4744e087c5d1 9,69-70,72-73,75-76,79-91,93-95,97-107,112-113,115-116,118-119,122-135,137-139,141-155,172-175,179-180,182-183,185,189-206,215,218,233-248,253-254,267-269,275,277,279
+  s_d194137f52cdf4::t_2bf83b2d1ca4e2 208-214,216-217,219-221,255-260
+  s_d194137f52cdf4::t_dfa1134a873011 207
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f1762389e934e2d3f0910c8b4eb5ea614748f483",
+  "prompts": {},
+  "sessions": {
+    "s_d194137f52cdf4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4c409e72-d9df-455f-9707-d5bb21a259a6",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
