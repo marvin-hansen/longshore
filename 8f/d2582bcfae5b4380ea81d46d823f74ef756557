@@ -1,0 +1,65 @@
+openspec/changes/add-file-operations/design.md
+  s_4edd737a92459c::t_85b0347ae62b1b 1-81
+openspec/changes/add-simulated-disk/specs/simulated-disk/spec.md
+  s_4edd737a92459c::t_efc0d51f71d5d8 1-76
+openspec/changes/add-server-networking/specs/server-networking/spec.md
+  s_4edd737a92459c::t_df3c5d2990d984 103-105
+  s_4edd737a92459c::t_028cf6693d16e9 1-102,106-113
+openspec/changes/add-simulated-disk/proposal.md
+  s_4edd737a92459c::t_13039568212ce3 1-34
+openspec/changes/add-simulated-disk/design.md
+  s_4edd737a92459c::t_7e4360be4f1fe0 1-65
+openspec/changes/add-portable-io-backend/tasks.md
+  s_4edd737a92459c::t_88cb2127c1c069 1-31
+openspec/changes/add-simulated-disk/tasks.md
+  s_4edd737a92459c::t_a9b54098d88e97 1-22,24-27
+  s_4edd737a92459c::t_1f09ae9fe3b49d 23
+openspec/changes/add-portable-io-backend/design.md
+  s_4edd737a92459c::t_f191022d4d521d 1-62,64-86
+  s_4edd737a92459c::t_2f2b5a88c4baba 87-89
+  s_4edd737a92459c::t_2bd4a425227cdc 63
+openspec/changes/add-core-mailbox/tasks.md
+  s_4edd737a92459c::t_1017bc1f8d7b84 1-24
+openspec/changes/add-file-operations/tasks.md
+  s_4edd737a92459c::t_4310cb2e3666ba 1-27
+openspec/changes/add-server-networking/proposal.md
+  s_4edd737a92459c::t_75c2788bf94d6c 1-41
+openspec/changes/add-server-networking/design.md
+  s_4edd737a92459c::t_033777bd99a6b0 1-75
+openspec/changes/add-core-mailbox/design.md
+  s_4edd737a92459c::t_551fba31994a1d 1-67
+openspec/changes/add-core-mailbox/proposal.md
+  s_4edd737a92459c::t_3e76faa1613368 1-34
+openspec/changes/add-core-mailbox/specs/core-mailbox/spec.md
+  s_4edd737a92459c::t_baee1407f3bf93 1-87
+openspec/changes/add-portable-io-backend/proposal.md
+  s_4edd737a92459c::t_3fa23f37b01bfd 1-44
+openspec/design/ring-per-core.md
+  s_4edd737a92459c::t_c6eab4faaf0fa8 1-190,192-249
+  s_4edd737a92459c::t_d6d0cf4e67dd89 191
+openspec/changes/add-file-operations/specs/file-operations/spec.md
+  s_4edd737a92459c::t_50fdf40282fefa 1-127
+openspec/changes/add-server-networking/tasks.md
+  s_4edd737a92459c::t_c86a2b71048743 1-28
+openspec/changes/add-portable-io-backend/specs/io-backends/spec.md
+  s_4edd737a92459c::t_4eaffa5e2072ab 4-5
+  s_4edd737a92459c::t_3b40120047cd98 1-3,6-105
+openspec/changes/add-file-operations/proposal.md
+  s_4edd737a92459c::t_c1f9c77fc557f4 1-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8fd2582bcfae5b4380ea81d46d823f74ef756557",
+  "prompts": {},
+  "sessions": {
+    "s_4edd737a92459c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5276d579-202d-4c67-89e2-c815e788fbec",
+        "model": "unknown"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
