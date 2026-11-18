@@ -1,0 +1,22 @@
+openspec/changes/add-simulated-disk/design.md
+  s_4edd737a92459c::t_b6eba67e099a69 22-25
+  s_4edd737a92459c::t_281cad4ba948c3 109-128
+openspec/changes/add-simulated-disk/tasks.md
+  s_4edd737a92459c::t_d094a3c5872fbf 23-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d85cd1a15eb22c47be60b2988ef15e044fe4b8a6",
+  "prompts": {},
+  "sessions": {
+    "s_4edd737a92459c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5276d579-202d-4c67-89e2-c815e788fbec",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
