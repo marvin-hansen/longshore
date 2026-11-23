@@ -1,0 +1,47 @@
+crates/longshore/tests/e2e/harness/mock_world.rs
+  s_0a7ba2e6f2f96f::t_424d049a241eb9 99-108,139-157
+crates/longshore/tests/e2e/harness/wal_engine.rs
+  s_0a7ba2e6f2f96f::t_0e14511db5cddd 19-27,52-69,91-92,108-111
+crates/longshore/tests/e2e/t12_limits_engine/f02_engine.rs
+  s_0a7ba2e6f2f96f::t_090c99e24c2138 278-280
+crates/longshore/tests/e2e/t12_limits_engine/f02_engine_t2.rs
+  s_0a7ba2e6f2f96f::t_2b335c86575ad7 58
+crates/longshore/tests/e2e/t12_sim_disk_faults/f17_wal_t1.rs
+  s_0a7ba2e6f2f96f::t_675e2bd0ef0957 181
+crates/longshore/tests/e2e/t12_sim_disk_faults/helpers.rs
+  s_0a7ba2e6f2f96f::t_ff09b21d0be24b 37-39
+crates/longshore/tests/e2e/t3_pairwise_mailbox/part4_mux_unix_wal.rs
+  s_0a7ba2e6f2f96f::t_c6c1a15c916adb 320
+crates/longshore/tests/e2e/t4_apps_storage/wal_lifecycle.rs
+  s_0a7ba2e6f2f96f::t_85bed016500567 128,136,152,179,182,238
+crates/longshore/tests/e2e/t4_apps_storage/wal_stack.rs
+  s_0a7ba2e6f2f96f::t_0cf7851dd739a9 22-23,41-55
+crates/longshore_dns/tests/dns/common/mod.rs
+  s_0a7ba2e6f2f96f::t_69657f42cddc7b 49,52-55,57,59,120-150
+crates/longshore_dns/tests/dns/resolver.rs
+  s_0a7ba2e6f2f96f::t_3ffe20ce9cef92 40,42,67,79,101
+crates/longshore_dns/tests/dns/resolver_edges.rs
+  s_0a7ba2e6f2f96f::t_b455f46b0eb7fd 63,77
+crates/longshore_dns/tests/dns/resolver_families.rs
+  s_0a7ba2e6f2f96f::t_345c4ee914660e 31,42-46,62,77,82,91,95-96,107-108
+crates/longshore_dns/tests/dns/resolver_forged.rs
+  s_0a7ba2e6f2f96f::t_59752e7be308b8 25,42,52,75,89,101,115
+crates/longshore_s3/tests/client/loopback.rs
+  s_0a7ba2e6f2f96f::t_669a7bdf3952c9 25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bc6f4f99bd88ff2a21ec00fe984a556917db37b4",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
