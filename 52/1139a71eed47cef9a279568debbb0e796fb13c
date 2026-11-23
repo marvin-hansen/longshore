@@ -1,0 +1,21 @@
+Cargo.toml
+  s_0a7ba2e6f2f96f::t_a9d132455f3d79 72
+crates/longshore_http_client/src/head.rs
+  s_0a7ba2e6f2f96f::t_bfc03d00206633 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "521139a71eed47cef9a279568debbb0e796fb13c",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
