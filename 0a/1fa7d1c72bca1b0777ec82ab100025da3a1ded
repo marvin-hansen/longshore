@@ -1,0 +1,95 @@
+crates/longshore_http_client/src/server/objects.rs
+  s_0a7ba2e6f2f96f::t_0b36ef24db0e4e 116,158,164
+crates/longshore_dns/tests/dns/resolver_segments.rs
+  s_0a7ba2e6f2f96f::t_3a4c34efe876b5 135,137,172,174-176,191,253
+crates/longshore_s3/src/s3.rs
+  s_0a7ba2e6f2f96f::t_48e8f380f823ee 44-47,199-228,274-275
+crates/longshore_http_client/tests/http/head_props.rs
+  s_0a7ba2e6f2f96f::t_7f46fbfd446ee3 36-37,41,130,135,138,208-209
+crates/longshore_http_client/tests/http/head_edges.rs
+  s_0a7ba2e6f2f96f::t_641757808679b4 33,75,89,93,106,254
+crates/longshore_http_client/src/client/receive.rs
+  s_0a7ba2e6f2f96f::t_00d2dbeecd667a 87,127-129,134,150,157,160,166
+crates/longshore_s3/tests/store/s3_conditional.rs
+  s_0a7ba2e6f2f96f::t_bd921c1686e849 124,228
+crates/longshore_dns/tests/dns/resolver_forged.rs
+  s_0a7ba2e6f2f96f::t_7e4dde0568e549 42,52,75,88-91,100,105,117
+crates/longshore_http_client/src/client/chunked_body.rs
+  s_0a7ba2e6f2f96f::t_603fe3ced86abe 93
+crates/longshore_s3/tests/store/creds_validate_sim.rs
+  s_0a7ba2e6f2f96f::t_70f9a2c5735453 37,39,50-51,62,96-97
+crates/longshore_s3/src/list/tests.rs
+  s_0a7ba2e6f2f96f::t_0bf0b90c210e28 18,159-160,164,169
+crates/longshore_http_client/src/server/identity.rs
+  s_0a7ba2e6f2f96f::t_87b0a14374b2b0 28,30,33-34,73-84
+crates/longshore_s3/tests/store/s3_listing.rs
+  s_0a7ba2e6f2f96f::t_ab814b02980e12 46,154-155,158
+crates/longshore-bench/src/bin/s3_uring/objects.rs
+  s_0a7ba2e6f2f96f::t_038532e91a2817 162,167,186
+crates/longshore_http_client/src/server/events.rs
+  s_0a7ba2e6f2f96f::t_1463483e625166 21-22,26
+crates/longshore_s3/tests/store/s3_multipart_edges.rs
+  s_0a7ba2e6f2f96f::t_17bd08ba54b5ac 60
+crates/longshore_s3/tests/store/creds_sim.rs
+  s_0a7ba2e6f2f96f::t_82af9dc3d8f4b8 36-37,47,51,61,69,74-75,87-88,107,111,116,147,156,181,188
+crates/longshore-bench/src/bin/s3_uring/throughput.rs
+  s_0a7ba2e6f2f96f::t_25a9b2ed9a2b14 172
+crates/longshore_crc/src/kernels.rs
+  s_0a7ba2e6f2f96f::t_3fb6fa93429950 26,50-56
+crates/longshore-bench/src/bin/dns_uring.rs
+  s_0a7ba2e6f2f96f::t_2ccbd211dd64be 102,116-117
+crates/longshore_dns/src/resolver.rs
+  s_0a7ba2e6f2f96f::t_9aa7077a8f270c 71-75,111-147
+crates/longshore_dns/tests/dns/resolver.rs
+  s_0a7ba2e6f2f96f::t_532a6d090da5c7 33,42,70,72,80,83,95,100-103,147
+crates/longshore_dns/tests/dns/resolver_families.rs
+  s_0a7ba2e6f2f96f::t_6c48fdecc756ed 32,35,42,50,63-64,77,95,101,104,106-107,114,126,131,138,148
+crates/longshore_s3/tests/store/s3_multipart.rs
+  s_0a7ba2e6f2f96f::t_8b9898c2b7956e 155
+crates/longshore_s3/src/list.rs
+  s_0a7ba2e6f2f96f::t_fa37dfe2634144 32-33,99-114
+crates/longshore_s3/tests/store/segments_sim.rs
+  s_0a7ba2e6f2f96f::t_1eda30e6b160d4 73-74,85,94,102,111,121,130,132,142,165,182,191
+crates/longshore_http_client/src/server/request.rs
+  s_0a7ba2e6f2f96f::t_43a47957d8ea3c 23-24,35,53-54,60,101,108
+crates/longshore_s3/src/client/worker.rs
+  s_0a7ba2e6f2f96f::t_58d80fdc59629e 184-187
+crates/longshore_s3/tests/store/s3_object_ops.rs
+  s_0a7ba2e6f2f96f::t_e854b3eb7fe11d 243
+crates/longshore/tests/e2e/harness/http_store.rs
+  s_0a7ba2e6f2f96f::t_57d2a51a5233d9 260-261,268,270,275
+fuzz/fuzz_targets/http_head.rs
+  s_0a7ba2e6f2f96f::t_707f3f632a3c7c 21,31
+crates/longshore_http_client/src/client.rs
+  s_0a7ba2e6f2f96f::t_9d91daecb19582 291
+crates/longshore-bench/benches/checksums.rs
+  s_0a7ba2e6f2f96f::t_310b2f2daf49e0 57,71,78-83,88,90,147,151,171,184
+crates/longshore_dns/tests/dns/resolver_edges.rs
+  s_0a7ba2e6f2f96f::t_e35e5335555e0f 62-65,77,83,96,105,124,148,168
+crates/longshore_s3/tests/store/gcs_sim.rs
+  s_0a7ba2e6f2f96f::t_2fe7fc1c8b0f68 176
+crates/longshore_http_client/src/head.rs
+  s_0a7ba2e6f2f96f::t_2c798e15501ee8 50-53,59-86,117,121-127
+crates/longshore-bench/src/bin/s3_uring/checks.rs
+  s_0a7ba2e6f2f96f::t_bc1d9a477b4989 69
+crates/longshore_crc/tests/checksum/kernels.rs
+  s_0a7ba2e6f2f96f::t_362199babe3abc 43,69,75,77,147,153-155,169-170
+crates/longshore_s3/tests/store/list_props.rs
+  s_0a7ba2e6f2f96f::t_cb1eb86ac3497e 85-86,138
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0a1fa7d1c72bca1b0777ec82ab100025da3a1ded",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
