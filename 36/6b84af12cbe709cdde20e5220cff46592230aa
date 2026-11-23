@@ -1,0 +1,25 @@
+crates/longshore/tests/e2e/t4_apps_network/plain_no_tls.rs
+  s_0a7ba2e6f2f96f::t_d901e0973769a7 56-58
+crates/longshore/tests/e2e/t3_pairwise_net_tls/part3_stream_plain.rs
+  s_0a7ba2e6f2f96f::t_d901e0973769a7 11,90-91
+crates/longshore_mailbox/tests/mailbox/model.rs
+  s_0a7ba2e6f2f96f::t_d901e0973769a7 38,69,198,236
+crates/longshore/tests/e2e/t12_stream_tls/f19_tls_feature.rs
+  s_0a7ba2e6f2f96f::t_d901e0973769a7 242-244
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "366b84af12cbe709cdde20e5220cff46592230aa",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
