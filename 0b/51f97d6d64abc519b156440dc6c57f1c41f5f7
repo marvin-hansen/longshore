@@ -1,0 +1,31 @@
+bench/results/m28-tls-wide-gcm.md
+  s_0a7ba2e6f2f96f::t_9640e03869ed81 1-44
+crates/longshore_tls/src/wide_gcm.rs
+  s_0a7ba2e6f2f96f::t_3e7d9011f70cfb 1-104
+crates/longshore_tls/Cargo.toml
+  s_0a7ba2e6f2f96f::t_5b6dafd5b2a534 44-47
+crates/longshore_tls/src/lib.rs
+  s_0a7ba2e6f2f96f::t_f37ae77a1f396d 18
+crates/longshore_tls/src/record.rs
+  s_0a7ba2e6f2f96f::t_60f3d2eb859c06 135-136
+crates/longshore_tls/tests/tls/wide_gcm.rs
+  s_0a7ba2e6f2f96f::t_81eebf2b66972c 1-50
+fuzz/fuzz_targets/tls_record.rs
+  s_0a7ba2e6f2f96f::t_7d4400a08226c3 16-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0b51f97d6d64abc519b156440dc6c57f1c41f5f7",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
