@@ -1,0 +1,39 @@
+crates/longshore_s3/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 34-35
+crates/longshore-bench/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 69-71
+crates/longshore_http_client/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 74-76
+crates/longshore_tls/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 51-53
+crates/longshore_stream/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 31-33
+crates/longshore_common/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 112-114
+crates/longshore/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 53-55
+Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 53-72
+crates/longshore_mailbox/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 17-18
+crates/longshore_dns/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 46-48
+crates/longshore_crc/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b21f27b471fb8a 23-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d6949107eab850a72f18718fb09286b1e26c7c74",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
