@@ -1,0 +1,23 @@
+crates/longshore_common/tests/sim/armed_faults/rig.rs
+  s_0a7ba2e6f2f96f::t_a68c4b765fb121 1-8,11-151
+  s_0a7ba2e6f2f96f::t_7d5bcf704fa786 9-10
+crates/longshore_common/tests/sim/armed_faults.rs
+  s_0a7ba2e6f2f96f::t_a68c4b765fb121 19-21
+  s_0a7ba2e6f2f96f::t_57ab435db1f072 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "00da701754206f81ae3f5e5962f5c3695f7607f7",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
