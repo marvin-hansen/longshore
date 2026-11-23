@@ -40,6 +40,7 @@ crates/longshore/tests/e2e/t12_shared_posix/f06_posix_world_t2.rs
   s_0a7ba2e6f2f96f::t_5c465e9e4b2d2b 92-93
 crates/longshore_http_client/src/server/identity.rs
   s_0a7ba2e6f2f96f::t_cfc299c00ed763 175,182-183,186-187
+  s_0a7ba2e6f2f96f::t_5d520eeae38e6a 190
 crates/longshore_http_client/src/server/listing.rs
   s_0a7ba2e6f2f96f::t_534952a0f8a194 46
 crates/longshore-bench/examples/tls_probe.rs
@@ -92,12 +93,14 @@ crates/longshore/tests/e2e/t12_shared_posix/f06_posix_world.rs
   s_0a7ba2e6f2f96f::t_9783c40d50a7dc 221-222
 crates/longshore-bench/benches/checksums.rs
   s_0a7ba2e6f2f96f::t_b1529cb279a3ac 144,156-157,169
+  s_0a7ba2e6f2f96f::t_5d520eeae38e6a 145,148,151,158,161,164
 crates/longshore-bench/src/bin/s3_uring/objects.rs
   s_0a7ba2e6f2f96f::t_c0ddc448776745 48-53,55-81,83-87,89-113,115-120,123,125-126,129,146-200,210-213,235-239
 crates/longshore_common/src/io/contract_net/unix.rs
   s_0a7ba2e6f2f96f::t_eebce795f0c747 162-164,166-167
 crates/longshore_dns/tests/dns/resolver_segments.rs
   s_0a7ba2e6f2f96f::t_058d72a90a73a5 97-99,101-103,106-108,110-111
+  s_0a7ba2e6f2f96f::t_5d520eeae38e6a 100,109
 crates/longshore_http_client/src/server/objects.rs
   s_0a7ba2e6f2f96f::t_5549c6d86cd4b7 29-31
 crates/longshore_s3/src/client/threads.rs
@@ -148,6 +151,7 @@ crates/longshore_http_client/tests/http/server_refusals.rs
   s_0a7ba2e6f2f96f::t_c8d5d9bb46fc4b 33-34,36,93-96
 crates/longshore_tls/tests/tls/handshake.rs
   s_0a7ba2e6f2f96f::t_eabf390a81eff7 50-53,56,58-59,61,116,118,123,125,146-148,170,172,243-248
+  s_0a7ba2e6f2f96f::t_5d520eeae38e6a 57,60
 crates/longshore/tests/e2e/t12_file_chains/f12_chains_t1.rs
   s_0a7ba2e6f2f96f::t_0ae33bcaac38f3 64
 crates/longshore_s3/tests/store/s3_exact.rs
