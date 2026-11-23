@@ -1,0 +1,46 @@
+crates/longshore_dns/src/resolver.rs
+  s_0a7ba2e6f2f96f::t_154af32bceaeb8 19,21,24,85-87,92-96,99,114
+crates/longshore-bench/src/bin/dns_uring.rs
+  s_0a7ba2e6f2f96f::t_5aa4cc3b100ec8 67,81
+  s_0a7ba2e6f2f96f::t_e3f1db0299095d 80
+crates/longshore_dns/tests/dns/resolver_props.rs
+  s_0a7ba2e6f2f96f::t_0e33081e1efced 39
+crates/longshore_dns/tests/dns/resolver_segments.rs
+  s_0a7ba2e6f2f96f::t_0c0d89f19d1a52 37
+  s_0a7ba2e6f2f96f::t_737c51062d7080 43
+crates/longshore_s3/tests/store/common/names.rs
+  s_0a7ba2e6f2f96f::t_8b4ece6ce857cb 135-149
+crates/longshore_dns/tests/dns/resolver_edges.rs
+  s_0a7ba2e6f2f96f::t_d54a24ab5feba2 15,87,108,135,172,197-199,215,220-221,226-227,234,241-246,251-252,259
+crates/longshore_dns/tests/dns/resolver.rs
+  s_0a7ba2e6f2f96f::t_9f055f3f4e338f 138
+crates/longshore_dns/src/lib.rs
+  s_0a7ba2e6f2f96f::t_01ea40d9d5a5ee 18
+crates/longshore_s3/src/client/threads/run.rs
+  s_0a7ba2e6f2f96f::t_e836567b289515 139,150-159
+crates/longshore_dns/tests/dns/common/mod.rs
+  s_0a7ba2e6f2f96f::t_2a45b3e4b11e8e 267
+crates/longshore_dns/src/resolver/config.rs
+  s_0a7ba2e6f2f96f::t_7265fe7194ebdc 1-98
+crates/longshore-bench/src/bin/s3_uring/linux.rs
+  s_0a7ba2e6f2f96f::t_0c0d89f19d1a52 126
+  s_0a7ba2e6f2f96f::t_fb479472c2d7c3 125
+crates/longshore_s3/tests/store/no_address_sim.rs
+  s_0a7ba2e6f2f96f::t_2bf5694cf7675e 51-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cb3c09b7e20673b661bc7f62a2afc3a9ec123b61",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": null
+    }
+  }
+}
