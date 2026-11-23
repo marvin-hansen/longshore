@@ -1,0 +1,73 @@
+crates/longshore-bench/benches/aead.rs
+  s_0a7ba2e6f2f96f::t_66b744c9eabc04 35-41,54-60,72-78,94,97-99,154-155,161-162
+crates/longshore-bench/benches/checksums.rs
+  s_0a7ba2e6f2f96f::t_690ca56bc016d4 57-60
+crates/longshore-bench/benches/dns_codec.rs
+  s_0a7ba2e6f2f96f::t_f0acad1a1a1cfc 22-25,40-41,46,51,57,61
+crates/longshore-bench/benches/http_head.rs
+  s_0a7ba2e6f2f96f::t_97a9d5559e6c5e 10,16-22,27-29,31,36-40,46-47
+crates/longshore-bench/examples/azure_probe.rs
+  s_0a7ba2e6f2f96f::t_387c02821dce82 59-60,86,101-102,104,156,158
+crates/longshore-bench/examples/ktls_probe.rs
+  s_0a7ba2e6f2f96f::t_f5bd94f63047cc 163,167-172
+crates/longshore-bench/examples/tls_probe.rs
+  s_0a7ba2e6f2f96f::t_11a682c6a703d4 35,40,64,70-75,81-84,87-88,99-100,102-103,110
+crates/longshore-bench/src/bin/client_faults/linux.rs
+  s_0a7ba2e6f2f96f::t_1293db3de3485b 84,100
+crates/longshore-bench/src/bin/client_uring.rs
+  s_0a7ba2e6f2f96f::t_938f8e3ecd7c04 116,131,296,302-306,338,362-363,384
+crates/longshore-bench/src/bin/client_uring/exact.rs
+  s_0a7ba2e6f2f96f::t_e738c8102ab96f 117
+crates/longshore-bench/src/bin/contract_uring.rs
+  s_0a7ba2e6f2f96f::t_371733d0ffa073 57,65
+crates/longshore-bench/src/bin/echo_uring.rs
+  s_0a7ba2e6f2f96f::t_d781e906a368e9 89,99,115-118,129,131,139,150,170,172,179,183,194,202-203,205,208,224-225,236,238,242,250,286,288,306-310,312,314,322-324
+crates/longshore-bench/src/bin/file_uring/bench.rs
+  s_0a7ba2e6f2f96f::t_a84eaae4aad3e6 49,52,69-71,79-81,147-153,165-167,197-199
+crates/longshore-bench/src/bin/file_uring/checks.rs
+  s_0a7ba2e6f2f96f::t_5911280daebd3d 102,105,127-129,141-143,146-148,183,199,203,222-224,257-259,273-275,287-289,293-295
+crates/longshore-bench/src/bin/file_uring/throughput.rs
+  s_0a7ba2e6f2f96f::t_76e16ede621694 35-37,78
+crates/longshore-bench/src/bin/http_uring/https.rs
+  s_0a7ba2e6f2f96f::t_59fb29cb281513 49,60
+crates/longshore-bench/src/bin/http_uring/sink.rs
+  s_0a7ba2e6f2f96f::t_c062e69e94b835 9,28
+crates/longshore-bench/src/bin/http_uring/throughput.rs
+  s_0a7ba2e6f2f96f::t_da52f7dfd47f4d 114,140
+crates/longshore-bench/src/bin/s3_uring/checks.rs
+  s_0a7ba2e6f2f96f::t_7822faefc46d81 9,102,104,106,132,135,137,141-142,151,153
+crates/longshore-bench/src/bin/s3_uring/linux.rs
+  s_0a7ba2e6f2f96f::t_3c75a65f96086a 193,204
+crates/longshore-bench/src/bin/s3_uring/multipart.rs
+  s_0a7ba2e6f2f96f::t_f853d888eec3c0 11,23-24,84,116,128,142,149,155,160-161
+crates/longshore-bench/src/bin/s3_uring/objects.rs
+  s_0a7ba2e6f2f96f::t_d0e67a286e99c8 10,51,57,85,91,119,151,206,214-215,238
+crates/longshore-bench/src/bin/s3_uring/ops.rs
+  s_0a7ba2e6f2f96f::t_b6d186d4099d94 9,102,113,121-122,124-125
+crates/longshore-bench/src/bin/s3_uring/throughput.rs
+  s_0a7ba2e6f2f96f::t_2b29055452ec99 9,74,194-197
+crates/longshore-bench/src/bin/server_uring/checks.rs
+  s_0a7ba2e6f2f96f::t_13e6fbcb4155f8 10,21,25,47,50,58,63,74,77,80,90-92,95-96,99,119,121,147,150,158,163,173,176,179,189-190,206,208,211,223,226-227,236-237,240,246,253,256,274-278,282-284,292-296,300-302
+crates/longshore-bench/src/bin/server_uring/options.rs
+  s_0a7ba2e6f2f96f::t_0ce3ec76f6218d 9,25,29,32,40,45,59,62,72-75,78-82,95,99,101,109,114,125-130,133,136,146-150
+crates/longshore-bench/src/bin/server_uring/thousand.rs
+  s_0a7ba2e6f2f96f::t_e23ff4e6c2f236 57,64,66,82,85,90,95,108,111,125,128,144,153,158,163,185,194,199,204,219,222,237-238
+crates/longshore-bench/src/bin/uring_faults.rs
+  s_0a7ba2e6f2f96f::t_896e11cc8159f6 33-35,43,57-58,84,87,91-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2f8c24229a2d35fc0b50a22a50897e11716d482e",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
