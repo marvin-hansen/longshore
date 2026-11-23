@@ -1,0 +1,35 @@
+crates/longshore_common/src/io/contract.rs
+  s_0a7ba2e6f2f96f::t_cbee4e439d32c5 30-31,37,98,114,116,133,143,146,159-160,163,174,184-185,203-205,219-221,233,237,247-249,266,277,286,295,305,313,320,336,339,341,344-345,353,359
+crates/longshore_common/src/io/contract_chains/cases.rs
+  s_0a7ba2e6f2f96f::t_823e6b3fc44a93 12,101-102,140-141,156-157,175,208-209,245,254-255,267
+crates/longshore_common/src/io/contract_files/refusals.rs
+  s_0a7ba2e6f2f96f::t_fdf6d838be7719 46,55-56,65,193,202-203,212,267,272-273,282,288
+crates/longshore_common/src/io/contract_net.rs
+  s_0a7ba2e6f2f96f::t_af75d022b5d34b 8,57,69,83,92,99,104,140,149,159,181-182,188,204,215
+crates/longshore_common/src/io/contract_net/accept.rs
+  s_0a7ba2e6f2f96f::t_1a66937813f96c 9,27,29,35,42,63,103,105,111,127,133,146-147,153,169,174,177,182,190,213-214,220,226-228,243
+crates/longshore_common/src/io/contract_net/recv.rs
+  s_0a7ba2e6f2f96f::t_b4eb36a773cbb0 9,38,53,68,77,84,99,107,117,126,145,149,157,169,183-184,212
+crates/longshore_common/src/io/contract_net/recv_idle.rs
+  s_0a7ba2e6f2f96f::t_7f55976dae83b5 9,22-23,25,37,41-42,44,56,64,92,94,100,107,124,129,131,149,158,165,170,175
+crates/longshore_common/src/io/contract_net/unix.rs
+  s_0a7ba2e6f2f96f::t_749013b26142f1 9,24-25,31,46,48,64,82,90,96,104,110,118,125,133,138,144-145,151,172,177,185,203,205,222
+crates/longshore_common/src/io/contract_net/unix_closed.rs
+  s_0a7ba2e6f2f96f::t_87f7f3b726b392 9,25,33-34,47,52,63,92,99,106,114,127,129,144,150,156,160,168,173,181
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a05e191431190489e2aa55db5fd742c0b20add0e",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
