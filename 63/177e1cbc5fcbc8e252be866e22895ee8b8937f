@@ -1,0 +1,79 @@
+crates/longshore_common/tests/guard/death.rs
+  s_0a7ba2e6f2f96f::t_033bde98cf3b26 57,63,87-127
+crates/longshore_common/tests/io/engine_adversarial.rs
+  s_0a7ba2e6f2f96f::t_94e2e3cbcf5374 99-101,104-140,145-176,178-203,208
+crates/longshore_common/tests/io/engine_adversarial/chains.rs
+  s_0a7ba2e6f2f96f::t_f54094b490aa8b 78-80,83-84,86-93,95-101,103-114,116-132,134-141,144-178,180,190-196,198-200,203-206,211-212,215-216
+crates/longshore_common/tests/io/posix.rs
+  s_0a7ba2e6f2f96f::t_7a5c586167f673 15-18
+crates/longshore_common/tests/io/posix/both_directions.rs
+  s_0a7ba2e6f2f96f::t_deff564845a92a 1-194
+crates/longshore_common/tests/io/posix_adversarial.rs
+  s_0a7ba2e6f2f96f::t_3d21ac3cfc5a5c 16,18,25-34,36-39,53,63-64,66-68,73,82,84-86,105,116-136,141-219,222,225-227,232-235,266-323,352
+crates/longshore_common/tests/io/posix_adversarial/files_udp.rs
+  s_0a7ba2e6f2f96f::t_6cd69197220ab4 16-21,23-25,28-40,42-45,83-84,86-88,96-102,104,109-113,116-120,124,126-137,139-178,181-188,196,198,200-201,221,227,229-230,234-242,245,247-248,252-256,259-267,276-297
+crates/longshore_common/tests/io/posix_faults.rs
+  s_0a7ba2e6f2f96f::t_7fb5438d5a884c 55-122,132-133,135,138
+crates/longshore_common/tests/sim/armed_faults.rs
+  s_0a7ba2e6f2f96f::t_ed0db97040ecee 47-157,184,186-191,193-237,239-244,246-248,250,252,254,285,287-289,300-376,400,402,404
+crates/longshore_common/tests/sim/chains.rs
+  s_0a7ba2e6f2f96f::t_5176c2a4745d76 17-20,23,105-163,177,179-180,182-183,189,196-197
+crates/longshore_common/tests/sim/disk/adversarial.rs
+  s_0a7ba2e6f2f96f::t_a23376a165235c 54-85,95-100,118-119,122-123,126-127
+crates/longshore_common/tests/sim/disk/adversarial_faults.rs
+  s_0a7ba2e6f2f96f::t_edf27e636a23f4 22-29,31,38,41,46,50,59,61-62,64-65,68,72,75,77,80,89,96,102,113,115,120,149-150,166-217
+crates/longshore_common/tests/sim/disk/dirs.rs
+  s_0a7ba2e6f2f96f::t_06414176c62c91 32-33,56,59-60,62-64,72-95,173-244
+crates/longshore_common/tests/sim/disk/dirs_overflow.rs
+  s_0a7ba2e6f2f96f::t_47a3b0d66d09db 8-11,15,18-34,37,39-95
+crates/longshore_common/tests/sim/disk/dirs_reclaim.rs
+  s_0a7ba2e6f2f96f::t_9632b709115f7a 10-14,18,173,176-192,194,201-203,205-207,209-210,212-213,215-217,219-225,227-228,230-231,233-235,237-240,242-251
+crates/longshore_common/tests/sim/disk/dirs_sync_fail.rs
+  s_0a7ba2e6f2f96f::t_674fc0a7f3e6be 11-14,18,118,120-123,125-129,131-134,136-139,141-143,145-168
+crates/longshore_common/tests/sim/disk/faults.rs
+  s_0a7ba2e6f2f96f::t_e36d16393a995a 8-10,84,86,93,96,98,104,115-128,139,142,144-145,148,150,153,160,162,164,167,170-172,187
+crates/longshore_common/tests/sim/disk/faults_placed.rs
+  s_0a7ba2e6f2f96f::t_d36d0f3eb0148e 8-10,17,39-82,90-91,104-105,115,117-118,120,125,133
+crates/longshore_common/tests/sim/disk/faults_sync.rs
+  s_0a7ba2e6f2f96f::t_1f22223f57650d 15,221,245,249-273
+crates/longshore_common/tests/sim/disk/power_loss.rs
+  s_0a7ba2e6f2f96f::t_6aa6cdf818dbfd 9,12,23-24,30,65-87,90,98,105-111,114,116-118,122-186,209
+crates/longshore_common/tests/sim/disk/power_loss_settle.rs
+  s_0a7ba2e6f2f96f::t_259edc3d4973aa 9-13,16-55,65-66,88-92,96,98,101-102,112,114-115,118,120,124,127-128
+crates/longshore_common/tests/sim/echo.rs
+  s_0a7ba2e6f2f96f::t_d4a2e4d5e8b6d7 12-15
+crates/longshore_common/tests/sim/echo/slots.rs
+  s_0a7ba2e6f2f96f::t_8abff1981398c7 1-182
+crates/longshore_common/tests/sim/files.rs
+  s_0a7ba2e6f2f96f::t_0475b90fee2027 35-95,113-114,119-122,126-212,214-229,232-253,270-271
+crates/longshore_common/tests/sim/storage/all_ops.rs
+  s_0a7ba2e6f2f96f::t_1421706de9a88a 8,10-33,37,42-47,49-84,86,88,91-92,94-101,106,108,110,116,118,120,123,125,127,132,134,136,140,142-143,145-155
+crates/longshore_common/tests/sim/storage/durability.rs
+  s_0a7ba2e6f2f96f::t_20451235536ad3 10-11,144-151,153-197,199,201-207,209-220,222-223,225-261
+crates/longshore_common/tests/sim/storage/rates.rs
+  s_0a7ba2e6f2f96f::t_f49ad6fb7e15f0 180-181,187-243,245-246,248-250,252-253
+crates/longshore_common/tests/sim/traces.rs
+  s_0a7ba2e6f2f96f::t_0bd035e2cedc1d 10,56-66,92,99,101-102,142,147,149-150,164,167,169-172,208,216,218-219,228
+crates/longshore_common/tests/sim/wal.rs
+  s_0a7ba2e6f2f96f::t_09710619a68d91 116-117,128-132,141-161,167-177,179-189
+crates/longshore_common/tests/sim/wal/recover.rs
+  s_0a7ba2e6f2f96f::t_bba565a9644d0e 44,46,56-99,103-115
+crates/longshore_common/tests/sim/wal/suite.rs
+  s_0a7ba2e6f2f96f::t_cc1080c2a5c16d 12-38,44-68,70-84,86,89-110,112-124,126-137,139-147,149-168,170-176,178-219,226,228,231-241,246-317
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "63177e1cbc5fcbc8e252be866e22895ee8b8937f",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
