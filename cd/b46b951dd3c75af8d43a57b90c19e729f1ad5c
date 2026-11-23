@@ -1,0 +1,38 @@
+openspec/specs/segment-size-preference/spec.md
+  s_0a7ba2e6f2f96f::t_4db7bdef5b1711 4-7
+  s_0a7ba2e6f2f96f::t_5177b9de3af3bd 1-3,8-37
+openspec/specs/multipart-upload/spec.md
+  s_0a7ba2e6f2f96f::t_5177b9de3af3bd 1-3,8-70
+  s_0a7ba2e6f2f96f::t_4db7bdef5b1711 4-7
+openspec/specs/core-mailbox/spec.md
+  s_0a7ba2e6f2f96f::t_5177b9de3af3bd 1-3,9-131
+  s_0a7ba2e6f2f96f::t_4db7bdef5b1711 4-8
+openspec/specs/simulated-disk/spec.md
+  s_0a7ba2e6f2f96f::t_4db7bdef5b1711 4-7
+  s_0a7ba2e6f2f96f::t_5177b9de3af3bd 1-3,8-135
+openspec/specs/file-operations/spec.md
+  s_0a7ba2e6f2f96f::t_5177b9de3af3bd 1-3,8-188
+  s_0a7ba2e6f2f96f::t_4db7bdef5b1711 4-7
+openspec/specs/io-backends/spec.md
+  s_0a7ba2e6f2f96f::t_4db7bdef5b1711 4-7
+  s_0a7ba2e6f2f96f::t_5177b9de3af3bd 1-3,8-159
+openspec/specs/server-networking/spec.md
+  s_0a7ba2e6f2f96f::t_4db7bdef5b1711 4-8
+  s_0a7ba2e6f2f96f::t_5177b9de3af3bd 1-3,9-151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cdb46b951dd3c75af8d43a57b90c19e729f1ad5c",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
