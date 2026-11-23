@@ -1,0 +1,251 @@
+crates/longshore_stream/src/handshake.rs
+  s_0a7ba2e6f2f96f::t_c05a502793d288 50-51,57
+crates/longshore/tests/e2e/harness/wal_engine.rs
+  s_0a7ba2e6f2f96f::t_5792aee67d71e6 151,157,210-211
+crates/longshore_dns/tests/dns/resolver_props.rs
+  s_0a7ba2e6f2f96f::t_b435d5aecccc49 97,109
+crates/longshore/tests/e2e/t12_pool_fileslots/f10_slots_t2.rs
+  s_0a7ba2e6f2f96f::t_d3b8103c481e3b 58
+crates/longshore_common/tests/sim/sockets.rs
+  s_0a7ba2e6f2f96f::t_68660113070de5 196-197,263
+crates/longshore_s3/tests/store/s3_conditional.rs
+  s_0a7ba2e6f2f96f::t_e2750bd179a0ad 84-89,92,156-157,163,165-167,170,179-180,186,188-190,193,232-233,239,241-243,246
+crates/longshore_common/tests/sim/storage/durability.rs
+  s_0a7ba2e6f2f96f::t_56731529288d8f 175-176,199-200,227,246
+crates/longshore_s3/tests/store/s3_multipart.rs
+  s_0a7ba2e6f2f96f::t_ab1db0bee3f0ff 41,44,91-93,157-158,161,166-168
+crates/longshore_stream/tests/stream/plain.rs
+  s_0a7ba2e6f2f96f::t_76112dc9b3104b 193-195,199-204,213-217,221-222
+crates/longshore_dns/tests/dns/common/mod.rs
+  s_0a7ba2e6f2f96f::t_f5397ece73676f 174-179
+crates/longshore/tests/e2e/t12_armed_net/f21_armed_ops_t2.rs
+  s_0a7ba2e6f2f96f::t_d251434f5642b0 151,155,240,244
+crates/longshore/tests/e2e/t12_sockets_server/f22_sockets_unix_t2.rs
+  s_0a7ba2e6f2f96f::t_7625a946a45cb9 84-85
+crates/longshore/tests/e2e/t12_sim_contract/f04_close_cancel.rs
+  s_0a7ba2e6f2f96f::t_d3a5f56bfef1ee 245-246,248-251
+crates/longshore_common/tests/sim/disk/dirs_reclaim.rs
+  s_0a7ba2e6f2f96f::t_66c24908969500 133,163,246,298
+crates/longshore_dns/src/codec/limit_tests.rs
+  s_0a7ba2e6f2f96f::t_a4b6b37ded15c2 95-97,99,136-137,139,142-143,145
+crates/longshore_s3/src/s3/types.rs
+  s_0a7ba2e6f2f96f::t_a43042075ed4cf 281
+crates/longshore-bench/src/bin/exact_s3.rs
+  s_0a7ba2e6f2f96f::t_de4923b9dfd0ce 84,106,146-147,167-168,179-180,185-186,200-201,213,215-216,218,221,223-225
+crates/longshore_common/tests/io/props.rs
+  s_0a7ba2e6f2f96f::t_b1c86b807eeb00 21,23,28
+crates/longshore_crc/src/fold.rs
+  s_0a7ba2e6f2f96f::t_0530ae5ace9307 135-136,333-335,339-340,343-344,356-357
+crates/longshore/tests/e2e/t12_shared_posix/f06_posix_world_t2.rs
+  s_0a7ba2e6f2f96f::t_5c465e9e4b2d2b 92-93
+crates/longshore_http_client/src/server/identity.rs
+  s_0a7ba2e6f2f96f::t_cfc299c00ed763 175,182-183,186-187
+crates/longshore_http_client/src/server/listing.rs
+  s_0a7ba2e6f2f96f::t_534952a0f8a194 46
+crates/longshore-bench/examples/tls_probe.rs
+  s_0a7ba2e6f2f96f::t_3755e05c44d6d6 84-87,105,112,125
+crates/longshore_http_client/tests/http/common/mod.rs
+  s_0a7ba2e6f2f96f::t_eb7bfa94f51dcf 276-277,282-283
+crates/longshore_mailbox/tests/mailbox/model/slots.rs
+  s_0a7ba2e6f2f96f::t_8ea14ce35db975 108-111,114-116,119,121,163-164,233,240,286-287
+crates/longshore/tests/e2e/t12_sim_contract/f03_sim_parity_t2.rs
+  s_0a7ba2e6f2f96f::t_f0c228391c14ce 93-94,139-140
+crates/longshore-bench/src/bin/client_s3.rs
+  s_0a7ba2e6f2f96f::t_b05879e6871c14 225-226
+crates/longshore_s3/tests/store/s3_listing.rs
+  s_0a7ba2e6f2f96f::t_88f5a96bbccf71 73,77
+crates/longshore_common/src/io/uring/tests.rs
+  s_0a7ba2e6f2f96f::t_5f9e4c958fa8d2 64-66,70
+crates/longshore-bench/src/bin/s3_uring/multipart.rs
+  s_0a7ba2e6f2f96f::t_fd7e404a28123c 90,94,114,117-126,151-152,158
+crates/longshore_common/src/sim/simio/ops.rs
+  s_0a7ba2e6f2f96f::t_66388cbf61603c 183
+crates/longshore_http_client/tests/http/pool_edges.rs
+  s_0a7ba2e6f2f96f::t_7a3b8da588dcdd 143-151,155-159,222-223,225,229,232-237
+crates/longshore_tls/tests/tls/record_edges.rs
+  s_0a7ba2e6f2f96f::t_27c3d418b6d982 173-176
+crates/longshore_s3/src/client/multipart.rs
+  s_0a7ba2e6f2f96f::t_fef12daf59d974 75,77
+crates/longshore/tests/e2e/t12_sockets_server/f22_sockets_unix_t1.rs
+  s_0a7ba2e6f2f96f::t_d34399c92c575a 85,87,164-167,231-239,295,299
+crates/longshore_common/tests/sim/disk/dirs_enametoolong.rs
+  s_0a7ba2e6f2f96f::t_93797d8e16269c 157,210
+crates/longshore/tests/e2e/t12_mailbox_s3/f27_s3_client_mailbox.rs
+  s_0a7ba2e6f2f96f::t_a053620385252f 125,127
+crates/longshore_s3/tests/client/builder.rs
+  s_0a7ba2e6f2f96f::t_56abb04fb296ba 64-69,105-107,109-111,113-115,117-119,127-129,149-155,158,160
+crates/longshore_dns/src/codec/tests.rs
+  s_0a7ba2e6f2f96f::t_f9e0190fe37637 112-113,115-120,287,289,311-315
+crates/longshore_http_client/tests/http/https.rs
+  s_0a7ba2e6f2f96f::t_d2030761d70abc 368,375,379,384,391,394-397,406,413,417,419,426,430,514,516-518,520,543
+crates/longshore/tests/e2e/t12_sockets_server/f23_server_shared_t1a.rs
+  s_0a7ba2e6f2f96f::t_c9d6411b376b40 69-71,94-95,124-125,150-158
+crates/longshore_common/tests/sim/disk/dirs_sync_fail.rs
+  s_0a7ba2e6f2f96f::t_984aa41ea4e42f 155
+crates/longshore_http_client/tests/http/head_props.rs
+  s_0a7ba2e6f2f96f::t_9391df7be89140 160
+crates/longshore_s3/tests/store/sigv4_suite.rs
+  s_0a7ba2e6f2f96f::t_e01b8995fbc32c 49,86
+crates/longshore_common/src/io/files.rs
+  s_0a7ba2e6f2f96f::t_870b1c123aecdb 160,233,247-248
+crates/longshore/tests/e2e/t12_shared_posix/f06_posix_world.rs
+  s_0a7ba2e6f2f96f::t_9783c40d50a7dc 221-222
+crates/longshore-bench/benches/checksums.rs
+  s_0a7ba2e6f2f96f::t_b1529cb279a3ac 144,156-157,169
+crates/longshore-bench/src/bin/s3_uring/objects.rs
+  s_0a7ba2e6f2f96f::t_c0ddc448776745 48-53,55-81,83-87,89-113,115-120,123,125-126,129,146-200,210-213,235-239
+crates/longshore_common/src/io/contract_net/unix.rs
+  s_0a7ba2e6f2f96f::t_eebce795f0c747 162-164,166-167
+crates/longshore_dns/tests/dns/resolver_segments.rs
+  s_0a7ba2e6f2f96f::t_058d72a90a73a5 97-99,101-103,106-108,110-111
+crates/longshore_http_client/src/server/objects.rs
+  s_0a7ba2e6f2f96f::t_5549c6d86cd4b7 29-31
+crates/longshore_s3/src/client/threads.rs
+  s_0a7ba2e6f2f96f::t_cb55149d67e376 255-256
+crates/longshore/tests/e2e/t12_file_chains/f12_chains_t2b.rs
+  s_0a7ba2e6f2f96f::t_8ee64b0b501b08 169
+Cargo.toml
+  s_0a7ba2e6f2f96f::t_768c5c751b5127 82
+crates/longshore_s3/src/s3/attempt.rs
+  s_0a7ba2e6f2f96f::t_6e756e8b204195 127-128,130-131
+crates/longshore_dns/tests/dns/codec_props.rs
+  s_0a7ba2e6f2f96f::t_c1c28abcd3f82a 194-195
+crates/longshore/tests/e2e/t12_pool_fileslots/f10_slots_t1.rs
+  s_0a7ba2e6f2f96f::t_67d612fc22bbdc 58,130,201
+crates/longshore/tests/e2e/t12_armed_net/f20_completions_t1.rs
+  s_0a7ba2e6f2f96f::t_f885025bd555ea 96-97
+crates/longshore_stream/tests/stream/tls.rs
+  s_0a7ba2e6f2f96f::t_3a9ec96c9806f8 201-202,218-219,222-223,235-236,303-331,334-335,337-360,363-365,374,376,379,386
+crates/longshore_s3/tests/store/s3_object_ops.rs
+  s_0a7ba2e6f2f96f::t_2915994bb9f19f 109,112-114,173,175,182-183,199,203,225,242,248,253,256,259,325,343
+crates/longshore/tests/e2e/t12_mailbox_core/f24_mailbox_queue.rs
+  s_0a7ba2e6f2f96f::t_4f4d72d76ef888 103
+crates/longshore-bench/examples/azure_probe.rs
+  s_0a7ba2e6f2f96f::t_68645432ce5bc6 89,91,99,102,104,179-181,196-197,240-245,248-249,251,265,268
+crates/longshore/tests/e2e/t12_file_ops/f11_ops_t1b.rs
+  s_0a7ba2e6f2f96f::t_6233ddb3da019a 77,141,167,189,228,250
+crates/longshore_s3/tests/store/doc_props.rs
+  s_0a7ba2e6f2f96f::t_1ce0dc322049b0 257,265
+crates/longshore-bench/src/bin/tcp_raw.rs
+  s_0a7ba2e6f2f96f::t_538d9260edb92a 212,214
+crates/longshore_s3/tests/client/exact.rs
+  s_0a7ba2e6f2f96f::t_6f478510f7a419 114-115
+crates/longshore_s3/src/presign/tests.rs
+  s_0a7ba2e6f2f96f::t_754709004abf89 87,96,125,212,220-223
+crates/longshore_common/tests/sim/storage/rates.rs
+  s_0a7ba2e6f2f96f::t_483f39ff57c00c 28,32,49,56,71,93
+crates/longshore_common/tests/io/posix_adversarial/files_udp.rs
+  s_0a7ba2e6f2f96f::t_5779fe9c794f1e 250-251,272-273,296-298
+crates/longshore_mailbox/tests/mailbox/slots.rs
+  s_0a7ba2e6f2f96f::t_ffd3f371745963 136-138,141,143-147,150,154-157,161-164,167-169
+crates/longshore/tests/e2e/t12_sim_disk_durability/f14_durable_t1.rs
+  s_0a7ba2e6f2f96f::t_8c726a1ee5065d 219-220,222
+crates/longshore-bench/src/bin/http_uring/throughput.rs
+  s_0a7ba2e6f2f96f::t_fef06353a5c8e5 64,74,104,126-127,129-130,165-168
+crates/longshore_tls/tests/tls/record.rs
+  s_0a7ba2e6f2f96f::t_b58184a82f6748 58-63
+crates/longshore_http_client/tests/http/server_refusals.rs
+  s_0a7ba2e6f2f96f::t_c8d5d9bb46fc4b 33-34,36,93-96
+crates/longshore_tls/tests/tls/handshake.rs
+  s_0a7ba2e6f2f96f::t_eabf390a81eff7 50-53,56,58-59,61,116,118,123,125,146-148,170,172,243-248
+crates/longshore/tests/e2e/t12_file_chains/f12_chains_t1.rs
+  s_0a7ba2e6f2f96f::t_0ae33bcaac38f3 64
+crates/longshore_s3/tests/store/s3_exact.rs
+  s_0a7ba2e6f2f96f::t_c03719124a3c6d 169-173,175,177,180-181,185-186,201-202,255-256,399-401,469,471-472,474
+crates/longshore_http_client/tests/http/failures.rs
+  s_0a7ba2e6f2f96f::t_3e2547f7946864 276,278-282,323-325,330
+crates/longshore-bench/src/bin/s3_uring/ops.rs
+  s_0a7ba2e6f2f96f::t_cddbc37755e28b 91,98-99,109-110,120,122,127
+crates/longshore_s3/tests/store/gcs_sim.rs
+  s_0a7ba2e6f2f96f::t_206e357ccc32d5 218,220-221,223
+crates/longshore_s3/src/presign.rs
+  s_0a7ba2e6f2f96f::t_68ac8caa0861ee 92,102,105,107
+crates/longshore-bench/benches/aead_memory.rs
+  s_0a7ba2e6f2f96f::t_3e33374085f539 209
+crates/longshore_s3/src/options/tests.rs
+  s_0a7ba2e6f2f96f::t_5a3fa0c5c17acc 90,93,170-172
+crates/longshore_dns/tests/dns/resolver_edges.rs
+  s_0a7ba2e6f2f96f::t_41cba9320670e2 132-141,143-146
+crates/longshore_s3/tests/store/s3_operations.rs
+  s_0a7ba2e6f2f96f::t_295b89c2cddf7a 204,214-215,217,219-220,223,226
+crates/longshore_mailbox/tests/mailbox/queue.rs
+  s_0a7ba2e6f2f96f::t_d77b5bef859d1b 162-170,172-175,178-187,190-199
+crates/longshore_stream/src/records.rs
+  s_0a7ba2e6f2f96f::t_039649c5ca5f0e 134-135
+crates/longshore_s3/src/creds/tests.rs
+  s_0a7ba2e6f2f96f::t_edfb5ad687af7b 16-21,23,27,72,106-110,179,183,185,188
+crates/longshore_common/tests/sim/wal/suite.rs
+  s_0a7ba2e6f2f96f::t_7410ca2d34d480 46,93,115,190
+crates/longshore_common/tests/sim/echo.rs
+  s_0a7ba2e6f2f96f::t_c9ad5ed0e9b95b 174-178,235,237,241,407-408,419,473
+crates/longshore-bench/src/bin/client_uring/multipart.rs
+  s_0a7ba2e6f2f96f::t_a2e9d8fc1f78fc 52,56-57,60-65,67
+crates/longshore-bench/src/bin/client_uring.rs
+  s_0a7ba2e6f2f96f::t_453e2518b4eff9 215-216,236,243
+crates/longshore_s3/tests/store/codec_props.rs
+  s_0a7ba2e6f2f96f::t_f2af79226488af 119,130-133,135,138,149
+crates/longshore_common/tests/io/posix_faults.rs
+  s_0a7ba2e6f2f96f::t_d5cb4bc5d58e36 191,199
+crates/longshore_common/tests/sim/files.rs
+  s_0a7ba2e6f2f96f::t_0cebf13c137d97 147-148,150-151,157-158
+crates/longshore_http_client/tests/http/requests.rs
+  s_0a7ba2e6f2f96f::t_91f9d33b4f78da 78,89,105,109,116,118,120
+crates/longshore_s3/tests/store/s3_checksums.rs
+  s_0a7ba2e6f2f96f::t_4d6798c9eaac5d 130-132
+crates/longshore_s3/tests/store/sigv4_props.rs
+  s_0a7ba2e6f2f96f::t_50e29045ea665d 150,164,167,171,196-198
+crates/longshore/tests/e2e/t4_apps_storage/dual_chaos.rs
+  s_0a7ba2e6f2f96f::t_e750d7f9ac7c00 106,198
+crates/longshore_s3/tests/client/waits.rs
+  s_0a7ba2e6f2f96f::t_540d48f0e5dcd2 130,135,223-228,279,284-286,292
+crates/longshore_stream/tests/stream/tls/adversarial.rs
+  s_0a7ba2e6f2f96f::t_7a444ad3729878 95-96,199-203
+crates/longshore/tests/e2e/t4_apps_storage/partitioned_service.rs
+  s_0a7ba2e6f2f96f::t_81631356c5a5b6 270,284
+crates/longshore_http_client/tests/http/framing.rs
+  s_0a7ba2e6f2f96f::t_4321116ac76a6a 124,127,265,275,289,299,406,414-415,417
+crates/longshore_tls/tests/tls/interop.rs
+  s_0a7ba2e6f2f96f::t_4470b7c1116a6d 140-141,171-172,187-188
+crates/longshore_s3/tests/store/list_props.rs
+  s_0a7ba2e6f2f96f::t_235ff8e855c727 86,91-92,101-102,111
+crates/longshore_http_client/tests/http/pool.rs
+  s_0a7ba2e6f2f96f::t_60170c0b98d96d 258,266-268,270
+crates/longshore-bench/src/bin/s3_uring/throughput.rs
+  s_0a7ba2e6f2f96f::t_7df98d5be982c4 84,86-87,95
+crates/longshore/tests/e2e/t4_apps_client_mailbox/mailbox_pipeline.rs
+  s_0a7ba2e6f2f96f::t_dfd7d6a5afc15c 160-161
+crates/longshore/tests/e2e/t12_stream_tls/f18_stream_t1.rs
+  s_0a7ba2e6f2f96f::t_688a6b27603429 335-339,346-350
+crates/longshore-bench/src/bin/echo_uring.rs
+  s_0a7ba2e6f2f96f::t_19d96b8396064d 111-112,123,295-296,298
+crates/longshore/tests/e2e/t12_file_ops/f11_ops_t1a.rs
+  s_0a7ba2e6f2f96f::t_d4ef5aaf3b0157 128,222,243
+crates/longshore/tests/e2e/t4_apps_storage/writeback_as_eio.rs
+  s_0a7ba2e6f2f96f::t_070fe2c43a31b8 61,214
+crates/longshore_http_client/src/server/events.rs
+  s_0a7ba2e6f2f96f::t_8d626e1d4b6e33 162
+crates/longshore_common/src/io/scenario.rs
+  s_0a7ba2e6f2f96f::t_e5e28a5fdfac01 60-62
+crates/longshore_common/tests/sim/disk/dirs_overflow.rs
+  s_0a7ba2e6f2f96f::t_59cda7279a336c 152
+crates/longshore_s3/src/s3/submit.rs
+  s_0a7ba2e6f2f96f::t_8072469624cb83 246
+crates/longshore/tests/e2e/t4_apps_network/parity_fileserver.rs
+  s_0a7ba2e6f2f96f::t_234fd5bbf68bf2 148-149
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "007672553f8c27252e48c6cb3f1a0e2f1e42e82a",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
