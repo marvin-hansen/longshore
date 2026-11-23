@@ -1,0 +1,19 @@
+crates/longshore_crc/src/x86_64.rs
+  s_0a7ba2e6f2f96f::t_7ed350b2c8a851 29,35-36,55-58,64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "eb7b9de6c4d2dc26cb42e7404cf5697663db4681",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
