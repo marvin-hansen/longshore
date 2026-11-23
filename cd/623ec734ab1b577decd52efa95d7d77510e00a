@@ -1,0 +1,47 @@
+makefile
+  s_0a7ba2e6f2f96f::t_45c9fdc501e2ae 1-42
+Cargo.toml
+  s_0a7ba2e6f2f96f::t_83f97d45bce6d0 86
+scripts/build.sh
+  s_40063c532c78d2::t_b4815a8293726e 1-13
+scripts/count.sh
+  s_40063c532c78d2::t_0303a0ce0b7c53 1-15
+scripts/fix.sh
+  s_40063c532c78d2::t_3c9f0eeab73b5e 1-14
+scripts/format.sh
+  s_40063c532c78d2::t_4f21ff7aa0933d 1-15
+scripts/update.sh
+  s_3fc6568eaf0047::t_279f3da787d57a 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cd623ec734ab1b577decd52efa95d7d77510e00a",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    },
+    "s_3fc6568eaf0047": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a164f93ac534b956d",
+        "model": "unknown"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    },
+    "s_40063c532c78d2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a3d38df288a2263c7",
+        "model": "unknown"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
