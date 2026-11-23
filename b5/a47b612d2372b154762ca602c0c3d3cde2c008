@@ -1,0 +1,26 @@
+openspec/notes/amazon-s3-runs.sh
+  s_ca9a59ced9a619::t_dad5b17fb5bbcd 71-73,76-91
+  s_ca9a59ced9a619::t_4d3f5ade110792 92
+openspec/notes/amazon-s3-runs.md
+  s_ca9a59ced9a619::t_536e8da33056df 19,36-37,71-72
+  s_ca9a59ced9a619::t_dad5b17fb5bbcd 18,20-25,35,70
+scripts/self-hosted-s3.sh
+  s_ca9a59ced9a619::t_dad5b17fb5bbcd 229-231
+  s_ca9a59ced9a619::t_6d38c9204c7abc 228
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b5a47b612d2372b154762ca602c0c3d3cde2c008",
+  "prompts": {},
+  "sessions": {
+    "s_ca9a59ced9a619": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b59c78e4-686a-4925-a556-922716a01687",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
