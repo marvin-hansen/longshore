@@ -1,0 +1,69 @@
+crates/longshore_common/src/io/engine/submit.rs
+  s_0a7ba2e6f2f96f::t_e44a5f39e85805 1-151
+crates/longshore_common/src/io/engine.rs
+  s_0a7ba2e6f2f96f::t_c06c1ae3bc8931 24
+crates/longshore_common/src/io/engine/backend.rs
+  s_0a7ba2e6f2f96f::t_ae976849232fe2 77-81,84-85
+crates/longshore_common/src/io/engine/step.rs
+  s_0a7ba2e6f2f96f::t_99fca436fc5367 150-169,171-183,185-189,194,224-254,256-258,264-327
+crates/longshore_common/src/io/files.rs
+  s_0a7ba2e6f2f96f::t_1f5aa9b2e700b9 227-260,262-272,274-299,301,304-307
+crates/longshore_common/src/io/files/validate.rs
+  s_0a7ba2e6f2f96f::t_c4e6aa1f10c907 18,36,54-79,124-173,175
+crates/longshore_common/src/io/posix/errno.rs
+  s_0a7ba2e6f2f96f::t_11b304eacd510e 98-205,209-213,217-308,312-315
+crates/longshore_common/src/io/posix/files.rs
+  s_0a7ba2e6f2f96f::t_80f870ff65aee2 114-137,147,159,167,175,190-197
+crates/longshore_common/src/io/uring.rs
+  s_0a7ba2e6f2f96f::t_bd7c74f0116e1a 23,30-31
+crates/longshore_common/src/io/uring/backend.rs
+  s_0a7ba2e6f2f96f::t_1fba38438c2726 110-113,315-377
+crates/longshore_common/src/io/uring/completions.rs
+  s_0a7ba2e6f2f96f::t_956216c6d6ed8e 186-188,190-197,199-201,203,205-207,210-232,235-252,254-258
+crates/longshore_common/src/io/uring/completions_steps.rs
+  s_0a7ba2e6f2f96f::t_2dc3abe46708fa 1-79
+crates/longshore_common/src/io/uring/ops.rs
+  s_0a7ba2e6f2f96f::t_5f70e3739f3d17 14,21-24,31,37,43-45,51-53,68-158
+crates/longshore_common/src/io/uring/ops_file.rs
+  s_0a7ba2e6f2f96f::t_8744ad40434037 10,21-22,29,36,38,48-49,56-57,59-159,167-169,179-181,187,192-198,212-240
+crates/longshore_common/src/io/uring/ops_sock.rs
+  s_0a7ba2e6f2f96f::t_b7f79495e930f4 1-223
+crates/longshore_common/src/io/uring/quiesce.rs
+  s_0a7ba2e6f2f96f::t_2c55a1569fd2f2 1-115
+crates/longshore_common/src/io/uring/setup.rs
+  s_0a7ba2e6f2f96f::t_f3cc9e69de4eaf 136-160,198
+crates/longshore_common/src/sim/simio.rs
+  s_0a7ba2e6f2f96f::t_c65d5a22cd832c 23
+crates/longshore_common/src/sim/simio/disk.rs
+  s_0a7ba2e6f2f96f::t_2e72967fea0714 27,29-30
+crates/longshore_common/src/sim/simio/disk_attempt.rs
+  s_0a7ba2e6f2f96f::t_4fc338eb791a1c 1-234
+crates/longshore_common/src/sim/simio/disk_dirs_apply.rs
+  s_0a7ba2e6f2f96f::t_c675d033461165 115-118,124-125,138-139,142-143,151-217
+crates/longshore_common/src/sim/simio/disk_ns.rs
+  s_0a7ba2e6f2f96f::t_0b0497fed2a3a4 53-54,56-57,67,92-167
+crates/longshore_common/src/sim/simio/disk_ops.rs
+  s_0a7ba2e6f2f96f::t_e0b58bd1b1a1bc 107,143-197
+crates/longshore_common/src/sim/simio/disk_paths.rs
+  s_0a7ba2e6f2f96f::t_8e0ce7056d356f 142,189-214
+crates/longshore_common/src/sim/simio/ops.rs
+  s_0a7ba2e6f2f96f::t_ccb3a4fde2b456 58,64-66,74-78,93-97,100,111,117-149
+crates/longshore_common/src/sim/simio/ops_net.rs
+  s_0a7ba2e6f2f96f::t_5d7f17e2b23221 1-252
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "313fe4dfcb89e3eb50033823767287dfafa76401",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
