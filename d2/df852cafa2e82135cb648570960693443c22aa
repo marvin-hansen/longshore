@@ -1,0 +1,34 @@
+crates/longshore_tls/src/record.rs
+  s_0a7ba2e6f2f96f::t_60f3d2eb859c06 135-136
+crates/longshore_tls/Cargo.toml
+  s_0a7ba2e6f2f96f::t_5b6dafd5b2a534 44-47
+fuzz/fuzz_targets/tls_record.rs
+  s_0a7ba2e6f2f96f::t_7d4400a08226c3 16-20
+crates/longshore_tls/src/lib.rs
+  s_0a7ba2e6f2f96f::t_f37ae77a1f396d 18
+crates/longshore_tls/src/wide_gcm.rs
+  s_0a7ba2e6f2f96f::t_3e7d9011f70cfb 1-5,8-9,14,84-98,101-105,107-111,116-123,128-138,143-166
+  s_0a7ba2e6f2f96f::t_122d29cb226188 6-7,10-13,15-83,99-100,106,112-115,124-127,139-142
+bench/results/m28-tls-wide-gcm.md
+  s_0a7ba2e6f2f96f::t_9640e03869ed81 1-56
+crates/longshore_tls/tests/tls/wide_gcm.rs
+  s_0a7ba2e6f2f96f::t_81eebf2b66972c 1-5,8-25,32,49-51,74-86
+  s_0a7ba2e6f2f96f::t_0e1566c3fc8eb2 6-7,26-31,33,37-48,52-73
+  s_0a7ba2e6f2f96f::t_2f4def6be75159 34-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d2df852cafa2e82135cb648570960693443c22aa",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": null
+    }
+  }
+}
