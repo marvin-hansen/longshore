@@ -1,0 +1,29 @@
+crates/longshore_s3/src/s3.rs
+  s_0a7ba2e6f2f96f::t_522cd7b8c3656d 18,20,68,71,75,77-78,83-89
+crates/longshore_s3/src/s3/consts.rs
+  s_0a7ba2e6f2f96f::t_34e01f2fee06ad 1-37
+crates/longshore_s3/src/s3/kind.rs
+  s_0a7ba2e6f2f96f::t_1ce7d47478f9ec 1-39
+crates/longshore_s3/src/s3/provider.rs
+  s_0a7ba2e6f2f96f::t_e607ae0ed21f70 1-17
+crates/longshore_s3/src/s3/slot.rs
+  s_0a7ba2e6f2f96f::t_4134f9450e9581 1-50
+crates/longshore_s3/src/s3/state.rs
+  s_0a7ba2e6f2f96f::t_39b5b4ccfe50f4 1-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cd8692cb3b2ccad4401e671b81932853318132bb",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
