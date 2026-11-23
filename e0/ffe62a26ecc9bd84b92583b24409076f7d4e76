@@ -1,0 +1,55 @@
+crates/longshore_s3/src/client/pending.rs
+  s_0a7ba2e6f2f96f::t_197c971708481b 63,86,168,237,256
+crates/longshore-bench/src/bin/client_uring/exact.rs
+  s_0a7ba2e6f2f96f::t_3954860211fb31 53,62,67,72,84,92,104
+  s_0a7ba2e6f2f96f::t_197c971708481b 27
+crates/longshore_s3/src/client.rs
+  s_0a7ba2e6f2f96f::t_7ec649d4c99178 242,294,315
+  s_0a7ba2e6f2f96f::t_197c971708481b 327,329
+crates/longshore_s3/src/client/multipart.rs
+  s_0a7ba2e6f2f96f::t_289a8fd939f593 43
+  s_0a7ba2e6f2f96f::t_7ec649d4c99178 76
+crates/longshore_s3/tests/store/creds_validate_sim.rs
+  s_0a7ba2e6f2f96f::t_5582a8592b402a 24
+  s_0a7ba2e6f2f96f::t_3954860211fb31 35,45,60
+  s_0a7ba2e6f2f96f::t_babe1c142ed7c5 91
+  s_0a7ba2e6f2f96f::t_197c971708481b 20
+crates/longshore_s3/src/s3/exact.rs
+  s_0a7ba2e6f2f96f::t_7ec649d4c99178 231,237,316
+crates/longshore_s3/tests/store/creds_world.rs
+  s_0a7ba2e6f2f96f::t_3954860211fb31 65,111
+  s_0a7ba2e6f2f96f::t_197c971708481b 68
+crates/longshore/tests/e2e/t12_mailbox_s3/f27_s3_client_mailbox.rs
+  s_0a7ba2e6f2f96f::t_3954860211fb31 66,71,75
+  s_0a7ba2e6f2f96f::t_197c971708481b 42
+crates/longshore_s3/src/client/exact.rs
+  s_0a7ba2e6f2f96f::t_197c971708481b 64,66
+Cargo.toml
+  s_0a7ba2e6f2f96f::t_197c971708481b 74
+crates/longshore_s3/src/s3/rotation.rs
+  s_0a7ba2e6f2f96f::t_197c971708481b 20
+crates/longshore_s3/src/s3/outcome.rs
+  s_0a7ba2e6f2f96f::t_7ec649d4c99178 22
+crates/longshore_s3/src/s3.rs
+  s_0a7ba2e6f2f96f::t_7ec649d4c99178 180,344
+  s_0a7ba2e6f2f96f::t_197c971708481b 179
+crates/longshore_s3/src/client/worker.rs
+  s_0a7ba2e6f2f96f::t_197c971708481b 160,182
+  s_0a7ba2e6f2f96f::t_7ec649d4c99178 147,162,178,184,235,287
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e0ffe62a26ecc9bd84b92583b24409076f7d4e76",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
