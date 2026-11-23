@@ -1,0 +1,19 @@
+crates/longshore-bench/src/bin/dns_uring.rs
+  s_0a7ba2e6f2f96f::t_542184a9fccb1b 27,29,40-48,56-72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9dea1accbe789f90b12ffa1a8acee44ab2ef6afa",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
