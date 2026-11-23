@@ -1,0 +1,25 @@
+crates/longshore-bench/benches/checksums.rs
+  s_0a7ba2e6f2f96f::t_a6f106bf986b9e 89-120,135,157
+crates/longshore-bench/examples/azure_probe.rs
+  s_0a7ba2e6f2f96f::t_cd226d9a9b41d6 170-186,203,210,215,224,229,238,243,247-253,255,257,264-269,273,295,300,308,317
+crates/longshore-bench/examples/ktls_probe.rs
+  s_0a7ba2e6f2f96f::t_22eff419b2a8fd 135-165,194-202,225-238,270-271,273-297,299-307,313,330-334
+crates/longshore-bench/examples/tls_probe.rs
+  s_0a7ba2e6f2f96f::t_c0272b7784e881 51-82,99-100,102-105,108,127-128,130-132,144-145,147-150,182
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "317573999c1832bb8c457b540f79a22b3f1dbb84",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
