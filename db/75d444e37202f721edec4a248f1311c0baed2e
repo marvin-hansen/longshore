@@ -1,0 +1,31 @@
+crates/longshore_s3/tests/client/alloc.rs
+  s_0a7ba2e6f2f96f::t_3690e047afdb18 15-19,38,40-41,46-47,49,57-106,108-113,116-121,123-124,127-183
+crates/longshore_s3/tests/client/alloc/exact_multipart.rs
+  s_0a7ba2e6f2f96f::t_61056571a81acb 12,14-15,17,23-24,30-31,43,45-46,57-59,61-63,65-72,74-81,83-84,86-115
+crates/longshore_s3/tests/client/builder.rs
+  s_0a7ba2e6f2f96f::t_cd6e98ed4c552c 136-137,140-142,146-210
+crates/longshore_s3/tests/client/loopback.rs
+  s_0a7ba2e6f2f96f::t_6723dfd7cacb77 1-100
+crates/longshore_s3/tests/client/portable.rs
+  s_0a7ba2e6f2f96f::t_caa1cae3f7ba09 9-12,16-18,23-24,30-31,41,43-44,71
+crates/longshore_s3/tests/store/no_address_sim.rs
+  s_0a7ba2e6f2f96f::t_5db09648f14a01 14,36-66,98,115-116,118-121,125,133,137,145
+crates/longshore_s3/tests/store/s3_checksums.rs
+  s_0a7ba2e6f2f96f::t_3fe8662b04a449 93,98-99,103-108,121-206
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "db75d444e37202f721edec4a248f1311c0baed2e",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "unknown"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
