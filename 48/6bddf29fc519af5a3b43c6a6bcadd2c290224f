@@ -1,0 +1,97 @@
+Cargo.toml
+  s_0a7ba2e6f2f96f::t_a2d25adf9e606e 85
+crates/longshore-bench/examples/ktls_probe.rs
+  s_0a7ba2e6f2f96f::t_151d08779c480b 245-246
+crates/longshore-bench/src/bin/echo_uring.rs
+  s_0a7ba2e6f2f96f::t_5c5fd54aa65a10 132
+crates/longshore-bench/src/bin/file_uring/throughput.rs
+  s_0a7ba2e6f2f96f::t_3e14c7d286c05f 79
+crates/longshore-bench/src/bin/http_uring/sink.rs
+  s_0a7ba2e6f2f96f::t_f239ec6ed57734 108
+crates/longshore-bench/src/bin/tcp_raw.rs
+  s_0a7ba2e6f2f96f::t_00ae7c1631e171 222
+crates/longshore/tests/e2e/harness/wal_engine.rs
+  s_0a7ba2e6f2f96f::t_13cf367d68cce5 216
+crates/longshore/tests/e2e/t12_armed_net/f20_completions_t2.rs
+  s_0a7ba2e6f2f96f::t_7ec98e461e3dba 213
+crates/longshore/tests/e2e/t12_shared_posix/f05_shared_contract_t2.rs
+  s_0a7ba2e6f2f96f::t_ad85b98b047875 211
+crates/longshore/tests/e2e/t12_stream_tls/f18_stream_t1.rs
+  s_0a7ba2e6f2f96f::t_2828bddc7106b6 231-232
+crates/longshore/tests/e2e/t3_pairwise_io_disk/part1_posix_chains.rs
+  s_0a7ba2e6f2f96f::t_7986d49a0857ab 174
+crates/longshore/tests/e2e/t4_apps_network/tls_end_to_end.rs
+  s_0a7ba2e6f2f96f::t_445823b0df00ea 139
+crates/longshore/tests/e2e/t4_apps_network/unix_ipc_rpc.rs
+  s_0a7ba2e6f2f96f::t_ffdc47a9421445 160
+crates/longshore/tests/e2e/t4_apps_storage/direct_io_punch.rs
+  s_0a7ba2e6f2f96f::t_a0e55a27d2dc17 163,226,249
+crates/longshore/tests/e2e/t4_apps_storage/partitioned_service.rs
+  s_0a7ba2e6f2f96f::t_7d04ee2ee3682a 163
+crates/longshore/tests/e2e/t4_apps_storage/wal_lifecycle.rs
+  s_0a7ba2e6f2f96f::t_bfbf4d26029e6f 160,179,213
+crates/longshore/tests/e2e/t4_apps_storage/wal_stack.rs
+  s_0a7ba2e6f2f96f::t_85c1d2675c61c9 165
+crates/longshore_common/src/io.rs
+  s_0a7ba2e6f2f96f::t_e421bcd4e5b4fd 269-277
+crates/longshore_common/src/io/contract_net/accept.rs
+  s_0a7ba2e6f2f96f::t_11e2d2a981df03 167
+crates/longshore_common/src/io/posix/epoll.rs
+  s_0a7ba2e6f2f96f::t_e974d6a83ca5e8 13,21-25,138,188
+crates/longshore_common/src/io/posix/files_space.rs
+  s_0a7ba2e6f2f96f::t_8d779160626a69 66-67,72
+crates/longshore_common/src/io/posix/kqueue.rs
+  s_0a7ba2e6f2f96f::t_cc5e5a76363adf 13-14,21-26,191,222-231,243
+crates/longshore_common/src/io/posix/ops_armed.rs
+  s_0a7ba2e6f2f96f::t_d80adae57d23fe 16,47
+crates/longshore_common/src/io/segment.rs
+  s_0a7ba2e6f2f96f::t_d4ae5fee932310 21,27-30,39
+crates/longshore_common/src/io/sys.rs
+  s_0a7ba2e6f2f96f::t_6323178eca9184 148-156
+crates/longshore_common/src/io/uring.rs
+  s_0a7ba2e6f2f96f::t_5ffbd91245f813 364,373
+crates/longshore_common/src/io/uring/backend.rs
+  s_0a7ba2e6f2f96f::t_3992dc4922afad 301
+crates/longshore_common/src/io/uring/ops.rs
+  s_0a7ba2e6f2f96f::t_16e8afbc268e74 201,284,286-288
+crates/longshore_common/src/sim/simio.rs
+  s_0a7ba2e6f2f96f::t_152fd4e8c22758 10-11
+crates/longshore_common/src/sim/simio/disk_faults.rs
+  s_0a7ba2e6f2f96f::t_b09b626fa84897 10,153,176
+crates/longshore_common/src/sim/simio/disk_ops.rs
+  s_0a7ba2e6f2f96f::t_e446bc4623c116 11,76,123,131,148,162,180,183
+crates/longshore_common/src/sim/simio/ops.rs
+  s_0a7ba2e6f2f96f::t_1ce322fbdd5f4b 104,159,196,247,296
+crates/longshore_common/src/sim/simio/ops_armed.rs
+  s_0a7ba2e6f2f96f::t_9eece4566dbefb 43,102
+crates/longshore_common/tests/sim/disk/power_loss_settle.rs
+  s_0a7ba2e6f2f96f::t_e93b3e50faef20 44,72,92
+crates/longshore_common/tests/sim/storage/rates.rs
+  s_0a7ba2e6f2f96f::t_4dbbaa4365d580 188
+crates/longshore_common/tests/sim/wal/recover.rs
+  s_0a7ba2e6f2f96f::t_22c508aa03354e 84,103
+crates/longshore_common/tests/sim/wal/suite.rs
+  s_0a7ba2e6f2f96f::t_5f3b3ed46c2d30 167
+crates/longshore_stream/src/records.rs
+  s_0a7ba2e6f2f96f::t_fe1649dfb3c94f 10,84,161
+crates/longshore_stream/src/stream.rs
+  s_0a7ba2e6f2f96f::t_3be26262c2b806 326
+crates/longshore_stream/tests/stream/tls/adversarial.rs
+  s_0a7ba2e6f2f96f::t_cc195e92508ca5 129,138,147-148,162
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "486bddf29fc519af5a3b43c6a6bcadd2c290224f",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
