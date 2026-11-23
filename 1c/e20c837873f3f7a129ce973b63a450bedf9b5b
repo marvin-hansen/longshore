@@ -1,0 +1,20 @@
+openspec/notes/amazon-s3-runs.sh
+  s_701ab420790f30::t_fbb0f333ef1208 89-91,93-94
+  s_701ab420790f30::t_0cd504fe144466 92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1ce20c837873f3f7a129ce973b63a450bedf9b5b",
+  "prompts": {},
+  "sessions": {
+    "s_701ab420790f30": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7173e54-b62c-4dba-8a57-d7f6caae8585",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
