@@ -22,6 +22,7 @@ crates/longshore-bench/src/bin/contract_uring.rs
   s_0a7ba2e6f2f96f::t_371733d0ffa073 57,65
 crates/longshore-bench/src/bin/echo_uring.rs
   s_0a7ba2e6f2f96f::t_d781e906a368e9 89,99,115-118,129,131,139,150,170,172,179,183,194,202-203,205,208,224-225,236,238,242,250,286,288,306-310,312,314,322-324
+  s_0a7ba2e6f2f96f::t_2925996a69cb14 140-141
 crates/longshore-bench/src/bin/file_uring/bench.rs
   s_0a7ba2e6f2f96f::t_a84eaae4aad3e6 49,52,69-71,79-81,147-153,165-167,197-199
 crates/longshore-bench/src/bin/file_uring/checks.rs
@@ -32,6 +33,7 @@ crates/longshore-bench/src/bin/http_uring/https.rs
   s_0a7ba2e6f2f96f::t_59fb29cb281513 49,60
 crates/longshore-bench/src/bin/http_uring/sink.rs
   s_0a7ba2e6f2f96f::t_c062e69e94b835 9,28
+  s_0a7ba2e6f2f96f::t_e0c194fc4b3ebd 114
 crates/longshore-bench/src/bin/http_uring/throughput.rs
   s_0a7ba2e6f2f96f::t_da52f7dfd47f4d 114,140
 crates/longshore-bench/src/bin/s3_uring/checks.rs
@@ -48,12 +50,20 @@ crates/longshore-bench/src/bin/s3_uring/throughput.rs
   s_0a7ba2e6f2f96f::t_2b29055452ec99 9,74,194-197
 crates/longshore-bench/src/bin/server_uring/checks.rs
   s_0a7ba2e6f2f96f::t_13e6fbcb4155f8 10,21,25,47,50,58,63,74,77,80,90-92,95-96,99,119,121,147,150,158,163,173,176,179,189-190,206,208,211,223,226-227,236-237,240,246,253,256,274-278,282-284,292-296,300-302
+  s_0a7ba2e6f2f96f::t_2925996a69cb14 222,245
+  s_0a7ba2e6f2f96f::t_e0c194fc4b3ebd 67,167
 crates/longshore-bench/src/bin/server_uring/options.rs
   s_0a7ba2e6f2f96f::t_0ce3ec76f6218d 9,25,29,32,40,45,59,62,72-75,78-82,95,99,101,109,114,125-130,133,136,146-150
+  s_0a7ba2e6f2f96f::t_e0c194fc4b3ebd 49,118
 crates/longshore-bench/src/bin/server_uring/thousand.rs
   s_0a7ba2e6f2f96f::t_e23ff4e6c2f236 57,64,66,82,85,90,95,108,111,125,128,144,153,158,163,185,194,199,204,219,222,237-238
+  s_0a7ba2e6f2f96f::t_e0c194fc4b3ebd 99
 crates/longshore-bench/src/bin/uring_faults.rs
   s_0a7ba2e6f2f96f::t_896e11cc8159f6 33-35,43,57-58,84,87,91-92
+crates/longshore_common/tests/sim/wal/recover.rs
+  s_0a7ba2e6f2f96f::t_1f64f56d9a5e47 13
+crates/longshore_common/tests/sim/storage.rs
+  s_0a7ba2e6f2f96f::t_1f64f56d9a5e47 140
 ---
 {
   "schema_version": "authorship/3.0.0",
