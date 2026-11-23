@@ -12,14 +12,17 @@ crates/longshore-bench/src/bin/file_uring/throughput.rs
   s_0a7ba2e6f2f96f::t_56539e525b9927 49,74,79,95
 crates/longshore-bench/src/bin/http_uring/throughput.rs
   s_0a7ba2e6f2f96f::t_13d6fd3e89af0f 145-149
+  s_0a7ba2e6f2f96f::t_7f553d811221d2 104
 crates/longshore-bench/src/bin/s3_uring/checks.rs
   s_0a7ba2e6f2f96f::t_93740fd02c00a4 77
 crates/longshore-bench/src/bin/s3_uring/multipart.rs
   s_0a7ba2e6f2f96f::t_dca2f2aee88f9d 74,132,137
 crates/longshore-bench/src/bin/s3_uring/ops.rs
   s_0a7ba2e6f2f96f::t_05084df1f2be38 51,100,108,111,113,143-144,146,152
+  s_0a7ba2e6f2f96f::t_7f553d811221d2 120,122
 crates/longshore-bench/src/bin/s3_uring/throughput.rs
   s_0a7ba2e6f2f96f::t_0327d161fe1087 67,88,120,122
+  s_0a7ba2e6f2f96f::t_8287111f483547 95-101
 crates/longshore-bench/src/bin/server_uring/thousand.rs
   s_0a7ba2e6f2f96f::t_67d0b75d1a2f5c 134,175
 crates/longshore/tests/e2e/harness/wal_engine.rs
@@ -100,6 +103,7 @@ crates/longshore_common/tests/sim/wal.rs
   s_0a7ba2e6f2f96f::t_26869dfd310e32 50,76,79,101,104
 crates/longshore_crc/src/fold.rs
   s_0a7ba2e6f2f96f::t_772bfba12b568e 274,309,353
+  s_0a7ba2e6f2f96f::t_7f553d811221d2 357
 crates/longshore_crc/tests/checksum/props.rs
   s_0a7ba2e6f2f96f::t_4c5adccd756ca2 77
 crates/longshore_crc/tests/checksum/reference.rs
@@ -164,12 +168,19 @@ crates/longshore_s3/tests/store/gcs_sim.rs
   s_0a7ba2e6f2f96f::t_282a775952ece6 256
 crates/longshore_s3/tests/store/s3_checksums.rs
   s_0a7ba2e6f2f96f::t_8453fb5ccd4330 100
+  s_0a7ba2e6f2f96f::t_7f553d811221d2 131
 crates/longshore_s3/tests/store/s3_exact.rs
   s_0a7ba2e6f2f96f::t_fdb6f0d37d9c60 103,124,360
 crates/longshore_s3/tests/store/s3_object_ops.rs
   s_0a7ba2e6f2f96f::t_9871a4514e9be6 64
 crates/longshore_s3/tests/store/s3_retries.rs
   s_0a7ba2e6f2f96f::t_91866a027ebe38 126
+crates/longshore_http_client/src/client/request.rs
+  s_0a7ba2e6f2f96f::t_7f553d811221d2 49
+crates/longshore-bench/src/bin/client_s3.rs
+  s_0a7ba2e6f2f96f::t_7f553d811221d2 270
+crates/longshore-bench/src/bin/s3_uring/objects.rs
+  s_0a7ba2e6f2f96f::t_7f553d811221d2 61,95
 ---
 {
   "schema_version": "authorship/3.0.0",
