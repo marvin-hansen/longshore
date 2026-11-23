@@ -1,0 +1,23 @@
+Cargo.toml
+  s_0a7ba2e6f2f96f::t_7f740c8d844928 86
+  s_0a7ba2e6f2f96f::t_a6c87d404d454c 87-89
+clippy.toml
+  s_0a7ba2e6f2f96f::t_a6c87d404d454c 1-3
+  s_0a7ba2e6f2f96f::t_8ffea7ac12a327 4-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5be05711a2a842bf8a12e4b08c1019615efab007",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
