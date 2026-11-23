@@ -1,0 +1,23 @@
+crates/longshore-bench/src/bin/http_uring/https.rs
+  s_0a7ba2e6f2f96f::t_4524131b7fc84f 11-44,87
+crates/longshore-bench/src/bin/http_uring/selftest.rs
+  s_0a7ba2e6f2f96f::t_11ac7d60661082 11-64,104
+crates/longshore-bench/src/bin/http_uring/throughput.rs
+  s_0a7ba2e6f2f96f::t_cb19924cd73529 11-13,20-25,30-36,44,47-79,81-82,87,122-145,148,151,156,165,174,179-242,245
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8681c2be9bc7c78c2f8cf77e055cade346ae2d3b",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
