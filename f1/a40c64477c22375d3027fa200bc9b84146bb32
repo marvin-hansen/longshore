@@ -1,0 +1,21 @@
+crates/longshore-bench/Cargo.toml
+  s_0a7ba2e6f2f96f::t_f33ca0f4e3e7f7 9-12,33
+  s_0a7ba2e6f2f96f::t_ef19e1f9e8832a 13
+  s_0a7ba2e6f2f96f::t_b1dbd60f43d0ab 31-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f1a40c64477c22375d3027fa200bc9b84146bb32",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
