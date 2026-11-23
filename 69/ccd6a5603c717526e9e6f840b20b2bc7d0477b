@@ -1,0 +1,139 @@
+crates/longshore_common/src/io/must.rs
+  s_0a7ba2e6f2f96f::t_d6ea13e8ee6baf 14,16-17,28-89
+crates/longshore_common/src/io/contract.rs
+  s_0a7ba2e6f2f96f::t_e24a0f7b199369 8,20,29,227,276
+crates/longshore_common/src/io/contract_chains.rs
+  s_0a7ba2e6f2f96f::t_5ebf33bbcec886 9,21,24
+crates/longshore_common/src/io/contract_files.rs
+  s_0a7ba2e6f2f96f::t_612efe3fce6e9c 8,41,43,60
+crates/longshore_common/src/io/contract_files/refusals.rs
+  s_0a7ba2e6f2f96f::t_55895142a8ae92 9,290,292
+crates/longshore_common/src/io/contract_net.rs
+  s_0a7ba2e6f2f96f::t_e86d94b4ff7497 8,38,185
+crates/longshore_common/src/io/contract_net/accept.rs
+  s_0a7ba2e6f2f96f::t_6b3067f30243a5 9,26,106,220
+crates/longshore_common/src/io/contract_net/recv_idle.rs
+  s_0a7ba2e6f2f96f::t_1dbbbbfc00ae23 9,93
+crates/longshore_common/src/io/contract_net/unix.rs
+  s_0a7ba2e6f2f96f::t_47d116d92da417 9,23,145,181
+crates/longshore_common/src/io/contract_net/unix_closed.rs
+  s_0a7ba2e6f2f96f::t_e6607a8fc850f9 9,90
+crates/longshore_common/src/io/files.rs
+  s_0a7ba2e6f2f96f::t_85add35fe553c9 35-37
+crates/longshore_common/src/io/ring.rs
+  s_0a7ba2e6f2f96f::t_0bef1571749a6c 172-175
+crates/longshore_common/src/io/scenario.rs
+  s_0a7ba2e6f2f96f::t_5a824241b9f09c 17,60,62,71-72,103,114,127,148,172,175,191,207,218
+crates/longshore_common/src/io/uring.rs
+  s_0a7ba2e6f2f96f::t_fdc2cd70c69d22 379-382
+crates/longshore_common/src/io/uring/backend.rs
+  s_0a7ba2e6f2f96f::t_fd69b9e4b487ba 194,206
+crates/longshore_common/src/io/uring/ops.rs
+  s_0a7ba2e6f2f96f::t_63bad8919c81da 252-255
+crates/longshore_common/src/sim/simio/disk_dirs.rs
+  s_0a7ba2e6f2f96f::t_568e03e5accce3 126-129
+crates/longshore_common/src/sim/simio/disk_types.rs
+  s_0a7ba2e6f2f96f::t_5fa7b5f3ded2bb 43-56
+crates/longshore_dns/src/resolver.rs
+  s_0a7ba2e6f2f96f::t_b5c7b2c27bbef4 192-195,235-238,245
+crates/longshore_http_client/src/chunked.rs
+  s_0a7ba2e6f2f96f::t_97821e6d1db2d8 92-93,99,103-109
+crates/longshore_http_client/src/client.rs
+  s_0a7ba2e6f2f96f::t_13e5d6741ad946 376-379
+crates/longshore_http_client/src/client/request.rs
+  s_0a7ba2e6f2f96f::t_8f400b5eb7be38 158-161
+crates/longshore_http_client/src/client/response.rs
+  s_0a7ba2e6f2f96f::t_4681de5a5fbe76 28-31
+crates/longshore_http_client/src/head.rs
+  s_0a7ba2e6f2f96f::t_bcc365e7f74c34 224,257
+crates/longshore_http_client/src/server.rs
+  s_0a7ba2e6f2f96f::t_2a1c6b8d996b39 450-458
+crates/longshore_http_client/src/server/events.rs
+  s_0a7ba2e6f2f96f::t_1befe50e53a199 159-162
+crates/longshore_http_client/src/server/multipart.rs
+  s_0a7ba2e6f2f96f::t_b82b8f11d40bd1 244-247
+crates/longshore_http_client/src/server/transport.rs
+  s_0a7ba2e6f2f96f::t_cf26a1a0a2065d 18-19,25,128-131
+crates/longshore_mailbox/src/cells.rs
+  s_0a7ba2e6f2f96f::t_dbb88a2c943fa2 11,81,93,99,117,122,134,153,183
+crates/longshore_mailbox/src/future.rs
+  s_0a7ba2e6f2f96f::t_d5023fdf544847 31,35,56,64,81,94-97,99-100
+crates/longshore_mailbox/src/pool.rs
+  s_0a7ba2e6f2f96f::t_7a630c5b8ec118 9,66,81,88,96
+crates/longshore_mailbox/src/queue.rs
+  s_0a7ba2e6f2f96f::t_7a892d2297a3c4 10,234
+crates/longshore_mailbox/src/queue/receiver.rs
+  s_0a7ba2e6f2f96f::t_c09f201b96d505 12,106,146
+crates/longshore_mailbox/src/sync.rs
+  s_0a7ba2e6f2f96f::t_1c30f821874db7 20-31
+crates/longshore_s3/src/client.rs
+  s_0a7ba2e6f2f96f::t_b5a8692561ef23 374-386
+crates/longshore_s3/src/client/pending.rs
+  s_0a7ba2e6f2f96f::t_3ee9452931a087 35-38,149-152
+crates/longshore_s3/src/client/threads.rs
+  s_0a7ba2e6f2f96f::t_eb1e7eeca07b00 15,286,292,301
+crates/longshore_s3/src/client/threads/run.rs
+  s_0a7ba2e6f2f96f::t_9301beae9c9a20 191-198
+crates/longshore_s3/src/client/worker.rs
+  s_0a7ba2e6f2f96f::t_e5ca03a9f6fa8c 15,48-54,68,86,106,112-115,122-125,139-143,146-147
+crates/longshore_s3/src/creds.rs
+  s_0a7ba2e6f2f96f::t_840c6ae93e2c9d 83,115,119
+crates/longshore_s3/src/crypto.rs
+  s_0a7ba2e6f2f96f::t_ef91479439ad6e 29-31,50-52
+crates/longshore_s3/src/lib.rs
+  s_0a7ba2e6f2f96f::t_d3cb42208b039d 47
+crates/longshore_s3/src/options.rs
+  s_0a7ba2e6f2f96f::t_14224f302ae339 185
+crates/longshore_s3/src/presign.rs
+  s_0a7ba2e6f2f96f::t_c257eeaac95e79 77,89,107,117,120,122-123
+crates/longshore_s3/src/s3.rs
+  s_0a7ba2e6f2f96f::t_0fe87d303421ee 400-403
+crates/longshore_s3/src/s3/attempt.rs
+  s_0a7ba2e6f2f96f::t_481665d965074e 41,43,74,78,84,90,98,133,147,151,157,276-279
+crates/longshore_s3/src/s3/exact.rs
+  s_0a7ba2e6f2f96f::t_3ab76c1a898441 38-41,201-207,247,305-308
+crates/longshore_s3/src/s3/multipart_ops.rs
+  s_0a7ba2e6f2f96f::t_c76070424bddaf 21-24
+crates/longshore_s3/src/s3/object_ops.rs
+  s_0a7ba2e6f2f96f::t_be6bba86a87b2b 344
+crates/longshore_s3/src/s3/outcome.rs
+  s_0a7ba2e6f2f96f::t_c4742d1faa17c7 26-29,82-85,171-174
+crates/longshore_s3/src/s3/types.rs
+  s_0a7ba2e6f2f96f::t_33cf31f029f59d 144
+crates/longshore_s3/src/sharedkey.rs
+  s_0a7ba2e6f2f96f::t_4a58b0f7ddf410 103
+crates/longshore_s3/src/text.rs
+  s_0a7ba2e6f2f96f::t_5250d0f6e3bf23 1-21
+crates/longshore_s3/tests/client/model/machine.rs
+  s_0a7ba2e6f2f96f::t_9a0ef927f33958 244-245
+crates/longshore_s3/tests/client/rig.rs
+  s_0a7ba2e6f2f96f::t_18b455b70bfc94 65-66
+crates/longshore_stream/src/handshake.rs
+  s_0a7ba2e6f2f96f::t_9b77fb9bbf1bb3 9,19-22,31-33,35-38,56,94-96
+crates/longshore_stream/src/idle.rs
+  s_0a7ba2e6f2f96f::t_b155a27c66235d 126-127,135
+crates/longshore_stream/src/records.rs
+  s_0a7ba2e6f2f96f::t_2bb8ae78c86733 8,44-45,54,169-170,178
+crates/longshore_stream/src/stream.rs
+  s_0a7ba2e6f2f96f::t_f8a288a7567549 210-213
+crates/longshore_tls/src/handshake.rs
+  s_0a7ba2e6f2f96f::t_3104fc4e857e72 111-114,141,202-207,212-219,258,286,305
+crates/longshore_tls/src/record.rs
+  s_0a7ba2e6f2f96f::t_0f9fac5c3b048e 350-351
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "69ccd6a5603c717526e9e6f840b20b2bc7d0477b",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
