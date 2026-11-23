@@ -1,0 +1,19 @@
+crates/longshore/tests/e2e/t12_sim_contract/f04_close_cancel.rs
+  s_0a7ba2e6f2f96f::t_178bb3385d0982 165-168
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "48d1021b0a67956d108327c5a0546c8c3bab9545",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
