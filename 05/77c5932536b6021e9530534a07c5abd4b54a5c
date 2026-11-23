@@ -1,0 +1,23 @@
+crates/longshore_mailbox/Cargo.toml
+  s_0a7ba2e6f2f96f::t_5f4d2d0117f4b3 31-34
+crates/longshore_mailbox/src/future.rs
+  s_0a7ba2e6f2f96f::t_83319082c0f500 63-75,84,97-100,109,112-115,117-140,143-146,161-163,185-187,201-202
+crates/longshore_mailbox/tests/mailbox/full_queue.rs
+  s_0a7ba2e6f2f96f::t_dd89f1700a04b6 1-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0577c5932536b6021e9530534a07c5abd4b54a5c",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
