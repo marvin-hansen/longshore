@@ -1,0 +1,54 @@
+crates/longshore_tcp/src/net/conn.rs
+  s_0a7ba2e6f2f96f::t_463d02aa7df49d 13,19,40,43,56,69-70,217,236-250,334-337
+  s_0a7ba2e6f2f96f::t_90433bdd022704 44-45
+crates/longshore_tcp/src/net/state.rs
+  s_0a7ba2e6f2f96f::t_463d02aa7df49d 8,88-90,141,196
+crates/longshore_tcp/src/lib.rs
+  s_0a7ba2e6f2f96f::t_ccfb99590a51ac 20
+  s_0a7ba2e6f2f96f::t_4097ddd6beeac3 18,31
+crates/longshore_tcp/src/addr.rs
+  s_0a7ba2e6f2f96f::t_4097ddd6beeac3 1-101
+crates/longshore_tcp/src/net/tx.rs
+  s_0a7ba2e6f2f96f::t_463d02aa7df49d 152-153
+crates/longshore_tcp/src/kernel.rs
+  s_0a7ba2e6f2f96f::t_4097ddd6beeac3 13,172,174-188
+  s_0a7ba2e6f2f96f::t_463d02aa7df49d 208-214,216-234
+  s_0a7ba2e6f2f96f::t_90433bdd022704 156-159
+crates/longshore_tcp/src/transport.rs
+  s_0a7ba2e6f2f96f::t_4097ddd6beeac3 19,160-161,166,168,180-188
+  s_0a7ba2e6f2f96f::t_90433bdd022704 147-149
+crates/longshore_tcp/tests/tcp/backends.rs
+  s_0a7ba2e6f2f96f::t_23fe26ab4581e0 1-54
+crates/longshore-bench/src/bin/tcp_uring.rs
+  s_0a7ba2e6f2f96f::t_200602798a4647 1-61
+  s_0a7ba2e6f2f96f::t_e16b4d456e0b24 62-64
+crates/longshore_tcp/src/check.rs
+  s_0a7ba2e6f2f96f::t_c54694f8ccb201 106-115,284,306,321,335,401
+  s_0a7ba2e6f2f96f::t_23fe26ab4581e0 392-398
+  s_0a7ba2e6f2f96f::t_ccfb99590a51ac 1-105,116-283,285-305,307-320,322-334,336-391,399-400,402-403
+crates/longshore_tcp/src/net.rs
+  s_0a7ba2e6f2f96f::t_463d02aa7df49d 23,109
+crates/longshore_tcp/Cargo.toml
+  s_0a7ba2e6f2f96f::t_23fe26ab4581e0 44-47
+crates/longshore_tcp/src/net/listen.rs
+  s_0a7ba2e6f2f96f::t_90433bdd022704 37
+  s_0a7ba2e6f2f96f::t_463d02aa7df49d 12,33,36,67,71,161,167
+scripts/test-linux.sh
+  s_0a7ba2e6f2f96f::t_bbd286a7f742db 60,70,99-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9e5292b2c3d056dec8cd9f17798208dbcf13dbbe",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
