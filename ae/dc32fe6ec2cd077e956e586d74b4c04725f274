@@ -1,0 +1,23 @@
+openspec/specs/server-networking/spec.md
+  s_0a7ba2e6f2f96f::t_6836bc8e6b2eb1 123-126,130,133,137
+openspec/specs/tls-providers/spec.md
+  s_0a7ba2e6f2f96f::t_6836bc8e6b2eb1 1-71
+openspec/changes/archive/2026-11-24-add-tls-providers/tasks.md
+  s_0a7ba2e6f2f96f::t_6836bc8e6b2eb1 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "aedc32fe6ec2cd077e956e586d74b4c04725f274",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
