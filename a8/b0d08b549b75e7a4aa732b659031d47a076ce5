@@ -1,0 +1,28 @@
+openspec/changes/add-tls-providers/design.md
+  s_0a7ba2e6f2f96f::t_2d75a550442b33 1-62
+openspec/changes/add-tls-providers/specs/tls-providers/spec.md
+  s_0a7ba2e6f2f96f::t_c1dd11d4e22a99 1-54
+openspec/changes/add-tls-providers/specs/server-networking/spec.md
+  s_0a7ba2e6f2f96f::t_43f5c18dffbafb 6
+  s_0a7ba2e6f2f96f::t_800ee5204f18c8 1-5,7-19
+openspec/changes/add-tls-providers/proposal.md
+  s_0a7ba2e6f2f96f::t_cc60c64467fe14 1-43
+openspec/changes/add-tls-providers/tasks.md
+  s_0a7ba2e6f2f96f::t_ccb8b2e7b75215 1-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a8b0d08b549b75e7a4aa732b659031d47a076ce5",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
