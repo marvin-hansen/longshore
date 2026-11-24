@@ -1,0 +1,25 @@
+crates/longshore_tcp/tests/tcp/net/half_close.rs
+  s_0a7ba2e6f2f96f::t_879120fafe7cd4 79-84
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_5c73e24210e209 94-97
+openspec/changes/add-tcp-simulation-and-benchmarks/design.md
+  s_0a7ba2e6f2f96f::t_008190814ee1e2 119
+openspec/changes/add-tcp-simulation-and-benchmarks/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_c6cb372c004ad9 112-113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3fb30108eb933a63deac0828388bdd8d271c4a7d",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
