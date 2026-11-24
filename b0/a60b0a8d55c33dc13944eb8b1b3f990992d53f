@@ -1,0 +1,33 @@
+openspec/changes/add-tcp-af-xdp-backend/design.md
+  s_0a7ba2e6f2f96f::t_b11a3631e58b50 58-198,213-215
+openspec/changes/add-tcp-af-xdp-backend/proposal.md
+  s_0a7ba2e6f2f96f::t_7a2422a3de9c69 54-62
+openspec/changes/add-tcp-af-xdp-backend/specs/tcp-kernel-bypass/spec.md
+  s_0a7ba2e6f2f96f::t_220725018700b0 75-138
+openspec/changes/add-tcp-af-xdp-backend/tasks.md
+  s_0a7ba2e6f2f96f::t_2a6c3dcefc2f5c 1-10,14-16,24-25,33-35,41-44,50
+openspec/changes/add-tcp-simulation-and-benchmarks/design.md
+  s_0a7ba2e6f2f96f::t_807f9c4d267e7a 1-231
+openspec/changes/add-tcp-simulation-and-benchmarks/proposal.md
+  s_0a7ba2e6f2f96f::t_0afa8b260bbbca 14-22,26-33,57-58
+openspec/changes/add-tcp-simulation-and-benchmarks/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_52267514dbc1b9 3-69
+openspec/changes/add-tcp-simulation-and-benchmarks/tasks.md
+  s_0a7ba2e6f2f96f::t_d9e2728ac6db61 1-2,4-11,13-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b0a60b0a8d55c33dc13944eb8b1b3f990992d53f",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
