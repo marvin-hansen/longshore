@@ -1,0 +1,32 @@
+openspec/specs/server-networking/spec.md
+  s_0a7ba2e6f2f96f::t_3b5930ecb6bba6 153-196
+openspec/changes/archive/2026-11-24-add-tcp-crate/specs/server-networking/spec.md
+  s_0a7ba2e6f2f96f::t_3b5930ecb6bba6 1-45
+openspec/changes/archive/2026-11-24-add-tcp-crate/proposal.md
+  s_0a7ba2e6f2f96f::t_3b5930ecb6bba6 1-73
+openspec/changes/archive/2026-11-24-add-tcp-crate/design.md
+  s_0a7ba2e6f2f96f::t_3b5930ecb6bba6 1-338
+openspec/changes/archive/2026-11-24-add-tcp-crate/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_3b5930ecb6bba6 1-200
+openspec/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_3b5930ecb6bba6 1-204
+  s_0a7ba2e6f2f96f::t_12e67116f322ec 205-209
+openspec/changes/archive/2026-11-24-add-tcp-crate/tasks.md
+  s_0a7ba2e6f2f96f::t_3b5930ecb6bba6 1-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "eac38b359633f727c2c07ed08296e9267ccb5010",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
