@@ -1,0 +1,54 @@
+crates/longshore_common/src/sim/simio/ops_net.rs
+  s_0a7ba2e6f2f96f::t_39e50670f05bb6 89-91
+  s_0a7ba2e6f2f96f::t_ace745bb982f9b 93
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 87,92,292
+  s_0a7ba2e6f2f96f::t_a13e011e672c93 88
+crates/longshore_common/src/io/uring/setup.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 209
+crates/longshore_common/src/io.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 319-326
+crates/longshore_common/src/io/posix/sock.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 69-79
+crates/longshore_common/src/io/engine.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 63-66
+crates/longshore_common/src/io/sys/sock.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 82-104
+crates/longshore_common/src/io/uring/backend.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 47-51
+crates/longshore_common/src/io/posix.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 208-215
+crates/longshore_common/src/io/contract_net/accept.rs
+  s_0a7ba2e6f2f96f::t_7273e5c82b0a88 271-308,310,312-313,315
+  s_0a7ba2e6f2f96f::t_ace745bb982f9b 309,311
+crates/longshore_common/src/sim/simio/world.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 40-46
+crates/longshore_common/src/io/uring/ops_sock.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 96-101,105-106,230
+crates/longshore_common/src/io/uring/completions.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 232,275
+crates/longshore_common/src/sim/simio.rs
+  s_0a7ba2e6f2f96f::t_39e50670f05bb6 67
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 66,68,146
+crates/longshore_common/src/io/engine/backend.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 42-46
+crates/longshore_common/src/io/uring.rs
+  s_0a7ba2e6f2f96f::t_e7ebbb93d95be8 170-172
+openspec/changes/add-tcp-crate/tasks.md
+  s_0a7ba2e6f2f96f::t_685733d6d83397 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d5b2fc260fdee6c502e9a2ca929a8a342eb937c7",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
