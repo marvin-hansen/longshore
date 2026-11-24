@@ -1,0 +1,22 @@
+crates/longshore_tcp/tests/tcp/net/half_close.rs
+  s_0a7ba2e6f2f96f::t_4254985dadaa3b 253-269,271-272,275-285,287,290,292
+  s_0a7ba2e6f2f96f::t_0dca9fbbfaef93 270,273-274,286,288-289,291
+crates/longshore_tcp/src/net/ending.rs
+  s_0a7ba2e6f2f96f::t_78076007d3a655 66-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "81bcb3e9cda8be2b620ec30591d84c04a62c896a",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": null
+    }
+  }
+}
