@@ -1,0 +1,34 @@
+docs/testing.md
+  s_0a7ba2e6f2f96f::t_fffc4a989a0a4a 18-19,22
+README.md
+  s_0a7ba2e6f2f96f::t_fffc4a989a0a4a 118,121-134
+  s_0a7ba2e6f2f96f::t_5d667249c612ee 135
+openspec/changes/add-tls-providers/design.md
+  s_0a7ba2e6f2f96f::t_9e8460a9a772fb 35-39
+openspec/changes/add-tls-providers/tasks.md
+  s_0a7ba2e6f2f96f::t_9e8460a9a772fb 2-3,6-10,13-15,18-20
+  s_0a7ba2e6f2f96f::t_2d44068ef56a52 23-25
+openspec/project.md
+  s_0a7ba2e6f2f96f::t_fffc4a989a0a4a 14-20
+.github/workflows/ci.yml
+  s_0a7ba2e6f2f96f::t_2438bcbe575f79 26-27,55-58,60-64,66-78,93,96,98-99
+  s_0a7ba2e6f2f96f::t_d65d80cf39810f 97
+openspec/changes/add-tls-providers/proposal.md
+  s_0a7ba2e6f2f96f::t_9e8460a9a772fb 40-44,56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bf8d2b7fccd059e0e5647d53f8e183cb3b0a309e",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
