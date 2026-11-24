@@ -1,0 +1,21 @@
+bench/results/m29-tls-providers.md
+  s_0a7ba2e6f2f96f::t_ae911126d5c1d6 1-37
+openspec/changes/add-tls-providers/tasks.md
+  s_0a7ba2e6f2f96f::t_03d08704afb470 20,23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a6629cfb0f2ae92b1815abde6c58d537a54aefe5",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
