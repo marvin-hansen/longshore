@@ -1,0 +1,46 @@
+crates/longshore_tcp/Cargo.toml
+  s_0a7ba2e6f2f96f::t_438079e94b40f1 1-41
+Cargo.toml
+  s_0a7ba2e6f2f96f::t_438079e94b40f1 13,33
+crates/longshore_tcp/README.md
+  s_0a7ba2e6f2f96f::t_438079e94b40f1 1-27
+crates/longshore_tcp/src/handle.rs
+  s_0a7ba2e6f2f96f::t_438079e94b40f1 1-94
+crates/longshore_tcp/src/backoff.rs
+  s_0a7ba2e6f2f96f::t_438079e94b40f1 1-67
+crates/longshore_tcp/src/deadline.rs
+  s_0a7ba2e6f2f96f::t_438079e94b40f1 1-88
+.github/workflows/ci.yml
+  s_0a7ba2e6f2f96f::t_532565dd0ca16a 27,97
+crates/longshore_tcp/tests/tcp/units.rs
+  s_0a7ba2e6f2f96f::t_01784341e99a1d 1-190
+crates/longshore_tcp/src/lib.rs
+  s_0a7ba2e6f2f96f::t_438079e94b40f1 1-21
+crates/longshore/src/lib.rs
+  s_0a7ba2e6f2f96f::t_532565dd0ca16a 264-265,287
+crates/longshore_tcp/src/framing.rs
+  s_0a7ba2e6f2f96f::t_438079e94b40f1 1-109,112-144
+  s_0a7ba2e6f2f96f::t_01784341e99a1d 110-111
+crates/longshore/Cargo.toml
+  s_0a7ba2e6f2f96f::t_532565dd0ca16a 19,22,26,29,43
+Cargo.lock
+  s_0a7ba2e6f2f96f::t_3002426e48c2d6 715,808-818
+openspec/changes/add-tcp-crate/tasks.md
+  s_0a7ba2e6f2f96f::t_e24d77dcaf3052 10,13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cd74e5674514764d5ef6d1cf1cf8db3a3d6b018c",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
