@@ -1,0 +1,72 @@
+docs/tcp.md
+  s_a1c884eaf2799a::t_74cf5b0175897a 117-119
+crates/longshore_tcp/tests/tcp/net/slots.rs
+  s_a1c884eaf2799a::t_1d0d24c0e8122d 14-18,91-98
+  s_a1c884eaf2799a::t_6819f85919b85b 99-102
+  s_a1c884eaf2799a::t_c97e75bd83d727 1-13,19-90,103-229
+crates/longshore_tcp/src/sizes.rs
+  s_a1c884eaf2799a::t_1d7849c819e313 113
+crates/longshore_tcp/src/net/rx.rs
+  s_a1c884eaf2799a::t_30311577377920 146,226-227,229,267
+crates/longshore_tcp/tests/tcp/tls.rs
+  s_a1c884eaf2799a::t_a30ba8794c6e51 18-20,229-252
+  s_a1c884eaf2799a::t_0d4b0e9491fb91 253-254
+crates/longshore_stream/tests/stream/ring.rs
+  s_a1c884eaf2799a::t_a30ba8794c6e51 41-42,119-122,131,134,136-137,140-141,148-149,158-169,173-174,232-237,241-242
+  s_a1c884eaf2799a::t_51a1c00f52070c 238-240
+  s_a1c884eaf2799a::t_6819f85919b85b 142-145
+  s_a1c884eaf2799a::t_f0c3a4a4f52377 243
+crates/longshore_tcp/src/net.rs
+  s_a1c884eaf2799a::t_12af3c6a622b81 119
+  s_a1c884eaf2799a::t_76e704ab473f6e 23,32
+  s_a1c884eaf2799a::t_26234a69aaa646 59-63,138-140
+crates/longshore_tcp/src/net/pull.rs
+  s_a1c884eaf2799a::t_1d7849c819e313 100-101
+  s_a1c884eaf2799a::t_0ba651681d4bbb 46-53,62,67,102-113,288-293
+crates/longshore_tcp/tests/tcp/net.rs
+  s_a1c884eaf2799a::t_74cf5b0175897a 17-19,24-26,32-34
+crates/longshore_tcp/tests/tcp/net/input.rs
+  s_a1c884eaf2799a::t_1d0d24c0e8122d 157,159
+  s_a1c884eaf2799a::t_78600a9c399754 1-156,158,160-190
+crates/longshore_tcp/src/net/listen.rs
+  s_a1c884eaf2799a::t_5c92ff86a0a1cb 10,50-51,113,118-125,129,135-136,138,169-192,197,264,273-276
+crates/longshore_tcp/src/net/conn.rs
+  s_a1c884eaf2799a::t_6819f85919b85b 9-10
+  s_a1c884eaf2799a::t_5c92ff86a0a1cb 64,190-193,228-229,247-249,348-350
+crates/longshore_tcp/src/net/secure.rs
+  s_a1c884eaf2799a::t_30311577377920 85-88,93-94,97,132-136
+  s_a1c884eaf2799a::t_1d7849c819e313 10,105-109
+crates/longshore_tcp/src/transport.rs
+  s_a1c884eaf2799a::t_30311577377920 55,66,70-78,83-88
+  s_a1c884eaf2799a::t_fac334eb8fddcb 89
+crates/longshore_tcp/src/net/state.rs
+  s_a1c884eaf2799a::t_12af3c6a622b81 14,261-279
+  s_a1c884eaf2799a::t_26234a69aaa646 37,106-109,123-124,147-148,172,181,198,204-219,251,253-256
+  s_a1c884eaf2799a::t_67af77d3cad920 280
+crates/longshore_tcp/tests/tcp/units.rs
+  s_a1c884eaf2799a::t_74cf5b0175897a 174,179-181,183-185
+crates/longshore_tcp/tests/tcp/net/accepting.rs
+  s_a1c884eaf2799a::t_6f13ef59c4873b 1-98
+crates/longshore_tcp/src/kernel/secure.rs
+  s_a1c884eaf2799a::t_30311577377920 167-168
+crates/longshore_stream/src/ring.rs
+  s_a1c884eaf2799a::t_30311577377920 64,68,73-80,128,157,180-183,208-211
+crates/longshore_tcp/src/net/tx.rs
+  s_a1c884eaf2799a::t_5b4bdc3942d8a5 93-94,97-102,104,112-138,250-252,261-262
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "54c25dbd24aa8acfa1f2131d5ed19832f370e6d0",
+  "prompts": {},
+  "sessions": {
+    "s_a1c884eaf2799a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2aa705d0-4f1b-472f-a995-4055212997af",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
