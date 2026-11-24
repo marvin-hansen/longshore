@@ -1,0 +1,34 @@
+scripts/test-hosts
+  s_0a7ba2e6f2f96f::t_498286208a8327 1-13
+scripts/test.sh
+  s_0a7ba2e6f2f96f::t_498286208a8327 9
+.no-mistakes.yaml
+  s_0a7ba2e6f2f96f::t_498286208a8327 4
+crates/longshore/tests/e2e/t12_shared_posix/f05_shared_contract_t2.rs
+  s_0a7ba2e6f2f96f::t_2515d3af6c3fc0 13
+  s_0a7ba2e6f2f96f::t_498286208a8327 26,28,31,36,40,46,50,55,59-60
+scripts/linux-checks.sh
+  s_0a7ba2e6f2f96f::t_498286208a8327 1-77
+scripts/test-linux.sh
+  s_0a7ba2e6f2f96f::t_498286208a8327 7-9,12-13,15-18,20-23,25-26,30-32,46-59,62-69,72-95,97,99-137,139-192,195
+crates/longshore/tests/e2e/t12_file_ops/f13_uring_t2.rs
+  s_0a7ba2e6f2f96f::t_498286208a8327 71,78,83,87
+docs/testing.md
+  s_0a7ba2e6f2f96f::t_498286208a8327 28-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "981ae18eac0b0e8ece6485b37494bef069975dd1",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
