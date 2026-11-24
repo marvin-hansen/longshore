@@ -1,0 +1,52 @@
+docs/testing.md
+  s_7da642023d9c4b::t_c144582b7fe890 31-32
+crates/longshore_tcp/src/net/conn.rs
+  s_7da642023d9c4b::t_aaf33fbe68e883 94-95,152-157,178-184,193
+scripts/test-linux.sh
+  s_7da642023d9c4b::t_c144582b7fe890 9,16-17,45-52,54-55,58-60,63,65,70,76,78,80-90,96,103-109,111-112,129,136,138-149,151-152,197-200
+crates/longshore_stream/tests/stream/ring.rs
+  s_7da642023d9c4b::t_e7625d8ab68be6 122-138,253
+  s_7da642023d9c4b::t_abada81b3de559 44-47,49,53,70,92-94,98-101,109-113,139-145,148-157,159-168,171-175,177-178,247-252,257,362-381
+  s_7da642023d9c4b::t_97e59735137798 67-69,91,95-97,102-108,114-121,146-147
+crates/longshore_tcp/src/net/pull.rs
+  s_7da642023d9c4b::t_aaf33fbe68e883 15,248-249,251-264,269-282
+  s_7da642023d9c4b::t_1afface1a37db8 283-284
+crates/longshore_tcp/src/net/listen.rs
+  s_7da642023d9c4b::t_aaf33fbe68e883 10,44-46,109-110
+crates/longshore_tcp/tests/tcp/net/listening.rs
+  s_7da642023d9c4b::t_e7625d8ab68be6 14,122-155
+  s_7da642023d9c4b::t_db9a67d24ac2a2 156-157
+crates/longshore_tcp/tests/tcp/net/slots.rs
+  s_7da642023d9c4b::t_e7625d8ab68be6 12,273-344
+crates/longshore_tcp/src/net/rx.rs
+  s_7da642023d9c4b::t_aaf33fbe68e883 108,138-140
+  s_7da642023d9c4b::t_8744cd2d66cbcf 141
+crates/longshore_tcp/tests/tcp/net/input.rs
+  s_7da642023d9c4b::t_b18d69f81c66fd 231
+  s_7da642023d9c4b::t_99a7af73367f1a 221-226,228-230,235,238-240,246,264,277,287
+  s_7da642023d9c4b::t_e7625d8ab68be6 232,241-245,247,249-252,256-257,261-262,265,267-275,278,289
+  s_7da642023d9c4b::t_ac247f7d80544e 12,220,227,233-234,236-237,248,253-255,258-260,263,266,276,279-286,288
+crates/longshore_stream/src/ring.rs
+  s_7da642023d9c4b::t_fd4858578efae3 168,216-226,231-232,238-241,243
+  s_7da642023d9c4b::t_ab02e6050e9586 227-230,233,236-237,242,244
+  s_7da642023d9c4b::t_aaf33fbe68e883 234-235,245
+  s_7da642023d9c4b::t_e49815ce9985b0 246-247
+crates/longshore_tcp/src/net/state.rs
+  s_7da642023d9c4b::t_aaf33fbe68e883 131-134,193
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "673edc52eea4aed22ff9656562215406237184cf",
+  "prompts": {},
+  "sessions": {
+    "s_7da642023d9c4b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "18428dd8-9cca-4acb-ae5f-4950cccd2aa3",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
