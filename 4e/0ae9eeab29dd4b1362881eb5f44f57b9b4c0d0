@@ -1,0 +1,98 @@
+crates/longshore_tcp/src/net/conn.rs
+  s_0a7ba2e6f2f96f::t_1564abb64ba8f1 9,151,184-190
+  s_0a7ba2e6f2f96f::t_5f17da90394035 18,136,140,144,147,164-169
+  s_0a7ba2e6f2f96f::t_8d83a728df4789 293,296-297
+  s_0a7ba2e6f2f96f::t_4b71668fc9e194 170-171
+crates/longshore_tcp/tests/tcp/net/listening.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 30,115,184,214
+crates/longshore_tcp/tests/tcp/net.rs
+  s_0a7ba2e6f2f96f::t_fbe4bd002a3b9c 21-23
+  s_0a7ba2e6f2f96f::t_1a74cf3796b2b9 27-29
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 163
+crates/longshore_tcp/src/config.rs
+  s_0a7ba2e6f2f96f::t_1564abb64ba8f1 63,79,124-130
+  s_0a7ba2e6f2f96f::t_1ce9835b831370 131-133
+crates/longshore_tcp/src/event.rs
+  s_0a7ba2e6f2f96f::t_1564abb64ba8f1 53-56,99-101
+crates/longshore_tcp/src/net/secure.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 72-79
+crates/longshore_tcp/src/check/exchange.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 110
+  s_0a7ba2e6f2f96f::t_17c51e8f2046c5 8,156-157,163-165
+crates/longshore_tcp/src/check/storage.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 197,294
+crates/longshore_tcp/tests/tcp/net/accepting.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 29
+crates/longshore_tcp/tests/tcp/net/input.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 32,140
+crates/longshore_tcp/src/check/ending.rs
+  s_0a7ba2e6f2f96f::t_77b229e3289ca9 127
+  s_0a7ba2e6f2f96f::t_17c51e8f2046c5 1-95,99-126,128-147,150-151
+  s_0a7ba2e6f2f96f::t_50049f74a33cf6 96-98,148-149
+crates/longshore_tcp/src/net/listen.rs
+  s_0a7ba2e6f2f96f::t_cc622c04720a1b 190,201,203
+  s_0a7ba2e6f2f96f::t_ccea21a32c5990 52-53,131-138,140-144,192,283-285
+  s_0a7ba2e6f2f96f::t_8d83a728df4789 186,204-205,210,212-213,219,248-251
+crates/longshore_tcp/tests/tcp/net/ending.rs
+  s_0a7ba2e6f2f96f::t_0452c92e1abca9 40-43,90,93,117-119,126
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 73,136
+  s_0a7ba2e6f2f96f::t_fbe4bd002a3b9c 1-11,13-39,44-72,74-89,91-92,94-102,107-116,120-125,127-135,137-147,168
+  s_0a7ba2e6f2f96f::t_a925714344d2d5 12,148-167
+  s_0a7ba2e6f2f96f::t_ccea21a32c5990 103-106
+crates/longshore_tcp/src/lib.rs
+  s_0a7ba2e6f2f96f::t_00315444797282 57-64
+crates/longshore_tcp/src/net/pull.rs
+  s_0a7ba2e6f2f96f::t_d2bbe2590f4ba4 15
+  s_0a7ba2e6f2f96f::t_1564abb64ba8f1 38,42-50,274,276,278,280-282
+crates/longshore_tcp/tests/tcp/tls/ending.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 52,98
+openspec/changes/add-tcp-simulation-and-benchmarks/design.md
+  s_0a7ba2e6f2f96f::t_ba6847be5bdb61 230-236,255-260
+crates/longshore_tcp/src/net/state.rs
+  s_0a7ba2e6f2f96f::t_cc622c04720a1b 98-102,193-194
+  s_0a7ba2e6f2f96f::t_0452c92e1abca9 12
+  s_0a7ba2e6f2f96f::t_1564abb64ba8f1 28-30,51-57,168-169,223,281-282,302
+crates/longshore_tcp/tests/tcp/tls.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 101,226
+crates/longshore_tcp/tests/tcp/net/half_close.rs
+  s_0a7ba2e6f2f96f::t_1a74cf3796b2b9 1-201,205-252
+  s_0a7ba2e6f2f96f::t_09be62758ea973 202-204
+openspec/changes/add-tcp-simulation-and-benchmarks/tasks.md
+  s_0a7ba2e6f2f96f::t_ba6847be5bdb61 5-10
+crates/longshore_tcp/src/net/tx.rs
+  s_0a7ba2e6f2f96f::t_ccea21a32c5990 76,169,173-177
+  s_0a7ba2e6f2f96f::t_1564abb64ba8f1 36-38,132,135,192,211-212,215,284-285,295
+  s_0a7ba2e6f2f96f::t_01ecb7053013af 178-179
+crates/longshore_tcp/tests/tcp/net/slots.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 47,81,164,191,231,274
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_ba6847be5bdb61 39-43,67-72,76-94
+crates/longshore_tcp/tests/tcp/net/lifecycle.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 88,122,158,214,244,292,347
+crates/longshore_tcp/tests/tcp/net/frames.rs
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 107
+crates/longshore_tcp/src/check.rs
+  s_0a7ba2e6f2f96f::t_77b229e3289ca9 17,243-248,250
+  s_0a7ba2e6f2f96f::t_17c51e8f2046c5 24
+  s_0a7ba2e6f2f96f::t_118d0ce9dd298d 286
+crates/longshore_tcp/src/net.rs
+  s_0a7ba2e6f2f96f::t_1564abb64ba8f1 35,206,290-294
+crates/longshore_tcp/src/net/ending.rs
+  s_0a7ba2e6f2f96f::t_1564abb64ba8f1 1-169
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4e0ae9eeab29dd4b1362881eb5f44f57b9b4c0d0",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
