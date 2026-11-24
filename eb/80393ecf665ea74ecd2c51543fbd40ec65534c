@@ -1,0 +1,33 @@
+crates/longshore_tcp/src/check.rs
+  s_0a7ba2e6f2f96f::t_300b630f9b97a5 17,20-27,32-33,62-65,110-114,168-186,188-195
+crates/longshore_tcp/tests/tcp/storage.rs
+  s_0a7ba2e6f2f96f::t_7213daebaa31ac 1-69
+crates/longshore-bench/src/bin/tcp_uring.rs
+  s_0a7ba2e6f2f96f::t_3c9ede5bf7887f 8-10,12,24-44,54-56,59,90-104
+crates/longshore_tcp/src/check/storage.rs
+  s_0a7ba2e6f2f96f::t_0666afba0d6ba0 157-158,169-171,174
+  s_0a7ba2e6f2f96f::t_7213daebaa31ac 108-110,243-244,263-267
+  s_0a7ba2e6f2f96f::t_300b630f9b97a5 1-107,111-156,159-168,172-173,175-242,245-262,268-306
+crates/longshore_tcp/Cargo.toml
+  s_0a7ba2e6f2f96f::t_7213daebaa31ac 48-51
+crates/longshore_tcp/src/check/exchange.rs
+  s_0a7ba2e6f2f96f::t_300b630f9b97a5 1-138
+scripts/test-linux.sh
+  s_0a7ba2e6f2f96f::t_3c9ede5bf7887f 99-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "eb80393ecf665ea74ecd2c51543fbd40ec65534c",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
