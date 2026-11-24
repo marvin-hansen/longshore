@@ -1,0 +1,34 @@
+crates/longshore_stream/src/ring.rs
+  s_0a7ba2e6f2f96f::t_733c353f9ef302 1-111,117-168,171-257
+  s_0a7ba2e6f2f96f::t_08a47c387c083c 169-170
+  s_0a7ba2e6f2f96f::t_7fa7e1a87f9114 112-116
+crates/longshore_stream/src/lib.rs
+  s_0a7ba2e6f2f96f::t_08a47c387c083c 20,25
+crates/longshore_stream/Cargo.toml
+  s_0a7ba2e6f2f96f::t_59b3daa27b3cd4 46-49
+crates/longshore_stream/tests/stream/ring.rs
+  s_0a7ba2e6f2f96f::t_59b3daa27b3cd4 1-41,43-52,54-59,61-111,113-118,120-140,142-151,153-162,164-169,171-186,188-207,211-229,233-248
+  s_0a7ba2e6f2f96f::t_af30d68fa6843f 42,53,60,112,119,141,187
+  s_0a7ba2e6f2f96f::t_fe72a2e058c9f9 152,163,208-210,230-232
+  s_0a7ba2e6f2f96f::t_e0a9953b917655 170
+crates/longshore_common/src/sim/simio.rs
+  s_0a7ba2e6f2f96f::t_45f1f66038cef5 224-229
+openspec/changes/add-tcp-crate/tasks.md
+  s_0a7ba2e6f2f96f::t_77380b541e668f 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1faf35900dc24c9d284ebd150973b3c21ace4148",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
