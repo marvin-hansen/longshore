@@ -1,0 +1,43 @@
+openspec/changes/add-tcp-simulation-and-benchmarks/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_802b2b94030181 1-30,35-39
+  s_0a7ba2e6f2f96f::t_aca1c7d8b9d06f 31-34
+openspec/changes/add-tcp-af-xdp-backend/proposal.md
+  s_0a7ba2e6f2f96f::t_4fd8cd44675e90 1-50
+openspec/changes/add-tcp-crate/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_f1b80281d8a173 1-142
+openspec/changes/add-tcp-af-xdp-backend/design.md
+  s_0a7ba2e6f2f96f::t_faba36b0c55643 1-59
+openspec/changes/add-tcp-af-xdp-backend/specs/tcp-kernel-bypass/spec.md
+  s_0a7ba2e6f2f96f::t_fc99e030ca4f96 1-61
+openspec/changes/add-tcp-af-xdp-backend/tasks.md
+  s_0a7ba2e6f2f96f::t_26d0d67c8cb20d 1-28
+openspec/changes/add-tcp-crate/proposal.md
+  s_0a7ba2e6f2f96f::t_9be9b2d502d689 49-51,62
+  s_0a7ba2e6f2f96f::t_96e7c12724402d 1-48,52-61
+openspec/changes/add-tcp-crate/specs/server-networking/spec.md
+  s_0a7ba2e6f2f96f::t_ec5eca97f0329b 1-35
+openspec/changes/add-tcp-crate/tasks.md
+  s_0a7ba2e6f2f96f::t_de4456a10c2c7e 1-31
+openspec/changes/add-tcp-crate/design.md
+  s_0a7ba2e6f2f96f::t_a6b5a9cf63d423 1-183
+openspec/changes/add-tcp-simulation-and-benchmarks/proposal.md
+  s_0a7ba2e6f2f96f::t_87007a0a1b3823 1-36
+openspec/changes/add-tcp-simulation-and-benchmarks/tasks.md
+  s_0a7ba2e6f2f96f::t_16095fb8088be0 1-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dd26746287119108823bd5e75f82dffc8ba90ae1",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
