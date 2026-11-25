@@ -1,0 +1,14 @@
+Cargo.lock
+  h_080fb89ca1f0c4 233,235,242,244,1784,1786,1793,1795
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e61fec65d4fe7f7ed00562c4f7cae3edd9a33bf6",
+  "prompts": {},
+  "humans": {
+    "h_080fb89ca1f0c4": {
+      "author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
