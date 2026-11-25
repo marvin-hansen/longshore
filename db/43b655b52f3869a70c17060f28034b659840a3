@@ -1,0 +1,21 @@
+crates/longshore_common/src/sim/packet/link.rs
+  s_0a7ba2e6f2f96f::t_b186a2d9f93934 55-57,79,92,109,136,152-153
+crates/longshore_common/tests/sim/packet.rs
+  s_0a7ba2e6f2f96f::t_dfce5d0c8de6aa 215-245
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "db43b655b52f3869a70c17060f28034b659840a3",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
