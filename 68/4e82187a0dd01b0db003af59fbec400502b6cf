@@ -1,0 +1,25 @@
+.github/workflows/ci.yml
+  s_0a7ba2e6f2f96f::t_93bd70386f94c3 107-108
+.github/workflows/tcp-model.yml
+  s_0a7ba2e6f2f96f::t_93bd70386f94c3 13-14
+crates/longshore_tcp/tests/tcp/model.rs
+  s_0a7ba2e6f2f96f::t_93bd70386f94c3 239-266,274,289
+crates/longshore_tcp/examples/tcp_model.rs
+  s_0a7ba2e6f2f96f::t_93bd70386f94c3 15-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "684e82187a0dd01b0db003af59fbec400502b6cf",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
