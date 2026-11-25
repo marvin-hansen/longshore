@@ -1,0 +1,21 @@
+openspec/changes/add-tcp-simulation-and-benchmarks/tasks.md
+  s_0a7ba2e6f2f96f::t_118ed465655d8e 29
+openspec/changes/add-tcp-simulation-and-benchmarks/design.md
+  s_0a7ba2e6f2f96f::t_118ed465655d8e 278-282,357,456-461
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "47452ac4d5c41085896b1d8bf90e860dfb34b4b6",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
