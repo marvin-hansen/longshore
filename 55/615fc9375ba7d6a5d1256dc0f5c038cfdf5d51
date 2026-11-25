@@ -1,0 +1,26 @@
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_bd914d0b364ab9 192-193
+openspec/changes/add-tcp-simulation-and-benchmarks/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_bd914d0b364ab9 46-49,142-144
+openspec/changes/add-tcp-simulation-and-benchmarks/design.md
+  s_0a7ba2e6f2f96f::t_bd914d0b364ab9 134,272-294,350,354,382-396,418-422
+  s_0a7ba2e6f2f96f::t_58972949293ab1 227-228,231
+openspec/changes/add-tcp-simulation-and-benchmarks/tasks.md
+  s_0a7ba2e6f2f96f::t_bd914d0b364ab9 15-16,19,21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "55615fc9375ba7d6a5d1256dc0f5c038cfdf5d51",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
