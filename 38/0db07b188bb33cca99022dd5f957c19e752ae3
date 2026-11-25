@@ -1,0 +1,32 @@
+crates/longshore-bench/Cargo.toml
+  s_0a7ba2e6f2f96f::t_b33e50b9876de4 88-97
+crates/longshore-bench/benches/tcp_coalescing.rs
+  s_0a7ba2e6f2f96f::t_b33e50b9876de4 140-141
+  s_0a7ba2e6f2f96f::t_62cb54e2876142 1-139,142-150
+crates/longshore-bench/benches/tcp_framing.rs
+  s_0a7ba2e6f2f96f::t_debaeda34a80cb 70-71
+  s_0a7ba2e6f2f96f::t_f25b61e5b2714e 58
+  s_0a7ba2e6f2f96f::t_4684b8b8366f1e 78-79
+  s_0a7ba2e6f2f96f::t_a3ce07540d9759 82-85
+  s_0a7ba2e6f2f96f::t_04f5ad654811da 62-63
+  s_0a7ba2e6f2f96f::t_c276d0117c0533 1-57,59-61,64-69,72-77,80-81,86-91
+  s_0a7ba2e6f2f96f::t_ba3977cbf5a51c 92-97
+bench/README.md
+  s_0a7ba2e6f2f96f::t_b33e50b9876de4 8-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "380db07b188bb33cca99022dd5f957c19e752ae3",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}

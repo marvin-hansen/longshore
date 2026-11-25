@@ -1,0 +1,46 @@
+crates/longshore_common/src/io/files/open_flags.rs
+  s_0a7ba2e6f2f96f::t_536f1274ffae93 20,113-130,132
+  s_0a7ba2e6f2f96f::t_769d0fa7ac265b 131
+crates/longshore_common/src/io/files.rs
+  s_0a7ba2e6f2f96f::t_536f1274ffae93 42
+crates/longshore_common/src/sim/simio/disk_ops.rs
+  s_0a7ba2e6f2f96f::t_b99ae5d6c0581d 106-111,113-123
+crates/longshore_common/tests/sim/disk/dsync.rs
+  s_0a7ba2e6f2f96f::t_854beceb34206d 11-12
+  s_0a7ba2e6f2f96f::t_4b8f21780b391f 1-10,13-153
+crates/longshore_common/src/sim/simio/disk_log.rs
+  s_0a7ba2e6f2f96f::t_b99ae5d6c0581d 8-9,265-281
+  s_0a7ba2e6f2f96f::t_417ba6f2a4bd30 282-283
+crates/longshore_common/tests/sim/disk.rs
+  s_0a7ba2e6f2f96f::t_28796d7293a802 24-25
+crates/longshore_common/src/io/contract_files/ops.rs
+  s_0a7ba2e6f2f96f::t_28796d7293a802 17,169-203
+  s_0a7ba2e6f2f96f::t_8b6eae499fc268 204-205
+crates/longshore_common/src/io/posix/abi_macos.rs
+  s_0a7ba2e6f2f96f::t_536f1274ffae93 46-48
+crates/longshore_common/src/io/sys.rs
+  s_0a7ba2e6f2f96f::t_536f1274ffae93 134-138,310-311
+  s_0a7ba2e6f2f96f::t_1607119c2fac9a 312
+crates/longshore_common/src/sim/simio/disk_faults_rates.rs
+  s_0a7ba2e6f2f96f::t_b99ae5d6c0581d 140-141
+crates/longshore_common/src/io/posix/abi_linux.rs
+  s_0a7ba2e6f2f96f::t_536f1274ffae93 54-55
+crates/longshore_common/src/io/posix/files.rs
+  s_0a7ba2e6f2f96f::t_536f1274ffae93 40-42,68-70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e58092a63df0a85731eb13a2a8abe0ea111d4d38",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
