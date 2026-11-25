@@ -1,0 +1,24 @@
+crates/longshore_tcp/tests/tcp/storage/durable.rs
+  s_0a7ba2e6f2f96f::t_bf375795ea232f 14-16,19-21
+crates/longshore_tcp/tests/tcp/storage.rs
+  s_0a7ba2e6f2f96f::t_bf375795ea232f 21-22
+  s_0a7ba2e6f2f96f::t_7c84af6a6598bb 20
+crates/longshore_tcp/tests/tcp/storage/disk.rs
+  s_0a7ba2e6f2f96f::t_bf375795ea232f 1-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "02001cce27929526c67be5b1de3be94ba910f594",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
