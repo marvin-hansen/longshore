@@ -1,0 +1,26 @@
+crates/longshore-bench/src/bin/tcp_uring.rs
+  s_0a7ba2e6f2f96f::t_41279cc0c34248 14-16,28-31,156-159
+crates/longshore-bench/src/bin/tcp_uring/load.rs
+  s_0a7ba2e6f2f96f::t_f9e63ca740128a 1-85,90-157,164-208,212-219
+  s_0a7ba2e6f2f96f::t_c5c9305fa73e00 86-89,209-211
+  s_0a7ba2e6f2f96f::t_675c9737683f50 158-163
+crates/longshore-bench/src/bin/tcp_uring/bench.rs
+  s_0a7ba2e6f2f96f::t_41279cc0c34248 1-82,89-119,123-169,174-208,212,216-219,221-227,237-239,244-266
+  s_0a7ba2e6f2f96f::t_969e47e7ad9e85 83-88,120-122,170-173,209-211,213-215,220,228-236,240-243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "28970877856eca8c99375ed3ca5a774fff204f76",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
