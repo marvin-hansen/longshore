@@ -1,0 +1,19 @@
+fuzz/fuzz_targets/tcp_framing.rs
+  s_0a7ba2e6f2f96f::t_28c4b89b37b4cc 8-14,17-45,48,51-56,61,67-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "db87c83b687c4dae164b2a8428527c6687920f06",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
