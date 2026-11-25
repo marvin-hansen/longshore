@@ -1,0 +1,24 @@
+bench/results/m21-tcp-loopback-container-aarch64.md
+  s_0a7ba2e6f2f96f::t_df1267a06b59a1 1-108
+bench/results/m21-tcp-loopback-container-aarch64.jsonl
+  s_0a7ba2e6f2f96f::t_dfe60209c85633 157-186
+  s_0a7ba2e6f2f96f::t_a5952c68c3a074 1-156
+crates/longshore-bench/src/bin/tcp_uring/bench.rs
+  s_0a7ba2e6f2f96f::t_7b2faa00b9749f 144-154,163
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4d2d3e5c863f78a0017906c9da798c5b1bde99f2",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
