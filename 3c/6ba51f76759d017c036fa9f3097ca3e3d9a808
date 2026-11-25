@@ -1,0 +1,40 @@
+openspec/specs/file-operations/spec.md
+  s_0a7ba2e6f2f96f::t_064af49987b1bb 188-203
+  s_0a7ba2e6f2f96f::t_e3c25da9eae40d 204
+openspec/changes/archive/2026-11-25-add-tcp-simulation-and-benchmarks/specs/simulated-disk/spec.md
+  s_0a7ba2e6f2f96f::t_064af49987b1bb 1-29
+openspec/changes/archive/2026-11-25-add-tcp-simulation-and-benchmarks/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_064af49987b1bb 1-195
+openspec/specs/simulated-disk/spec.md
+  s_0a7ba2e6f2f96f::t_064af49987b1bb 135-162
+  s_0a7ba2e6f2f96f::t_b4272d7998f6ab 163
+openspec/changes/archive/2026-11-25-add-tcp-simulation-and-benchmarks/design.md
+  s_0a7ba2e6f2f96f::t_064af49987b1bb 1-605
+openspec/changes/archive/2026-11-25-add-tcp-simulation-and-benchmarks/specs/file-operations/spec.md
+  s_0a7ba2e6f2f96f::t_064af49987b1bb 1-17
+openspec/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_064af49987b1bb 209-401
+  s_0a7ba2e6f2f96f::t_cddfef88c2f146 402
+openspec/changes/archive/2026-11-25-add-tcp-simulation-and-benchmarks/proposal.md
+  s_0a7ba2e6f2f96f::t_064af49987b1bb 1-74
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_6baf9c775ed33b 202-203
+openspec/changes/archive/2026-11-25-add-tcp-simulation-and-benchmarks/tasks.md
+  s_0a7ba2e6f2f96f::t_064af49987b1bb 1-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3c6ba51f76759d017c036fa9f3097ca3e3d9a808",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
