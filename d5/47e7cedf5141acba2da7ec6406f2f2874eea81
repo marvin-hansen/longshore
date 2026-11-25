@@ -1,0 +1,25 @@
+crates/longshore_tcp/src/sizes.rs
+  s_0a7ba2e6f2f96f::t_df1267a06b59a1 37,49
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_f682fd75629d10 197-281
+  s_0a7ba2e6f2f96f::t_df1267a06b59a1 181
+  s_0a7ba2e6f2f96f::t_05c75e46819bf5 282,297-300
+openspec/changes/add-tcp-simulation-and-benchmarks/tasks.md
+  s_0a7ba2e6f2f96f::t_f682fd75629d10 42-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d547e7cedf5141acba2da7ec6406f2f2874eea81",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
