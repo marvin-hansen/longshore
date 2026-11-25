@@ -1,0 +1,34 @@
+crates/longshore_common/Cargo.toml
+  s_0a7ba2e6f2f96f::t_f88dc9fef18bd8 112-114
+  s_0a7ba2e6f2f96f::t_c43f4345ec671a 111
+crates/longshore_common/src/sim.rs
+  s_0a7ba2e6f2f96f::t_6546a85e121e48 13,18
+crates/longshore_common/tests/sim/packet/random.rs
+  s_0a7ba2e6f2f96f::t_2b2bf4ab106fbe 81
+  s_0a7ba2e6f2f96f::t_f88dc9fef18bd8 1-10,12-72,83-171
+  s_0a7ba2e6f2f96f::t_b5e7acfe7677b2 11,73-75
+  s_0a7ba2e6f2f96f::t_81a92d132714c8 76-80,82
+crates/longshore_common/tests/sim/packet.rs
+  s_0a7ba2e6f2f96f::t_b5e7acfe7677b2 60-62,64-65
+  s_0a7ba2e6f2f96f::t_f88dc9fef18bd8 1-59,63,66-214
+crates/longshore_common/src/sim/packet.rs
+  s_0a7ba2e6f2f96f::t_6546a85e121e48 1-240
+crates/longshore_common/src/sim/packet/link.rs
+  s_0a7ba2e6f2f96f::t_6546a85e121e48 1-272
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "95dec6f8788f31f4f1e94db45ded1665d1ca29c7",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
