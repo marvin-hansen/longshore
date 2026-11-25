@@ -1,0 +1,30 @@
+fuzz/Cargo.toml
+  s_0a7ba2e6f2f96f::t_74306032c24212 30-34,72-85
+  s_0a7ba2e6f2f96f::t_560f2f8505ace8 18-22
+fuzz/fuzz_targets/tcp_model_steps.rs
+  s_0a7ba2e6f2f96f::t_74306032c24212 1-64
+.github/workflows/fuzz.yml
+  s_0a7ba2e6f2f96f::t_74306032c24212 6-7,46-53
+docs/testing.md
+  s_0a7ba2e6f2f96f::t_a521d394f086d4 59-61
+fuzz/fuzz_targets/tcp_framing.rs
+  s_0a7ba2e6f2f96f::t_74306032c24212 1-50
+fuzz/Cargo.lock
+  s_0a7ba2e6f2f96f::t_ad798c10e77aaa 132-133,142-156
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "94c60c696f8919aad1875e00e75eee7d9430c5c7",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
