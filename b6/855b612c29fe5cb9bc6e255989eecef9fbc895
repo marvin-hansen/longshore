@@ -1,0 +1,41 @@
+crates/longshore_tcp/src/lib.rs
+  s_0a7ba2e6f2f96f::t_6f5331ed058040 90
+crates/longshore_tcp/src/net.rs
+  s_0a7ba2e6f2f96f::t_ff453e5b0dad72 175-179
+crates/longshore_tcp/src/net/listen.rs
+  s_0a7ba2e6f2f96f::t_ff453e5b0dad72 10,49,110,134,181,285,309
+crates/longshore_tcp/src/kernel.rs
+  s_0a7ba2e6f2f96f::t_ff453e5b0dad72 27-29
+crates/longshore_tcp/tests/tcp/model.rs
+  s_0a7ba2e6f2f96f::t_6f5331ed058040 13,50-56,59-65,71-107,159,174-175
+  s_0a7ba2e6f2f96f::t_58972949293ab1 57-58,66-70
+crates/longshore_tcp/src/kernel/cover.rs
+  s_0a7ba2e6f2f96f::t_ff453e5b0dad72 1-50,52-82
+  s_0a7ba2e6f2f96f::t_6f5331ed058040 51
+crates/longshore_tcp/src/kernel/secure.rs
+  s_0a7ba2e6f2f96f::t_6f5331ed058040 162
+  s_0a7ba2e6f2f96f::t_ff453e5b0dad72 14,81,95,134-150,218,227,238,266
+crates/longshore_tcp/src/kernel/plain.rs
+  s_0a7ba2e6f2f96f::t_ff453e5b0dad72 62-65
+crates/longshore_tcp/src/net/cover.rs
+  s_0a7ba2e6f2f96f::t_ff453e5b0dad72 7-8,11,49-61,65,102-114,118,121-127,141-145,181-191,194
+  s_0a7ba2e6f2f96f::t_0bdd1cfac4d2c0 192-193,195
+crates/longshore_tcp/tests/tcp/model/drive.rs
+  s_0a7ba2e6f2f96f::t_6f5331ed058040 16,59-60,138,140
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b6855b612c29fe5cb9bc6e255989eecef9fbc895",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
