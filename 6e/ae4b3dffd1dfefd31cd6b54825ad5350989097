@@ -1,0 +1,23 @@
+crates/longshore_tcp/tests/tcp/props.rs
+  s_0a7ba2e6f2f96f::t_0ccc4fc3708505 1-15,17,19-20,25-53,55-84,86-269
+  s_0a7ba2e6f2f96f::t_56bce721cb667c 16,18,21-24,54,85
+crates/longshore_tcp/Cargo.toml
+  s_0a7ba2e6f2f96f::t_0ccc4fc3708505 41-43
+  s_0a7ba2e6f2f96f::t_e686d587682782 40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6eae4b3dffd1dfefd31cd6b54825ad5350989097",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
