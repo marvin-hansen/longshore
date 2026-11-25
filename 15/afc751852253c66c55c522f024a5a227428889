@@ -1,0 +1,24 @@
+crates/longshore_tcp/tests/tcp/net.rs
+  s_0a7ba2e6f2f96f::t_282655915b9205 24-26
+crates/longshore_tcp/tests/tcp/net/exhaustion.rs
+  s_0a7ba2e6f2f96f::t_282655915b9205 1-23,25-103,118-119,124-127,129-130,132-140,142-155,157-174,183
+  s_0a7ba2e6f2f96f::t_e98ff055badf72 156,175,177,179,181-182
+  s_0a7ba2e6f2f96f::t_4e3f1d36ec071e 24,104-117,131,141,176,178,180
+  s_0a7ba2e6f2f96f::t_136c6957347929 120-123,128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "15afc751852253c66c55c522f024a5a227428889",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
