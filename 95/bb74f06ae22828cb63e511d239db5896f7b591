@@ -1,0 +1,28 @@
+openspec/changes/add-tcp-simulation-and-benchmarks/design.md
+  s_0a7ba2e6f2f96f::t_213f2469a6a8c7 270-272
+crates/longshore_tcp/src/net/pull.rs
+  s_0a7ba2e6f2f96f::t_9114cb3a4283ed 226-231
+crates/longshore_tcp/tests/tcp/net/exhaustion.rs
+  s_0a7ba2e6f2f96f::t_15347b7ceca9b2 27-29,186-240
+  s_0a7ba2e6f2f96f::t_b2e3618ef5b83c 241
+crates/longshore_tcp/src/net/spill.rs
+  s_0a7ba2e6f2f96f::t_9114cb3a4283ed 13-20,25,149-180
+  s_0a7ba2e6f2f96f::t_213f2469a6a8c7 181-182
+  s_0a7ba2e6f2f96f::t_7d2453880240f4 183-184
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "95bb74f06ae22828cb63e511d239db5896f7b591",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
