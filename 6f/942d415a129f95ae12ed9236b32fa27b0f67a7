@@ -1,0 +1,21 @@
+crates/longshore_stream/src/ring.rs
+  s_0a7ba2e6f2f96f::t_70030631d6791e 169-178
+crates/longshore_tcp/src/kernel/secure.rs
+  s_0a7ba2e6f2f96f::t_f423132511c903 204,262-264
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6f942d415a129f95ae12ed9236b32fa27b0f67a7",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
