@@ -1,0 +1,28 @@
+openspec/changes/add-tcp-simulation-and-benchmarks/specs/file-operations/spec.md
+  s_0a7ba2e6f2f96f::t_1c624dc0371174 1-17
+openspec/changes/add-tcp-simulation-and-benchmarks/proposal.md
+  s_0a7ba2e6f2f96f::t_1c624dc0371174 68-70,72-73
+openspec/changes/add-tcp-simulation-and-benchmarks/specs/simulated-disk/spec.md
+  s_0a7ba2e6f2f96f::t_1c624dc0371174 1-29
+crates/longshore_common/src/io/files/open_flags.rs
+  s_0a7ba2e6f2f96f::t_1c624dc0371174 122-129
+openspec/changes/add-tcp-simulation-and-benchmarks/tasks.md
+  s_0a7ba2e6f2f96f::t_5eac6d5accfb60 46
+  s_0a7ba2e6f2f96f::t_1c624dc0371174 48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "82ffe2b6c14f5e3d5212584dc693193a1ec3dd25",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
