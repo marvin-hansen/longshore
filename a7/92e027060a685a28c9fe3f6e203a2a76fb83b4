@@ -1,0 +1,28 @@
+crates/longshore_tcp/examples/tcp_model.rs
+  s_0a7ba2e6f2f96f::t_ba57a9f18a74bc 11-15,33,92-112,114,135-144,153,166
+  s_0a7ba2e6f2f96f::t_561263e75f9057 157,165
+fuzz/fuzz_targets/tcp_model_steps.rs
+  s_0a7ba2e6f2f96f::t_ba57a9f18a74bc 13-17,28,31-33,36,39
+crates/longshore_tcp/tests/tcp/model.rs
+  s_0a7ba2e6f2f96f::t_ba57a9f18a74bc 20,297-316
+  s_0a7ba2e6f2f96f::t_86db0ccec534eb 317
+crates/longshore_tcp/tests/tcp/model/steps.rs
+  s_0a7ba2e6f2f96f::t_561263e75f9057 117-119
+  s_0a7ba2e6f2f96f::t_ba57a9f18a74bc 93-116,120-129
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a792e027060a685a28c9fe3f6e203a2a76fb83b4",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
