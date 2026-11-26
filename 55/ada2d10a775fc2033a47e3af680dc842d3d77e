@@ -1,0 +1,27 @@
+crates/longshore-bench/src/bin/tcp_uring/opts.rs
+  s_0a7ba2e6f2f96f::t_8110be1b862365 263-265
+bench/results/m31-tcp-zero-copy-receive-spike-dgx-spark.jsonl
+  s_0a7ba2e6f2f96f::t_d618d19306d17b 87-113
+bench/results/m31-tcp-zero-copy-receive-spike-dgx-spark.md
+  s_0a7ba2e6f2f96f::t_86f1ce4c63238b 350-416
+crates/longshore-bench/src/bin/zc_uring.rs
+  s_0a7ba2e6f2f96f::t_5a264911e5e2b5 17-18
+crates/longshore-bench/src/bin/zc_uring/opts.rs
+  s_0a7ba2e6f2f96f::t_8c2f8cb6e8a7eb 82-83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "55ada2d10a775fc2033a47e3af680dc842d3d77e",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
