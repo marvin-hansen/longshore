@@ -1,0 +1,25 @@
+crates/longshore-bench/src/bin/tcp_uring/opts.rs
+  s_0a7ba2e6f2f96f::t_f58e4b53a18fc2 1-250
+crates/longshore-bench/src/bin/tcp_uring/bench.rs
+  s_0a7ba2e6f2f96f::t_8db8f74edb2646 28-37,62,69,73,87-88
+crates/longshore-bench/src/bin/tcp_uring/load.rs
+  s_0a7ba2e6f2f96f::t_8db8f74edb2646 19-21,138,140,146,264-273,293,295,321,327-328
+crates/longshore-bench/src/bin/tcp_uring/path.rs
+  s_0a7ba2e6f2f96f::t_8db8f74edb2646 12-18,20,23,37,42-44,48-54,132-133,137-138,140-158,161-162,169,191,194-196,204,216-219,248
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c23e31d8056b930a5920975074efda04bda3d828",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
