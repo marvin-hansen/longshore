@@ -1,0 +1,25 @@
+openspec/changes/add-tcp-zero-copy-receive/design.md
+  s_0a7ba2e6f2f96f::t_7277748184a6fd 135-185
+openspec/changes/add-tcp-zero-copy-receive/proposal.md
+  s_0a7ba2e6f2f96f::t_dfaf5ade209e40 62-66,76
+openspec/changes/add-tcp-zero-copy-receive/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_48bbe3590c724e 12-26
+openspec/changes/add-tcp-zero-copy-receive/tasks.md
+  s_0a7ba2e6f2f96f::t_1b2abd58ac7479 13,39-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "04b76dea36b4fa9b5b73f162863898d710e3d9b2",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
