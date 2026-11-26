@@ -1,0 +1,21 @@
+docs/DGX-Spark-TLS-OFFLOAD.md
+  s_86dd7e895d1527::t_2de9ffeccc0562 1-129,132-264,268-342
+  s_86dd7e895d1527::t_6a5688f563d85d 130-131
+  s_86dd7e895d1527::t_4679c03cf8ddd8 265-267
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9558235d44458bae8b8775eec596f674427feaed",
+  "prompts": {},
+  "sessions": {
+    "s_86dd7e895d1527": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5b10afb9-dc52-403f-8f91-f4fb51d62411",
+        "model": "unknown"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
