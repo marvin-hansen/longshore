@@ -1,0 +1,40 @@
+crates/longshore_tcp/src/net/rx.rs
+  s_0a7ba2e6f2f96f::t_b3ce313bac1385 74,84,134,136
+crates/longshore_tcp/src/framing.rs
+  s_0a7ba2e6f2f96f::t_b3ce313bac1385 23-24
+  s_0a7ba2e6f2f96f::t_bb21a479a3f2ec 45-46,90,94-117
+  s_0a7ba2e6f2f96f::t_675c71cd20ed21 118
+crates/longshore_tcp/src/net/conn.rs
+  s_0a7ba2e6f2f96f::t_8d1c4e51aae7a3 16
+  s_0a7ba2e6f2f96f::t_b3ce313bac1385 29-31,33-34,39-45
+  s_0a7ba2e6f2f96f::t_d5bb523cafd632 46-48
+crates/longshore_tcp/tests/tcp/props.rs
+  s_0a7ba2e6f2f96f::t_7a14a00bdfb5f5 156-171,173-228
+  s_0a7ba2e6f2f96f::t_a85a5f34d1ee0e 172
+crates/longshore_tcp/src/net/pull.rs
+  s_0a7ba2e6f2f96f::t_b3ce313bac1385 61-62
+crates/longshore_tcp/tests/tcp/tls.rs
+  s_0a7ba2e6f2f96f::t_3928852ef09693 241-284
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_bb9c723b895d79 125-134
+openspec/changes/add-tcp-zero-copy-receive/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_de307a9fe3da95 14-17,20-21,23-25
+openspec/changes/add-tcp-zero-copy-receive/tasks.md
+  s_0a7ba2e6f2f96f::t_07d74471b476fe 41-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bab062b7d5cd402e78ec881ecd9584de9fbd568b",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
