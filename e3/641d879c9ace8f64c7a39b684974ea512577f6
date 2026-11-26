@@ -1,0 +1,75 @@
+crates/longshore_common/src/io/files/validate.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 38-48,146,196-240,247
+crates/longshore_common/src/io/uring/ops.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 70
+crates/longshore_common/src/io/posix.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 293,367,446
+crates/longshore_common/src/sim/simio/disk_attempt.rs
+  s_0a7ba2e6f2f96f::t_5899edd73e9157 21
+  s_0a7ba2e6f2f96f::t_48550834080794 226
+  s_0a7ba2e6f2f96f::t_5d0ea959b945df 16-17,19-20,22-23,35-52
+  s_0a7ba2e6f2f96f::t_455704af96197f 14-15,18,24-34,94
+crates/longshore_common/src/sim/simio/ops.rs
+  s_0a7ba2e6f2f96f::t_5d0ea959b945df 46-60,98
+  s_0a7ba2e6f2f96f::t_48550834080794 124
+crates/longshore_common/src/io/engine/submit.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 84,119,166
+crates/longshore_common/src/io/uring/ops_file.rs
+  s_0a7ba2e6f2f96f::t_69db47ef2c9084 37-38
+  s_0a7ba2e6f2f96f::t_48550834080794 225
+crates/longshore_common/src/io/uring/backend.rs
+  s_0a7ba2e6f2f96f::t_88abfa5825967e 420-423
+  s_0a7ba2e6f2f96f::t_48550834080794 485
+crates/longshore_common/src/io/posix/ops.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 95
+crates/longshore_common/Cargo.toml
+  s_0a7ba2e6f2f96f::t_c82afc77bccb23 127-130
+crates/longshore_common/src/io/engine/tests.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 70,119
+crates/longshore_common/src/io/files.rs
+  s_0a7ba2e6f2f96f::t_69db47ef2c9084 12
+  s_0a7ba2e6f2f96f::t_48550834080794 65,216,315,365
+crates/longshore_common/src/io/op.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 270-293
+crates/longshore_common/src/io/engine/step.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 61,263,345,359
+crates/longshore_common/src/io.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 176-177
+crates/longshore_common/src/sim/simio/world.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 217
+  s_0a7ba2e6f2f96f::t_88abfa5825967e 153-156
+crates/longshore_common/tests/sim/write_spans.rs
+  s_0a7ba2e6f2f96f::t_c82afc77bccb23 1-112,114-129,131-155,157-160,168-213
+  s_0a7ba2e6f2f96f::t_b369bbd57be860 113,130,156,161-167
+crates/longshore_common/src/io/engine/backend.rs
+  s_0a7ba2e6f2f96f::t_88abfa5825967e 105-109
+  s_0a7ba2e6f2f96f::t_24800b2960438b 9
+crates/longshore_common/src/io/posix/files.rs
+  s_0a7ba2e6f2f96f::t_69db47ef2c9084 108-109
+  s_0a7ba2e6f2f96f::t_48550834080794 209
+crates/longshore/tests/e2e/harness/mock_world.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 214,307,347
+  s_0a7ba2e6f2f96f::t_a144330e747360 67
+crates/longshore/tests/e2e/t12_limits_engine/f02_engine.rs
+  s_0a7ba2e6f2f96f::t_48550834080794 217
+crates/longshore_common/src/io/engine.rs
+  s_0a7ba2e6f2f96f::t_88abfa5825967e 88-91
+openspec/changes/add-tcp-zero-copy-receive/tasks.md
+  s_0a7ba2e6f2f96f::t_19f69bab8f09c9 22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e3641d879c9ace8f64c7a39b684974ea512577f6",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
