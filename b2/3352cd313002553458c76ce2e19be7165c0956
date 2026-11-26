@@ -1,0 +1,38 @@
+crates/longshore_tcp/src/sizes.rs
+  s_0a7ba2e6f2f96f::t_7589d99738e316 56,120-125
+bench/results/m32-tcp-zero-copy-send-dgx-spark-pair.md
+  s_0a7ba2e6f2f96f::t_7589d99738e316 1-81
+crates/longshore-bench/src/bin/tcp_uring/bench.rs
+  s_0a7ba2e6f2f96f::t_42332f6a8f17c2 24
+bench/results/m32-tcp-zero-copy-send-dgx-spark-pair.jsonl
+  s_0a7ba2e6f2f96f::t_7589d99738e316 1-222
+crates/longshore-bench/src/bin/tcp_uring/load.rs
+  s_0a7ba2e6f2f96f::t_52f8f647fd43ea 15,35,37-40
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_42332f6a8f17c2 173
+  s_0a7ba2e6f2f96f::t_ed9313a894825a 181-182,321-327
+openspec/changes/add-tcp-zero-copy-receive/tasks.md
+  s_0a7ba2e6f2f96f::t_42332f6a8f17c2 40-43
+openspec/notes/tcp-db-modes.md
+  s_0a7ba2e6f2f96f::t_42332f6a8f17c2 155-160
+crates/longshore-bench/src/bin/tcp_uring/path.rs
+  s_0a7ba2e6f2f96f::t_52f8f647fd43ea 25,232,234-237
+crates/longshore-bench/src/bin/tcp_uring/opts.rs
+  s_0a7ba2e6f2f96f::t_42332f6a8f17c2 63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b23352cd313002553458c76ce2e19be7165c0956",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
