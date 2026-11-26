@@ -1,0 +1,22 @@
+bench/results/m33-ipsec-packet-offload-dgx-spark-pair.md
+  s_86dd7e895d1527::t_20e4d3e9f6c4f5 98-104
+  s_86dd7e895d1527::t_905ad7bf59360a 1-97,105-172
+bench/results/m33-ipsec-packet-offload-dgx-spark-pair.jsonl
+  s_86dd7e895d1527::t_a7fdf2e05df5ad 1-72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "18e0e17476d51d1e3504d0f9d373184b1b1dc1fc",
+  "prompts": {},
+  "sessions": {
+    "s_86dd7e895d1527": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5b10afb9-dc52-403f-8f91-f4fb51d62411",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
