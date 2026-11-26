@@ -1,0 +1,19 @@
+crates/longshore_tcp/tests/tcp/net/paged_disk.rs
+  s_0a7ba2e6f2f96f::t_1ef61ce947932a 24-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d9ef0446f24d33fa15101ee7ff0b919f6483f035",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
