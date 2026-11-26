@@ -1,0 +1,27 @@
+crates/longshore_common/src/io/uring/area.rs
+  s_0a7ba2e6f2f96f::t_f66c4f40171a9e 16,36,126-127,135,159
+crates/longshore_common/src/io/uring/setup.rs
+  s_0a7ba2e6f2f96f::t_f66c4f40171a9e 193
+crates/longshore_common/src/io/uring.rs
+  s_0a7ba2e6f2f96f::t_f66c4f40171a9e 29,178-180,270
+crates/longshore_common/src/io/uring/mapped.rs
+  s_0a7ba2e6f2f96f::t_2464de97d05f64 1-84
+openspec/changes/add-tcp-zero-copy-receive/design.md
+  s_0a7ba2e6f2f96f::t_3fbc87c3480952 312-321
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "948a669dda05ac7d5f70a6b699f6f4b6c5b085d5",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
