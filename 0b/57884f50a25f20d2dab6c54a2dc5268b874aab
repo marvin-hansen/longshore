@@ -1,0 +1,92 @@
+crates/longshore_common/src/io/contract_files/spans.rs
+  s_0a7ba2e6f2f96f::t_2d640a99796e57 11
+  s_0a7ba2e6f2f96f::t_5adc87994201a1 53-61,71-76,104-109,115-116,126-134
+  s_0a7ba2e6f2f96f::t_0f027e1305b5dd 1-10,12-52,62-70,77-103,110-114,117-125,135-142
+crates/longshore_common/src/io/uring/ops_file.rs
+  s_0a7ba2e6f2f96f::t_f99cb25afd4c96 37
+crates/longshore_common/Cargo.toml
+  s_0a7ba2e6f2f96f::t_48d94b15964714 64-66
+  s_0a7ba2e6f2f96f::t_03ca6b53e04edf 63
+crates/longshore_common/src/io/files/validate.rs
+  s_0a7ba2e6f2f96f::t_9580611dfe4a03 217-220
+crates/longshore_common/src/io/limits/fields.rs
+  s_0a7ba2e6f2f96f::t_9580611dfe4a03 192-195
+  s_0a7ba2e6f2f96f::t_0718e08fd955b8 189-191,196-247
+crates/longshore_common/src/io/sys.rs
+  s_0a7ba2e6f2f96f::t_2ec2cb7c868112 16,19
+crates/longshore_common/src/io/posix/files.rs
+  s_0a7ba2e6f2f96f::t_4dbb119261efdf 108
+crates/longshore_common/src/io/refill/tests.rs
+  s_0a7ba2e6f2f96f::t_c6c51bdbeb470a 51,84-88
+  s_0a7ba2e6f2f96f::t_4cbd1f76dd9667 66,83,110,113,127,130-131,133-139,147,151
+  s_0a7ba2e6f2f96f::t_d0e27b4dd70735 1-50,52-65,67-82,89-109,111-112,114-126,128-129,132,140-146,148-150,152-166
+crates/longshore_common/src/io/uring/setup.rs
+  s_0a7ba2e6f2f96f::t_6e15495c5062fb 165-186,192
+  s_0a7ba2e6f2f96f::t_7e3d9f403e9495 60-63,161,211,221-223
+crates/longshore_common/src/io/posix.rs
+  s_0a7ba2e6f2f96f::t_ae3c8a68a8f026 16,96-97,124,139-145
+  s_0a7ba2e6f2f96f::t_f62c5541e2fb83 252-255
+crates/longshore_common/src/io/uring/gather.rs
+  s_0a7ba2e6f2f96f::t_d1bbf0defc674d 1-51,66-85
+  s_0a7ba2e6f2f96f::t_f99cb25afd4c96 52-65
+crates/longshore_common/tests/sim/write_spans.rs
+  s_0a7ba2e6f2f96f::t_9580611dfe4a03 28
+crates/longshore_common/src/io/uring/ops.rs
+  s_0a7ba2e6f2f96f::t_7e3d9f403e9495 25
+crates/longshore_common/src/io/uring/completions.rs
+  s_0a7ba2e6f2f96f::t_7e3d9f403e9495 137-141,197,316,324
+crates/longshore_common/src/io/limits.rs
+  s_0a7ba2e6f2f96f::t_0718e08fd955b8 29-33,55-59,67-74,103,108-114
+  s_0a7ba2e6f2f96f::t_9580611dfe4a03 104-107,139-149
+  s_0a7ba2e6f2f96f::t_af3ee2e156a387 150-151
+crates/longshore_common/src/io/ring/zcrx.rs
+  s_0a7ba2e6f2f96f::t_8db3163851c7f8 1-25,29-53
+  s_0a7ba2e6f2f96f::t_ee373b1d65493d 26-28
+crates/longshore_common/src/io/uring/quiesce.rs
+  s_0a7ba2e6f2f96f::t_7e3d9f403e9495 107
+crates/longshore_common/src/io/uring.rs
+  s_0a7ba2e6f2f96f::t_7e3d9f403e9495 21,27,56-57,115-117,179-184,267-268
+crates/longshore_common/src/io/posix/gather.rs
+  s_0a7ba2e6f2f96f::t_c2712870839dcf 1-18,20-43,59-103
+  s_0a7ba2e6f2f96f::t_4dbb119261efdf 19,44-58
+crates/longshore_common/tests/io/area_refused.rs
+  s_0a7ba2e6f2f96f::t_01524597301703 1-58
+crates/longshore_common/src/io/uring/tests.rs
+  s_0a7ba2e6f2f96f::t_4125bf0c13ae3b 51-55
+crates/longshore_common/src/io/sys/zcrx.rs
+  s_0a7ba2e6f2f96f::t_15de165eb8cd86 1-160
+crates/longshore_common/src/io/uring/backend.rs
+  s_0a7ba2e6f2f96f::t_0c5cc1be8b97bb 70-77,209,234,262,431-433,452
+crates/longshore_common/src/io/uring/area.rs
+  s_0a7ba2e6f2f96f::t_0c5cc1be8b97bb 18,22-26,73,77-78,82,86,125-126,255-263
+  s_0a7ba2e6f2f96f::t_6e15495c5062fb 131
+  s_0a7ba2e6f2f96f::t_76f78a51712622 1-17,19-21,27-72,74-76,79-81,83-85,87-124,127-130,132-192,197-254,264-273,275-277
+  s_0a7ba2e6f2f96f::t_4cbd1f76dd9667 193-196,274
+crates/longshore_common/src/io/refill.rs
+  s_0a7ba2e6f2f96f::t_ee373b1d65493d 137
+  s_0a7ba2e6f2f96f::t_1476b88eb6134a 1-13,17-18,20-42,45-70,72-92,95-100,103,105-109,114-132,134-136,138,140-144
+  s_0a7ba2e6f2f96f::t_4cbd1f76dd9667 14-16,19,43-44,71,93-94,101-102,104,110-113,133,139
+crates/longshore_common/src/io/ring.rs
+  s_0a7ba2e6f2f96f::t_ca29940dd09b7c 17,71-75,128-130,170-172,275-280,286-302,304
+  s_0a7ba2e6f2f96f::t_714e3ee7bef0fb 303,305
+crates/longshore_common/src/io.rs
+  s_0a7ba2e6f2f96f::t_4c7d473ef5c82a 40-41
+crates/longshore_common/src/io/contract_files.rs
+  s_0a7ba2e6f2f96f::t_6c91864e6ee4db 15,174
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0b57884f50a25f20d2dab6c54a2dc5268b874aab",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
