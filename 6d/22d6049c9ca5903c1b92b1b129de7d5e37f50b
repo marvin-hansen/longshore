@@ -1,0 +1,31 @@
+openspec/changes/add-tcp-zero-copy-receive/specs/tcp-connections/spec.md
+  s_0a7ba2e6f2f96f::t_27b40c76919d00 1-10
+openspec/changes/add-tcp-zero-copy-receive/specs/tcp-zero-copy-receive/spec.md
+  s_0a7ba2e6f2f96f::t_27b40c76919d00 1-97
+openspec/changes/add-tcp-zero-copy-receive/tasks.md
+  s_0a7ba2e6f2f96f::t_27b40c76919d00 1-37
+openspec/changes/add-tcp-zero-copy-receive/design.md
+  s_0a7ba2e6f2f96f::t_27b40c76919d00 1-98
+openspec/changes/add-tcp-zero-copy-receive/proposal.md
+  s_0a7ba2e6f2f96f::t_27b40c76919d00 1-71
+openspec/changes/add-tcp-af-xdp-backend/proposal.md
+  s_0a7ba2e6f2f96f::t_597894f2322dc2 17-24,82-83
+openspec/changes/add-tcp-af-xdp-backend/tasks.md
+  s_0a7ba2e6f2f96f::t_05272ab39f760b 7,48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6d22d6049c9ca5903c1b92b1b129de7d5e37f50b",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
