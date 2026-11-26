@@ -1,0 +1,21 @@
+bench/results/m30-tcp-dgx-spark-pair-200gbe-aarch64.jsonl
+  s_0a7ba2e6f2f96f::t_fbab9b2eb2850d 274-317
+bench/results/m30-tcp-dgx-spark-pair-200gbe-aarch64.md
+  s_0a7ba2e6f2f96f::t_ca136b74b58324 83-105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f9c24c39b30a1b09318e03b23697a535ee7499df",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
