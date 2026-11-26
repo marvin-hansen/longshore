@@ -1,0 +1,44 @@
+crates/longshore_common/src/io/engine.rs
+  s_0a7ba2e6f2f96f::t_424aca6abcd741 86-91
+crates/longshore_common/src/sim/simio.rs
+  s_0a7ba2e6f2f96f::t_424aca6abcd741 39-40,139-140,188-189
+crates/longshore_common/src/sim/simio/area.rs
+  s_0a7ba2e6f2f96f::t_4e1e943021d327 195-200
+  s_0a7ba2e6f2f96f::t_b865f1fb2c01d1 23
+  s_0a7ba2e6f2f96f::t_424aca6abcd741 14-20,42-55,59-60,62-66,70,72,75-85,98-103,106-107,111-115,118-119,128-148,150-155,159-165,167,172-182,184-186,192-194,201-210,215-230,236-238,247,257-283,286-287,295-304,307,310-320,326,332-341,354
+  s_0a7ba2e6f2f96f::t_2ba7177487e25c 308-309
+crates/longshore_common/src/io.rs
+  s_0a7ba2e6f2f96f::t_424aca6abcd741 176-179
+crates/longshore_common/tests/sim/recv_zc.rs
+  s_0a7ba2e6f2f96f::t_f53d1831e31241 20-21
+  s_0a7ba2e6f2f96f::t_4e1e943021d327 295-298,302,304
+crates/longshore_common/src/io/engine/step.rs
+  s_0a7ba2e6f2f96f::t_e7962c5f1b10d6 24-27
+crates/longshore_common/tests/sim/recv_zc/faults.rs
+  s_0a7ba2e6f2f96f::t_eab555a502a31e 10
+  s_0a7ba2e6f2f96f::t_f53d1831e31241 1-9,11-184
+crates/longshore_common/src/sim/simio/world.rs
+  s_0a7ba2e6f2f96f::t_424aca6abcd741 149-156,158-161
+crates/longshore_common/src/sim/simio/ops_net.rs
+  s_0a7ba2e6f2f96f::t_424aca6abcd741 201,281
+crates/longshore_common/src/io/engine/backend.rs
+  s_0a7ba2e6f2f96f::t_424aca6abcd741 192-195,197
+crates/longshore_common/src/sim/simio/faults.rs
+  s_0a7ba2e6f2f96f::t_7c238f32440192 21-22,139-170
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a5ef9b7afc92fe7cc440ec275bfa1c0fc75065e9",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
