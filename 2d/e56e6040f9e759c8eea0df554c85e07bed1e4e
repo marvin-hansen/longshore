@@ -1,0 +1,23 @@
+bench/results/m31-tcp-zero-copy-receive-spike-dgx-spark.jsonl
+  s_0a7ba2e6f2f96f::t_0962160de167cb 52-86
+bench/results/m31-tcp-zero-copy-receive-spike-dgx-spark.md
+  s_0a7ba2e6f2f96f::t_1db80d65eca206 288-335
+bench/spikes/zcrx/eor.py
+  s_0a7ba2e6f2f96f::t_5ce3a3cdd2917f 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2de56e6040f9e759c8eea0df554c85e07bed1e4e",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
