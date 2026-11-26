@@ -1,0 +1,26 @@
+openspec/notes/s3-cache/s3-cache-draft.md
+  s_86dd7e895d1527::t_f5c0d8c9dc20de 531-533
+  s_86dd7e895d1527::t_fc4885a0d14e39 354-358
+  s_86dd7e895d1527::t_6c9c043b38c8bf 351-353
+  s_86dd7e895d1527::t_9672649ce6a71a 359-361,528-530
+  s_86dd7e895d1527::t_bc499f7a65b46a 534-536
+  s_86dd7e895d1527::t_cd872981d99a07 1-350,362-527,537-545
+openspec/notes/s3-cache/s3-cache-model.py
+  s_86dd7e895d1527::t_f5b8253ed09b09 1-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "06bf5d339df359e8f6341b4d13498885e420e0a9",
+  "prompts": {},
+  "sessions": {
+    "s_86dd7e895d1527": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5b10afb9-dc52-403f-8f91-f4fb51d62411",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
