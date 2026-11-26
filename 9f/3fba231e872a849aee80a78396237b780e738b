@@ -1,0 +1,60 @@
+crates/longshore_tcp/src/kernel/transport.rs
+  s_0a7ba2e6f2f96f::t_355ba0c2f40721 149-163
+crates/longshore_tcp/src/net/conn.rs
+  s_0a7ba2e6f2f96f::t_02c86b32015ace 26-28
+crates/longshore_tcp/src/sizes.rs
+  s_0a7ba2e6f2f96f::t_085ac7768d8295 29-33,63-67,143-174
+  s_0a7ba2e6f2f96f::t_265e276ad6a3a6 175
+crates/longshore_tcp/src/check/conformance.rs
+  s_0a7ba2e6f2f96f::t_fe499b8a67353b 115
+  s_0a7ba2e6f2f96f::t_664d219e95655a 24-26,35,298,309-313
+  s_0a7ba2e6f2f96f::t_97b185b5be0090 314-315
+crates/longshore_tcp/src/check/conformance/pieces.rs
+  s_0a7ba2e6f2f96f::t_edab1034ad6aad 100
+  s_0a7ba2e6f2f96f::t_664d219e95655a 18-19,158-166,171-174
+  s_0a7ba2e6f2f96f::t_3642facd074c74 96,101-103
+  s_0a7ba2e6f2f96f::t_030d1c471fb326 167
+  s_0a7ba2e6f2f96f::t_a286c1430a6811 64-68,75-95,97-99,104-113
+  s_0a7ba2e6f2f96f::t_85db48733fbc59 16
+  s_0a7ba2e6f2f96f::t_ebd373325837bc 31-33,35,37-56
+  s_0a7ba2e6f2f96f::t_d25686c8c102fe 1-15,17,20-30,34,36,57-63,69-74,114-157,168-170,175-192
+crates/longshore_tcp/src/check/conformance/kernel.rs
+  s_0a7ba2e6f2f96f::t_664d219e95655a 45-50
+crates/longshore_tcp/src/kernel.rs
+  s_0a7ba2e6f2f96f::t_355ba0c2f40721 52-54,83,178-189
+crates/longshore_tcp/src/config.rs
+  s_0a7ba2e6f2f96f::t_085ac7768d8295 16-17,23-28,272-285,311-318,359,392,399,417-421,467-471
+crates/longshore_tcp/src/transport/happened.rs
+  s_0a7ba2e6f2f96f::t_355ba0c2f40721 87-101
+crates/longshore_tcp/src/transport.rs
+  s_0a7ba2e6f2f96f::t_355ba0c2f40721 254-268
+crates/longshore_tcp/tests/tcp/net/pages.rs
+  s_0a7ba2e6f2f96f::t_5593d20e703b50 1-55
+crates/longshore_tcp/tests/tcp/conformance.rs
+  s_0a7ba2e6f2f96f::t_664d219e95655a 12,25-34
+  s_0a7ba2e6f2f96f::t_7a0dcec9c4187c 35-36
+crates/longshore_tcp/src/config/zc.rs
+  s_0a7ba2e6f2f96f::t_085ac7768d8295 1-71
+crates/longshore_tcp/src/net.rs
+  s_0a7ba2e6f2f96f::t_44886f3f7ed0fb 233-234
+crates/longshore_tcp/tests/tcp/net.rs
+  s_0a7ba2e6f2f96f::t_102b6021b4ca15 45-47
+crates/longshore_tcp/src/net/rx.rs
+  s_0a7ba2e6f2f96f::t_6912f26d7f908d 68-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9f3fba231e872a849aee80a78396237b780e738b",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
