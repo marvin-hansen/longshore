@@ -1,0 +1,120 @@
+crates/longshore_tcp/tests/tcp/net/paged_faults.rs
+  s_0a7ba2e6f2f96f::t_facfbc4e518aa3 155,158-160,162-199,201-205
+  s_0a7ba2e6f2f96f::t_8e2eec8fc90763 40-50,54-57,111-121,125,156-157,161
+  s_0a7ba2e6f2f96f::t_0818f84cc2f99d 14-36,39,51-52,63-66,150-153
+  s_0a7ba2e6f2f96f::t_34d1804d0b677b 75,77,85,108,126,139,200
+  s_0a7ba2e6f2f96f::t_21f66fc89f0147 1-10,12-13,37-38,53,58-62,67-74,76,78-84,86-107,109-110,122-124,127-138,140-143,149,154
+  s_0a7ba2e6f2f96f::t_46ac626141263a 144-148
+  s_0a7ba2e6f2f96f::t_ea48aced6f1976 11
+crates/longshore_tcp/src/lib.rs
+  s_0a7ba2e6f2f96f::t_63c5f385ef5db6 92
+crates/longshore_tcp/src/net/secure.rs
+  s_0a7ba2e6f2f96f::t_e8ed88d2be34d9 44-45
+crates/longshore_tcp/src/net/zc.rs
+  s_0a7ba2e6f2f96f::t_523a2658aeba7a 1-134,137,139-142,144-210,216-287,289-290,294-373
+  s_0a7ba2e6f2f96f::t_46ac626141263a 211-215
+  s_0a7ba2e6f2f96f::t_220fcf454e3cb0 288,291-293
+  s_0a7ba2e6f2f96f::t_34d1804d0b677b 135-136,138,143
+crates/longshore_tcp/src/net/conn.rs
+  s_0a7ba2e6f2f96f::t_e8ed88d2be34d9 26,78
+crates/longshore_tcp/tests/tcp/net/paged.rs
+  s_0a7ba2e6f2f96f::t_aeb1c46726f7fa 1-14,16-19,24-26,30-83,89-121,123-136,138,144-151,154-166,168-189
+  s_0a7ba2e6f2f96f::t_46ac626141263a 21-23,84-88,139,142
+  s_0a7ba2e6f2f96f::t_ac75ca8ef09814 27-29
+  s_0a7ba2e6f2f96f::t_34d1804d0b677b 122,137,140-141,143
+  s_0a7ba2e6f2f96f::t_89636dbc753684 20
+  s_0a7ba2e6f2f96f::t_f4b1307da5a47b 152-153
+  s_0a7ba2e6f2f96f::t_a373c6b65c5797 15,167
+crates/longshore_tcp/src/net/pull.rs
+  s_0a7ba2e6f2f96f::t_df1c0e560f2fc3 60-64,104,111,125-128
+crates/longshore_tcp/src/config.rs
+  s_0a7ba2e6f2f96f::t_4f8648dd357bff 17,19-20
+crates/longshore_tcp/tests/tcp/net/paged_disk.rs
+  s_0a7ba2e6f2f96f::t_0ed3080da994a8 16
+  s_0a7ba2e6f2f96f::t_67d5efaa0d59e6 109-113
+  s_0a7ba2e6f2f96f::t_3890da0c2feaa8 1-15,17-54,57-102,107-108,114-158
+  s_0a7ba2e6f2f96f::t_46ac626141263a 55-56,103-106
+crates/longshore_tcp/src/net/runs.rs
+  s_0a7ba2e6f2f96f::t_ac53815b7d53c4 79
+  s_0a7ba2e6f2f96f::t_469864cd2977fe 130-132
+  s_0a7ba2e6f2f96f::t_fdba3a33c552b4 1-74,82-127,133-199,201-265,271-278,282-283,285-292,294-298,300-302,307-309,314-316,318,320-322,324-326,370-371
+  s_0a7ba2e6f2f96f::t_46ac626141263a 266-270,363-366
+  s_0a7ba2e6f2f96f::t_34d1804d0b677b 200
+  s_0a7ba2e6f2f96f::t_7a47084eccf2ed 75-78,80-81,128-129,293,299,303-306,310-313,317,319,323,327-362,367-369
+  s_0a7ba2e6f2f96f::t_df1c0e560f2fc3 279-281,284
+crates/longshore-bench/src/bin/tcp_uring/path.rs
+  s_0a7ba2e6f2f96f::t_03ca311a935c38 135-137
+  s_0a7ba2e6f2f96f::t_5d471cf6a727aa 138-139
+crates/longshore_tcp/src/net/paged.rs
+  s_0a7ba2e6f2f96f::t_3ed869b2216435 1-65,71-74,76-78,80-93,95-120
+  s_0a7ba2e6f2f96f::t_fb23ab86ba2b51 66-70,75,79,94
+crates/longshore_tcp/src/net/rx.rs
+  s_0a7ba2e6f2f96f::t_df1c0e560f2fc3 68,286-288,321
+crates/longshore_tcp/tests/tcp/tls.rs
+  s_0a7ba2e6f2f96f::t_3e3ec85c20c262 275-276
+crates/longshore_tcp/tests/tcp/net/pages.rs
+  s_0a7ba2e6f2f96f::t_46ac626141263a 59-60
+  s_0a7ba2e6f2f96f::t_faea245bc7e04c 6-7,9-52,56-58,61-63
+  s_0a7ba2e6f2f96f::t_3e3ec85c20c262 53-55
+crates/longshore_tcp/tests/tcp/props.rs
+  s_0a7ba2e6f2f96f::t_3e3ec85c20c262 179-184
+crates/longshore_tcp/src/check/storage.rs
+  s_0a7ba2e6f2f96f::t_ee1a6a797a6542 205-206
+crates/longshore_tcp/tests/tcp/net/paged_ends.rs
+  s_0a7ba2e6f2f96f::t_edaaf6166e8799 36
+  s_0a7ba2e6f2f96f::t_3e3ec85c20c262 77
+  s_0a7ba2e6f2f96f::t_ecaf27a33beccf 1-35,37-42,47-76,78-87
+  s_0a7ba2e6f2f96f::t_46ac626141263a 43-46
+crates/longshore_tcp/src/net/listen.rs
+  s_0a7ba2e6f2f96f::t_e8ed88d2be34d9 39
+crates/longshore_tcp/src/net/frames.rs
+  s_0a7ba2e6f2f96f::t_711719cb038d09 8,24-26,32-35,60,62,66,70-79,84-86,90,92,102,112,119-122,124-127,147-148,150-153,158-163
+crates/longshore_tcp/src/net/usage.rs
+  s_0a7ba2e6f2f96f::t_63c5f385ef5db6 25-31,43,53-54,59,64,69-70,75-76,81-82,120-125,127,134-135,154-169
+  s_0a7ba2e6f2f96f::t_34d1804d0b677b 32-42,44-52,55-58,60-63,65-68,71-74,77-80,83-85
+crates/longshore_tcp/tests/tcp/net.rs
+  s_0a7ba2e6f2f96f::t_180b0780b3151a 54-56
+  s_0a7ba2e6f2f96f::t_8732d0b0420b79 57-59
+  s_0a7ba2e6f2f96f::t_43aeab3dd6725d 51-53
+  s_0a7ba2e6f2f96f::t_a373c6b65c5797 83-84,116
+  s_0a7ba2e6f2f96f::t_0f3bbea554a261 45-47
+  s_0a7ba2e6f2f96f::t_27dc695416857e 48-50
+crates/longshore_tcp/src/net/state.rs
+  s_0a7ba2e6f2f96f::t_df1c0e560f2fc3 168-176,243-247
+crates/longshore_tcp/tests/tcp/net/paged_holds.rs
+  s_0a7ba2e6f2f96f::t_bb27b6d124b3fe 1-10,12,14-90,93-147,158-186
+  s_0a7ba2e6f2f96f::t_ec6ca62c601697 150-157
+  s_0a7ba2e6f2f96f::t_22b7d170d1f6e0 11,13
+  s_0a7ba2e6f2f96f::t_59592b538eb1c8 148-149
+  s_0a7ba2e6f2f96f::t_67d5efaa0d59e6 91-92
+crates/longshore_tcp/src/net.rs
+  s_0a7ba2e6f2f96f::t_df1c0e560f2fc3 39,42,49,53-54,68-69,163,215-217,219-221,248-260
+  s_0a7ba2e6f2f96f::t_63c5f385ef5db6 55
+  s_0a7ba2e6f2f96f::t_757cb9792382ea 24,218
+  s_0a7ba2e6f2f96f::t_813a4ef28ca2a8 287-288
+  s_0a7ba2e6f2f96f::t_6afed5ea1589b2 307-308
+crates/longshore_tcp/tests/tcp/storage/durable.rs
+  s_0a7ba2e6f2f96f::t_3e3ec85c20c262 148
+crates/longshore_tcp/tests/tcp/net/frames.rs
+  s_0a7ba2e6f2f96f::t_a373c6b65c5797 77
+crates/longshore_tcp/src/net/tx.rs
+  s_0a7ba2e6f2f96f::t_e8ed88d2be34d9 179-180
+crates/longshore_tcp/src/config/error.rs
+  s_0a7ba2e6f2f96f::t_4f8648dd357bff 1-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "406be6e2d108eabc10db8e05f072d45fa73719e2",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
