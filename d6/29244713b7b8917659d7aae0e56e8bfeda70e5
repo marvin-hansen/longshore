@@ -1,0 +1,29 @@
+bench/results/m31-tcp-zero-copy-receive-spike-dgx-spark.jsonl
+  s_0a7ba2e6f2f96f::t_1896f67ef5eb3a 1-6
+bench/results/m31-tcp-zero-copy-receive-spike-dgx-spark.md
+  s_0a7ba2e6f2f96f::t_f20a3392b9ff3c 1-73
+bench/spikes/zcrx/zcprobe.c
+  s_0a7ba2e6f2f96f::t_dd68afca5fc4fe 1-40
+bench/spikes/zcrx/zcrecv.c
+  s_0a7ba2e6f2f96f::t_0285e4b73ca150 1-102
+openspec/changes/add-tcp-zero-copy-receive/design.md
+  s_0a7ba2e6f2f96f::t_778c4bcc3809b3 92-99
+openspec/changes/add-tcp-zero-copy-receive/tasks.md
+  s_0a7ba2e6f2f96f::t_43280f194b5457 7-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d629244713b7b8917659d7aae0e56e8bfeda70e5",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
