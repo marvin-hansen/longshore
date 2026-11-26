@@ -1,0 +1,23 @@
+crates/longshore_common/src/io/uring/area.rs
+  s_0a7ba2e6f2f96f::t_234476d25145c9 63-64,177,192-200,202-203,206,259-261,283,286
+crates/longshore_common/src/io/refill.rs
+  s_0a7ba2e6f2f96f::t_234476d25145c9 139-144
+crates/longshore_common/src/io/uring/backend.rs
+  s_0a7ba2e6f2f96f::t_234476d25145c9 209
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4249eb7cb95f621f20473c6d2f4e76dd1119a78c",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
