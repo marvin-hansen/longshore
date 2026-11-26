@@ -1,0 +1,23 @@
+crates/longshore_common/src/io/uring/area.rs
+  s_0a7ba2e6f2f96f::t_9a9d76cb44aa64 70-74,89-100,103,110,113,119,123,127
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_78d42e5d8f1f8e 169-172
+openspec/changes/add-tcp-zero-copy-receive/tasks.md
+  s_0a7ba2e6f2f96f::t_fad634fa803691 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9a6c71c6a070c1450ba75f1692bae8284d46d88b",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
