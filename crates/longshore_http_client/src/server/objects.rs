@@ -43,7 +43,7 @@ impl Server {
         let found = self.find(target);
         match method {
             b"PUT" => self.put(io, i, &c, found, apply_then_close),
-            b"GET" | b"HEAD" => self.get(io, i, &c, found, behavior == Behavior::TruncateBody),
+            b"GET" | b"HEAD" => self.get(io, i, &c, found, behavior),
             b"DELETE" => self.delete(io, i, &c, found, apply_then_close),
             _ => self.status(io, i, 405, "Method Not Allowed", 0, 0, true),
         }
@@ -138,15 +138,17 @@ impl Server {
     }
 
     /// Serve the object at `found`, whole or the range asked for; HEAD
-    /// sends no body, and `truncate` sends half of it.
+    /// sends no body, `TruncateBody` sends half of it, and `FlipBit`
+    /// damages one byte of it.
     fn get<IO: Io>(
         &mut self,
         io: &mut IO,
         i: usize,
         c: &Conn,
         found: Option<usize>,
-        truncate: bool,
+        behavior: Behavior,
     ) {
+        let truncate = behavior == Behavior::TruncateBody;
         let Some(slot) = found else {
             return self.status(io, i, 404, "Not Found", 0, 0, false);
         };
@@ -163,9 +165,11 @@ impl Server {
             let n = (b - a + 1) as usize;
             self.conns[i].asked.set_reply_range(a, b);
             io.buf(self.body_buf(i))[..n].copy_from_slice(&o.data[a as usize..a as usize + n]);
+            flip(io.buf(self.body_buf(i)), n, behavior);
             return self.status(io, i, 206, "Partial Content", n as u64, n as u32, false);
         }
         io.buf(self.body_buf(i))[..o.len as usize].copy_from_slice(&o.data[..o.len as usize]);
+        flip(io.buf(self.body_buf(i)), o.len as usize, behavior);
         // S3 returns a checksum only when asked; Google Cloud Storage always does.
         self.conns[i].reply_checksum = o
             .checksum
@@ -203,5 +207,15 @@ impl Server {
             return self.close(io, i);
         }
         self.status(io, i, 204, "No Content", 0, 0, false);
+    }
+}
+
+/// Flip the lowest bit of byte `at` of the first `len` bytes of `body`, if
+/// `behavior` asks for it and the body reaches that far.
+fn flip(body: &mut [u8], len: usize, behavior: Behavior) {
+    if let Behavior::FlipBit(at) = behavior {
+        if let Some(b) = body[..len].get_mut(at as usize) {
+            *b ^= 1;
+        }
     }
 }

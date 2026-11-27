@@ -66,7 +66,10 @@ impl Server {
                 b"HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\n\r\nzz\r\noops\r\n0\r\n\r\n",
             ),
             Behavior::ChunkedBody(chunk) => self.chunked_body(io, i, chunk),
-            Behavior::Normal | Behavior::TruncateBody | Behavior::ApplyThenClose => return false,
+            Behavior::Normal
+            | Behavior::TruncateBody
+            | Behavior::ApplyThenClose
+            | Behavior::FlipBit(_) => return false,
         }
         true
     }
