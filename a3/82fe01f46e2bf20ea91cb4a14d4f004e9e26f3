@@ -1,0 +1,52 @@
+openspec/changes/add-high-level-client/tasks.md
+  s_cb91250eaedb7c::t_2e36ec69e5495f 17
+crates/longshore_s3/src/client/download.rs
+  s_cb91250eaedb7c::t_837fe757797871 64-68
+  s_cb91250eaedb7c::t_b0a9bcab914f90 33-35,106,143,153,159,173
+  s_cb91250eaedb7c::t_6c4b29d9479a16 177
+  s_cb91250eaedb7c::t_502891864e5ef3 1-32,36-63,69-105,107-142,144-152,154-158,160-172,174-176,178-273
+crates/longshore_s3/Cargo.toml
+  s_cb91250eaedb7c::t_d9c3890917be8f 71-73
+  s_cb91250eaedb7c::t_3340a3e72fe539 70
+openspec/changes/add-high-level-client/design.md
+  s_cb91250eaedb7c::t_5603fb4c356f28 173-200
+crates/longshore_s3/src/client/download/tests.rs
+  s_cb91250eaedb7c::t_ca60ab6d114630 1-7,9-26,28-45,54-93,96,99-153
+  s_cb91250eaedb7c::t_e6658a547d3157 27
+  s_cb91250eaedb7c::t_2e5f4dde91c0ba 8,46-53
+  s_cb91250eaedb7c::t_b0a9bcab914f90 94-95,97-98
+crates/longshore_s3/tests/client/download/setup.rs
+  s_cb91250eaedb7c::t_9ab6e94ba6b5d6 1-34,36-37,40-42,44,46-53,66-104,106,109-113,118-149,155-171
+  s_cb91250eaedb7c::t_2e5f4dde91c0ba 114-117,150-154
+  s_cb91250eaedb7c::t_b3995446b05dc2 105,107-108
+  s_cb91250eaedb7c::t_9e7741472a9205 54-65
+  s_cb91250eaedb7c::t_6a5fda84bc99e3 35,38-39,43,45
+crates/longshore_s3/tests/client/download.rs
+  s_cb91250eaedb7c::t_6a5fda84bc99e3 161-163
+  s_cb91250eaedb7c::t_1da8f55aa71100 1-16,24-40,42,45-58,60-87,89-106,108-145,147-159,164-166,168-218,220-236
+  s_cb91250eaedb7c::t_e9c148eb004f81 20-23
+  s_cb91250eaedb7c::t_8bec29d989bea8 43-44
+  s_cb91250eaedb7c::t_b3995446b05dc2 41,59,88,107,146,160
+  s_cb91250eaedb7c::t_2e5f4dde91c0ba 17-19,167,219
+crates/longshore_s3/src/client/download/check.rs
+  s_cb91250eaedb7c::t_a13c5930cabdf5 1-9,11-63,65-118
+  s_cb91250eaedb7c::t_2e5f4dde91c0ba 10,64
+crates/longshore_s3/src/client.rs
+  s_cb91250eaedb7c::t_c6ef15568a4fb8 53,65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a382fe01f46e2bf20ea91cb4a14d4f004e9e26f3",
+  "prompts": {},
+  "sessions": {
+    "s_cb91250eaedb7c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85561ab2-6f01-42b5-b9cb-0a09c47358cf",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
