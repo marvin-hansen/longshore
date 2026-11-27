@@ -1,0 +1,45 @@
+crates/longshore_file/tests/units/rig.rs
+  s_0a7ba2e6f2f96f::t_24934ce2fc0525 8
+  s_0a7ba2e6f2f96f::t_b14a8d0c6b30c6 27,49,146-163
+crates/longshore_file/tests/units/review.rs
+  s_0a7ba2e6f2f96f::t_5b027d0f89c72a 1-39,50,55,61-76,87-88,93-114,129-170,175-192,197-216,222-223,233-249,255-256,266-296,302-304
+  s_0a7ba2e6f2f96f::t_24934ce2fc0525 40-49,51-54,56-60,77-86,89-92,115-128,171-174,193-196,217-221,224-232,250-254,257-265,297-301
+crates/longshore_file/tests/units/plan.rs
+  s_0a7ba2e6f2f96f::t_6afefc59cde296 35
+crates/longshore_file/tests/units/record.rs
+  s_0a7ba2e6f2f96f::t_f5d08722c9c4ef 1-9,11-54,61-124
+  s_0a7ba2e6f2f96f::t_951eca88711be9 55-60
+  s_0a7ba2e6f2f96f::t_24934ce2fc0525 10
+crates/longshore_file/tests/units/faults.rs
+  s_0a7ba2e6f2f96f::t_1f80234d0232ce 10-21,26-27,35-36,43,51-52,56-92,100-104,144,204-205,228,235-236,240,256-257,260-262
+  s_0a7ba2e6f2f96f::t_24934ce2fc0525 22-25,38-42,93-99,105-109,223-227
+  s_0a7ba2e6f2f96f::t_8b951832aa06c8 110-113
+crates/longshore_file/tests/units/recorded.rs
+  s_0a7ba2e6f2f96f::t_951eca88711be9 49-50
+  s_0a7ba2e6f2f96f::t_66ee0ca0adfecd 1-10,12-18,23,28-48,55-59,61-79,91-96,108-111,117-119,125,129
+  s_0a7ba2e6f2f96f::t_24934ce2fc0525 19-22,24-27,51-54,80-90,97-107,121-124
+  s_0a7ba2e6f2f96f::t_ace01b7ed20078 127
+  s_0a7ba2e6f2f96f::t_0013a21a1d3ed8 11,60,112-116,120,128
+  s_0a7ba2e6f2f96f::t_c57501f3ed273c 126
+crates/longshore_file/tests/units/main.rs
+  s_0a7ba2e6f2f96f::t_b14a8d0c6b30c6 14,16-17
+  s_0a7ba2e6f2f96f::t_24934ce2fc0525 15,18
+crates/longshore_file/tests/units/bounds.rs
+  s_0a7ba2e6f2f96f::t_b14a8d0c6b30c6 55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "468d280cd651a667b5697e694381642674522b77",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
