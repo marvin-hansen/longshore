@@ -1,0 +1,22 @@
+crates/longshore_tcp/src/net/listen.rs
+  s_0a7ba2e6f2f96f::t_64898c7d9f1ef3 39-40,44-45
+  s_0a7ba2e6f2f96f::t_1b98ef17c265f8 46
+crates/longshore_tcp/tests/tcp/net/pages.rs
+  s_0a7ba2e6f2f96f::t_2a1d7dd70ccbbe 52-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c7d2819990d5a89e89c5eb807f5cb7a0daa063a5",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
