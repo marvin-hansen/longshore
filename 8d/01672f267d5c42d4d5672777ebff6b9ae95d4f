@@ -1,0 +1,46 @@
+crates/longshore_file/tests/model/seqs.rs
+  s_0a7ba2e6f2f96f::t_bb00f79875471d 103
+  s_0a7ba2e6f2f96f::t_46ce986a21406a 101,104,222
+crates/longshore_file/tests/model/checks.rs
+  s_0a7ba2e6f2f96f::t_e79d1bfa656f8f 68
+crates/longshore_file/tests/model/paths.rs
+  s_0a7ba2e6f2f96f::t_46ce986a21406a 290-291
+crates/longshore_file/tests/model/ops.rs
+  s_0a7ba2e6f2f96f::t_d344237e218e3b 218-231
+  s_0a7ba2e6f2f96f::t_46ce986a21406a 153
+crates/longshore_file/tests/model/main.rs
+  s_0a7ba2e6f2f96f::t_696489eba90976 54-55
+crates/longshore_file/tests/model/run.rs
+  s_0a7ba2e6f2f96f::t_061da797706f27 137-139,249-252
+  s_0a7ba2e6f2f96f::t_bb00f79875471d 181-182,187-188,195,215-216
+  s_0a7ba2e6f2f96f::t_f8b4a7e9e0bfef 65-66,89,111-119,124-127,134-136,140-141,179,247-248,253-256
+crates/longshore_file/tests/model/events.rs
+  s_0a7ba2e6f2f96f::t_061da797706f27 349-352
+  s_0a7ba2e6f2f96f::t_c0627feb5f981a 35,215,244-246,344-348
+crates/longshore_file/tests/model/lives.rs
+  s_0a7ba2e6f2f96f::t_6406bbe88a482c 62,65-67,123
+crates/longshore_file/tests/model/state.rs
+  s_0a7ba2e6f2f96f::t_a4db17820f5f3e 90-91
+crates/longshore_file/tests/props/main.rs
+  s_0a7ba2e6f2f96f::t_88f4b80790dfc8 11-13
+crates/longshore_file/tests/props/plan.rs
+  s_0a7ba2e6f2f96f::t_2caef96b67e21d 37,104
+crates/longshore_file/tests/props/transfers.rs
+  s_0a7ba2e6f2f96f::t_22e7181b888a2e 28,58,109
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8d01672f267d5c42d4d5672777ebff6b9ae95d4f",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
