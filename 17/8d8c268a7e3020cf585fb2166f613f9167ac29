@@ -1,0 +1,35 @@
+bench/results/m35-profiles/ring-on.txt
+  s_0a7ba2e6f2f96f::t_0c3c090635f53e 1-400
+bench/results/m35-profiles/direct-off.txt
+  s_0a7ba2e6f2f96f::t_0c3c090635f53e 1-400
+openspec/changes/add-tcp-af-xdp-backend/proposal.md
+  s_0a7ba2e6f2f96f::t_0c3c090635f53e 3-10,53-56
+bench/results/m35-tcp-small-frames-kernel-share-dgx-spark.jsonl
+  s_0a7ba2e6f2f96f::t_0c3c090635f53e 1-14
+openspec/changes/add-tcp-zero-copy-receive/tasks.md
+  s_0a7ba2e6f2f96f::t_0c3c090635f53e 48
+openspec/project.md
+  s_0a7ba2e6f2f96f::t_0c3c090635f53e 140-143
+bench/results/m35-profiles/ring-off.txt
+  s_0a7ba2e6f2f96f::t_0c3c090635f53e 1-400
+openspec/changes/add-tcp-af-xdp-backend/tasks.md
+  s_0a7ba2e6f2f96f::t_0c3c090635f53e 7
+bench/results/m35-tcp-small-frames-kernel-share-dgx-spark.md
+  s_0a7ba2e6f2f96f::t_0c3c090635f53e 1-102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "178d8c268a7e3020cf585fb2166f613f9167ac29",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
