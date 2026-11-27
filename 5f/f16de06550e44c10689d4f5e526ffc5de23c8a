@@ -1,0 +1,42 @@
+crates/longshore_common/src/io/engine.rs
+  s_0a7ba2e6f2f96f::t_8f507ae08d1ecc 93-97
+crates/longshore_common/src/sim/simio.rs
+  s_0a7ba2e6f2f96f::t_23c7ba647ec7ed 196
+  s_0a7ba2e6f2f96f::t_4537c7b60c8d5c 144-145
+crates/longshore_common/src/io.rs
+  s_0a7ba2e6f2f96f::t_d647493eb80114 292-300
+crates/longshore_common/src/io/uring/backend.rs
+  s_0a7ba2e6f2f96f::t_e74b2dd3884e9b 83-86
+  s_0a7ba2e6f2f96f::t_9d124f36fb7f19 244-246
+crates/longshore_common/src/io/engine/backend.rs
+  s_0a7ba2e6f2f96f::t_fbaba52ac20761 210-213
+crates/longshore_common/src/sim/simio/world.rs
+  s_0a7ba2e6f2f96f::t_fe987cf9d2b6bb 157-160
+crates/longshore_common/src/io/uring.rs
+  s_0a7ba2e6f2f96f::t_67cbeb45107891 192-193
+crates/longshore_common/tests/sim/recv_zc/faults.rs
+  s_0a7ba2e6f2f96f::t_61f8f45f0b19e2 224-227
+  s_0a7ba2e6f2f96f::t_d023cef4439fe5 185-223,228
+crates/longshore_common/src/io/uring/area.rs
+  s_0a7ba2e6f2f96f::t_8c94b0f2c5b3b1 302
+crates/longshore_common/src/sim/simio/area.rs
+  s_0a7ba2e6f2f96f::t_818e31f44ae06d 286
+crates/longshore_common/src/io/uring/setup.rs
+  s_0a7ba2e6f2f96f::t_dce13f71a20791 224
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5ff16de06550e44c10689d4f5e526ffc5de23c8a",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
