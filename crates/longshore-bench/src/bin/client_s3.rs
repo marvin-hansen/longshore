@@ -20,6 +20,14 @@
 //! client's multipart calls, with an object's parts in flight together,
 //! and checks every part with a ranged fetch.
 //!
+//!   client_s3 check [--size BYTES] [--conns N]
+//!
+//! is a correctness run of the client's own forms, step by step: stat,
+//! paged and delimited listing, the copying forms and the download
+//! stream. It prints one line per step and `ok client_s3 check` if every
+//! step passed, and exits with status 1 if one did not. `--conns`
+//! defaults to 4 here.
+//!
 //! The store comes from the same environment variables as `s3_uring`:
 //! S3_ENDPOINT, S3_REGION, S3_BUCKET, S3_ACCESS_KEY, S3_SECRET_KEY,
 //! S3_SESSION_TOKEN, S3_TLS, S3_PATH_STYLE, S3_PREFER_LARGE_SEGMENTS, and
@@ -34,6 +42,10 @@
 fn main() {
     eprintln!("client_s3 needs Linux");
 }
+
+#[cfg(target_os = "linux")]
+#[path = "client_s3/check.rs"]
+mod check;
 
 #[cfg(target_os = "linux")]
 #[path = "client_s3/multipart.rs"]
@@ -84,14 +96,17 @@ impl Args {
         let mut args = std::env::args().skip(1);
         let cmd = args
             .next()
-            .unwrap_or_else(|| die("usage: client_s3 put|get|mix|multipart [flags]"));
+            .unwrap_or_else(|| die("usage: client_s3 put|get|mix|multipart|check [flags]"));
         let (put, mix) = match cmd.as_str() {
             "put" => (true, false),
             "get" => (false, false),
             "mix" => (false, true),
             "multipart" => (true, false),
+            "check" => (false, false),
             other => die(&format!("unknown command {other}")),
         };
+        // A check stores one object of `--conns` + 1 buffers: keep it small.
+        let conns = if cmd == "check" { 4 } else { 64 };
         let mut a = Self {
             cmd,
             put,
@@ -100,7 +115,7 @@ impl Args {
             parts: 4,
             objects: 4,
             threads: 1,
-            conns: 64,
+            conns,
             callers: 0,
             size: 8 << 20,
             secs: 10,
@@ -140,6 +155,11 @@ fn main() {
     // S3_CLIENT_CHECKSUM=0 sends bodies without a checksum, as `s3_uring put` does.
     let checksums = !std::env::var("S3_CLIENT_CHECKSUM").is_ok_and(|v| v == "0");
     let client = build(&a, checksums);
+    if a.cmd == "check" {
+        let ok = check::run(&client, a.size as usize, a.conns);
+        drop(client);
+        std::process::exit(if ok { 0 } else { 1 });
+    }
     if a.cmd == "multipart" {
         if a.parts == 0 || a.parts > a.threads * a.conns {
             die("--parts must be 1 to the number of buffers (threads x conns)");
