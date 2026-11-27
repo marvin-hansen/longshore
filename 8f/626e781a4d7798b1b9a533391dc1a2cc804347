@@ -1,0 +1,20 @@
+crates/longshore_file/tests/units/ops.rs
+  s_0a7ba2e6f2f96f::t_13c475db6aed2b 14-24
+  s_0a7ba2e6f2f96f::t_5db9c8ae6d827c 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8f626e781a4d7798b1b9a533391dc1a2cc804347",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
