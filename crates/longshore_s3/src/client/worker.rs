@@ -100,7 +100,7 @@ impl Worker {
             void: AtomicBool::new(false),
             owed: AtomicU32::new(0),
             part_min: layout.part_min,
-            streams: layout.streams.max(1),
+            streams: layout.streams,
             #[cfg(all(feature = "fault-injection", target_os = "linux"))]
             fault: Default::default(),
         });
@@ -313,7 +313,11 @@ impl Layout {
 
     /// Upload streams open at once on a client over this lane: 4 by
     /// default. See [`super::Builder::streams`]. A client takes this from
-    /// its first lane.
+    /// its first lane. A client opens none, and
+    /// [`super::Client::upload`] fails at once with
+    /// [`super::Error::NoStreams`], if this is 0 or any of its lanes has a
+    /// single operation slot ([`Layout::new`]'s `operations`), since a
+    /// stream keeps one slot for its abort.
     #[inline]
     pub const fn with_streams(mut self, streams: u32) -> Layout {
         self.streams = streams;

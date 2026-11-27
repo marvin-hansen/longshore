@@ -148,7 +148,10 @@ impl Builder {
         self
     }
 
-    /// Operations in progress at most. Others wait.
+    /// Operations in progress at most. Others wait. At least 2 unless
+    /// [`Builder::streams`] is 0: a begun upload stream keeps one slot for
+    /// its abort, and with a single slot it would have none left for its
+    /// requests, so [`Builder::build`] refuses that.
     pub fn operations(mut self, operations: u32) -> Builder {
         self.operations = operations;
         self
@@ -158,7 +161,14 @@ impl Builder {
     /// [`Client::upload`](crate::client::Client::upload)). 4 by default.
     /// Opening one more waits until one ends. Each stream that has begun
     /// its upload holds one buffer for its list of parts, and one operation
-    /// slot kept for aborting it, until it ends.
+    /// slot kept for aborting it, until it ends. That slot is on the
+    /// thread the buffer came from, so a caller that keeps begun streams
+    /// open on a thread up to its [`Builder::operations`] leaves the
+    /// streams' requests no slot there, and their writes wait until one of
+    /// those streams ends. 0 turns streams off:
+    /// [`Client::upload`](crate::client::Client::upload) then fails at once
+    /// with [`Error::NoStreams`](crate::client::Error::NoStreams), and
+    /// [`Builder::operations`] may be 1, which otherwise is refused.
     pub fn streams(mut self, streams: u32) -> Builder {
         self.streams = streams;
         self

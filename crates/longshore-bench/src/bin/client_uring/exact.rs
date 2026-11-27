@@ -121,6 +121,7 @@ pub fn deadline_stops_a_connect() {
         .connections(1)
         .buffers(1)
         .operations(1)
+        .streams(0)
         .buffer_size(64 * 1024);
     let client = b.build().or_die("client");
     let body = client.buffer_blocking();

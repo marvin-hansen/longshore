@@ -59,6 +59,11 @@ pub enum Error {
         /// The smallest part the store takes, in bytes.
         min: u64,
     },
+    /// This client opens no upload streams: it was built with
+    /// [`Builder::streams`] 0, or over a lane with a single operation slot
+    /// (see [`Layout`]). A begun stream keeps one slot of a lane for its
+    /// abort, which on such a lane would leave none for its requests.
+    NoStreams,
     /// The store refused or could not be reached. Retries have been made.
     Store(Fatal),
     /// The operation did not run: the client was shut down, or the I/O

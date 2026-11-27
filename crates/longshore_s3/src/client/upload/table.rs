@@ -40,6 +40,9 @@ pub(in crate::client) struct Streams {
     pub(super) free: Pool,
     /// The smallest part the store takes.
     pub(super) part_min: u64,
+    /// Whether a stream can open: there are records, and every lane has
+    /// a slot to spare beside the one a stream keeps for its abort.
+    pub(super) usable: bool,
 }
 
 struct Record {
@@ -58,8 +61,13 @@ unsafe impl Sync for Streams {}
 unsafe impl Send for Streams {}
 
 impl Streams {
-    /// `count` records over `lanes`. Initialization: this allocates.
+    /// `count` records over `lanes`. None can be opened if `count` is 0 or
+    /// a lane has a single operation slot: a stream keeps a slot of the
+    /// lane its buffer of part records came from, which may be any, and a
+    /// lane with one would have none left for the stream's requests.
+    /// Initialization: this allocates.
     pub(in crate::client) fn new(lanes: Arc<[Arc<Lane>]>, count: u32, part_min: u64) -> Streams {
+        let usable = count > 0 && lanes.iter().all(|l| l.sender.pool().slots() >= 2);
         let count = count.max(1);
         let records = (0..count)
             .map(|_| Record {
@@ -74,6 +82,7 @@ impl Streams {
             records,
             free: Pool::new(count, WAITERS),
             part_min,
+            usable,
         }
     }
 

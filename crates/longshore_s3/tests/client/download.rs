@@ -14,8 +14,13 @@
 #[path = "../store/common/mod.rs"]
 mod common;
 #[cfg(test)]
+#[path = "download/dropped.rs"]
+mod dropped;
+#[cfg(test)]
 #[cfg(any(target_os = "linux", target_os = "macos"))]
 mod loopback;
+#[cfg(test)]
+mod returned;
 #[cfg(test)]
 #[expect(
     dead_code,
@@ -50,6 +55,25 @@ fn an_object_larger_than_every_lent_buffer_arrives_in_order_and_verified() {
         drive(&mut r, d.read()),
         Ok(Piece::End { verified: true })
     ));
+}
+
+#[test]
+fn every_range_of_the_window_is_fetched_before_the_reader_reaches_it() {
+    let mut r = download_rig(true);
+    let bytes = object(SIZE, 10);
+    upload(&mut r, "ahead", &bytes, true);
+    let mut d = open(&mut r, "ahead");
+    let before = r.lanes[0].server.requests();
+    // One read asks for the window: two ranges, leaving a buffer of the
+    // three for the reader. Both reach the store, not only the first.
+    let mut read = std::pin::pin!(d.read());
+    let mut cx = std::task::Context::from_waker(std::task::Waker::noop());
+    assert!(std::future::Future::poll(read.as_mut(), &mut cx).is_pending());
+    for _ in 0..500 {
+        r.pump();
+    }
+    assert_eq!(r.lanes[0].server.requests(), before + 2);
+    assert!(std::future::Future::poll(read.as_mut(), &mut cx).is_ready());
 }
 
 #[test]

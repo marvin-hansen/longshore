@@ -102,8 +102,10 @@ impl Client {
     /// is in use (see [`super::Builder::streams`]).
     ///
     /// [`Error::PartTooSmall`] if this client's buffers are smaller than
-    /// the store's smallest part, and [`Error::BadKey`] for a key that
-    /// cannot be sent. Whether the upload sends checksums follows this
+    /// the store's smallest part, [`Error::NoStreams`] at once if it opens
+    /// no streams (built with `streams(0)`, or over a lane with a single
+    /// operation slot), and [`Error::BadKey`] for a key that cannot be
+    /// sent. Whether the upload sends checksums follows this
     /// handle (see [`Client::with_checksums`]).
     pub fn upload<'a>(&'a self, key: &'a str) -> OpeningUpload<'a> {
         OpeningUpload {
@@ -137,6 +139,9 @@ impl Future for OpeningUpload<'_> {
         let client = me.client;
         if me.key.is_empty() || me.key.len() > KEY_MAX {
             return Poll::Ready(Err(Error::BadKey));
+        }
+        if !client.streams.usable {
+            return Poll::Ready(Err(Error::NoStreams));
         }
         let min = client.streams.part_min;
         if (client.buffer_size() as u64) < min {

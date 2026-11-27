@@ -10,14 +10,22 @@
 #[path = "../store/common/mod.rs"]
 mod common;
 #[cfg(test)]
+#[path = "upload/dropped.rs"]
+mod dropped;
+#[cfg(test)]
 #[path = "upload/ends.rs"]
 mod ends;
 #[cfg(test)]
 #[cfg(any(target_os = "linux", target_os = "macos"))]
 mod loopback;
 #[cfg(test)]
+mod returned;
+#[cfg(test)]
 #[path = "upload/rig.rs"]
 mod rig;
+#[cfg(test)]
+#[path = "upload/settle.rs"]
+mod settle;
 #[cfg(test)]
 #[cfg(any(target_os = "linux", target_os = "macos"))]
 #[path = "upload/threaded.rs"]
@@ -105,6 +113,42 @@ fn a_buffer_below_the_smallest_part_cannot_open_a_stream() {
     let opened = r.run(client.upload("k"));
     assert_eq!(opened.err(), Some(Error::PartTooSmall { min }));
     assert_eq!(r.run(client.upload("")).err(), Some(Error::BadKey));
+}
+
+#[test]
+fn a_lane_with_one_operation_slot_refuses_a_stream_at_once() {
+    // The slot a stream keeps for its abort would leave its begin none:
+    // before, the first write past a buffer waited forever.
+    let mut cx = Context::from_waker(Waker::noop());
+    for shape in [
+        Shape {
+            operations: 1,
+            ..Shape::new()
+        },
+        Shape {
+            streams: 0,
+            ..Shape::new()
+        },
+    ] {
+        let mut r = rig(shape);
+        let client = r.client.clone();
+        let opened = pin!(client.upload("k")).poll(&mut cx);
+        assert!(matches!(opened, Poll::Ready(Err(Error::NoStreams))));
+        // Everything else still runs.
+        let body = r.run(client.buffer());
+        let (stored, _body) = r.run(client.store("k", body, 10));
+        assert_eq!(stored, Ok(()));
+    }
+    // Two slots are enough for a stream that begins an upload.
+    let mut r = rig(Shape {
+        operations: 2,
+        ..Shape::new()
+    });
+    let client = r.client.clone();
+    let data = pattern(2 * SIZE + 1, 8);
+    let up = write_all(&mut r, &client, "two-slots", &data, SIZE);
+    assert_eq!(r.run(up.finish()), Ok(()));
+    assert_eq!(r.lanes[0].server.object("/two-slots"), Some(&data[..]));
 }
 
 #[test]

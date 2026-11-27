@@ -128,6 +128,29 @@ fn the_default_tls_provider_is_the_first_compiled_in_of_aws_lc_ring_and_rustls()
 }
 
 #[test]
+fn one_operation_slot_is_refused_unless_streams_are_off() {
+    let one = settings("bucket.s3.example.com").operations(1);
+    let Err(BuildError::Setting(what)) = one.build() else {
+        panic!("a single operation slot with streams was not refused");
+    };
+    assert!(what.contains("operations"), "{what}");
+    assert!(refused(settings("bucket.s3.example.com").streams(1025)));
+
+    // With streams off, one slot builds, and opening a stream fails at once.
+    #[cfg(any(target_os = "linux", target_os = "macos"))]
+    {
+        let off = settings("bucket.s3.example.com")
+            .address(Some("127.0.0.1:1".parse().unwrap()))
+            .operations(1)
+            .streams(0)
+            .portable(true);
+        let client = off.build().expect("one slot with streams off");
+        let opened = client.upload("k").wait();
+        assert_eq!(opened.err(), Some(longshore_s3::client::Error::NoStreams));
+    }
+}
+
+#[test]
 fn builder_validation_edges_and_non_utf8_credentials_and_partial_start_failure() {
     let no_operations = settings("bucket.s3.example.com").operations(0);
     assert!(refused(no_operations));
@@ -181,6 +204,7 @@ fn partial_start_fails_with_io_error() {
         .connections(1)
         .buffers(1)
         .operations(1)
+        .streams(0)
         .waiters(1)
         .portable(true);
     assert!(matches!(partial.build(), Err(BuildError::Io(_))));

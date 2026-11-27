@@ -9,6 +9,7 @@
 
 use super::common::{Behavior, Server, BUF};
 use super::rig::*;
+use super::settle::{settled, Key, Left};
 use longshore_s3::client::Error;
 
 const SIZE: usize = BUF as usize;
@@ -16,10 +17,11 @@ const SIZE: usize = BUF as usize;
 #[test]
 fn a_dropped_stream_aborts_its_upload_after_its_parts_end() {
     // Room for the records, three parts and the buffer being filled.
-    let mut r = rig(Shape {
+    let shape = Shape {
         buffers: 6,
         ..Shape::new()
-    });
+    };
+    let mut r = rig(shape);
     let client = r.client.clone();
     let data = pattern(3 * SIZE + 10, 3);
     let mut up = r.run(client.upload("gone")).unwrap();
@@ -52,17 +54,28 @@ fn a_dropped_stream_aborts_its_upload_after_its_parts_end() {
     assert_eq!(server(&r).object("/gone"), None);
     // The begin, three parts, and the abort.
     assert_eq!(server(&r).requests(), 5);
+    let left = Left {
+        held: 0,
+        requests: 5,
+        stored: None,
+    };
+    let key = Key {
+        key: "gone",
+        path: "/gone",
+    };
+    settled(&mut r, shape, key, &left);
 }
 
 #[test]
 fn the_abort_waits_for_a_part_on_another_lane() {
     // Two buffers a lane: the first lane lends the part records' buffer and
     // the first part's, so the second part goes out on the second lane.
-    let mut r = rig(Shape {
+    let shape = Shape {
         lanes: 2,
         buffers: 2,
         ..Shape::new()
-    });
+    };
+    let mut r = rig(shape);
     let client = r.client.clone();
     let data = pattern(2 * SIZE + 1, 4);
     let mut up = r.run(client.upload("two")).unwrap();
@@ -99,11 +112,23 @@ fn the_abort_waits_for_a_part_on_another_lane() {
     assert_eq!(r.lanes[0].server.uploads_in_progress(), 0);
     assert_eq!(r.lanes[0].server.object(&first), None);
     assert_eq!(r.lanes[0].server.requests(), 3);
+    // Both lanes' buffers and slots, and the record, are back.
+    let left = Left {
+        held: 0,
+        requests: 3,
+        stored: None,
+    };
+    let key = Key {
+        key: "two",
+        path: "/two",
+    };
+    settled(&mut r, shape, key, &left);
 }
 
 #[test]
 fn a_refused_completion_aborts_the_upload() {
-    let mut r = rig(Shape::new());
+    let shape = Shape::new();
+    let mut r = rig(shape);
     let client = r.client.clone();
     let data = pattern(2 * SIZE + 5, 5);
     let mut up = r.run(client.upload("refused")).unwrap();
@@ -128,4 +153,14 @@ fn a_refused_completion_aborts_the_upload() {
     assert_eq!(server.object("/refused"), None);
     // The begin, three parts, the completion and the abort.
     assert_eq!(server.requests(), 6);
+    let left = Left {
+        held: 0,
+        requests: 6,
+        stored: None,
+    };
+    let key = Key {
+        key: "refused",
+        path: "/refused",
+    };
+    settled(&mut r, shape, key, &left);
 }

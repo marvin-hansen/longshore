@@ -240,6 +240,13 @@ impl Download {
             self.borrow = None;
             self.ask(buffer);
         }
+        // Every range asked for goes out now, not once it is the oldest;
+        // only the oldest's result is taken.
+        for n in 1..self.count {
+            if let Some(range) = self.ring[(self.head + n) % WINDOW].as_mut() {
+                range.send_ahead(cx);
+            }
+        }
         // With nothing asked for, the download waits for a buffer.
         let Some(oldest) = self.ring[self.head].as_mut() else {
             return Poll::Pending;
