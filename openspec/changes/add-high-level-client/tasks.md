@@ -16,7 +16,7 @@
 - [ ] 2.3 Upload stream: stream record table (`Builder::streams`), lazy begin with a plain store for a short stream, part records in a held buffer and the manifest rendered from them, fixed parts in flight, 5 MiB and 10,000-part checks, abort after the last part in flight through the reserved slot on drop and on failed completion; simulation tests for each
 - [ ] 2.4 Download stream: stat first, ranges of one buffer a fixed window ahead with `If-Match`, delivery in order, running CRC-64/NVME (S3) or CRC-32C (GCS) checked at the end, unverified end for objects without a full-object checksum; simulation tests with a flipped bit and an object replaced mid-download
 - [ ] 2.2 Copying forms `store_from` and `fetch_into`: one buffer for a slice that fits, the streams for a longer one, `Error::TooLong` for a slice shorter than the object
-- [ ] 2.7 Run 2.5, 2.3, 2.4 and 2.2 against Amazon S3 and Linode Object Storage, recorded in `bench/results/`
+- [ ] 2.7 Run 2.5, 2.3, 2.4 and 2.2 through the client against RustFS in Docker (`scripts/self-hosted-s3.sh`), standing in for Amazon S3 and Linode, which the client already ran against for store, fetch and multipart (`m22`, `m23`, `m27`); recorded in `bench/results/`
 
 ## 3. Quality
 - [ ] 3.1 Cancellation tests: futures dropped at every stage never free a buffer the kernel still holds. Covered: a store dropped after it was sent (`tests/client/driven.rs`), dropped while waiting for a slot or before sending (`tests/client/waits_adversarial.rs`), dropped unfinished in the loom model. Still to add: a fetch dropped while the kernel receives into its buffer, under the simulator and on a real kernel; a stream dropped at each stage
