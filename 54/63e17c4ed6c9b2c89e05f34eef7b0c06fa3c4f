@@ -1,0 +1,23 @@
+scripts/test-linux.sh
+  s_0a7ba2e6f2f96f::t_8b948344f1b9f7 30
+openspec/changes/add-file-crate/design.md
+  s_0a7ba2e6f2f96f::t_8b948344f1b9f7 242-245,276-278
+scripts/linux-checks.sh
+  s_0a7ba2e6f2f96f::t_8b948344f1b9f7 51-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5463e17c4ed6c9b2c89e05f34eef7b0c06fa3c4f",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
