@@ -1,0 +1,25 @@
+crates/longshore_file/src/check/basics.rs
+  s_0a7ba2e6f2f96f::t_ebbff37a2c9759 121-122,126-127,129-131
+  s_0a7ba2e6f2f96f::t_c965057449657a 124,128
+docs/file.md
+  s_0a7ba2e6f2f96f::t_3c97e57a0422b0 550-551
+crates/longshore_file/tests/README.md
+  s_0a7ba2e6f2f96f::t_1d39ac633ea1cc 117-118
+  s_0a7ba2e6f2f96f::t_3c97e57a0422b0 50,54,64,69,75,107,128,132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c77aec8ee87233b4ebce0124cc8818c985b277f0",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
