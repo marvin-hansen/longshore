@@ -1,0 +1,74 @@
+crates/longshore_file/src/check.rs
+  s_0a7ba2e6f2f96f::t_95d00bb5a14180 1-28,30-35,38-42,46-47,56-75,86-143
+  s_0a7ba2e6f2f96f::t_67d152520be181 43-45,48
+  s_0a7ba2e6f2f96f::t_b97a6e673e5bc4 29,36
+  s_0a7ba2e6f2f96f::t_1392a04ecc4c2e 49-55
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 37
+  s_0a7ba2e6f2f96f::t_46b9721620c4c1 76-85
+crates/longshore_file/src/check/sequences.rs
+  s_0a7ba2e6f2f96f::t_8d8e770bb078a2 6-10,12-14,17-120,130-192
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 121-127
+  s_0a7ba2e6f2f96f::t_01d9a301e44aa7 1-5,11,15-16
+  s_0a7ba2e6f2f96f::t_08cd274ba06c93 128-129
+crates/longshore_file/src/check/spy.rs
+  s_0a7ba2e6f2f96f::t_b75e9e00efe2e3 51-55
+  s_0a7ba2e6f2f96f::t_b97a6e673e5bc4 10,12-14
+  s_0a7ba2e6f2f96f::t_0dae0f794eafb9 1-9,15-17,21-50,56-67,69-83,85-120,123-184,186-189,191-239,243,249-250,258-263
+  s_0a7ba2e6f2f96f::t_0bd20275dfda90 18-20,68,84,121-122,185,190,240-242,244-248,251-257
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 11
+crates/longshore_file/src/check/kind.rs
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 49
+  s_0a7ba2e6f2f96f::t_328aa030d29268 1-48,50-75
+crates/longshore_file/src/check/closing.rs
+  s_0a7ba2e6f2f96f::t_47411d9beebefd 6-10,12-14,16-37,44,48-54,57-66,69-92
+  s_0a7ba2e6f2f96f::t_13d83834860864 55-56,67-68
+  s_0a7ba2e6f2f96f::t_01d9a301e44aa7 1-5,11,15
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 38-43,45-47
+crates/longshore_file/src/check/transfers.rs
+  s_0a7ba2e6f2f96f::t_01d9a301e44aa7 1-5,10,13-14
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 28-31,57-61
+  s_0a7ba2e6f2f96f::t_6315b39f377f41 6-9,11-12,15-27,32-47,49-54,56,62-135
+  s_0a7ba2e6f2f96f::t_08cd274ba06c93 48,55
+crates/longshore_file/src/check/refusals.rs
+  s_0a7ba2e6f2f96f::t_08cd274ba06c93 103,107,112-113
+  s_0a7ba2e6f2f96f::t_01d9a301e44aa7 1-5,11,14-15
+  s_0a7ba2e6f2f96f::t_12443b44b76212 6-10,12-13,16-30,34-48,52-97,102,104-106,108-111,114-161,168-181,185-190,194-202
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 31-33,49-51,98-101,162-167,182-184,191-193
+crates/longshore_file/src/check/bounds.rs
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 64-67,79,82-85,148-152
+  s_0a7ba2e6f2f96f::t_08cd274ba06c93 114,116,141-143
+  s_0a7ba2e6f2f96f::t_01d9a301e44aa7 1-5,11,14-15
+  s_0a7ba2e6f2f96f::t_5ccadb1cd888b7 6-10,12-13,16-63,68-78,80-81,86-113,115,117-140,144-147,153-178
+crates/longshore_file/src/lib.rs
+  s_0a7ba2e6f2f96f::t_9846c95525f5e6 14
+crates/longshore_file/src/check/direct.rs
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 28-30,63-68
+  s_0a7ba2e6f2f96f::t_01d9a301e44aa7 1-5,12,17
+  s_0a7ba2e6f2f96f::t_35e1cace0580d7 6-11,13-16,18-27,31-62,69-103
+crates/longshore_file/src/check/rig.rs
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 148-151,308-313,319-324,326-328
+  s_0a7ba2e6f2f96f::t_9ab9fc0f69ac57 160-170
+  s_0a7ba2e6f2f96f::t_777aadb6b71318 307,325
+  s_0a7ba2e6f2f96f::t_232711c6f92cd6 1-147,152-159,171-306,314-318,329-337
+crates/longshore_file/src/check/basics.rs
+  s_0a7ba2e6f2f96f::t_c5e90838429a11 124,137,140,165
+  s_0a7ba2e6f2f96f::t_3e8a771938fd19 48-52,57-71,143-146,186-190,221-224
+  s_0a7ba2e6f2f96f::t_f69400f87fc0a1 1-47,53-56,72-121,125-131,133-135,141-142,147-156,159,162-164,166-184,192,199,213-220,225-237
+  s_0a7ba2e6f2f96f::t_b02c0922bce735 122-123,132,136,138-139,157-158,160-161,185,191,193-198,200-212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8a5ea87b2781ea4eb67240a153168863e2ec8351",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
