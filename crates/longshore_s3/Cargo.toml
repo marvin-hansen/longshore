@@ -54,6 +54,13 @@ longshore_common = { workspace = true, features = ["sim"] }
 hegeltest.workspace = true
 # Test certificates.
 rcgen.workspace = true
+# Two async executors for `client_executors`.
+futures-executor.workspace = true
+tokio.workspace = true
+
+[[test]]
+name = "client_executors"
+path = "tests/client/executors.rs"
 
 [[test]]
 name = "client_multipart"
