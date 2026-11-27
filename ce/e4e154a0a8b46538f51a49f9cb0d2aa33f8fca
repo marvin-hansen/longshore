@@ -1,0 +1,28 @@
+crates/longshore_file/src/check/refusals.rs
+  s_0a7ba2e6f2f96f::t_1bce3ce4f1e174 10,95-104
+crates/longshore_file/tests/model/events.rs
+  s_0a7ba2e6f2f96f::t_6fb5611b4b0cee 279-282
+  s_0a7ba2e6f2f96f::t_1bce3ce4f1e174 270-278
+crates/longshore_file/tests/contract/resumes.rs
+  s_0a7ba2e6f2f96f::t_f86e671c5c33d9 59-61,68,74,81-85,87,92-132,151-154,156-159,161-195
+crates/longshore_file/tests/contract/faults.rs
+  s_0a7ba2e6f2f96f::t_ca5dfdf2ddc8c5 63,65
+crates/longshore_file/tests/props/plan.rs
+  s_0a7ba2e6f2f96f::t_1394f22dd89026 93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cee4e154a0a8b46538f51a49f9cb0d2aa33f8fca",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
