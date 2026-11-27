@@ -1,0 +1,39 @@
+crates/longshore_file/tests/contract/main.rs
+  s_0a7ba2e6f2f96f::t_2332ea4ff8d3f9 24-25
+  s_0a7ba2e6f2f96f::t_df9a4cf72adfb7 1-20,26
+  s_0a7ba2e6f2f96f::t_00e878506c0eb7 21-23
+crates/longshore_file/tests/contract/posix.rs
+  s_0a7ba2e6f2f96f::t_aa3dbd995065a6 1-43
+crates/longshore_file/tests/contract/sim.rs
+  s_0a7ba2e6f2f96f::t_6f8c1c1055dca8 1-50
+crates/longshore_file/tests/contract/resumes.rs
+  s_0a7ba2e6f2f96f::t_9dbaf1d5c7263e 47,69-72,92-95,147-151
+  s_0a7ba2e6f2f96f::t_e82f54cfca2dd7 15,23-24,26-31,162
+  s_0a7ba2e6f2f96f::t_d59ee19e3d9748 1-14,16-22,25,32-46,48-68,73-91,96-146,152-161,163-164
+crates/longshore_file/tests/contract/faults.rs
+  s_0a7ba2e6f2f96f::t_2332ea4ff8d3f9 150-151,154-155
+  s_0a7ba2e6f2f96f::t_309b9e14bdb3ce 1-63,68-77,82-131,136-149,152-153,156-168
+  s_0a7ba2e6f2f96f::t_9dbaf1d5c7263e 64-67,78-81,132-135
+crates/longshore_file/src/check/spy.rs
+  s_0a7ba2e6f2f96f::t_d13ef7c626e886 130-134
+crates/longshore_file/tests/contract/power.rs
+  s_0a7ba2e6f2f96f::t_4821cdf2ac9f41 1-10,12-36,39-43,48-53,55-68,72-117
+  s_0a7ba2e6f2f96f::t_9dbaf1d5c7263e 44-47,69-71
+  s_0a7ba2e6f2f96f::t_00e878506c0eb7 11,37-38,54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f8b72ffd42af41205da86f0eac9a60b2b27c4148",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
