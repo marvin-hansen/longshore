@@ -1,0 +1,31 @@
+crates/longshore_common/src/io/uring/ops_sock.rs
+  s_0a7ba2e6f2f96f::t_f75acae56beb3c 24,67
+  s_0a7ba2e6f2f96f::t_cb0699c9f49c1d 104
+crates/longshore_common/tests/sim/packets.rs
+  s_0a7ba2e6f2f96f::t_3afddcfc97377e 31-37,39-40
+  s_0a7ba2e6f2f96f::t_4ed9004be6c9dc 201-216
+crates/longshore_common/src/io/uring/completions.rs
+  s_0a7ba2e6f2f96f::t_45eac85ef94dce 248
+crates/longshore_common/src/sim/simio/ops_net.rs
+  s_0a7ba2e6f2f96f::t_909d1a6622c93a 91
+  s_0a7ba2e6f2f96f::t_354b3afee47902 33-34
+crates/longshore_common/src/sim/simio/ops_armed.rs
+  s_0a7ba2e6f2f96f::t_33064598a4d97f 43
+  s_0a7ba2e6f2f96f::t_404cfa900ad0a4 123-124
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d7b7da37076206c5a99116db6823899a12936740",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
