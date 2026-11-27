@@ -1,0 +1,31 @@
+docs/file.md
+  s_0a7ba2e6f2f96f::t_714506de949089 520
+  s_0a7ba2e6f2f96f::t_e4a53b5dddff6b 399-403
+  s_0a7ba2e6f2f96f::t_2469ed49c88dad 302-304
+  s_0a7ba2e6f2f96f::t_4736995a4bb693 446,458
+  s_0a7ba2e6f2f96f::t_d56910e8324ab9 269-272,274-277
+  s_0a7ba2e6f2f96f::t_73720e8e421773 368-372
+  s_0a7ba2e6f2f96f::t_2ddedd6fd4195c 92-94
+  s_0a7ba2e6f2f96f::t_63cd5ddcabc0a4 480-500,504-505
+  s_0a7ba2e6f2f96f::t_9ddfb11aafed4a 387-390
+bench/README.md
+  s_0a7ba2e6f2f96f::t_f2476cdbb218ed 67
+docs/benchmarks.md
+  s_0a7ba2e6f2f96f::t_ec52ad1199b021 161-172,181-185
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "13421107643cd5e7c466d8a8ceb06aa2dab1eda5",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
