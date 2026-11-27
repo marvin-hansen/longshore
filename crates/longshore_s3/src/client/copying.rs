@@ -23,6 +23,16 @@ impl Client {
     /// Store `body` under `key`, replacing any object there. One copy into
     /// a registered buffer; a body longer than one buffer is sent as a
     /// multipart upload, through [`Client::upload`].
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # async fn run(client: &Client) -> Result<(), Error> {
+    /// let report = format!("{} rows\n", 42);
+    /// client.store_from("reports/today", report.as_bytes()).await?;
+    /// // Or, from a plain thread:
+    /// client.store_from_blocking("reports/today", report.as_bytes())?;
+    /// # Ok(()) }
+    /// ```
     pub async fn store_from(&self, key: &str, body: &[u8]) -> Result<(), Error> {
         if body.len() > self.buffer_size() {
             return self.store_streamed(key, body).await;
@@ -47,6 +57,19 @@ impl Client {
     /// store's checksum, and one copy out. A longer `out` is filled
     /// through [`Client::download`], which learns the object's size first,
     /// so an object longer than `out` fails before any of it is fetched.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// let mut out = vec![0u8; 1 << 20];
+    /// match client.fetch_into_blocking("reports/today", &mut out) {
+    ///     Ok(Some(n)) => println!("{}", String::from_utf8_lossy(&out[..n])),
+    ///     Ok(None) => println!("no such object"),
+    ///     Err(Error::TooLong) => println!("larger than 1 MiB"),
+    ///     Err(e) => return Err(e),
+    /// }
+    /// # Ok(()) }
+    /// ```
     pub async fn fetch_into(&self, key: &str, out: &mut [u8]) -> Result<Option<usize>, Error> {
         if out.len() > self.buffer_size() {
             return self.fetch_downloaded(key, out).await;

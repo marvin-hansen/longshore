@@ -47,12 +47,39 @@ assert_eq!(fetched.unwrap(), Some(5));
 assert_eq!(&body.as_slice()[..5], b"hello");
 ```
 
+## Examples
+
+Each program in `examples/` stores under a prefix of its own, prints what
+it did, erases what it stored, and exits non-zero on failure. The store
+comes from `S3_ENDPOINT`, `S3_REGION`, `S3_BUCKET`, `S3_ACCESS_KEY` and
+`S3_SECRET_KEY`, with `S3_SESSION_TOKEN` for temporary keys, `S3_TLS=1`
+for HTTPS and `S3_PATH_STYLE=1` for the bucket in the path.
+
+| Example | What it shows |
+|---|---|
+| `round_trip` | Borrow a buffer, store, fetch, fetch a range, conditional store, erase: no copy of the body |
+| `many_threads` | Eight plain threads and four tokio tasks sharing one client with two I/O threads |
+| `copying` | `store_from` and `fetch_into` with the caller's slices, within one buffer and beyond it |
+| `streams` | An upload stream fed by `send` and `write`, a verified download, and a stream dropped half way |
+| `stat_and_list` | `stat`, `stat_head`, a listing by delimiter, and a listing in pages |
+| `verified_write` | `put`, `head` and `get`: what the store answered to each request |
+
+```sh
+S3_ENDPOINT=s3.us-east-1.amazonaws.com S3_REGION=us-east-1 S3_BUCKET=my-bucket \
+S3_ACCESS_KEY=... S3_SECRET_KEY=... S3_TLS=1 \
+    cargo run --release -p longshore_s3 --example round_trip
+```
+
+`verified_write` reads its own variables; its first lines say which.
+
 ## What it gives
 
-- Store, conditional store, fetch, ranged fetch, erase and multipart
-  upload on the client. The store adds listing, batch erase, `stat` and
-  presigned URLs, and `options` carries headers such as content type,
-  metadata, storage class and server-side encryption.
+- Store, conditional store, fetch, ranged fetch, erase, `stat`, listing
+  and multipart upload on the client, with upload and download streams
+  for objects of any size and copying forms for the caller's own slices.
+  The store adds batch erase and presigned URLs, and `options` carries
+  headers such as content type, metadata, storage class and server-side
+  encryption.
 - `put`, `head` and `get`, which take a budget of attempts and a deadline
   and report exactly what the store answered (`report`), for a caller that
   must account for every request.
