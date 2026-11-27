@@ -1,0 +1,23 @@
+crates/longshore_s3/src/client/worker/dispatch.rs
+  s_cb91250eaedb7c::t_8793bde4593205 1-63,65-84
+  s_cb91250eaedb7c::t_d5e5456e3aa106 64
+crates/longshore_s3/src/client/worker.rs
+  s_cb91250eaedb7c::t_8793bde4593205 19-20
+  s_cb91250eaedb7c::t_d5e5456e3aa106 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ab9d6eb19887810c5b7dab9744691234026bfd92",
+  "prompts": {},
+  "sessions": {
+    "s_cb91250eaedb7c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85561ab2-6f01-42b5-b9cb-0a09c47358cf",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
