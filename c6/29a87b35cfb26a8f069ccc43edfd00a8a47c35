@@ -1,0 +1,19 @@
+openspec/changes/add-file-crate/design.md
+  s_0a7ba2e6f2f96f::t_97f38ab0098779 177-179,191-193
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c629a87b35cfb26a8f069ccc43edfd00a8a47c35",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "unknown"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
