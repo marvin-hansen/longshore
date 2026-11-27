@@ -80,6 +80,10 @@ name = "client_copying"
 path = "tests/client/copying.rs"
 
 [[test]]
+name = "client_error_display"
+path = "tests/client/error_display.rs"
+
+[[test]]
 name = "client_download"
 path = "tests/client/download.rs"
 

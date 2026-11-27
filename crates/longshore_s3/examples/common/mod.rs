@@ -74,8 +74,17 @@ pub fn erase(client: &Client, keys: &[impl AsRef<str>]) -> Result<(), Failure> {
     Ok(first?)
 }
 
-/// Turn a client [`Error`] into a message that says which step failed.
-/// The message is a `String`, so it can cross threads.
+/// Turn a client [`Error`] into a message that says which step failed,
+/// followed by each cause in turn. The message is a `String`, so it can
+/// cross threads.
 pub fn why(step: &'static str) -> impl Fn(Error) -> String {
-    move |e| format!("{step}: {e:?}")
+    move |e| {
+        let mut message = format!("{step}: {e}");
+        let mut cause = std::error::Error::source(&e);
+        while let Some(c) = cause {
+            message.push_str(&format!(": {c}"));
+            cause = c.source();
+        }
+        message
+    }
 }

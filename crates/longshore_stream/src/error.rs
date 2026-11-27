@@ -51,3 +51,22 @@ impl From<longshore_tls::handshake::TlsError> for TlsError {
         }
     }
 }
+
+impl core::fmt::Display for TlsError {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        match self {
+            TlsError::BadCertificate => f.write_str("the peer's certificate did not validate"),
+            TlsError::Handshake => f.write_str("the TLS handshake failed"),
+            TlsError::BadRecord => f.write_str("a TLS record was malformed"),
+            TlsError::Setup => f.write_str("the TLS certificate, key or server name is unusable"),
+            TlsError::NotDone => f.write_str("the TLS handshake had not completed"),
+            TlsError::UnsupportedSuite => {
+                f.write_str("the peer chose a cipher suite other than AES-GCM")
+            }
+            TlsError::Alert(code) => write!(f, "the peer sent TLS alert {code}"),
+            TlsError::Record => f.write_str("a TLS record could not be sealed or opened"),
+        }
+    }
+}
+
+impl std::error::Error for TlsError {}

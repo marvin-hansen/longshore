@@ -64,6 +64,7 @@ mod checksum;
 mod config;
 mod consts;
 mod exact;
+mod fatal;
 mod head;
 mod kind;
 mod multipart_ops;

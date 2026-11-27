@@ -8,6 +8,7 @@
 mod buffer;
 mod copying;
 mod download;
+mod error;
 mod exact;
 mod lane;
 mod multipart;
@@ -21,6 +22,7 @@ mod worker;
 
 pub use buffer::Buffer;
 pub use download::{Download, OpeningDownload, Piece};
+pub use error::Error;
 pub use exact::Budget;
 pub use lane::{Lane, KEY_MAX};
 pub use pending::{Output, Pending};
@@ -30,53 +32,12 @@ pub use upload::{Finishing, OpeningUpload, Sending, Upload, Writing, PARTS_IN_FL
 pub use worker::{Layout, Worker};
 
 use crate::report::Expect;
-use crate::s3::{Checksum, Fatal, Outcome, SubmitError};
+use crate::s3::{Checksum, Outcome, SubmitError};
 use buffer::Borrow;
 use lane::{Finished, Kind, Request, Streamed};
 use std::future::Future;
 use std::sync::atomic::Ordering;
 use std::sync::Arc;
-
-/// Why an operation did not do what was asked.
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Error {
-    /// The key is empty, or longer than [`KEY_MAX`] or than the store allows,
-    /// or an expected `ETag` holds a byte that is not visible ASCII.
-    BadKey,
-    /// The byte range ends before it starts, or the parts of an upload are
-    /// not in ascending order, or a write to an upload stream was dropped
-    /// part-way, so the stream no longer knows which bytes it holds.
-    BadRange,
-    /// The part number is not 1 to 10000.
-    BadPart,
-    /// More bytes than the buffer holds.
-    TooLong,
-    /// The client's buffers are smaller than the store's smallest part,
-    /// `min` bytes (5 MiB on Amazon S3). An upload stream sends each
-    /// buffer as one part, so it cannot be opened. See
-    /// [`Builder::part_min`].
-    PartTooSmall {
-        /// The smallest part the store takes, in bytes.
-        min: u64,
-    },
-    /// This client opens no upload streams: it was built with
-    /// [`Builder::streams`] 0, or over a lane with a single operation slot
-    /// (see [`Layout`]). A begun stream keeps one slot of a lane for its
-    /// abort, which on such a lane would leave none for its requests.
-    NoStreams,
-    /// The store refused or could not be reached. Retries have been made.
-    Store(Fatal),
-    /// The operation did not run: the client was shut down, or the I/O
-    /// thread it was given to failed. An operation without a buffer goes to
-    /// an I/O thread still running when it is sent, but one can fail just
-    /// after that, and an operation with a buffer stays on the buffer's
-    /// thread. Asking again may succeed on another thread. If the failed
-    /// thread's kernel work could not be stopped, a buffer that comes back
-    /// with this error is void: see [`Buffer`].
-    Closed,
-    /// The store answered with something this operation does not expect.
-    Unexpected,
-}
 
 /// What keeps a threaded client's I/O threads running. `None` for a client
 /// over workers the caller drives.
