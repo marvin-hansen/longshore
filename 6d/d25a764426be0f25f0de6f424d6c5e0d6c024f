@@ -1,0 +1,19 @@
+docs/tcp.md
+  s_e8242feed63fda::t_ded7dc2617780b 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6dd25a764426be0f25f0de6f424d6c5e0d6c024f",
+  "prompts": {},
+  "sessions": {
+    "s_e8242feed63fda": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ca4783b3-bd48-42bf-bd71-8a1ebf648e7a",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
