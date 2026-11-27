@@ -159,20 +159,20 @@ Most callers are on other threads, often inside an async runtime.
   With realistic tags 10,000 parts need about 2.4 MiB of a 5 MiB buffer,
   so only buffers smaller than 5 MiB, which need a lowered `part_min`,
   reach that limit first.
-- A lane with a single operation slot cannot hold a stream: the slot kept
-  for the abort leaves the begin none, and the stream would wait forever.
-  So `Builder::build` refuses `operations(1)` with `BuildError::Setting`
-  unless `streams(0)`, which turns streams off (`streams` is 0 to 1024),
-  and a client that opens no streams, because it was built so or because
-  it is over driven workers (`Client::over`, which skips the builder)
-  whose first lane's `Layout::with_streams` is 0 or any of whose lanes
-  has one slot, fails `Client::upload` at once with `Error::NoStreams`.
-  Any lane counts, because the buffer of records, and so the kept slot,
-  may come from any. The same holds beyond one slot: a begun stream keeps
-  its slot until it ends, so as many begun streams on a lane as it has
-  slots leave the next stream's requests none there, and its writes wait
-  until one of them ends. That is documented on `Builder::streams`; the
-  defaults (64 slots, 4 streams) leave room.
+- A begun stream keeps its slot until it ends, on the lane its buffer of
+  records came from, and every stream may be on one lane. So as many
+  streams as a lane has slots would leave the next stream's requests none
+  there, and every stream would wait forever. `Builder::build` therefore
+  refuses `streams` at or above `operations` with `BuildError::Setting`
+  (0 turns streams off; `streams` is at most 1024), and when `streams` is
+  not set it is 4, or one fewer than `operations` if that is smaller, so a
+  client with one slot has streams off. A client that opens no streams,
+  because it was built so or because it is over driven workers
+  (`Client::over`, which skips the builder) whose first lane's
+  `Layout::with_streams` is 0 or any of whose lanes has one slot, fails
+  `Client::upload` at once with `Error::NoStreams`. A caller of
+  `Client::over` must keep `Layout::with_streams` below every lane's
+  slots itself.
 - Dropping an unfinished, begun stream writes the number of its
   operations still running (begin, parts, completion) into the record,
   marks the abort as owed to the reserved slot's lane, keeps one count on

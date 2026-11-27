@@ -79,7 +79,8 @@ pub struct Builder {
     buffer_size: u32,
     operations: u32,
     waiters: u32,
-    streams: u32,
+    /// `None` until set: then one fewer than `operations`, at most 4.
+    streams: Option<u32>,
     part_min: u64,
     family: Family,
     prefer_large_segments: Option<usize>,
@@ -111,13 +112,20 @@ impl Builder {
             buffer_size: 8 << 20,
             operations: 64,
             waiters: 256,
-            streams: 4,
+            streams: None,
             part_min: 5 << 20,
             family: Family::V4,
             prefer_large_segments: None,
             nameservers: Vec::new(),
             address: None,
         }
+    }
+
+    /// Upload streams the client opens: as set, or one fewer than
+    /// `operations`, at most 4.
+    pub(super) fn streams_or_default(&self) -> u32 {
+        self.streams
+            .unwrap_or(4.min(self.operations.saturating_sub(1)))
     }
 
     fn check(&self) -> Result<(), BuildError> {
@@ -141,13 +149,15 @@ impl Builder {
         if self.connections == 0 || self.buffers == 0 || self.operations == 0 || self.waiters == 0 {
             return bad("connections, buffers, operations and waiters must be at least 1");
         }
-        if self.streams > 1024 {
+        if self.streams.is_some_and(|s| s > 1024) {
             return bad("streams must be 0 to 1024");
         }
-        if self.streams > 0 && self.operations < 2 {
-            // A begun stream keeps one slot for its abort, which would
-            // leave its own requests none: every stream would wait forever.
-            return bad("operations must be at least 2 unless streams is 0: an upload stream keeps an operation slot for its abort");
+        // A begun stream keeps one slot for its abort on the thread its
+        // list of parts came from, and every stream may be on one thread.
+        // With as many streams as slots, their requests would have none
+        // left there, and every stream would wait for ever.
+        if self.streams.is_some_and(|s| s > 0 && s >= self.operations) {
+            return bad("streams must be below operations, or 0: each begun upload stream keeps an operation slot for its abort, and all of them may be on one thread");
         }
         if self.buffer_size < 8192 {
             return bad("buffer_size must be at least 8192");

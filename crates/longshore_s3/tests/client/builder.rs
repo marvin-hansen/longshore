@@ -128,25 +128,42 @@ fn the_default_tls_provider_is_the_first_compiled_in_of_aws_lc_ring_and_rustls()
 }
 
 #[test]
-fn one_operation_slot_is_refused_unless_streams_are_off() {
-    let one = settings("bucket.s3.example.com").operations(1);
-    let Err(BuildError::Setting(what)) = one.build() else {
-        panic!("a single operation slot with streams was not refused");
-    };
-    assert!(what.contains("operations"), "{what}");
+fn as_many_streams_as_operations_are_refused_and_the_default_stays_below() {
+    // Every begun stream keeps a slot for its abort, all perhaps on one
+    // thread: with as many streams as slots, their requests have none.
+    for (operations, streams) in [(1, 1), (4, 4), (4, 5), (2, 2)] {
+        let b = settings("bucket.s3.example.com")
+            .operations(operations)
+            .streams(streams);
+        let Err(BuildError::Setting(what)) = b.build() else {
+            panic!("{streams} streams on {operations} operations were not refused");
+        };
+        assert!(what.contains("streams must be below operations"), "{what}");
+    }
     assert!(refused(settings("bucket.s3.example.com").streams(1025)));
 
-    // With streams off, one slot builds, and opening a stream fails at once.
     #[cfg(any(target_os = "linux", target_os = "macos"))]
     {
-        let off = settings("bucket.s3.example.com")
-            .address(Some("127.0.0.1:1".parse().unwrap()))
-            .operations(1)
-            .streams(0)
-            .portable(true);
-        let client = off.build().expect("one slot with streams off");
+        let on = |operations: u32| {
+            settings("bucket.s3.example.com")
+                .address(Some("127.0.0.1:1".parse().unwrap()))
+                .operations(operations)
+                .portable(true)
+        };
+        // One slot: the default turns streams off, and opening one fails
+        // at once rather than wait for ever.
+        let client = on(1).build().expect("one slot, streams off by default");
         let opened = client.upload("k").wait();
         assert_eq!(opened.err(), Some(longshore_s3::client::Error::NoStreams));
+        // Fewer slots than the default 4 streams: the default is one fewer.
+        drop(on(3).build().expect("three slots, two streams by default"));
+        drop(
+            on(4)
+                .streams(3)
+                .build()
+                .expect("three streams on four slots"),
+        );
+        drop(on(1).streams(0).build().expect("one slot with streams off"));
     }
 }
 
