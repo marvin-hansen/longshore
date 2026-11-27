@@ -1,0 +1,21 @@
+crates/longshore_tcp/src/lib.rs
+  s_3f171a10be674f::t_bc7850a5bf72dc 21-22,96-102
+crates/longshore_file/src/lib.rs
+  s_3f171a10be674f::t_bc7850a5bf72dc 47-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e8b01ca0a8ae37f29228f8b872fc0f0e48ba9267",
+  "prompts": {},
+  "sessions": {
+    "s_3f171a10be674f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f42a7383-5457-4792-ad6a-1eed0bd72f87",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
