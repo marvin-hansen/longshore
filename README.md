@@ -271,7 +271,20 @@ available.
   `Builder::portable(true)` is set), or macOS for the portable `kqueue` backend
   (without core pinning). Other targets build the crate and run the simulator,
   while `client::Builder::build` returns `BuildError::Unsupported`.
-- A recent stable Rust toolchain.
+- Rust 1.89 or later, the `rust-version` every crate states.
+- A C compiler (GCC or Clang; on macOS, the Xcode command-line tools).
+  ring, which signs every request, compiles some C and assembly with it in
+  every build. AWS-LC, the default `aws-lc` provider (`aws-lc-sys` 0.47),
+  compiles a larger C library with it. On x86-64 and AArch64 Linux (glibc
+  or musl) and on macOS that is all it needs: the crate ships the bindings,
+  so no CMake, Go, Perl or NASM. CMake and `bindgen-cli` (libclang) are
+  needed only on a target without shipped bindings, or when
+  `AWS_LC_SYS_CMAKE_BUILDER=1` or `AWS_LC_SYS_NO_ASM=1` asks for the CMake
+  build; Go and Perl only for a FIPS build, which longshore does not ask
+  for; NASM only on Windows x86-64. To leave AWS-LC out, build with
+  `default-features = false` and the `ring` or `rustls` feature, or no
+  provider for plain HTTP (see
+  [Switching a provider on](#switching-a-provider-on)).
 
 [Building, testing and running against a store][testing] has the test
 commands and how to run the real-kernel checks on a Linux host.
