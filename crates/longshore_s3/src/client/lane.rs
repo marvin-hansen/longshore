@@ -49,6 +49,22 @@ pub(super) struct Request {
     pub expect: Expect,
     /// For `put`, `head` and `get`: how far the operation may go.
     pub budget: Budget,
+    /// Whether the request belongs to an upload stream.
+    pub stream: Streamed,
+}
+
+/// How a request stands to an upload stream (see `super::upload`).
+#[derive(Clone, Copy, PartialEq, Eq)]
+pub(super) enum Streamed {
+    /// It does not belong to one.
+    No,
+    /// One of the stream's operations: the table of stream records at this
+    /// address, and the stream's record in it. If the stream is dropped
+    /// while the operation runs, the I/O thread that ends it tells the table.
+    Op { table: usize, record: u32 },
+    /// The abort a dropped stream owes this lane, sent through an operation
+    /// slot reserved for it. It runs even while the lane shuts down.
+    Abort,
 }
 
 #[derive(Clone, Copy)]
@@ -110,6 +126,13 @@ pub struct Lane {
     /// The kernel may still use this lane's buffers: none is lent again or
     /// read or written through a [`super::Buffer`].
     pub(super) void: AtomicBool,
+    /// Aborts that dropped upload streams owe this lane and have not yet
+    /// sent. The I/O thread does not finish a shutdown while any is owed.
+    pub(super) owed: AtomicU32,
+    /// From the worker's [`super::Layout`]: the smallest part the store
+    /// takes, and how many upload streams a client over this lane has.
+    pub(super) part_min: u64,
+    pub(super) streams: u32,
     /// A failure a test has asked this lane's I/O thread to cause in its
     /// ring: 0 for none. See [`super::Client::inject_fault`].
     #[cfg(all(feature = "fault-injection", target_os = "linux"))]

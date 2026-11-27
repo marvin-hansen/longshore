@@ -58,6 +58,7 @@ mod query;
 use longshore_mailbox::sync;
 mod threads;
 mod tls_provider;
+mod upload;
 mod worker;
 
 pub use buffer::Buffer;
@@ -66,12 +67,13 @@ pub use lane::{Lane, KEY_MAX};
 pub use pending::{Output, Pending};
 pub use threads::{BuildError, Builder};
 pub use tls_provider::TlsProvider;
+pub use upload::{Finishing, Opening, Sending, Upload, Writing, PARTS_IN_FLIGHT};
 pub use worker::{Layout, Worker};
 
 use crate::report::Expect;
 use crate::s3::{Checksum, Fatal, Outcome, SubmitError};
 use buffer::Borrow;
-use lane::{Finished, Kind, Request};
+use lane::{Finished, Kind, Request, Streamed};
 use std::future::Future;
 use std::sync::atomic::Ordering;
 use std::sync::Arc;
@@ -83,12 +85,21 @@ pub enum Error {
     /// or an expected `ETag` holds a byte that is not visible ASCII.
     BadKey,
     /// The byte range ends before it starts, or the parts of an upload are
-    /// not in ascending order.
+    /// not in ascending order, or a write to an upload stream was dropped
+    /// part-way, so the stream no longer knows which bytes it holds.
     BadRange,
     /// The part number is not 1 to 10000.
     BadPart,
     /// More bytes than the buffer holds.
     TooLong,
+    /// The client's buffers are smaller than the store's smallest part,
+    /// `min` bytes (5 MiB on Amazon S3). An upload stream sends each
+    /// buffer as one part, so it cannot be opened. See
+    /// [`Builder::part_min`].
+    PartTooSmall {
+        /// The smallest part the store takes, in bytes.
+        min: u64,
+    },
     /// The store refused or could not be reached. Retries have been made.
     Store(Fatal),
     /// The operation did not run: the client was shut down, or the I/O
@@ -111,6 +122,8 @@ type Alive = Option<Arc<threads::Threads>>;
 #[derive(Clone)]
 pub struct Client {
     lanes: Arc<[Arc<Lane>]>,
+    /// The records of upload streams, a fixed number per client.
+    streams: Arc<upload::Streams>,
     /// Stops and joins the I/O threads when the last handle, buffer and
     /// operation are gone.
     alive: Alive,
@@ -126,12 +139,24 @@ impl Client {
     /// The lent buffers are memory of the `Io` each worker was built over.
     /// Every such `Io` must outlive this client, its clones, and every
     /// [`Buffer`] and [`Pending`] that came from them.
+    ///
+    /// The number of upload streams and the smallest part are taken from
+    /// the first lane's [`Layout`].
     pub unsafe fn over(lanes: Vec<Arc<Lane>>) -> Client {
         assert!(!lanes.is_empty(), "a client needs at least one lane");
+        Client::assemble(lanes, None, Checksum::Compute)
+    }
+
+    /// A client over `lanes`, with its table of upload stream records.
+    /// Initialization: this allocates.
+    fn assemble(lanes: Vec<Arc<Lane>>, alive: Alive, checksum: Checksum) -> Client {
+        let lanes: Arc<[Arc<Lane>]> = lanes.into();
+        let (count, part_min) = (lanes[0].streams, lanes[0].part_min);
         Client {
-            lanes: lanes.into(),
-            alive: None,
-            checksum: Checksum::Compute,
+            streams: Arc::new(upload::Streams::new(lanes.clone(), count, part_min)),
+            lanes,
+            alive,
+            checksum,
         }
     }
 
@@ -366,6 +391,7 @@ fn request(op: u32, key: &str, kind: Kind, buf: u32, len: u32) -> Result<Request
         number: 0,
         expect: Expect::default(),
         budget: Budget::UNLIMITED,
+        stream: Streamed::No,
     };
     r.key[..key.len()].copy_from_slice(key.as_bytes());
     Ok(r)

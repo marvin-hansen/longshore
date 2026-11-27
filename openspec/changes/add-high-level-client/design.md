@@ -119,32 +119,70 @@ Most callers are on other threads, often inside an async runtime.
 - `client.upload(key)` opens a stream. It writes into lent buffers, with
   `write(&[u8])` copying and `send(buffer, len)` lending, and sends each
   full buffer as one part, so each part is one zero-copy send. A fixed
-  number of parts are in flight; `write` and `send` wait when that many
-  are. Opening fails with a clear error when the client's buffer size is
-  below the store's 5 MiB minimum part size, and the stream fails with a
-  clear error before it would exceed 10,000 parts. A streamed object is
-  therefore capped at 10,000 times the buffer size.
-- The multipart upload begins only when the first full buffer is sent. A
-  stream finished before that is stored with one plain store, so a short
-  stream costs no more than `store_from`, and dropping it costs nothing.
+  number of parts (`PARTS_IN_FLIGHT`, 4) are in flight; `write` and `send`
+  wait when that many are. Opening fails with `Error::PartTooSmall { min }`
+  when the client's buffer size is below the store's minimum part size,
+  and the stream fails with `Error::BadPart` before it would exceed 10,000
+  parts. A streamed object is therefore capped at 10,000 times the buffer
+  size. The minimum is a setting, `Builder::part_min` (and
+  `Layout::with_part_min` for a client over driven workers), 5 MiB by
+  default, so the simulator can stream with small buffers.
+- `send(buffer, len)` with a full buffer lends it as a part. A buffer with
+  room left becomes the one later writes fill; if bytes already wait in a
+  partly filled buffer, the handed-over bytes are copied after them. A
+  `write` or `send` future dropped after taking some but not all of its
+  bytes leaves the stream unsure of its contents, so the stream fails
+  with `Error::BadRange` and is aborted when dropped.
+- The multipart upload begins only when bytes arrive beyond the first
+  buffer: a full buffer is held until more bytes follow it or the stream
+  finishes. A stream finished before that, an object of exactly one
+  buffer included, is stored with one plain store, so a short stream
+  costs no more than `store_from`, and dropping it costs nothing.
 - Each stream takes a record from a fixed table set when the client is
-  built (`Builder::streams`, per client). The record holds the upload id,
-  the count of parts in flight, a dropped flag, and an operation slot
-  reserved when the upload begins. Opening a stream waits when no record
-  is free. The record also holds one lent buffer, taken at begin, in which
-  each finished part's number, tag and checksum are written at an offset
-  set by the part number; at finish the manifest is rendered from those
-  records into the same buffer and sent with the completion. The records
-  for 10,000 parts take well under 1 MiB, and the buffer is at least
-  5 MiB.
-- Dropping an unfinished stream sets the dropped flag. Whichever thread
-  ends the stream's last part in flight, or the drop itself if none is in
-  flight, sends the abort through the reserved slot, so the abort needs no
-  slot it might have to wait for and comes after every part has ended.
-  S3 notes that a part still uploading when its upload is aborted may land
-  anyway; aborting last avoids that. A failed completion aborts the same
-  way. Shutting down the client counts a pending abort as an operation in
-  progress.
+  built (`Builder::streams`, per client, 4 by default; a client over
+  driven workers takes it from its first lane's `Layout::with_streams`).
+  The record holds the key, the upload id, the count of the stream's
+  operations still running with a dropped flag (one atomic, used only
+  once the stream is dropped), and an operation slot reserved when the
+  upload begins, on the lane of the buffer of records. Opening a stream
+  waits when no record is free. The stream also holds one lent buffer,
+  taken at begin, in which each finished part's record (its `Part`:
+  number, tag and checksum) is written at an offset set by the part
+  number. At finish the completion document is rendered from those
+  records into the space after them in the same buffer, moved to its
+  start, and sent with the completion. The begin request carries that
+  buffer too (unused by the request), so it runs on the reserved slot's
+  lane and every operation of the stream holds a buffer. A part is sent
+  only if its record and the document still fit, counting the exact
+  entries of the parts that have ended and the largest possible entry
+  for those in flight; past that the stream fails with `Error::TooLong`.
+  With realistic tags 10,000 parts need about 2.4 MiB of a 5 MiB buffer,
+  so only buffers smaller than 5 MiB, which need a lowered `part_min`,
+  reach that limit first.
+- Dropping an unfinished, begun stream writes the number of its
+  operations still running (begin, parts, completion) into the record,
+  marks the abort as owed to the reserved slot's lane, keeps one count on
+  the table so it outlives the stream, and detaches those operations;
+  then it sets the dropped flag. Each request of a stream names the table
+  and record, and the I/O thread that ends one whose caller has gone
+  takes one off the count. Whichever side takes the count to zero with
+  the flag set, an I/O thread or the drop itself if nothing was left
+  running, sends the abort through the reserved slot (or gives the slot
+  back if no upload began), frees the record and gives the table's count
+  back. So the abort needs no slot it might have to wait for and comes
+  after every operation has ended, on whichever threads they ran. A
+  begin that ends after its stream was dropped writes the upload id into
+  the record, so even that upload is aborted. S3 notes that a part still
+  uploading when its upload is aborted may land anyway; aborting last
+  avoids that. A failed completion, or any other failure seen by
+  `finish`, aborts the same way.
+- Shutting down: a lane's queue refuses messages once the lane is
+  stopped, so the client's shutdown first waits until every owed abort
+  has arrived at its lane, then stops the lanes. A lane's I/O thread does
+  not finish while an abort is owed to it, and runs an owed abort even
+  while it stops, so the abort is an operation in progress like any
+  other. A lane that has failed refuses the abort, which then counts as
+  sent.
   Alternatives considered: sending the abort at once from `Drop`, which can
   find no free slot and cannot wait there; keeping all of one stream's
   parts on one thread, which caps one HTTPS upload at one core.
@@ -184,9 +222,13 @@ Most callers are on other threads, often inside an async runtime.
   changes.
 - A download reader that stops early never learns whether the bytes it read
   were the object's; only reading to the end verifies.
-- Each upload stream holds one buffer for its part records from begin to
-  finish, so `Builder::streams` streams in progress take that many buffers
-  out of the pool.
+- Each upload stream holds one buffer for its part records and one
+  operation slot from begin to finish, so `Builder::streams` streams in
+  progress take that many buffers and slots out of the pool. A stream also
+  holds the buffer it is filling and, until it next writes, the buffers of
+  its parts that have ended: up to `PARTS_IN_FLIGHT + 2` buffers between
+  calls. Pools sized below that for the streams open at once make writes
+  wait on each other.
 
 ## Open Questions
 - Whether the async methods should also be offered as a `Stream` and

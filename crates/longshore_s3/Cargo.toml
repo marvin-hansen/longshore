@@ -68,6 +68,10 @@ name = "client_query"
 path = "tests/client/query.rs"
 
 [[test]]
+name = "client_upload"
+path = "tests/client/upload.rs"
+
+[[test]]
 name = "client_exact"
 path = "tests/client/exact.rs"
 
