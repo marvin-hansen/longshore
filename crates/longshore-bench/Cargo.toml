@@ -1,6 +1,7 @@
 [package]
 name = "longshore-bench"
 edition.workspace = true
+rust-version.workspace = true
 version.workspace = true
 # The benchmarks and check programs are not a library.
 publish = false

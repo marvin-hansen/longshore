@@ -2,6 +2,7 @@
 name = "longshore_stream"
 description = "Plain or TLS byte stream over longshore I/O, for clients and servers"
 edition.workspace = true
+rust-version.workspace = true
 version.workspace = true
 license.workspace = true
 repository = "https://github.com/carverauto/longshore"

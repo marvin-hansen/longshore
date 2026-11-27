@@ -2,6 +2,7 @@
 name = "longshore_s3"
 description = "An object storage client for S3 and stores that speak its protocol, and Google Cloud Storage: one thread per ring, memory allocated at start-up, bodies sent without copying"
 edition.workspace = true
+rust-version.workspace = true
 version.workspace = true
 license.workspace = true
 repository = "https://github.com/carverauto/longshore"
@@ -54,6 +55,13 @@ longshore_common = { workspace = true, features = ["sim"] }
 hegeltest.workspace = true
 # Test certificates.
 rcgen.workspace = true
+# Two async executors for `client_executors`.
+futures-executor.workspace = true
+tokio.workspace = true
+
+[[test]]
+name = "client_executors"
+path = "tests/client/executors.rs"
 
 [[test]]
 name = "client_multipart"
@@ -86,6 +94,10 @@ path = "tests/client/portable.rs"
 [[test]]
 name = "client_model"
 path = "tests/client/model.rs"
+
+[[test]]
+name = "client_cancel"
+path = "tests/client/cancel.rs"
 
 [[test]]
 name = "client_waits"

@@ -18,6 +18,12 @@ members = [
 
 [workspace.package]
 edition = "2021"
+# The oldest Rust that builds and checks the whole workspace, every target
+# and feature set, on Linux and macOS: `slice::as_chunks` (1.88) in
+# longshore_crc, and crc-fast and aes (1.89) among the benchmark crate's
+# dev-dependencies. The loom model checks (`--cfg longshore_model`) need
+# 1.95, for loom's `generator`.
+rust-version = "1.89"
 version = "0.2.0"
 license = "Apache-2.0"
 
@@ -53,6 +59,9 @@ crc-fast = "1.10"
 crc32c = "0.6"
 crc64fast-nvme = "1.2"
 criterion = { version = "0.8", default-features = false }
+# Async executors the client's tests run under (`client_executors`).
+futures-executor = { version = "0.3.34", default-features = false, features = ["std"] }
+tokio = { version = "1.54.1", default-features = false, features = ["rt", "rt-multi-thread"] }
 
 [workspace.lints.rust]
 # `--cfg longshore_model` builds the loom model checks (scripts/test-model.sh).

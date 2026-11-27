@@ -10,6 +10,10 @@
 #[cfg(any(target_os = "linux", target_os = "macos"))]
 mod loopback;
 
+#[cfg(test)]
+#[cfg(any(target_os = "linux", target_os = "macos"))]
+mod dropped_fetch;
+
 #[cfg(any(target_os = "linux", target_os = "macos"))]
 #[test]
 fn client_stores_and_fetches_over_loopback_on_portable_backend() {

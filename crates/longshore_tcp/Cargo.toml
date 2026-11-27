@@ -2,6 +2,7 @@
 name = "longshore_tcp"
 description = "TCP connections over longshore I/O: framing, frames lent in place, caller-owned time"
 edition.workspace = true
+rust-version.workspace = true
 version.workspace = true
 license.workspace = true
 repository = "https://github.com/carverauto/longshore"
