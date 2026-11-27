@@ -1,0 +1,42 @@
+crates/longshore_http_client/src/client/error.rs
+  s_cb91250eaedb7c::t_10f0371fec6301 47-49,51-53,73-75
+  s_cb91250eaedb7c::t_2e105d1fb8159c 92-98
+  s_cb91250eaedb7c::t_b8dc601bdb9b46 39-46,50,54-72,76-91,99-101
+crates/longshore_s3/tests/client/error_display.rs
+  s_cb91250eaedb7c::t_d0afac2c701f79 1-59
+crates/longshore_s3/Cargo.toml
+  s_cb91250eaedb7c::t_d0afac2c701f79 83-85
+  s_cb91250eaedb7c::t_c8f9bc081c6f1f 82
+crates/longshore_s3/src/client/error.rs
+  s_cb91250eaedb7c::t_2e105d1fb8159c 75-82
+  s_cb91250eaedb7c::t_fe1fe819adb20a 14,28,34-35,46
+  s_cb91250eaedb7c::t_59cc006b90c700 1-13,15-27,29-33,36-45,47-74,83-85
+crates/longshore_stream/src/error.rs
+  s_cb91250eaedb7c::t_10f0371fec6301 63-65
+  s_cb91250eaedb7c::t_b8dc601bdb9b46 54-62,66-72
+crates/longshore_s3/examples/common/mod.rs
+  s_cb91250eaedb7c::t_d0afac2c701f79 77-79,81-89
+crates/longshore_s3/src/s3.rs
+  s_cb91250eaedb7c::t_10f0371fec6301 67
+crates/longshore_s3/src/s3/fatal.rs
+  s_cb91250eaedb7c::t_2e105d1fb8159c 1-40
+crates/longshore_s3/src/client.rs
+  s_cb91250eaedb7c::t_59cc006b90c700 11,25
+  s_cb91250eaedb7c::t_fe1fe819adb20a 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ebdaa7ffe72af2254f801cea44b11d17cdd14069",
+  "prompts": {},
+  "sessions": {
+    "s_cb91250eaedb7c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85561ab2-6f01-42b5-b9cb-0a09c47358cf",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
