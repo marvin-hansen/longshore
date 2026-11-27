@@ -1,0 +1,24 @@
+README.md
+  s_0a7ba2e6f2f96f::t_55175b0650e823 133-144
+  s_0a7ba2e6f2f96f::t_d701672d5c080c 277
+  s_0a7ba2e6f2f96f::t_83aca948a7ac91 260
+openspec/project.md
+  s_0a7ba2e6f2f96f::t_7a06faea497d0e 8-9
+  s_0a7ba2e6f2f96f::t_92be7c2ac639d9 67,72-76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cb02cd2417cf6a6e7aa2907727e63d2f7baad16a",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
