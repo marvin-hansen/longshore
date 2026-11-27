@@ -1,6 +1,6 @@
 # Milestone 38: the client's stat, listing, streams and copying forms against RustFS
 
-Run 2026-11-27 with `client_s3 check` at commit `69b7f73`, on an Apple M3
+Run 2026-11-27 with `client_s3 check` at commit `ebdaa7f`, on an Apple M3
 Max under OrbStack (Docker 29.8.2, Linux `7.2.12-orbstack` on AArch64).
 RustFS 1.0.6 (`rustfs/rustfs:1.0.6`, one node, one volume) ran in its own
 container, started by `scripts/self-hosted-s3.sh up rustfs`, and the program
@@ -34,7 +34,7 @@ status 0.
 | `download` of the big object | 6 pieces in order, every byte checked, verified against the stored checksum |
 | `fetch_into` a slice longer than one buffer | equal |
 | `fetch_into` slices too short, one buffer long and one byte short | `TooLong` both ways |
-| `download` while the object is replaced by `store_from` | status 412 on the next read after the first piece |
+| `download` while the object is replaced by `store_from` | the two ranges already sent arrived whole; status 412 on the first range asked for after (at 25,165,824 of 42,991,616 bytes) |
 | upload stream of 1000 bytes | one plain store: the tag has no `-N` part |
 | upload stream of the big object written in pieces of 2,796,219 bytes | a multipart upload of 6 parts (tag ends `-6`), read back equal |
 | `store_from` of the big object | a multipart upload of 6 parts, read back equal |
@@ -46,12 +46,21 @@ status 0.
 - **A whole-object checksum after a multipart upload.** The client asks for
   a full-object CRC-64/NVME when it begins an upload, and RustFS kept one:
   the download of the multipart object ended verified, not unverified.
-- **The replaced object.** The download had asked for up to three ranges
-  ahead before the object was replaced, yet the very next read already got
-  412. RustFS checks `If-Match` when it serves a request, not when it
-  receives it, so ranges asked for before the replacement but served after
-  it are refused too. Either way the download stopped rather than hand out
-  bytes of two objects.
+- **The replaced object.** The download had three ranges in flight
+  when the reader took its first piece. The object was replaced, then the
+  first piece was handed back, which let the download ask for the next
+  range. The two ranges sent before the replacement arrived as they were,
+  bytes of the original object with its tag, and the first range asked
+  for after it was refused with 412. The download stopped rather than hand
+  out bytes of two objects.
+  An earlier run of this program, before commit `35ff6a2`, got 412 on the
+  very next read. The download then sent only its oldest range: the
+  others held their buffers but were not sent until they became the
+  oldest, so no range was fetched ahead of the reader. That run's reading,
+  that RustFS checks `If-Match` when it serves a request rather than when
+  it receives it, was wrong. The throughput figures elsewhere in
+  `bench/results/` measure whole-object fetches, not this stream, and are
+  not affected.
 - **The dropped stream.** The client cannot list uploads in progress, so
   after the run a `ListMultipartUploads` under the run's prefix was sent
   with `curl --aws-sigv4` (the last lines of the `.txt`): it listed none.
@@ -71,5 +80,5 @@ status 0.
 - Whether parts were still in flight when the stream was dropped, so
   whether the abort waited for one: the output does not say. That
   ordering is covered in the simulator.
-- Repeatability beyond two full runs on one machine, both passing, and an
-  earlier run without the upload steps, also passing.
+- Repeatability beyond this run and two earlier full runs on one machine,
+  all passing, the earlier ones before the download fix.
