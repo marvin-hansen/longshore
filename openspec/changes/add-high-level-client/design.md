@@ -170,6 +170,34 @@ Most callers are on other threads, often inside an async runtime.
   composite checksum or none, ends reported as unverified.
   The CRC runs on the reader's thread, not the I/O thread, because HTTPS
   download is already bound by the I/O thread's core.
+- `client.download(key)` resolves to `Ok(None)` for a missing key, as
+  `fetch` and `stat` do, and otherwise to a `Download`. Each
+  `read()` (or `read_blocking()`) gives `Piece::Bytes(buffer, len)`, the
+  lent buffer itself, which the reader returns by dropping it, and at the
+  end `Piece::End { verified }`. An end or an error is given again on
+  every later read.
+- The window is four ranges, and never more than the client's lent
+  buffers less one, which is left for the buffer the reader holds (one
+  range for a client that lends one buffer). A range is asked for as soon
+  as a buffer is free; the stream gives up its place in the buffer queue
+  whenever it hands a buffer out, so it never keeps a returned buffer
+  from the client's other callers while the reader is busy.
+- Ranges are fetched with the reported `get`, not the plain fetch, so
+  each answer can be checked against the range asked for: status 206,
+  that `Content-Range`, that many bytes, and the tag from the first
+  answer, which also catches a store that ignores `If-Match`. Status 200
+  is `Fatal::RangeIgnored`, a range other than the one asked for is
+  `Fatal::BadResponse`, and a changed object is the store's own
+  `Fatal::Status(412)` (404 if it is gone); no new error variant is
+  added. The reported `get` exists only for S3 so far, so on Google Cloud
+  Storage every range fails until `update-gcs-xml-coverage` 1.1 and 2.2
+  land.
+- Which CRC to run is read from the stored checksum's form, which the
+  vendor decides: twelve base64 characters are S3's CRC-64/NVME, eight
+  followed by zeros are Google Cloud Storage's CRC-32C. The stream needs
+  no vendor setting of its own.
+- An empty object asks for no range and ends at once, checked against
+  the stored checksum of no bytes.
 
 ## Risks / Trade-offs
 - A queue hop between threads costs time on small requests. The overhead

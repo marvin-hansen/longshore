@@ -50,6 +50,7 @@
 //! loop that already owns the core.
 
 mod buffer;
+mod download;
 mod exact;
 mod lane;
 mod multipart;
@@ -61,6 +62,7 @@ mod tls_provider;
 mod worker;
 
 pub use buffer::Buffer;
+pub use download::{Download, Opening, Piece};
 pub use exact::Budget;
 pub use lane::{Lane, KEY_MAX};
 pub use pending::{Output, Pending};
