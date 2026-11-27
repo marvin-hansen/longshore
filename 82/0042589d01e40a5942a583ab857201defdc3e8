@@ -1,0 +1,42 @@
+crates/longshore_file/src/error.rs
+  s_0a7ba2e6f2f96f::t_83ec18fb461644 1-110
+crates/longshore_file/src/lib.rs
+  s_0a7ba2e6f2f96f::t_8c25525b85bddd 13-29
+crates/longshore_file/src/config.rs
+  s_0a7ba2e6f2f96f::t_5f80fabd2bbfad 1-58
+crates/longshore_file/src/sizes.rs
+  s_0a7ba2e6f2f96f::t_5f80fabd2bbfad 1-74
+crates/longshore_file/src/event.rs
+  s_0a7ba2e6f2f96f::t_2315726436d174 29-35,37-40,42-45,47-50,53-55
+  s_0a7ba2e6f2f96f::t_83ec18fb461644 1-28,36,41,46,51-52,56
+crates/longshore_file/src/files.rs
+  s_0a7ba2e6f2f96f::t_e40ee3da870bcd 1-12,16-23,25-33,40-42,45-47,49,74,126,132,177-178
+  s_0a7ba2e6f2f96f::t_8c25525b85bddd 13-15,34-35,39,43,48,50,56-62,68-73,80-86,90-96,101-107,111-115,117-122,127-130,133-135,137-143,148-152,159-162,164-171,173-176
+  s_0a7ba2e6f2f96f::t_2315726436d174 24,36-38,44,51-55,63-67,75-79,87-89,97-100,108-110,116,123-125,131,136,144-147,153-158,163,172
+crates/longshore_file/src/span.rs
+  s_0a7ba2e6f2f96f::t_83ec18fb461644 1-10,12-125
+  s_0a7ba2e6f2f96f::t_5f80fabd2bbfad 11
+crates/longshore_file/src/plan.rs
+  s_0a7ba2e6f2f96f::t_5f80fabd2bbfad 1-10,15-16
+  s_0a7ba2e6f2f96f::t_9a6c73aa6602a1 11-14
+crates/longshore_file/src/handle.rs
+  s_0a7ba2e6f2f96f::t_83ec18fb461644 1-45
+openspec/changes/add-file-crate/design.md
+  s_0a7ba2e6f2f96f::t_c7f1b04d9de62e 280-283,285-297,300
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "820042589d01e40a5942a583ab857201defdc3e8",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
