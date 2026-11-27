@@ -1,0 +1,21 @@
+crates/longshore_common/src/io/limits/fields.rs
+  s_0a7ba2e6f2f96f::t_cda577fe7b9d38 176-178
+crates/longshore_common/src/sim/simio/area.rs
+  s_0a7ba2e6f2f96f::t_a0b97b77cd16fc 48-52,81,99,219,227-228,230,233
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "36baac140e223c8ace27eb71a92407f23b7dbc1e",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
