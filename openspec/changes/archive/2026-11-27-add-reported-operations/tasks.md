@@ -20,4 +20,4 @@
 - [x] 4.2 Example program `verified_write`
 - [x] 4.3 README: status row, how to use them, limits
 - [x] 4.4 `exact_s3`, and a run against Linode Object Storage recorded in `bench/results/m24-put-head-get-linode.md`
-- [ ] 4.5 Run against Amazon S3
+- [x] 4.5 Run against Amazon S3
