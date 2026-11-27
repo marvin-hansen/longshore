@@ -1,0 +1,19 @@
+openspec/notes/tcp-db-modes.md
+  s_0a7ba2e6f2f96f::t_e38861b9ff15b1 4-6,70-71,73,116-117
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1787c873cedcf42ab4f662e623e1f279208af9b4",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
