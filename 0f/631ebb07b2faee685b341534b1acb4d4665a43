@@ -1,0 +1,21 @@
+bench/results/m35-tcp-small-frames-kernel-share-dgx-spark.md
+  s_0a7ba2e6f2f96f::t_1941c23630ac64 28-32,34-35,37-42
+  s_0a7ba2e6f2f96f::t_513b99a2d4ccc5 33
+  s_0a7ba2e6f2f96f::t_ff3b7204125cc6 36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0f631ebb07b2faee685b341534b1acb4d4665a43",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
