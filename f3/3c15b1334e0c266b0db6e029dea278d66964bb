@@ -1,0 +1,23 @@
+openspec/changes/add-tcp-af-xdp-backend/proposal.md
+  s_0a7ba2e6f2f96f::t_da54fdb3f6e1e8 25-48
+openspec/changes/add-tcp-af-xdp-backend/tasks.md
+  s_0a7ba2e6f2f96f::t_da54fdb3f6e1e8 7
+openspec/changes/add-tcp-zero-copy-receive/tasks.md
+  s_0a7ba2e6f2f96f::t_99e01e1fe640b8 46-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f33c15b1334e0c266b0db6e029dea278d66964bb",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
