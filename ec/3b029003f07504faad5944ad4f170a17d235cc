@@ -1,0 +1,31 @@
+bench/spikes/zcrx/group5/summary.py
+  s_0a7ba2e6f2f96f::t_7b3b912c0a32df 49,58,60
+bench/results/m34-tcp-receive-modes-dgx-spark.md
+  s_0a7ba2e6f2f96f::t_fb75aebbc85262 1-15,21-22,24-40,42-45,49-86,90-127,131-163,171-186
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_ccfaadfc1fb376 214-219,248-250,252-253
+bench/spikes/zcrx/group5/cell.sh
+  s_0a7ba2e6f2f96f::t_7b3b912c0a32df 15-17,19
+openspec/changes/add-tcp-af-xdp-backend/proposal.md
+  s_0a7ba2e6f2f96f::t_ccfaadfc1fb376 26-27,29-43,45-47
+openspec/changes/add-tcp-af-xdp-backend/tasks.md
+  s_0a7ba2e6f2f96f::t_ccfaadfc1fb376 7
+openspec/changes/add-tcp-zero-copy-receive/tasks.md
+  s_0a7ba2e6f2f96f::t_ccfaadfc1fb376 46-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ec3b029003f07504faad5944ad4f170a17d235cc",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
