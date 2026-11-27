@@ -1,0 +1,42 @@
+crates/longshore_s3/src/client/lane.rs
+  s_cb91250eaedb7c::t_b982969f8e4e4e 83-95
+crates/longshore_s3/Cargo.toml
+  s_cb91250eaedb7c::t_f0fd9cd4da13d0 67-69
+  s_cb91250eaedb7c::t_a666f544248a73 66
+crates/longshore_s3/tests/client/query.rs
+  s_cb91250eaedb7c::t_bac2b5cb19d87a 22,32,46
+  s_cb91250eaedb7c::t_aa98b7ec0f499c 16,112-113,129-130,140-141
+  s_cb91250eaedb7c::t_f9a9e8eecae793 1-15,17-21,23-31,33-45,47-55,60-111,114-128,131-139,142-152
+  s_cb91250eaedb7c::t_4cea13bcc1e8b9 56-59
+openspec/changes/add-high-level-client/design.md
+  s_cb91250eaedb7c::t_658f17e3c41fc8 89-90
+crates/longshore_s3/src/client.rs
+  s_cb91250eaedb7c::t_f74ed037375fcf 57
+  s_cb91250eaedb7c::t_81b9d3638573a5 353-355
+openspec/changes/add-high-level-client/tasks.md
+  s_cb91250eaedb7c::t_658f17e3c41fc8 15
+crates/longshore_s3/src/client/worker.rs
+  s_cb91250eaedb7c::t_19925acf846864 241-255
+crates/longshore_s3/src/client/query.rs
+  s_cb91250eaedb7c::t_4cea13bcc1e8b9 102-106,108-109,114-115
+  s_cb91250eaedb7c::t_1a098e99765463 1-18,20-100,110-113,116-146,148-151,153-163,173
+  s_cb91250eaedb7c::t_67a4fcdb24213b 19
+  s_cb91250eaedb7c::t_25a23e171a5900 107
+  s_cb91250eaedb7c::t_d7c54edc58e427 101,147,152,164-172
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "866615820176efc92687d47128bc2b9c4092b98a",
+  "prompts": {},
+  "sessions": {
+    "s_cb91250eaedb7c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85561ab2-6f01-42b5-b9cb-0a09c47358cf",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
