@@ -1,0 +1,30 @@
+crates/longshore_tcp/src/net.rs
+  s_0a7ba2e6f2f96f::t_25ed9f084dec04 123-125,198
+crates/longshore_tcp/src/check/conformance/pieces.rs
+  s_0a7ba2e6f2f96f::t_25ed9f084dec04 80,86-87
+crates/longshore_tcp/src/net/zc.rs
+  s_0a7ba2e6f2f96f::t_25ed9f084dec04 313-317,319-323,333-334
+crates/longshore_tcp/tests/tcp/net/paged_wake.rs
+  s_0a7ba2e6f2f96f::t_13831de8617322 90-98,100,102-105
+  s_0a7ba2e6f2f96f::t_c57c4b12d14955 8-9,11,99,101
+crates/longshore_tcp/src/kernel/transport.rs
+  s_0a7ba2e6f2f96f::t_25ed9f084dec04 160-161
+crates/longshore_tcp/src/transport.rs
+  s_0a7ba2e6f2f96f::t_25ed9f084dec04 265-270
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b255a6859bb9eb24ca8a37e07e7d6ef4fe3e8b01",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
