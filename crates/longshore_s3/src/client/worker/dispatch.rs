@@ -5,13 +5,29 @@
 
 //! Turning one caller's request into the store call it asks for.
 
-use super::super::lane::{Finished, Kind, Request};
+use super::super::lane::{Finished, Kind, Request, Streamed};
 use super::Worker;
 use longshore_common::io::{BufId, Io};
+use std::sync::atomic::Ordering;
 
 impl Worker {
+    /// Note what the request is to an upload stream. True for the abort a
+    /// dropped stream owes, which runs even while stopping, and which a
+    /// shutdown waits for.
+    fn note_stream(&mut self, r: &Request) -> bool {
+        self.streamed[r.op as usize] = match r.stream {
+            Streamed::Op { table, record } => Some((table, record)),
+            Streamed::No | Streamed::Abort => None,
+        };
+        let owed = r.stream == Streamed::Abort;
+        if owed {
+            let _: u32 = self.lane.owed.fetch_sub(1, Ordering::AcqRel);
+        }
+        owed
+    }
+
     pub(super) fn begin<IO: Io>(&mut self, io: &mut IO, r: &Request) {
-        if self.stopping {
+        if !self.note_stream(r) && self.stopping {
             self.answer(r.op, &Finished::Closed);
             return;
         }

@@ -8,7 +8,7 @@
 //! own, so the same code runs on a real thread, in the simulator, and under
 //! a caller's event loop.
 
-use super::lane::{Finished, Lane, Request};
+use super::lane::{Finished, Lane, Request, Streamed};
 use super::sync::{AtomicBool, AtomicU32, AtomicU64};
 use crate::s3::S3;
 use longshore_common::io::{BufId, Completion, Io, Op, Token};
@@ -28,6 +28,8 @@ pub struct Layout {
     pub(crate) buffers: u32,
     pub(crate) token_base: u64,
     pub(crate) heartbeat_ns: u64,
+    pub(crate) streams: u32,
+    pub(crate) part_min: u64,
 }
 
 /// One I/O thread's side of a client: the store, and the lane its requests
@@ -39,6 +41,9 @@ pub struct Worker {
     layout: Layout,
     /// Operation slots the store is running.
     running: Box<[bool]>,
+    /// For each operation slot holding an upload stream's operation: the
+    /// stream's table and record, from the request.
+    streamed: Box<[Option<(usize, u32)>]>,
     stopping: bool,
 }
 
@@ -93,6 +98,9 @@ impl Worker {
             in_flight: AtomicU32::new(0),
             reloads: [AtomicU64::new(0), AtomicU64::new(0)],
             void: AtomicBool::new(false),
+            owed: AtomicU32::new(0),
+            part_min: layout.part_min,
+            streams: layout.streams.max(1),
             #[cfg(all(feature = "fault-injection", target_os = "linux"))]
             fault: Default::default(),
         });
@@ -102,6 +110,7 @@ impl Worker {
             rx,
             layout,
             running: vec![false; layout.operations as usize].into_boxed_slice(),
+            streamed: vec![None; layout.operations as usize].into_boxed_slice(),
             stopping: false,
         };
         Ok((worker, lane))
@@ -176,8 +185,15 @@ impl Worker {
 
     fn answer(&mut self, op: u32, finished: &Finished) {
         let _: u32 = self.lane.in_flight.fetch_sub(1, Ordering::Relaxed);
+        let stream = self.streamed[op as usize].take();
+        // A buffer comes back here only when its caller has gone. Every
+        // operation of an upload stream holds a buffer.
         if let Some(buf) = self.rx.answer(op, *finished) {
             self.lane.give_buffer(buf);
+            if let Some((table, record)) = stream {
+                // The stream was dropped while this ran, which keeps its table alive.
+                unsafe { super::upload::ended(table, record, finished) };
+            }
         }
     }
 
@@ -197,7 +213,7 @@ impl Worker {
     /// True once a shutdown was asked for and nothing is in progress. The
     /// owner then stops driving the worker and calls [`Worker::close`].
     pub fn finished(&self) -> bool {
-        self.stopping && self.s3.in_progress() == 0
+        self.stopping && self.s3.in_progress() == 0 && self.lane.owed.load(Ordering::Acquire) == 0
     }
 
     /// Mark the lane closed and end every request still queued.
@@ -207,12 +223,20 @@ impl Worker {
         self.rx.begin_close(|item| match item {
             Recv::Message(r) => {
                 let _: u32 = lane.in_flight.fetch_sub(1, Ordering::Relaxed);
+                if r.stream == Streamed::Abort {
+                    // An abort owed to this lane that will never run.
+                    let _: u32 = lane.owed.fetch_sub(1, Ordering::AcqRel);
+                }
                 if let Some(buf) =
                     lane.sender
                         .cells()
                         .answer(lane.sender.pool(), r.op, Finished::Closed)
                 {
                     lane.give_buffer(buf);
+                    if let Streamed::Op { table, record } = r.stream {
+                        // As in `answer`: the dropped stream keeps its table alive.
+                        unsafe { super::upload::ended(table, record, &Finished::Closed) };
+                    }
                 }
             }
             Recv::Stop => *stopping = true,
@@ -282,7 +306,39 @@ impl Layout {
             buffers,
             token_base,
             heartbeat_ns,
+            streams: 4,
+            part_min: 5 << 20,
         }
+    }
+
+    /// Upload streams open at once on a client over this lane: 4 by
+    /// default. See [`super::Builder::streams`]. A client takes this from
+    /// its first lane.
+    #[inline]
+    pub const fn with_streams(mut self, streams: u32) -> Layout {
+        self.streams = streams;
+        self
+    }
+
+    /// The smallest part the store takes: 5 MiB by default. See
+    /// [`super::Builder::part_min`]. A client takes this from its first
+    /// lane.
+    #[inline]
+    pub const fn with_part_min(mut self, bytes: u64) -> Layout {
+        self.part_min = bytes;
+        self
+    }
+
+    /// See [`Layout::with_streams`].
+    #[inline]
+    pub const fn streams(self) -> u32 {
+        self.streams
+    }
+
+    /// See [`Layout::with_part_min`].
+    #[inline]
+    pub const fn part_min(self) -> u64 {
+        self.part_min
     }
 
     /// Operations in progress at most. The store must allow as many.

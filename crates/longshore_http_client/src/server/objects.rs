@@ -159,17 +159,27 @@ impl Server {
         self.conns[i].reply_object = Some(slot as u32);
         self.conns[i].asked.set_reply(slot as u32);
         let o = &self.objects[slot];
+        let room = self.cfg.buffer_size() as usize;
         // A satisfiable range is served as 206 with just those bytes.
         if let Some((a, b)) = c.range.filter(|(a, b)| a <= b && *a < o.len && is_get) {
             let b = b.min(o.len - 1);
             let n = (b - a + 1) as usize;
+            if n > room {
+                return self.status(io, i, 500, "Internal Server Error", 0, 0, false);
+            }
             self.conns[i].asked.set_reply_range(a, b);
             io.buf(self.body_buf(i))[..n].copy_from_slice(&o.data[a as usize..a as usize + n]);
             flip(io.buf(self.body_buf(i)), n, behavior);
             return self.status(io, i, 206, "Partial Content", n as u64, n as u32, false);
         }
-        io.buf(self.body_buf(i))[..o.len as usize].copy_from_slice(&o.data[..o.len as usize]);
-        flip(io.buf(self.body_buf(i)), o.len as usize, behavior);
+        // An object assembled from parts may be larger than one buffer.
+        if is_get && o.len as usize > room {
+            return self.status(io, i, 500, "Internal Server Error", 0, 0, false);
+        }
+        if is_get {
+            io.buf(self.body_buf(i))[..o.len as usize].copy_from_slice(&o.data[..o.len as usize]);
+            flip(io.buf(self.body_buf(i)), o.len as usize, behavior);
+        }
         // S3 returns a checksum only when asked; Google Cloud Storage always does.
         self.conns[i].reply_checksum = o
             .checksum

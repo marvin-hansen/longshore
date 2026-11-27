@@ -154,6 +154,24 @@ impl Builder {
         self
     }
 
+    /// Upload streams open at once, per client (see
+    /// [`Client::upload`](crate::client::Client::upload)). 4 by default.
+    /// Opening one more waits until one ends. Each stream that has begun
+    /// its upload holds one buffer for its list of parts, and one operation
+    /// slot kept for aborting it, until it ends.
+    pub fn streams(mut self, streams: u32) -> Builder {
+        self.streams = streams;
+        self
+    }
+
+    /// The smallest part the store takes, in bytes: 5 MiB, as on Amazon
+    /// S3, by default. An upload stream sends each buffer as one part, so
+    /// opening one fails while [`Builder::buffer_size`] is below this.
+    pub fn part_min(mut self, bytes: u64) -> Builder {
+        self.part_min = bytes;
+        self
+    }
+
     /// Waiters preallocated per pool on each thread. Waiting beyond this
     /// grows the queue rather than refusing callers.
     pub fn waiters(mut self, waiters: u32) -> Builder {

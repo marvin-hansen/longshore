@@ -149,7 +149,9 @@ fn setup<B: Backend>(b: &Builder) -> std::io::Result<(B, Worker, Arc<Lane>)> {
         b.buffers,
         7 << 40,
         50 * MS,
-    );
+    )
+    .with_streams(b.streams)
+    .with_part_min(b.part_min);
     let (mut worker, lane) = Worker::with_waiters(&mut io, s3, layout, b.waiters as usize)
         .map_err(std::io::Error::other)?;
     worker.start(&mut io);

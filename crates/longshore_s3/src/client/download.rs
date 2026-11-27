@@ -48,9 +48,9 @@ pub enum Piece {
 }
 
 /// Opening a download: asking the store about the object. Await it, or
-/// call [`Opening::wait`].
+/// call [`OpeningDownload::wait`].
 #[must_use = "the download comes back through this"]
-pub struct Opening {
+pub struct OpeningDownload {
     client: Client,
     key: [u8; KEY_MAX],
     key_len: u16,
@@ -117,12 +117,12 @@ impl Client {
     /// Open a download of the object under `key`: ask the store about it,
     /// and then read it with [`Download::read`]. `Ok(None)` means there is
     /// no such object.
-    pub fn download(&self, key: &str) -> Opening {
+    pub fn download(&self, key: &str) -> OpeningDownload {
         // A key too long fails the question about it, and is never used.
         let n = key.len().min(KEY_MAX);
         let mut copy = [0u8; KEY_MAX];
         copy[..n].copy_from_slice(&key.as_bytes()[..n]);
-        Opening {
+        OpeningDownload {
             client: self.clone(),
             key: copy,
             key_len: n as u16,
@@ -131,10 +131,10 @@ impl Client {
     }
 }
 
-impl Opening {
+impl OpeningDownload {
     /// Block the calling thread until the store has answered.
     pub fn wait(self) -> Result<Option<Download>, Error> {
-        let Opening {
+        let OpeningDownload {
             client,
             key,
             key_len,
@@ -144,7 +144,7 @@ impl Opening {
     }
 }
 
-impl Future for Opening {
+impl Future for OpeningDownload {
     type Output = Result<Option<Download>, Error>;
 
     fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {

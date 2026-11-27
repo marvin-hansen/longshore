@@ -103,6 +103,12 @@ pub fn error_code_in(doc: &[u8]) -> Option<&[u8]> {
 /// the store requires. `None` if they are not, a number is out of range, or
 /// `out` is too small.
 pub fn write_manifest(out: &mut [u8], parts: &[Part]) -> Option<usize> {
+    manifest_from(out, parts.iter().copied())
+}
+
+/// [`write_manifest`] for parts read one at a time, so they need not lie
+/// in one slice: an upload stream keeps them as records in a lent buffer.
+pub(crate) fn manifest_from(out: &mut [u8], parts: impl Iterator<Item = Part>) -> Option<usize> {
     let mut n = 0;
     let mut put = |bytes: &[u8]| -> Option<()> {
         out.get_mut(n..n + bytes.len())?.copy_from_slice(bytes);
