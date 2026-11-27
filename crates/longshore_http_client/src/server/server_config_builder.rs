@@ -28,6 +28,7 @@ pub struct ServerConfigBuilder {
     pub(super) head_max: u32,
     pub(super) buffer_size: u32,
     pub(super) objects_max: u32,
+    pub(super) object_size: u32,
     pub(super) token_base: u64,
     pub(super) checksum: Option<ChecksumFn>,
 }
@@ -49,6 +50,7 @@ impl ServerConfigBuilder {
             head_max: 4096,
             buffer_size,
             objects_max: 8,
+            object_size: 0,
             token_base,
             checksum: None,
         }
@@ -65,6 +67,17 @@ impl ServerConfigBuilder {
     /// init. With none, every store is answered 507.
     pub fn objects_max(mut self, objects_max: u32) -> Self {
         self.objects_max = objects_max;
+        self
+    }
+
+    /// Bytes each object slot holds: `buffer_size` by default, and never
+    /// less. A request body still fits one buffer, but a completed
+    /// multipart upload may fill a larger slot, so a test can upload more
+    /// than a client's buffers hold. Such an object can be read back with
+    /// [`super::Server::object`]; a request to read more of it than one
+    /// buffer is answered 500.
+    pub fn object_size(mut self, bytes: u32) -> Self {
+        self.object_size = bytes;
         self
     }
 
