@@ -1,0 +1,31 @@
+crates/longshore_file/src/check.rs
+  s_0a7ba2e6f2f96f::t_a067de97a6cebb 21-31,57-61,75-78,88-91,149-153
+crates/longshore_file/src/lib.rs
+  s_0a7ba2e6f2f96f::t_82337c15d7b08c 13-19
+openspec/changes/add-file-crate/tasks.md
+  s_0a7ba2e6f2f96f::t_00a7e756e2b803 26,30
+docs/file.md
+  s_0a7ba2e6f2f96f::t_a067de97a6cebb 532-537
+crates/longshore_file/src/check/rig.rs
+  s_0a7ba2e6f2f96f::t_a067de97a6cebb 24-30
+crates/longshore_file/tests/README.md
+  s_0a7ba2e6f2f96f::t_00a7e756e2b803 75,104,107,136-142,171-179
+crates/longshore_file/src/check/spy.rs
+  s_0a7ba2e6f2f96f::t_a067de97a6cebb 59-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8d68b61db58d1ac76f082c4c5fb167954d444086",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
