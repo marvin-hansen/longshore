@@ -1,0 +1,22 @@
+bench/results/m38-client-streams-rustfs.md
+  s_cb91250eaedb7c::t_28918fe0a45ef0 3,37,49-63,83
+  s_cb91250eaedb7c::t_ea7564dec9ccc2 84
+bench/results/m38-client-streams-rustfs.txt
+  s_cb91250eaedb7c::t_64d62aa061018c 2,4,10,15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f15502bde50dab617956d1694867acdf5305d5b0",
+  "prompts": {},
+  "sessions": {
+    "s_cb91250eaedb7c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85561ab2-6f01-42b5-b9cb-0a09c47358cf",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
