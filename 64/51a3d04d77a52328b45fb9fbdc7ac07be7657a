@@ -1,0 +1,20 @@
+crates/longshore-bench/src/bin/zc_uring/opts.rs
+  s_0a7ba2e6f2f96f::t_d3e157abeb8ae4 122-123,126-127,130
+  s_0a7ba2e6f2f96f::t_b243e5f1efec7a 104-113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6451a3d04d77a52328b45fb9fbdc7ac07be7657a",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
