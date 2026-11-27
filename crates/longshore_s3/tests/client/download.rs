@@ -14,8 +14,13 @@
 #[path = "../store/common/mod.rs"]
 mod common;
 #[cfg(test)]
+#[path = "download/dropped.rs"]
+mod dropped;
+#[cfg(test)]
 #[cfg(any(target_os = "linux", target_os = "macos"))]
 mod loopback;
+#[cfg(test)]
+mod returned;
 #[cfg(test)]
 #[expect(
     dead_code,

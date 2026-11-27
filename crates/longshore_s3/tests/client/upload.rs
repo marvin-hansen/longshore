@@ -10,14 +10,22 @@
 #[path = "../store/common/mod.rs"]
 mod common;
 #[cfg(test)]
+#[path = "upload/dropped.rs"]
+mod dropped;
+#[cfg(test)]
 #[path = "upload/ends.rs"]
 mod ends;
 #[cfg(test)]
 #[cfg(any(target_os = "linux", target_os = "macos"))]
 mod loopback;
 #[cfg(test)]
+mod returned;
+#[cfg(test)]
 #[path = "upload/rig.rs"]
 mod rig;
+#[cfg(test)]
+#[path = "upload/settle.rs"]
+mod settle;
 #[cfg(test)]
 #[cfg(any(target_os = "linux", target_os = "macos"))]
 #[path = "upload/threaded.rs"]
