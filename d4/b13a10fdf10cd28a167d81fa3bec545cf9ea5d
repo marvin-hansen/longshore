@@ -1,0 +1,23 @@
+.gitignore
+  s_0a7ba2e6f2f96f::t_3378bc8c41d4cd 12-15
+docs/file.md
+  s_0a7ba2e6f2f96f::t_3ef8de751185be 524-540
+openspec/changes/add-file-crate/tasks.md
+  s_0a7ba2e6f2f96f::t_d3e36f1f38c3d7 25-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d4b13a10fdf10cd28a167d81fa3bec545cf9ea5d",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
