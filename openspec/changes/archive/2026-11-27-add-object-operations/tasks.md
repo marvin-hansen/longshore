@@ -12,7 +12,7 @@
 ## 3. Presigned URLs
 - [x] 3.1 Query-string SigV4 for fetch and store, written into a caller buffer, checked against published examples
 - [x] 3.2 Refuse expiry beyond the store's limit
-- [ ] 3.3 Refuse expiry beyond the life of temporary credentials. Waits for `add-credential-providers`, which gives credentials an expiry time
+- [x] ~~3.3 Refuse expiry beyond the life of temporary credentials~~ *(moved to `add-credential-providers` 1.1, which gives credentials an expiry time; its scenario moved with it)*
 
 ## 4. Real stores
 - [x] 4.1 `s3_uring objects` covers every new operation

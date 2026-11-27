@@ -59,7 +59,3 @@ performing I/O or allocating.
 #### Scenario: Presigned fetch
 - **WHEN** a presigned fetch URL for an existing key is requested with a one-hour expiry
 - **THEN** a plain HTTP GET of that URL with no other credentials returns the object until the hour has passed
-
-#### Scenario: Expiry longer than the credentials
-- **WHEN** the credentials in use are temporary and expire before the requested URL expiry
-- **THEN** the request for a URL fails with an error that says so
