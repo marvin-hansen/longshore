@@ -89,7 +89,7 @@ fn resident_mb() -> u64 {
 }
 
 /// User and system CPU time of the whole process, callers included.
-fn process_cpu_secs() -> f64 {
+pub fn process_cpu_secs() -> f64 {
     let stat = std::fs::read_to_string("/proc/self/stat").unwrap_or_default();
     let after = stat.rsplit(')').next().unwrap_or("");
     let f: Vec<&str> = after.split_whitespace().collect();
