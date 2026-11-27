@@ -1,0 +1,42 @@
+crates/longshore_common/src/sim/simio/disk_attempt.rs
+  s_0a7ba2e6f2f96f::t_cac20f9439eaa0 44
+  s_0a7ba2e6f2f96f::t_7f626865ae7add 8
+  s_0a7ba2e6f2f96f::t_eda6c9f04b0737 15-17,21,35,38-43
+  s_0a7ba2e6f2f96f::t_aa2b144006c87d 86
+crates/longshore_common/src/sim/simio/disk_faults.rs
+  s_0a7ba2e6f2f96f::t_094e4c1dde5736 145-146
+  s_0a7ba2e6f2f96f::t_cac20f9439eaa0 141,162
+  s_0a7ba2e6f2f96f::t_cdee12d2a98331 9,152,167,170,178
+crates/longshore_common/src/sim/simio/disk_write.rs
+  s_0a7ba2e6f2f96f::t_cac20f9439eaa0 25,75,97-98,111,154
+  s_0a7ba2e6f2f96f::t_4c1161bc169f4f 1-24,26-74,76-96,99-110,112-153,155-210
+crates/longshore_common/tests/sim/write_spans/faults.rs
+  s_0a7ba2e6f2f96f::t_094e4c1dde5736 22-27
+  s_0a7ba2e6f2f96f::t_9d6d7051261044 1-11,13-21,28-42,46-50,56-94,96-97,101-128
+  s_0a7ba2e6f2f96f::t_c1a8f03915493e 12
+  s_0a7ba2e6f2f96f::t_8b7bef9aaba394 51
+  s_0a7ba2e6f2f96f::t_e18df6bfc5619d 52-55
+  s_0a7ba2e6f2f96f::t_1f9742ac4fa383 43-45
+  s_0a7ba2e6f2f96f::t_55e6558aa59ac2 95,98-100
+crates/longshore_common/src/sim/simio/disk.rs
+  s_0a7ba2e6f2f96f::t_cdee12d2a98331 55-56
+crates/longshore_common/tests/sim/write_spans.rs
+  s_0a7ba2e6f2f96f::t_dab0fe6bd08916 58
+  s_0a7ba2e6f2f96f::t_9ff06eb94cc9c2 34-36,40-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "04f11a1769152d1bf1bb7eef69d8cc173a8c6dee",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
