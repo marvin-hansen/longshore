@@ -1,0 +1,21 @@
+bench/results/m37-file-bench-dgx-spark-nvme.md
+  s_e9f3fcbec30865::t_a48bce6635c1e6 24-25
+bench/spikes/file/fbm.sh
+  s_e9f3fcbec30865::t_bd43c955b15713 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "13f1a3754aae764a2922a1cae74860a2b1ae34e1",
+  "prompts": {},
+  "sessions": {
+    "s_e9f3fcbec30865": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-ae1196b64aa9a0bac",
+        "model": "unknown"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
