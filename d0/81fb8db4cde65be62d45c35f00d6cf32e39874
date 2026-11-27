@@ -1,0 +1,22 @@
+crates/longshore_tcp/README.md
+  s_3f171a10be674f::t_bc7850a5bf72dc 38-40,49-50
+crates/longshore_file/README.md
+  s_3f171a10be674f::t_bc7850a5bf72dc 34-37,48-51,104-170
+  s_3f171a10be674f::t_2b49765602569c 171
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d081fb8db4cde65be62d45c35f00d6cf32e39874",
+  "prompts": {},
+  "sessions": {
+    "s_3f171a10be674f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f42a7383-5457-4792-ad6a-1eed0bd72f87",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
