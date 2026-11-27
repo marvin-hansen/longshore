@@ -1,0 +1,21 @@
+crates/longshore_common/src/io/posix/world.rs
+  s_0a7ba2e6f2f96f::t_127c4d8e818a13 1-276
+crates/longshore_common/src/io/posix.rs
+  s_0a7ba2e6f2f96f::t_127c4d8e818a13 22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6073aa01a98af02f6ac870717bda8a2f4225b043",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
