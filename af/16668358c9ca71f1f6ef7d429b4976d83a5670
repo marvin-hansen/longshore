@@ -1,0 +1,31 @@
+bench/spikes/zcrx/group5/run.sh
+  s_0a7ba2e6f2f96f::t_ec7659cf50ab7e 6-8,10-24,26-30,33-36,41,44
+docs/DGX-Spark-IPSEC-OFFLOAD.md
+  s_0a7ba2e6f2f96f::t_03c998debbcdb7 133-134
+  s_0a7ba2e6f2f96f::t_ab0bb1dcf27e17 139,143,146,169,175,218,220,233
+bench/spikes/file/fbm.sh
+  s_0a7ba2e6f2f96f::t_2cf7b28f9a1c43 7-24,27-28,31-32,34
+bench/spikes/zcrx/group5/rr.sh
+  s_0a7ba2e6f2f96f::t_e34ec4c22bfd6f 8-22,24-28,30-32,34,37
+bench/spikes/zcrx/group5/cell.sh
+  s_0a7ba2e6f2f96f::t_94c5756a50399b 6-9,11-18,20-24,26-27,40
+bench/spikes/zcrx/group5/small.sh
+  s_0a7ba2e6f2f96f::t_8b0056567c0914 7-11,13-19,27-31,34-36,41,44
+  s_0a7ba2e6f2f96f::t_3651968b1ab6aa 20-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "af16668358c9ca71f1f6ef7d429b4976d83a5670",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
