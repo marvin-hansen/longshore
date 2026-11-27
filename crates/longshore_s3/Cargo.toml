@@ -84,6 +84,10 @@ name = "client_model"
 path = "tests/client/model.rs"
 
 [[test]]
+name = "client_cancel"
+path = "tests/client/cancel.rs"
+
+[[test]]
 name = "client_waits"
 path = "tests/client/waits.rs"
 
