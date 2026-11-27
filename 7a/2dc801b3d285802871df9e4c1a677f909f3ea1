@@ -1,0 +1,19 @@
+crates/longshore_file/tests/README.md
+  s_0a7ba2e6f2f96f::t_5ff9be09ca8fef 54,58,75-76,96,104-108,132-156
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7a2dc801b3d285802871df9e4c1a677f909f3ea1",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
