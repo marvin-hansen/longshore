@@ -53,6 +53,25 @@ fn an_object_larger_than_every_lent_buffer_arrives_in_order_and_verified() {
 }
 
 #[test]
+fn every_range_of_the_window_is_fetched_before_the_reader_reaches_it() {
+    let mut r = download_rig(true);
+    let bytes = object(SIZE, 10);
+    upload(&mut r, "ahead", &bytes, true);
+    let mut d = open(&mut r, "ahead");
+    let before = r.lanes[0].server.requests();
+    // One read asks for the window: two ranges, leaving a buffer of the
+    // three for the reader. Both reach the store, not only the first.
+    let mut read = std::pin::pin!(d.read());
+    let mut cx = std::task::Context::from_waker(std::task::Waker::noop());
+    assert!(std::future::Future::poll(read.as_mut(), &mut cx).is_pending());
+    for _ in 0..500 {
+        r.pump();
+    }
+    assert_eq!(r.lanes[0].server.requests(), before + 2);
+    assert!(std::future::Future::poll(read.as_mut(), &mut cx).is_ready());
+}
+
+#[test]
 fn a_flipped_bit_in_one_range_ends_with_a_checksum_error() {
     let mut r = download_rig(true);
     let bytes = object(SIZE, 2);

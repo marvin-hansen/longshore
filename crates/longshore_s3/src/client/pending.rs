@@ -170,6 +170,16 @@ impl<T: Output> Pending<T> {
         }
     }
 
+    /// Send the request if it still waits for an operation slot and one is
+    /// free, without taking its result: for an operation asked for ahead
+    /// of the one its caller waits on. While no slot is free, `cx` is woken
+    /// when one is.
+    pub(super) fn send_ahead(&mut self, cx: &mut Context<'_>) {
+        match self.poll_slot(cx) {
+            Poll::Ready(()) | Poll::Pending => {}
+        }
+    }
+
     /// Let the operation run on whichever of `lanes` is open when it is sent.
     pub(super) fn on_any(mut self, lanes: Arc<[Arc<Lane>]>) -> Self {
         self.any = Some(lanes);
