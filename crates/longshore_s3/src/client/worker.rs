@@ -238,6 +238,21 @@ impl Worker {
                 let limit = r.budget.limit(io);
                 self.s3.get(io, token, key, range, &r.expect, buf, limit)
             }
+            Kind::Stat { head } => self.s3.stat(io, token, key, head.then_some(buf)),
+            Kind::List {
+                delimiter,
+                max_keys,
+                next,
+            } => super::query::submit_list(
+                &mut self.s3,
+                io,
+                token,
+                key,
+                delimiter,
+                max_keys,
+                next.then_some(r.len),
+                buf,
+            ),
             Kind::Abort => match &r.upload {
                 Some(upload) => self.s3.multipart_abort(io, token, key, upload),
                 None => Err(crate::s3::SubmitError::BadPart),

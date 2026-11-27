@@ -86,7 +86,8 @@ Most callers are on other threads, often inside an async runtime.
   in the lent buffer with its length. The caller parses it in place with
   `list::Listing`, which allocates and copies nothing.
 - A truncated listing is resumed by `list_next(prefix, delimiter, max_keys,
-  buffer)`, given the buffer that holds the previous page. The I/O thread
+  buffer, len)`, given the buffer that holds the previous page and that
+  page's length as the call that filled it returned. The I/O thread
   reads the continuation token out of that page and builds the next
   request's query from it before the response overwrites the buffer. No
   token crosses the queue, so the request message keeps its size (one key

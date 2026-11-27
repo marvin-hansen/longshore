@@ -54,6 +54,7 @@ mod exact;
 mod lane;
 mod multipart;
 mod pending;
+mod query;
 use longshore_mailbox::sync;
 mod threads;
 mod tls_provider;
@@ -349,7 +350,9 @@ fn error_of(f: &Finished) -> Error {
 
 /// Build the request for `key`, or say why it cannot be sent.
 fn request(op: u32, key: &str, kind: Kind, buf: u32, len: u32) -> Result<Request, Error> {
-    if key.is_empty() || key.len() > KEY_MAX {
+    // A listing's key is its prefix, and the empty prefix lists everything.
+    let empty_ok = matches!(kind, Kind::List { .. });
+    if (key.is_empty() && !empty_ok) || key.len() > KEY_MAX {
         return Err(Error::BadKey);
     }
     let mut r = Request {

@@ -80,6 +80,19 @@ pub(super) enum Kind {
     Get {
         range: Option<(u64, u64)>,
     },
+    /// Ask about the object; with `head`, also copy the response head into
+    /// the lent buffer.
+    Stat {
+        head: bool,
+    },
+    /// List keys under the prefix the key field holds, into the lent
+    /// buffer. With `next`, the buffer holds the previous page, `len`
+    /// bytes, and its continuation token resumes the listing.
+    List {
+        delimiter: Option<u8>,
+        max_keys: u16,
+        next: bool,
+    },
 }
 
 /// One I/O thread as its callers see it.

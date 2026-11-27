@@ -64,6 +64,10 @@ name = "client_driven"
 path = "tests/client/driven.rs"
 
 [[test]]
+name = "client_query"
+path = "tests/client/query.rs"
+
+[[test]]
 name = "client_exact"
 path = "tests/client/exact.rs"
 
