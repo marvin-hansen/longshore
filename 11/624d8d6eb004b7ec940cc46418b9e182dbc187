@@ -1,0 +1,29 @@
+crates/longshore_common/src/io/posix/abi_macos.rs
+  s_0a7ba2e6f2f96f::t_ac2f1b1b14c06e 36-39
+crates/longshore_common/tests/io/posix/end_sends.rs
+  s_0a7ba2e6f2f96f::t_5dc4370052a900 10,38,43-56
+  s_0a7ba2e6f2f96f::t_ddb82577b3d58f 1-9,11-20,22-24,26-32,34-37,39-40,42,57
+  s_0a7ba2e6f2f96f::t_8e5434be17f09e 21,25,33,41
+crates/longshore_common/src/io.rs
+  s_0a7ba2e6f2f96f::t_1f0ebbdd1aa214 258-259
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_1f0ebbdd1aa214 321-322
+crates/longshore_common/tests/io/posix.rs
+  s_0a7ba2e6f2f96f::t_ddb82577b3d58f 18-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "11624d8d6eb004b7ec940cc46418b9e182dbc187",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
