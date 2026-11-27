@@ -27,6 +27,8 @@ pub struct Server {
     #[cfg(feature = "tls-core")]
     tls: Option<ServerSetup>,
     objects: Vec<Object>,
+    /// Where a completed multipart upload is put together.
+    assembly: Box<[u8]>,
     /// Ids of the multipart uploads in progress; zero is a free entry.
     uploads: [u32; multipart::UPLOADS_MAX],
     uploads_begun: u32,
@@ -195,6 +197,11 @@ impl Server {
     /// Connections closed so far.
     pub fn closed(&self) -> u64 {
         self.closed
+    }
+
+    /// Multipart uploads begun and neither completed nor aborted.
+    pub fn uploads_in_progress(&self) -> usize {
+        self.uploads.iter().filter(|id| **id != 0).count()
     }
 
     /// Stored size of an object, for assertions.

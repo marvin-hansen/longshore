@@ -3,104 +3,41 @@
 // Licensed under the Apache License, Version 2.0 (the "License").
 // SPDX-License-Identifier: Apache-2.0
 
-//! A client that callers on any thread can share.
-//!
-//! A [`Client`] is a handle to one or more I/O threads. Each I/O thread is a
-//! complete single-threaded store with its own ring, connections and
-//! buffers, and the threads share nothing with each other. One thread is
-//! enough to fill a fast network card with plain uploads. More threads are
-//! for work that one core cannot carry, such as HTTPS and downloads.
-//!
-//! Bodies are not copied. A caller borrows a registered [`Buffer`] from the
-//! client, fills it, and hands it to an operation, which gives it back with
-//! the result. When no buffer or operation slot is free a call waits, so
-//! nothing queues without bound.
-//!
-//! Every operation returns a [`Pending`], which is a `Future` that works
-//! under any executor and also has a blocking [`Pending::wait`].
-//!
-//! ```no_run
-//! use longshore_s3::client::Builder;
-//! use longshore_s3::creds::Credentials;
-//!
-//! let credentials = Credentials::new("ACCESS_KEY", "SECRET_KEY").unwrap();
-//! let client = Builder::new("my-bucket.s3.us-east-1.amazonaws.com", "us-east-1", credentials)
-//!     .tls(true)
-//!     .port(443)
-//!     .threads(4) // four independent I/O threads
-//!     .build()
-//!     .unwrap();
-//!
-//! let mut body = client.buffer_blocking();
-//! body.as_mut_slice()[..5].copy_from_slice(b"hello");
-//! let (stored, body) = client.store("greeting", body, 5).wait();
-//! stored.unwrap();
-//! let (fetched, body) = client.fetch("greeting", body).wait();
-//! assert_eq!(fetched.unwrap(), Some(5));
-//! assert_eq!(&body.as_slice()[..5], b"hello");
-//! ```
-//!
-//! [`Client::put`], [`Client::head`] and [`Client::get`] are for a caller
-//! that must know exactly what happened: they take a limit of attempts and
-//! time, and report what the store answered instead of deciding what it
-//! means. See [`crate::report`].
-//!
-//! [`Worker`] is one I/O thread's logic with no thread around it, for a
-//! caller that drives the I/O itself: the simulator in tests, or an event
-//! loop that already owns the core.
+#![doc = include_str!("client/overview.md")]
 
 mod buffer;
+mod copying;
+mod download;
+mod error;
 mod exact;
 mod lane;
 mod multipart;
 mod pending;
+mod query;
 use longshore_mailbox::sync;
 mod threads;
 mod tls_provider;
+mod upload;
 mod worker;
 
 pub use buffer::Buffer;
+pub use download::{Download, OpeningDownload, Piece};
+pub use error::Error;
 pub use exact::Budget;
 pub use lane::{Lane, KEY_MAX};
 pub use pending::{Output, Pending};
 pub use threads::{BuildError, Builder};
 pub use tls_provider::TlsProvider;
+pub use upload::{Finishing, OpeningUpload, Sending, Upload, Writing, PARTS_IN_FLIGHT};
 pub use worker::{Layout, Worker};
 
 use crate::report::Expect;
-use crate::s3::{Checksum, Fatal, Outcome, SubmitError};
+use crate::s3::{Checksum, Outcome, SubmitError};
 use buffer::Borrow;
-use lane::{Finished, Kind, Request};
+use lane::{Finished, Kind, Request, Streamed};
 use std::future::Future;
 use std::sync::atomic::Ordering;
 use std::sync::Arc;
-
-/// Why an operation did not do what was asked.
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Error {
-    /// The key is empty, or longer than [`KEY_MAX`] or than the store allows,
-    /// or an expected `ETag` holds a byte that is not visible ASCII.
-    BadKey,
-    /// The byte range ends before it starts, or the parts of an upload are
-    /// not in ascending order.
-    BadRange,
-    /// The part number is not 1 to 10000.
-    BadPart,
-    /// More bytes than the buffer holds.
-    TooLong,
-    /// The store refused or could not be reached. Retries have been made.
-    Store(Fatal),
-    /// The operation did not run: the client was shut down, or the I/O
-    /// thread it was given to failed. An operation without a buffer goes to
-    /// an I/O thread still running when it is sent, but one can fail just
-    /// after that, and an operation with a buffer stays on the buffer's
-    /// thread. Asking again may succeed on another thread. If the failed
-    /// thread's kernel work could not be stopped, a buffer that comes back
-    /// with this error is void: see [`Buffer`].
-    Closed,
-    /// The store answered with something this operation does not expect.
-    Unexpected,
-}
 
 /// What keeps a threaded client's I/O threads running. `None` for a client
 /// over workers the caller drives.
@@ -110,6 +47,8 @@ type Alive = Option<Arc<threads::Threads>>;
 #[derive(Clone)]
 pub struct Client {
     lanes: Arc<[Arc<Lane>]>,
+    /// The records of upload streams, a fixed number per client.
+    streams: Arc<upload::Streams>,
     /// Stops and joins the I/O threads when the last handle, buffer and
     /// operation are gone.
     alive: Alive,
@@ -125,12 +64,24 @@ impl Client {
     /// The lent buffers are memory of the `Io` each worker was built over.
     /// Every such `Io` must outlive this client, its clones, and every
     /// [`Buffer`] and [`Pending`] that came from them.
+    ///
+    /// The number of upload streams and the smallest part are taken from
+    /// the first lane's [`Layout`].
     pub unsafe fn over(lanes: Vec<Arc<Lane>>) -> Client {
         assert!(!lanes.is_empty(), "a client needs at least one lane");
+        Client::assemble(lanes, None, Checksum::Compute)
+    }
+
+    /// A client over `lanes`, with its table of upload stream records.
+    /// Initialization: this allocates.
+    fn assemble(lanes: Vec<Arc<Lane>>, alive: Alive, checksum: Checksum) -> Client {
+        let lanes: Arc<[Arc<Lane>]> = lanes.into();
+        let (count, part_min) = (lanes[0].streams, lanes[0].part_min);
         Client {
-            lanes: lanes.into(),
-            alive: None,
-            checksum: Checksum::Compute,
+            streams: Arc::new(upload::Streams::new(lanes.clone(), count, part_min)),
+            lanes,
+            alive,
+            checksum,
         }
     }
 
@@ -209,6 +160,17 @@ impl Client {
 
     /// Store the first `len` bytes of `body` under `key`, replacing any
     /// object there. The buffer comes back with the result.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// let mut body = client.buffer_blocking();
+    /// body.as_mut_slice()[..5].copy_from_slice(b"hello");
+    /// let (stored, body) = client.store("greeting", body, 5).wait();
+    /// stored?;
+    /// // `body` is free for the next request, or dropped to give it back.
+    /// # Ok(()) }
+    /// ```
     pub fn store(
         &self,
         key: &str,
@@ -225,6 +187,17 @@ impl Client {
 
     /// Store only if no object exists under `key`. `Ok(true)` if this call
     /// stored it, `Ok(false)` if an object was already there.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// let body = client.buffer_blocking();
+    /// let (stored, _body) = client.store_no_clobber("lock", body, 0).wait();
+    /// if !stored? {
+    ///     println!("someone else holds the lock");
+    /// }
+    /// # Ok(()) }
+    /// ```
     pub fn store_no_clobber(
         &self,
         key: &str,
@@ -263,7 +236,19 @@ impl Client {
     }
 
     /// Fetch the object under `key` into `into`. `Ok(Some(n))` is its
-    /// length, `Ok(None)` means there is no such object.
+    /// length, `Ok(None)` means there is no such object. An object larger
+    /// than the buffer fails; [`Client::download`] reads one of any size.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// let (fetched, body) = client.fetch("greeting", client.buffer_blocking()).wait();
+    /// match fetched? {
+    ///     Some(n) => println!("{:?}", &body.as_slice()[..n]),
+    ///     None => println!("no such object"),
+    /// }
+    /// # Ok(()) }
+    /// ```
     pub fn fetch(
         &self,
         key: &str,
@@ -272,7 +257,20 @@ impl Client {
         self.fetch_as(key, None, into)
     }
 
-    /// Fetch bytes `first..=last` of the object under `key`.
+    /// Fetch bytes `first..=last` of the object under `key`, as
+    /// [`Client::fetch`] does.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// // Bytes 0 to 1023, both ends included.
+    /// let into = client.buffer_blocking();
+    /// let (fetched, into) = client.fetch_range("video.mp4", 0, 1023, into).wait();
+    /// if let Some(n) = fetched? {
+    ///     println!("{n} bytes: {:?}", &into.as_slice()[..n]);
+    /// }
+    /// # Ok(()) }
+    /// ```
     pub fn fetch_range(
         &self,
         key: &str,
@@ -349,7 +347,9 @@ fn error_of(f: &Finished) -> Error {
 
 /// Build the request for `key`, or say why it cannot be sent.
 fn request(op: u32, key: &str, kind: Kind, buf: u32, len: u32) -> Result<Request, Error> {
-    if key.is_empty() || key.len() > KEY_MAX {
+    // A listing's key is its prefix, and the empty prefix lists everything.
+    let empty_ok = matches!(kind, Kind::List { .. });
+    if (key.is_empty() && !empty_ok) || key.len() > KEY_MAX {
         return Err(Error::BadKey);
     }
     let mut r = Request {
@@ -363,6 +363,7 @@ fn request(op: u32, key: &str, kind: Kind, buf: u32, len: u32) -> Result<Request
         number: 0,
         expect: Expect::default(),
         budget: Budget::UNLIMITED,
+        stream: Streamed::No,
     };
     r.key[..key.len()].copy_from_slice(key.as_bytes());
     Ok(r)

@@ -2,6 +2,7 @@
 name = "longshore_file"
 description = "File I/O over longshore I/O: one API on io_uring, kqueue/epoll and the simulator"
 edition.workspace = true
+rust-version.workspace = true
 version.workspace = true
 license.workspace = true
 repository = "https://github.com/carverauto/longshore"

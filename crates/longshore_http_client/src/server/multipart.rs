@@ -177,13 +177,16 @@ impl Server {
         upload: &Upload<'_>,
         apply_then_close: bool,
     ) {
-        // Read the list of parts, then reuse the body buffer to assemble them.
+        // Read the list of parts, then assemble them beside it.
         let parsed = listed_parts(&io.buf(self.body_buf(i))[..c.request_len as usize]);
         let (listed, count) = match parsed {
             Ok(parts) => parts,
             Err(code) => return self.error_document(io, i, 400, code),
         };
-        let total = match self.assemble(io, i, upload, &listed[..count]) {
+        let mut assembly = core::mem::take(&mut self.assembly);
+        let assembled = self.assemble(&mut assembly, upload, &listed[..count]);
+        self.assembly = assembly;
+        let total = match assembled {
             Ok(total) => total,
             Err(code) => return self.error_document(io, i, 400, code),
         };
@@ -191,12 +194,12 @@ impl Server {
             return self.error_document(io, i, 400, "MalformedXML");
         }
         if let (Some(sum), Some(claimed)) = (self.cfg.checksum(), c.claimed) {
-            if sum(&io.buf(self.body_buf(i))[..total]) != claimed {
+            if sum(&self.assembly[..total]) != claimed {
                 return self.error_document(io, i, 400, "BadDigest");
             }
         }
         self.end_upload(upload);
-        self.store_assembled(io, i, upload.path, total);
+        self.store_assembled(upload.path, total);
         if apply_then_close {
             return self.close(io, i);
         }
@@ -205,12 +208,11 @@ impl Server {
         self.status(io, i, 200, "OK", doc.len() as u64, doc.len() as u32, false);
     }
 
-    /// Copy the `listed` parts, in order, into the body buffer. Returns
-    /// their total length, or the error code a part is refused with.
-    fn assemble<IO: Io>(
+    /// Copy the `listed` parts, in order, into `out`. Returns their total
+    /// length, or the error code a part is refused with.
+    fn assemble(
         &self,
-        io: &mut IO,
-        i: usize,
+        out: &mut [u8],
         upload: &Upload<'_>,
         listed: &[Listed],
     ) -> Result<usize, &'static str> {
@@ -233,17 +235,17 @@ impl Server {
                 return Err("InvalidPart");
             }
             let len = part.len as usize;
-            if total + len > self.cfg.buffer_size() as usize {
+            if total + len > out.len() {
                 return Err("EntityTooLarge");
             }
-            io.buf(self.body_buf(i))[total..total + len].copy_from_slice(&part.data[..len]);
+            out[total..total + len].copy_from_slice(&part.data[..len]);
             total += len;
         }
         Ok(total)
     }
 
-    /// Store the `total` assembled bytes in the body buffer as the object `path`.
-    fn store_assembled<IO: Io>(&mut self, io: &mut IO, i: usize, path: &[u8], total: usize) {
+    /// Store the `total` assembled bytes as the object `path`.
+    fn store_assembled(&mut self, path: &[u8], total: usize) {
         #[expect(
             clippy::expect_used,
             reason = "the object's parts were just freed, so a slot is free"
@@ -253,8 +255,7 @@ impl Server {
             .or_else(|| self.objects.iter().position(|o| !o.used))
             .expect("the parts just freed leave room");
         let o = &mut self.objects[slot];
-        o.data[..total]
-            .copy_from_slice(&io.buf(BufId::new(self.cfg.first_buf() + i as u32 * 2 + 1))[..total]);
+        o.data[..total].copy_from_slice(&self.assembly[..total]);
         o.target[..path.len()].copy_from_slice(path);
         o.target_len = path.len();
         o.len = total as u32;

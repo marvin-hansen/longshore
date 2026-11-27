@@ -1,0 +1,24 @@
+== host: Linux 7.2.12-orbstack-00394-gbecdd6130068 aarch64 under OrbStack 29.8.2 on an Apple M3 Max
+== commit: ebdaa7f
+== store: rustfs 1.0.6
+== client_s3 check under check/7-1795791121/
+ok   copy a slice that fits one buffer: 1048576 bytes back, equal
+ok   stat a stored key: size 1048576, tag present, stored checksum present
+ok   stat a missing key: none
+ok   stat with the response head: 393 bytes of head, content-length 1048576
+ok   list two keys a page: 5 keys in 3 pages, in order
+ok   list one level by delimiter: common prefixes ["check/7-1795791121/l/"]
+ok   store the big object (multipart): 42991616 bytes in 6 parts
+ok   download the big object: 42991616 bytes in 6 pieces, in order, verified against the stored checksum
+ok   fetch the big object into a slice: 42991616 bytes, equal
+ok   fetch into slices too short: TooLong both ways
+ok   download while the object is replaced: status 412 after 25165824 of 42991616 bytes
+ok   upload a short stream: 1000 bytes, tag "9c99545ea9d093b03fa3397715dae50f": one plain store
+ok   upload a long stream written in pieces: 42991616 bytes in pieces of 2796219, tag "17401c57b53ab6981033f4ad3bffe3db-6", read back equal
+ok   store a long slice: 42991616 bytes, tag "17401c57b53ab6981033f4ad3bffe3db-6", read back equal
+ok   drop a stream half way: no object; the upload was aborted (not visible through the client)
+ok   erase everything stored: 12 keys erased
+ok client_s3 check
+exit status 0
+== multipart uploads in progress under check/ afterwards (ListMultipartUploads with curl --aws-sigv4):
+<?xml version="1.0" encoding="UTF-8"?><ListMultipartUploadsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Bucket>longshore-test</Bucket><IsTruncated>false</IsTruncated><MaxUploads>1000</MaxUploads><Prefix>check/</Prefix></ListMultipartUploadsResult>

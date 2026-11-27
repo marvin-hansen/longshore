@@ -21,6 +21,15 @@ pub struct Stat {
 /// the caller's buffer. Names compare without regard to case. Use it for
 /// what [`Stat`] has no field for: `content-type`, `x-amz-meta-...`,
 /// `x-amz-storage-class` and so on.
+///
+/// ```
+/// use longshore_s3::stat::header_in;
+///
+/// let head = b"HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nX-Amz-Meta-Owner: ops\r\n\r\n";
+/// assert_eq!(header_in(head, "content-type"), Some(&b"text/plain"[..]));
+/// assert_eq!(header_in(head, "x-amz-meta-owner"), Some(&b"ops"[..]));
+/// assert_eq!(header_in(head, "x-amz-storage-class"), None);
+/// ```
 pub fn header_in<'a>(head: &'a [u8], name: &str) -> Option<&'a [u8]> {
     // The first line is the status line.
     head.split(|b| *b == b'\n').skip(1).find_map(|line| {

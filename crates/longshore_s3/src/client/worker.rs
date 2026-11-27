@@ -8,13 +8,15 @@
 //! own, so the same code runs on a real thread, in the simulator, and under
 //! a caller's event loop.
 
-use super::lane::{Finished, Kind, Lane, Request};
+use super::lane::{Finished, Lane, Request, Streamed};
 use super::sync::{AtomicBool, AtomicU32, AtomicU64};
 use crate::s3::S3;
 use longshore_common::io::{BufId, Completion, Io, Op, Token};
 use longshore_mailbox::{Config, NoWaker, Pool, Receiver, Recv, TryRecv};
 use std::sync::atomic::Ordering;
 use std::sync::Arc;
+
+mod dispatch;
 
 const DEFAULT_WAITERS: usize = 256;
 
@@ -26,6 +28,8 @@ pub struct Layout {
     pub(crate) buffers: u32,
     pub(crate) token_base: u64,
     pub(crate) heartbeat_ns: u64,
+    pub(crate) streams: u32,
+    pub(crate) part_min: u64,
 }
 
 /// One I/O thread's side of a client: the store, and the lane its requests
@@ -37,6 +41,9 @@ pub struct Worker {
     layout: Layout,
     /// Operation slots the store is running.
     running: Box<[bool]>,
+    /// For each operation slot holding an upload stream's operation: the
+    /// stream's table and record, from the request.
+    streamed: Box<[Option<(usize, u32)>]>,
     stopping: bool,
 }
 
@@ -91,6 +98,9 @@ impl Worker {
             in_flight: AtomicU32::new(0),
             reloads: [AtomicU64::new(0), AtomicU64::new(0)],
             void: AtomicBool::new(false),
+            owed: AtomicU32::new(0),
+            part_min: layout.part_min,
+            streams: layout.streams,
             #[cfg(all(feature = "fault-injection", target_os = "linux"))]
             fault: Default::default(),
         });
@@ -100,6 +110,7 @@ impl Worker {
             rx,
             layout,
             running: vec![false; layout.operations as usize].into_boxed_slice(),
+            streamed: vec![None; layout.operations as usize].into_boxed_slice(),
             stopping: false,
         };
         Ok((worker, lane))
@@ -174,8 +185,15 @@ impl Worker {
 
     fn answer(&mut self, op: u32, finished: &Finished) {
         let _: u32 = self.lane.in_flight.fetch_sub(1, Ordering::Relaxed);
+        let stream = self.streamed[op as usize].take();
+        // A buffer comes back here only when its caller has gone. Every
+        // operation of an upload stream holds a buffer.
         if let Some(buf) = self.rx.answer(op, *finished) {
             self.lane.give_buffer(buf);
+            if let Some((table, record)) = stream {
+                // The stream was dropped while this ran, which keeps its table alive.
+                unsafe { super::upload::ended(table, record, finished) };
+            }
         }
     }
 
@@ -192,67 +210,10 @@ impl Worker {
         }
     }
 
-    fn begin<IO: Io>(&mut self, io: &mut IO, r: &Request) {
-        if self.stopping {
-            self.answer(r.op, &Finished::Closed);
-            return;
-        }
-        let key = core::str::from_utf8(&r.key[..r.key_len as usize]).unwrap_or("");
-        let buf = BufId::new(self.layout.first_buffer.get() + r.buf);
-        let token = u64::from(r.op);
-        let sent = match r.kind {
-            Kind::Store {
-                no_clobber: false,
-                checksum,
-            } => self.s3.store(io, token, key, buf, r.len, checksum),
-            Kind::Store {
-                no_clobber: true,
-                checksum,
-            } => self
-                .s3
-                .store_no_clobber(io, token, key, buf, r.len, checksum),
-            Kind::Fetch { range } => self.s3.fetch(io, token, key, range, buf),
-            Kind::Erase => self.s3.erase(io, token, key),
-            Kind::Begin { checksums } => self.s3.multipart_begin(io, token, key, checksums),
-            Kind::Part { checksum } => match &r.upload {
-                Some(upload) => self
-                    .s3
-                    .multipart_store_part(io, token, key, upload, r.number, buf, r.len, checksum),
-                None => Err(crate::s3::SubmitError::BadPart),
-            },
-            Kind::Complete => match &r.upload {
-                Some(upload) => self
-                    .s3
-                    .multipart_complete(io, token, key, upload, buf, r.len, None),
-                None => Err(crate::s3::SubmitError::BadPart),
-            },
-            Kind::Put { options } => {
-                let limit = r.budget.limit(io);
-                self.s3.put(io, token, key, buf, r.len, &options, limit)
-            }
-            Kind::Head => {
-                let limit = r.budget.limit(io);
-                self.s3.head(io, token, key, &r.expect, limit)
-            }
-            Kind::Get { range } => {
-                let limit = r.budget.limit(io);
-                self.s3.get(io, token, key, range, &r.expect, buf, limit)
-            }
-            Kind::Abort => match &r.upload {
-                Some(upload) => self.s3.multipart_abort(io, token, key, upload),
-                None => Err(crate::s3::SubmitError::BadPart),
-            },
-        };
-        match sent {
-            Ok(()) => self.running[r.op as usize] = true,
-            Err(e) => self.answer(r.op, &Finished::Rejected(e)),
-        }
-    }
-
     /// True once a shutdown was asked for and nothing is in progress. The
     /// owner then stops driving the worker and calls [`Worker::close`].
     pub fn finished(&self) -> bool {
-        self.stopping && self.s3.in_progress() == 0
+        self.stopping && self.s3.in_progress() == 0 && self.lane.owed.load(Ordering::Acquire) == 0
     }
 
     /// Mark the lane closed and end every request still queued.
@@ -262,12 +223,20 @@ impl Worker {
         self.rx.begin_close(|item| match item {
             Recv::Message(r) => {
                 let _: u32 = lane.in_flight.fetch_sub(1, Ordering::Relaxed);
+                if r.stream == Streamed::Abort {
+                    // An abort owed to this lane that will never run.
+                    let _: u32 = lane.owed.fetch_sub(1, Ordering::AcqRel);
+                }
                 if let Some(buf) =
                     lane.sender
                         .cells()
                         .answer(lane.sender.pool(), r.op, Finished::Closed)
                 {
                     lane.give_buffer(buf);
+                    if let Streamed::Op { table, record } = r.stream {
+                        // As in `answer`: the dropped stream keeps its table alive.
+                        unsafe { super::upload::ended(table, record, &Finished::Closed) };
+                    }
                 }
             }
             Recv::Stop => *stopping = true,
@@ -337,7 +306,43 @@ impl Layout {
             buffers,
             token_base,
             heartbeat_ns,
+            streams: 4,
+            part_min: 5 << 20,
         }
+    }
+
+    /// Upload streams open at once on a client over this lane: 4 by
+    /// default. See [`super::Builder::streams`]. A client takes this from
+    /// its first lane. A client opens none, and
+    /// [`super::Client::upload`] fails at once with
+    /// [`super::Error::NoStreams`], if this is 0 or any of its lanes has a
+    /// single operation slot ([`Layout::new`]'s `operations`), since a
+    /// stream keeps one slot for its abort.
+    #[inline]
+    pub const fn with_streams(mut self, streams: u32) -> Layout {
+        self.streams = streams;
+        self
+    }
+
+    /// The smallest part the store takes: 5 MiB by default. See
+    /// [`super::Builder::part_min`]. A client takes this from its first
+    /// lane.
+    #[inline]
+    pub const fn with_part_min(mut self, bytes: u64) -> Layout {
+        self.part_min = bytes;
+        self
+    }
+
+    /// See [`Layout::with_streams`].
+    #[inline]
+    pub const fn streams(self) -> u32 {
+        self.streams
+    }
+
+    /// See [`Layout::with_part_min`].
+    #[inline]
+    pub const fn part_min(self) -> u64 {
+        self.part_min
     }
 
     /// Operations in progress at most. The store must allow as many.

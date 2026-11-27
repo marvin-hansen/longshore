@@ -60,6 +60,21 @@ fn element<'a>(xml: &'a [u8], name: &str) -> Result<Option<(&'a [u8], usize)>, L
 impl<'a> Listing<'a> {
     /// Read the listing document `xml`. The objects in it are read by
     /// [`Listing::entries`].
+    ///
+    /// ```
+    /// use longshore_s3::list::Listing;
+    ///
+    /// let xml = b"<ListBucketResult><IsTruncated>false</IsTruncated>\
+    ///     <Contents><Key>logs/a</Key><Size>12</Size></Contents>\
+    ///     <CommonPrefixes><Prefix>logs/2026/</Prefix></CommonPrefixes>\
+    ///     </ListBucketResult>";
+    /// let listing = Listing::parse(xml).unwrap();
+    /// let entry = listing.entries().next().unwrap().unwrap();
+    /// assert_eq!((entry.key_raw(), entry.size()), (&b"logs/a"[..], 12));
+    /// let below: Vec<_> = listing.common_prefixes().flatten().collect();
+    /// assert_eq!(below, [&b"logs/2026/"[..]]);
+    /// assert!(!listing.is_truncated());
+    /// ```
     pub fn parse(xml: &'a [u8]) -> Result<Listing<'a>, ListError> {
         // The root element, possibly after an XML declaration, possibly with
         // a namespace attribute.

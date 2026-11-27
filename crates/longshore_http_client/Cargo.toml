@@ -2,6 +2,7 @@
 name = "longshore_http_client"
 description = "An HTTP/1.1 client over longshore I/O, plain or TLS, with a connection pool, and a server used by tests"
 edition.workspace = true
+rust-version.workspace = true
 version.workspace = true
 license.workspace = true
 repository = "https://github.com/carverauto/longshore"

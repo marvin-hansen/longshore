@@ -9,8 +9,9 @@
 //!   client_uring [--threads N] [--v6]
 //!
 //! Stores, fetches and erases objects from several caller threads at once,
-//! through blocking calls and through futures, verifies every byte, uploads
-//! an object in parts, writes one that is read back under the identity the
+//! through blocking calls and through futures, verifies every byte, drops
+//! fetches while the kernel receives into their buffers, uploads an object
+//! in parts, writes one that is read back under the identity the
 //! store gave it, ends a request at its deadline, then
 //! drops the client and checks that its I/O threads have gone.
 
@@ -44,6 +45,10 @@ mod callers;
 #[cfg(target_os = "linux")]
 #[path = "client_uring/quiesce.rs"]
 mod quiesce;
+
+#[cfg(target_os = "linux")]
+#[path = "client_uring/cancel.rs"]
+mod cancel;
 
 /// The size of every object and of the buffers that carry them.
 #[cfg(target_os = "linux")]
@@ -127,6 +132,7 @@ fn main() {
     }
 
     callers::run(&client);
+    cancel::check(&client);
 
     multipart::round_trip(&client, SIZE as usize / 4);
     exact::round_trip(&client, SIZE as usize / 4);

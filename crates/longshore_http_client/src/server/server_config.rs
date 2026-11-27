@@ -26,6 +26,7 @@ pub struct ServerConfig {
     head_max: u32,
     buffer_size: u32,
     objects_max: u32,
+    object_size: u32,
     token_base: u64,
     checksum: Option<ChecksumFn>,
 }
@@ -64,6 +65,7 @@ impl ServerConfig {
             head_max: b.head_max,
             buffer_size: b.buffer_size,
             objects_max: b.objects_max,
+            object_size: b.object_size.max(b.buffer_size),
             token_base: b.token_base,
             checksum: b.checksum,
         }
@@ -102,6 +104,12 @@ impl ServerConfig {
     /// Objects the store can hold. Each reserves `buffer_size` bytes at init.
     pub fn objects_max(&self) -> u32 {
         self.objects_max
+    }
+
+    /// Bytes each object slot holds, at least `buffer_size`. See
+    /// [`ServerConfigBuilder::object_size`].
+    pub fn object_size(&self) -> u32 {
+        self.object_size
     }
 
     /// Tokens used are `token_base..token_base + connections_max * 8 + 1`.

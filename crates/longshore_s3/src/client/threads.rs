@@ -79,6 +79,9 @@ pub struct Builder {
     buffer_size: u32,
     operations: u32,
     waiters: u32,
+    /// `None` until set: then one fewer than `operations`, at most 4.
+    streams: Option<u32>,
+    part_min: u64,
     family: Family,
     prefer_large_segments: Option<usize>,
     nameservers: Vec<SocketAddr>,
@@ -109,11 +112,20 @@ impl Builder {
             buffer_size: 8 << 20,
             operations: 64,
             waiters: 256,
+            streams: None,
+            part_min: 5 << 20,
             family: Family::V4,
             prefer_large_segments: None,
             nameservers: Vec::new(),
             address: None,
         }
+    }
+
+    /// Upload streams the client opens: as set, or one fewer than
+    /// `operations`, at most 4.
+    pub(super) fn streams_or_default(&self) -> u32 {
+        self.streams
+            .unwrap_or(4.min(self.operations.saturating_sub(1)))
     }
 
     fn check(&self) -> Result<(), BuildError> {
@@ -136,6 +148,16 @@ impl Builder {
         }
         if self.connections == 0 || self.buffers == 0 || self.operations == 0 || self.waiters == 0 {
             return bad("connections, buffers, operations and waiters must be at least 1");
+        }
+        if self.streams.is_some_and(|s| s > 1024) {
+            return bad("streams must be 0 to 1024");
+        }
+        // A begun stream keeps one slot for its abort on the thread its
+        // list of parts came from, and every stream may be on one thread.
+        // With as many streams as slots, their requests would have none
+        // left there, and every stream would wait for ever.
+        if self.streams.is_some_and(|s| s > 0 && s >= self.operations) {
+            return bad("streams must be below operations, or 0: each begun upload stream keeps an operation slot for its abort, and all of them may be on one thread");
         }
         if self.buffer_size < 8192 {
             return bad("buffer_size must be at least 8192");
@@ -247,15 +269,15 @@ impl Builder {
         let threads = Threads::new(lanes.clone(), joins);
         match failed {
             Some(e) => Err(BuildError::Io(e)),
-            None => Ok(Client {
-                lanes: lanes.into(),
-                alive: Some(Arc::new(threads)),
-                checksum: if self.checksums {
+            None => Ok(Client::assemble(
+                lanes,
+                Some(Arc::new(threads)),
+                if self.checksums {
                     crate::s3::Checksum::Compute
                 } else {
                     crate::s3::Checksum::None
                 },
-            }),
+            )),
         }
     }
 }
@@ -276,6 +298,19 @@ impl Threads {
 
 impl Drop for Threads {
     fn drop(&mut self) {
+        // An upload stream dropped with parts in flight owes an abort,
+        // which the I/O thread that ends its last part sends through a
+        // lane's queue, and a stop closes the queues. So the aborts are let
+        // arrive first. Parts end, by retries and time limits if not
+        // otherwise, so this ends; a thread that has died stops the wait.
+        while self
+            .lanes
+            .iter()
+            .any(|l| l.owed.load(std::sync::atomic::Ordering::Acquire) > 0)
+            && !self.joins.iter().any(JoinHandle::is_finished)
+        {
+            std::thread::sleep(std::time::Duration::from_millis(1));
+        }
         for lane in &self.lanes {
             lane.sender.stop();
         }

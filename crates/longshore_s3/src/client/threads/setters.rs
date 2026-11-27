@@ -148,9 +148,35 @@ impl Builder {
         self
     }
 
-    /// Operations in progress at most. Others wait.
+    /// Operations in progress at most, per thread. Others wait. Each begun
+    /// upload stream keeps one of them for its abort, so
+    /// [`Builder::streams`] must be below this.
     pub fn operations(mut self, operations: u32) -> Builder {
         self.operations = operations;
+        self
+    }
+
+    /// Upload streams open at once, per client (see
+    /// [`Client::upload`](crate::client::Client::upload)). By default 4, or
+    /// one fewer than [`Builder::operations`] if that is smaller. Opening
+    /// one more waits until one ends. Each stream that has begun its upload
+    /// holds one buffer for its list of parts, and one operation slot kept
+    /// for aborting it, until it ends. That slot is on the thread the
+    /// buffer came from, and every stream may be on one thread, so
+    /// [`Builder::build`] refuses as many streams as operations or more:
+    /// their requests would have no slot left. 0 turns streams off:
+    /// [`Client::upload`](crate::client::Client::upload) then fails at once
+    /// with [`Error::NoStreams`](crate::client::Error::NoStreams).
+    pub fn streams(mut self, streams: u32) -> Builder {
+        self.streams = Some(streams);
+        self
+    }
+
+    /// The smallest part the store takes, in bytes: 5 MiB, as on Amazon
+    /// S3, by default. An upload stream sends each buffer as one part, so
+    /// opening one fails while [`Builder::buffer_size`] is below this.
+    pub fn part_min(mut self, bytes: u64) -> Builder {
+        self.part_min = bytes;
         self
     }
 

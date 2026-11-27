@@ -19,5 +19,5 @@
 - [ ] 4.3 Whatever 4.1 shows to be refused by the store is refused when submitted, the same way
 
 ## 5. Real stores and documentation
-- [ ] 5.1 The client's driver against a standard Google Cloud Storage bucket (closes `add-high-level-client` 3.4)
+- [ ] 5.1 The client's driver against a standard Google Cloud Storage bucket (moved here from `add-high-level-client` 3.4)
 - [ ] 5.2 README: what works on which store, and what a zonal bucket cannot do

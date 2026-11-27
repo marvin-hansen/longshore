@@ -23,8 +23,9 @@ impl Server {
             #[cfg(feature = "tls-core")]
             tls: tls.map(|t| t.0),
             objects: (0..cfg.objects_max())
-                .map(|_| Object::empty(cfg.buffer_size()))
+                .map(|_| Object::empty(cfg.object_size()))
                 .collect(),
+            assembly: vec![0; cfg.object_size() as usize].into_boxed_slice(),
             uploads: [0; multipart::UPLOADS_MAX],
             uploads_begun: 0,
             erase_denied: "",

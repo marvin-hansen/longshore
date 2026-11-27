@@ -2,6 +2,7 @@
 name = "longshore_common"
 description = "The I/O layer of longshore: one trait, an io_uring backend with memory allocated at start-up, and a deterministic simulator for tests"
 edition.workspace = true
+rust-version.workspace = true
 version.workspace = true
 license.workspace = true
 repository = "https://github.com/carverauto/longshore"

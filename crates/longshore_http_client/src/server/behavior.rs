@@ -41,4 +41,8 @@ pub enum Behavior {
     ChunkedBody(u32),
     /// Respond with chunked transfer encoding whose first chunk size is not a number.
     BadChunk,
+    /// Serve a GET as usual, with the lowest bit of the body byte at this
+    /// offset flipped: damage in transit that TCP's own checksum missed.
+    /// Nothing is flipped in a body this short.
+    FlipBit(u32),
 }

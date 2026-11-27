@@ -128,6 +128,46 @@ fn the_default_tls_provider_is_the_first_compiled_in_of_aws_lc_ring_and_rustls()
 }
 
 #[test]
+fn as_many_streams_as_operations_are_refused_and_the_default_stays_below() {
+    // Every begun stream keeps a slot for its abort, all perhaps on one
+    // thread: with as many streams as slots, their requests have none.
+    for (operations, streams) in [(1, 1), (4, 4), (4, 5), (2, 2)] {
+        let b = settings("bucket.s3.example.com")
+            .operations(operations)
+            .streams(streams);
+        let Err(BuildError::Setting(what)) = b.build() else {
+            panic!("{streams} streams on {operations} operations were not refused");
+        };
+        assert!(what.contains("streams must be below operations"), "{what}");
+    }
+    assert!(refused(settings("bucket.s3.example.com").streams(1025)));
+
+    #[cfg(any(target_os = "linux", target_os = "macos"))]
+    {
+        let on = |operations: u32| {
+            settings("bucket.s3.example.com")
+                .address(Some("127.0.0.1:1".parse().unwrap()))
+                .operations(operations)
+                .portable(true)
+        };
+        // One slot: the default turns streams off, and opening one fails
+        // at once rather than wait for ever.
+        let client = on(1).build().expect("one slot, streams off by default");
+        let opened = client.upload("k").wait();
+        assert_eq!(opened.err(), Some(longshore_s3::client::Error::NoStreams));
+        // Fewer slots than the default 4 streams: the default is one fewer.
+        drop(on(3).build().expect("three slots, two streams by default"));
+        drop(
+            on(4)
+                .streams(3)
+                .build()
+                .expect("three streams on four slots"),
+        );
+        drop(on(1).streams(0).build().expect("one slot with streams off"));
+    }
+}
+
+#[test]
 fn builder_validation_edges_and_non_utf8_credentials_and_partial_start_failure() {
     let no_operations = settings("bucket.s3.example.com").operations(0);
     assert!(refused(no_operations));
@@ -181,6 +221,7 @@ fn partial_start_fails_with_io_error() {
         .connections(1)
         .buffers(1)
         .operations(1)
+        .streams(0)
         .waiters(1)
         .portable(true);
     assert!(matches!(partial.build(), Err(BuildError::Io(_))));

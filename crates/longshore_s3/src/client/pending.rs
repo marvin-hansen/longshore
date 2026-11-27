@@ -6,7 +6,7 @@
 //! An operation in progress: a future, with a blocking wait as well.
 
 use super::buffer::NO_INDEX;
-use super::lane::{Finished, Kind, Lane, Request};
+use super::lane::{Finished, Kind, Lane, Request, Streamed};
 use super::{least_busy, open, request, Alive, Buffer, Error};
 use longshore_mailbox::{block_on, SlotWaiter, TrySendError};
 use std::future::Future;
@@ -69,6 +69,13 @@ pub struct Pending<T: Output> {
     number: u32,
 }
 
+/// What became of an operation given up with [`Pending::abandon`].
+pub(super) enum Left<T> {
+    NotSent,
+    Running,
+    Ended(T),
+}
+
 #[derive(Clone, Copy, PartialEq)]
 enum Stage {
     /// Waiting for an operation slot.
@@ -128,6 +135,49 @@ impl<T: Output> Pending<T> {
             r.expect = *expect;
         }
         self
+    }
+
+    /// Mark the request as an operation of the upload stream whose record
+    /// is `record` in the table at `table`.
+    pub(super) fn of_stream(mut self, table: usize, record: u32) -> Self {
+        if let Some(r) = &mut self.request {
+            r.stream = Streamed::Op { table, record };
+        }
+        self
+    }
+
+    /// Whether the request has gone to its I/O thread and its result has
+    /// not been taken.
+    pub(super) fn is_sent(&self) -> bool {
+        matches!(self.stage, Stage::Sent(_))
+    }
+
+    /// Stop waiting for the operation. If it was sent and has not ended,
+    /// its I/O thread ends it and takes back its buffer: [`Left::Running`].
+    /// If it has ended, its result: [`Left::Ended`]. Otherwise it never
+    /// ran, and its buffer goes back to the pool.
+    pub(super) fn abandon(mut self) -> Left<T> {
+        let Stage::Sent(op) = self.stage else {
+            return Left::NotSent;
+        };
+        match self.lane.sender.detach(op) {
+            Some(finished) => Left::Ended(self.finish(&finished)),
+            None => {
+                self.stage = Stage::Taken;
+                self.buf = None;
+                Left::Running
+            }
+        }
+    }
+
+    /// Send the request if it still waits for an operation slot and one is
+    /// free, without taking its result: for an operation asked for ahead
+    /// of the one its caller waits on. While no slot is free, `cx` is woken
+    /// when one is.
+    pub(super) fn send_ahead(&mut self, cx: &mut Context<'_>) {
+        match self.poll_slot(cx) {
+            Poll::Ready(()) | Poll::Pending => {}
+        }
     }
 
     /// Let the operation run on whichever of `lanes` is open when it is sent.
