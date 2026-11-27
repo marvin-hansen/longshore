@@ -50,6 +50,7 @@
 //! loop that already owns the core.
 
 mod buffer;
+mod copying;
 mod download;
 mod exact;
 mod lane;

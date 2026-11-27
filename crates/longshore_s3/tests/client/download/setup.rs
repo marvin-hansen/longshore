@@ -64,7 +64,8 @@ pub fn download_rig(checksums: bool) -> Rig {
     .with_backoff_ns(100 * MS)
     .with_backoff_max_ns(800 * MS);
     let lent = BufId::new(LIMITS_DL.buffers() + CONNS);
-    let layout = Layout::new(4, lent, LENT, 7 << 40, 10 * MS);
+    // Parts as small as a range, so streams can upload through these buffers.
+    let layout = Layout::new(4, lent, LENT, 7 << 40, 10 * MS).with_part_min(RANGE as u64);
     let (mut worker, lane) = Worker::new(&mut io, S3::new(cfg), layout).unwrap();
     worker.start(&mut io);
     let lane_rig = LaneRig {
