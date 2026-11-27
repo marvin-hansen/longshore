@@ -101,6 +101,7 @@ impl Server {
         o.target[..c.target_len].copy_from_slice(&c.target[..c.target_len]);
         o.target_len = c.target_len;
         o.len = len as u32;
+        o.tag = multipart::tag(&o.data[..len]);
         o.used = true;
         o.describing = c.describing;
         o.describing_len = c.describing_len;
@@ -108,7 +109,7 @@ impl Server {
             return self.close(io, i);
         }
         // A stored part is answered with its tag, and so is an object.
-        self.conns[i].reply_tag = Some(multipart::tag(&self.objects[slot].data[..len]));
+        self.conns[i].reply_tag = Some(self.objects[slot].tag);
         if !c.target[..c.target_len]
             .windows(12)
             .any(|w| w == b"?partNumber=")

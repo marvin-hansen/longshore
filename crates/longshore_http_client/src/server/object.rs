@@ -7,6 +7,7 @@
 
 use super::consts::{DESCRIBING_MAX, TARGET_MAX};
 use super::identity;
+use super::multipart::TAG_LEN;
 
 /// An object slot in the store's table, with room for one buffer of data.
 pub(super) struct Object {
@@ -16,6 +17,9 @@ pub(super) struct Object {
     pub(super) data: Box<[u8]>,
     pub(super) used: bool,
     pub(super) checksum: Option<[u8; 12]>,
+    /// Its `ETag`, worked out once when its bytes are written, not on
+    /// every request that names it.
+    pub(super) tag: [u8; TAG_LEN],
     /// Content type and metadata headers it was stored with, as raw lines.
     pub(super) describing: [u8; DESCRIBING_MAX],
     pub(super) describing_len: usize,
@@ -33,6 +37,7 @@ impl Object {
             data: vec![0u8; buffer_size as usize].into_boxed_slice(),
             used: false,
             checksum: None,
+            tag: [0; TAG_LEN],
             describing: [0; DESCRIBING_MAX],
             describing_len: 0,
             kept: Default::default(),

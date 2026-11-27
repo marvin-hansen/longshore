@@ -140,8 +140,7 @@ impl Server {
             return Some((404, "Not Found"));
         }
         let (tag, n) = asked.if_match;
-        (n > 0 && tag.get(..n) != Some(&multipart::tag(&o.data[..o.len as usize])[..]))
-            .then_some((412, "Precondition Failed"))
+        (n > 0 && tag.get(..n) != Some(&o.tag[..])).then_some((412, "Precondition Failed"))
     }
 
     /// Write the headers that identify the object the response is about.
