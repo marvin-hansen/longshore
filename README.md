@@ -113,6 +113,20 @@ assert_eq!(&body.as_slice()[..5], b"hello");
 
 Every operation returns a `Future` that also has a blocking `wait`, so the
 same calls work under any async executor and from plain threads.
+
+Beyond that round trip, the client copies from and into the caller's own
+slices (`store_from`, `fetch_into`), streams objects of any size
+(`upload`, `download`), and asks about objects (`stat`, `list`). Each has
+a complete program in
+[`crates/longshore_s3/examples/`](crates/longshore_s3/examples/), run
+against a store the environment names:
+
+```sh
+S3_ENDPOINT=s3.us-east-1.amazonaws.com S3_REGION=us-east-1 S3_BUCKET=my-bucket \
+S3_ACCESS_KEY=... S3_SECRET_KEY=... S3_TLS=1 \
+    cargo run --release -p longshore_s3 --example streams
+```
+
 [The shareable client][client] covers multipart uploads, the calls that
 report exactly what the store answered, the settings, and how the client is
 tested. The store's own API is lower level:

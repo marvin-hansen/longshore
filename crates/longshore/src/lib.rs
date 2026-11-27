@@ -144,10 +144,34 @@
 //!
 //! ## Objects larger than one buffer
 //!
-//! One operation moves at most one buffer. A larger object goes up as a
-//! multipart upload: begin it, store each buffer as a numbered part, and
-//! complete it with the parts in order. Parts are separate operations, so
-//! several can be in flight at once.
+//! One operation moves at most one buffer. A stream moves an object of any
+//! size a buffer at a time: [`client::Client::upload`] sends each full
+//! buffer as one part of a multipart upload, and
+//! [`client::Client::download`] fetches ranges of one buffer and checks
+//! the whole object against the store's checksum at the end.
+//!
+//! ```no_run
+//! # use longshore::client::{Builder, Piece};
+//! # use longshore::store::creds::Credentials;
+//! # let client = Builder::new("b.s3.us-east-1.amazonaws.com", "us-east-1", Credentials::new("K", "S").unwrap()).build().unwrap();
+//! # let bytes = vec![0u8; 20 << 20];
+//! let mut upload = client.upload("big.bin").wait().unwrap();
+//! upload.write(&bytes).wait().unwrap(); // or `send` a filled buffer, with no copy
+//! upload.finish().wait().unwrap();
+//!
+//! let mut download = client.download("big.bin").wait().unwrap().expect("stored above");
+//! while let Piece::Bytes(buffer, n) = download.read_blocking().unwrap() {
+//!     println!("{n} bytes"); // in `buffer`, until it is dropped
+//! }
+//! ```
+//!
+//! [`client::Client::store_from`] and [`client::Client::fetch_into`] do
+//! the same from and into the caller's own slice, at the cost of one copy.
+//!
+//! A caller that places the parts itself uses a multipart upload directly:
+//! begin it, store each buffer as a numbered part, and complete it with the
+//! parts in order. Parts are separate operations, so several can be in
+//! flight at once.
 //!
 //! ```no_run
 //! # use longshore::client::Builder;
@@ -171,6 +195,31 @@
 //!
 //! An upload that is neither completed nor aborted keeps its parts in the
 //! store. [`client::Client::upload_abort`] discards one.
+//!
+//! ## Asking about objects
+//!
+//! [`client::Client::stat`] says whether an object exists, and its size,
+//! tag and stored checksum, without fetching it. [`client::Client::list`]
+//! returns a page of keys under a prefix as the store's document, which
+//! [`store::list::Listing`] reads in place.
+//!
+//! ```no_run
+//! # use longshore::client::Builder;
+//! # use longshore::store::creds::Credentials;
+//! use longshore::store::list::Listing;
+//! # let client = Builder::new("b.s3.us-east-1.amazonaws.com", "us-east-1", Credentials::new("K", "S").unwrap()).build().unwrap();
+//! if let Some(stat) = client.stat("big.bin").wait().unwrap() {
+//!     println!("{} bytes", stat.size());
+//! }
+//! let (len, page) = client.list("logs/", Some(b'/'), 1000, client.buffer_blocking()).wait();
+//! let listing = Listing::parse(&page.as_slice()[..len.unwrap()]).unwrap();
+//! for entry in listing.entries().flatten() {
+//!     println!("{:?}", entry.key_raw());
+//! }
+//! ```
+//!
+//! `longshore_s3`'s `examples/` directory has a complete program for each
+//! of these forms, run against a store the environment names.
 //!
 //! ## From async code
 //!
@@ -228,8 +277,8 @@
 //! [`store`] is the single-threaded API the client is built on. Its caller
 //! owns the event loop, gives the store registered buffers, submits each
 //! operation with a token and collects outcomes by polling. It has what the
-//! client does not expose yet: listing, `stat`, copy, batch erase, object
-//! metadata and presigned URLs. [`client::Worker`] is one I/O thread's
+//! client does not expose yet: copy, batch erase, object metadata and
+//! presigned URLs. [`client::Worker`] is one I/O thread's
 //! logic without the thread, for a program that already runs an event loop
 //! on each core.
 //!

@@ -3,51 +3,7 @@
 // Licensed under the Apache License, Version 2.0 (the "License").
 // SPDX-License-Identifier: Apache-2.0
 
-//! A client that callers on any thread can share.
-//!
-//! A [`Client`] is a handle to one or more I/O threads. Each I/O thread is a
-//! complete single-threaded store with its own ring, connections and
-//! buffers, and the threads share nothing with each other. One thread is
-//! enough to fill a fast network card with plain uploads. More threads are
-//! for work that one core cannot carry, such as HTTPS and downloads.
-//!
-//! Bodies are not copied. A caller borrows a registered [`Buffer`] from the
-//! client, fills it, and hands it to an operation, which gives it back with
-//! the result. When no buffer or operation slot is free a call waits, so
-//! nothing queues without bound.
-//!
-//! Every operation returns a [`Pending`], which is a `Future` that works
-//! under any executor and also has a blocking [`Pending::wait`].
-//!
-//! ```no_run
-//! use longshore_s3::client::Builder;
-//! use longshore_s3::creds::Credentials;
-//!
-//! let credentials = Credentials::new("ACCESS_KEY", "SECRET_KEY").unwrap();
-//! let client = Builder::new("my-bucket.s3.us-east-1.amazonaws.com", "us-east-1", credentials)
-//!     .tls(true)
-//!     .port(443)
-//!     .threads(4) // four independent I/O threads
-//!     .build()
-//!     .unwrap();
-//!
-//! let mut body = client.buffer_blocking();
-//! body.as_mut_slice()[..5].copy_from_slice(b"hello");
-//! let (stored, body) = client.store("greeting", body, 5).wait();
-//! stored.unwrap();
-//! let (fetched, body) = client.fetch("greeting", body).wait();
-//! assert_eq!(fetched.unwrap(), Some(5));
-//! assert_eq!(&body.as_slice()[..5], b"hello");
-//! ```
-//!
-//! [`Client::put`], [`Client::head`] and [`Client::get`] are for a caller
-//! that must know exactly what happened: they take a limit of attempts and
-//! time, and report what the store answered instead of deciding what it
-//! means. See [`crate::report`].
-//!
-//! [`Worker`] is one I/O thread's logic with no thread around it, for a
-//! caller that drives the I/O itself: the simulator in tests, or an event
-//! loop that already owns the core.
+#![doc = include_str!("client/overview.md")]
 
 mod buffer;
 mod copying;
@@ -238,6 +194,17 @@ impl Client {
 
     /// Store the first `len` bytes of `body` under `key`, replacing any
     /// object there. The buffer comes back with the result.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// let mut body = client.buffer_blocking();
+    /// body.as_mut_slice()[..5].copy_from_slice(b"hello");
+    /// let (stored, body) = client.store("greeting", body, 5).wait();
+    /// stored?;
+    /// // `body` is free for the next request, or dropped to give it back.
+    /// # Ok(()) }
+    /// ```
     pub fn store(
         &self,
         key: &str,
@@ -254,6 +221,17 @@ impl Client {
 
     /// Store only if no object exists under `key`. `Ok(true)` if this call
     /// stored it, `Ok(false)` if an object was already there.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// let body = client.buffer_blocking();
+    /// let (stored, _body) = client.store_no_clobber("lock", body, 0).wait();
+    /// if !stored? {
+    ///     println!("someone else holds the lock");
+    /// }
+    /// # Ok(()) }
+    /// ```
     pub fn store_no_clobber(
         &self,
         key: &str,
@@ -292,7 +270,19 @@ impl Client {
     }
 
     /// Fetch the object under `key` into `into`. `Ok(Some(n))` is its
-    /// length, `Ok(None)` means there is no such object.
+    /// length, `Ok(None)` means there is no such object. An object larger
+    /// than the buffer fails; [`Client::download`] reads one of any size.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// let (fetched, body) = client.fetch("greeting", client.buffer_blocking()).wait();
+    /// match fetched? {
+    ///     Some(n) => println!("{:?}", &body.as_slice()[..n]),
+    ///     None => println!("no such object"),
+    /// }
+    /// # Ok(()) }
+    /// ```
     pub fn fetch(
         &self,
         key: &str,
@@ -301,7 +291,20 @@ impl Client {
         self.fetch_as(key, None, into)
     }
 
-    /// Fetch bytes `first..=last` of the object under `key`.
+    /// Fetch bytes `first..=last` of the object under `key`, as
+    /// [`Client::fetch`] does.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// // Bytes 0 to 1023, both ends included.
+    /// let into = client.buffer_blocking();
+    /// let (fetched, into) = client.fetch_range("video.mp4", 0, 1023, into).wait();
+    /// if let Some(n) = fetched? {
+    ///     println!("{n} bytes: {:?}", &into.as_slice()[..n]);
+    /// }
+    /// # Ok(()) }
+    /// ```
     pub fn fetch_range(
         &self,
         key: &str,

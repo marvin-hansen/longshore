@@ -117,6 +117,21 @@ impl Client {
     /// Open a download of the object under `key`: ask the store about it,
     /// and then read it with [`Download::read`]. `Ok(None)` means there is
     /// no such object.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error, Piece};
+    /// # fn run(client: &Client, out: &mut impl std::io::Write) -> Result<(), Error> {
+    /// let Some(mut download) = client.download("backups/monday").wait()? else {
+    ///     return Ok(()); // no such object
+    /// };
+    /// while let Piece::Bytes(buffer, n) = download.read_blocking()? {
+    ///     out.write_all(&buffer.as_slice()[..n]).expect("written");
+    /// }
+    /// // Stopped at `Piece::End`. Bytes that do not match the store's
+    /// // checksum of the whole object end in an error instead, and
+    /// // `End { verified: false }` means the store keeps no such checksum.
+    /// # Ok(()) }
+    /// ```
     pub fn download(&self, key: &str) -> OpeningDownload {
         // A key too long fails the question about it, and is never used.
         let n = key.len().min(KEY_MAX);

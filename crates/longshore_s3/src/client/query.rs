@@ -24,6 +24,16 @@ impl Client {
     /// What the store knows about the object under `key`, without fetching
     /// it. `Ok(None)` means there is no such object. Uses no lent buffer,
     /// so it runs on whichever I/O thread is open and least busy.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// match client.stat("greeting").wait()? {
+    ///     Some(stat) => println!("{} bytes, tag {:?}", stat.size(), stat.tag()),
+    ///     None => println!("no such object"),
+    /// }
+    /// # Ok(()) }
+    /// ```
     pub fn stat(&self, key: &str) -> Pending<Result<Option<Stat>, Error>> {
         self.unbuffered(key, Kind::Stat { head: false }, stat_of)
     }
@@ -31,6 +41,18 @@ impl Client {
     /// [`Client::stat`], also copying the response head into `into`, for
     /// headers [`Stat`] has no field for. Read them with
     /// [`crate::stat::header_in`] over the first [`Stat::head_len`] bytes.
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// use longshore_s3::stat::header_in;
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// let (stat, head) = client.stat_head("greeting", client.buffer_blocking()).wait();
+    /// if let Some(stat) = stat? {
+    ///     let head = &head.as_slice()[..stat.head_len() as usize];
+    ///     println!("{:?}", header_in(head, "content-type"));
+    /// }
+    /// # Ok(()) }
+    /// ```
     pub fn stat_head(
         &self,
         key: &str,
@@ -49,6 +71,29 @@ impl Client {
     /// The delimiter is one ASCII byte, `/` in practice; any other byte is
     /// refused with [`Error::BadKey`]. A page of zero keys is asked for as
     /// a page of one, as the store requires.
+    ///
+    /// Every key under a prefix, a page at a time:
+    ///
+    /// ```no_run
+    /// # use longshore_s3::client::{Client, Error};
+    /// use longshore_s3::list::Listing;
+    /// # fn run(client: &Client) -> Result<(), Error> {
+    /// let into = client.buffer_blocking();
+    /// let (mut len, mut page) = client.list("logs/", None, 1000, into).wait();
+    /// loop {
+    ///     let n = len?;
+    ///     let listing = Listing::parse(&page.as_slice()[..n]).expect("a listing");
+    ///     for entry in listing.entries().flatten() {
+    ///         println!("{:?}: {} bytes", entry.key_raw(), entry.size());
+    ///     }
+    ///     if !listing.is_truncated() {
+    ///         break;
+    ///     }
+    ///     // The next page is written over this one.
+    ///     (len, page) = client.list_next("logs/", None, 1000, page, n).wait();
+    /// }
+    /// # Ok(()) }
+    /// ```
     pub fn list(
         &self,
         prefix: &str,
@@ -65,7 +110,8 @@ impl Client {
     /// with. The next page is written over the previous one.
     ///
     /// [`Error::BadKey`] if the page is not a listing that was cut short:
-    /// it has no continuation token, or one too long to send.
+    /// it has no continuation token, or one too long to send. See
+    /// [`Client::list`] for a loop over every page.
     pub fn list_next(
         &self,
         prefix: &str,

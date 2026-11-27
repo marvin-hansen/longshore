@@ -34,9 +34,12 @@ assert_eq!(&body.as_slice()[..5], b"hello");
 Every operation returns a value that is a `Future` and also has a blocking
 `wait`, so the same calls work under any async executor and from plain
 threads. When no buffer or operation slot is free a call waits. It has
-store, conditional store, fetch, ranged fetch, erase, multipart upload
-and the reporting `put`, `head` and `get` so far. Listing, `stat` and the other store operations are on the
-low-level API only.
+store, conditional store, fetch, ranged fetch, erase, `stat`, listing,
+multipart upload, upload and download streams, the copying forms
+`store_from` and `fetch_into`, and the reporting `put`, `head` and `get`.
+Copy, batch erase and presigned URLs are on the low-level API only. The
+module documentation of `longshore::client` says which form to pick, and
+`crates/longshore_s3/examples/` has a program for each.
 
 An object larger than one buffer goes up in parts. `upload_begin` returns
 an id, each `upload_part` stores one buffer under a part number and
