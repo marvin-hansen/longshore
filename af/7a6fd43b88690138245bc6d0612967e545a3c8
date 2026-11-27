@@ -1,0 +1,25 @@
+docs/tcp.md
+  s_0a7ba2e6f2f96f::t_a91c3d075e8a85 358
+crates/longshore_tcp/src/sizes.rs
+  s_0a7ba2e6f2f96f::t_a91c3d075e8a85 45
+openspec/notes/tcp-db-modes.md
+  s_0a7ba2e6f2f96f::t_a91c3d075e8a85 5-6,13-15,27,31
+crates/longshore_tcp/src/net/frames.rs
+  s_0a7ba2e6f2f96f::t_a91c3d075e8a85 75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "af7a6fd43b88690138245bc6d0612967e545a3c8",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
