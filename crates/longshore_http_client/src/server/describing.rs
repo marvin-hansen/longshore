@@ -75,7 +75,11 @@ impl Server {
             return self.status(io, i, 507, "Insufficient Storage", 0, 0, false);
         };
         if to != from {
-            let (len, checksum) = (self.objects[from].len, self.objects[from].checksum);
+            let (len, checksum, tag) = (
+                self.objects[from].len,
+                self.objects[from].checksum,
+                self.objects[from].tag,
+            );
             let (describing, describing_len) = (
                 self.objects[from].describing,
                 self.objects[from].describing_len,
@@ -89,7 +93,7 @@ impl Server {
             o.data[..len as usize].copy_from_slice(&io.buf(scratch)[..len as usize]);
             o.target[..c.target_len].copy_from_slice(&c.target[..c.target_len]);
             o.target_len = c.target_len;
-            (o.len, o.checksum, o.used) = (len, checksum, true);
+            (o.len, o.checksum, o.tag, o.used) = (len, checksum, tag, true);
             (o.describing, o.describing_len) = (describing, describing_len);
         }
         if apply_then_close {

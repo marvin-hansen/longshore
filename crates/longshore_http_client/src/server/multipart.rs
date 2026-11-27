@@ -224,7 +224,7 @@ impl Server {
                         == Some(*n)
             });
             let part = part
-                .filter(|p| tag(&p.data[..p.len as usize]) == *claimed_tag)
+                .filter(|p| p.tag == *claimed_tag)
                 .ok_or("InvalidPart")?;
             // A CRC-32C (four zero bytes after it) is never listed.
             let kept = part.checksum.filter(|sum| sum[8..] != [0; 4]);
@@ -259,6 +259,7 @@ impl Server {
         o.target[..path.len()].copy_from_slice(path);
         o.target_len = path.len();
         o.len = total as u32;
+        o.tag = tag(&o.data[..total]);
         o.used = true;
         // A store that keeps checksums has one for the assembled object
         // whether or not the request claimed it.

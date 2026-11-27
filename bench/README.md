@@ -52,6 +52,11 @@ HTTP PUT and GET throughput uses `http_uring` the same way, against its own
 `sink` peer; see the header of `crates/longshore-bench/src/bin/http_uring.rs`.
 S3 against a real bucket uses `s3_uring`; see the header of
 `crates/longshore-bench/src/bin/s3_uring.rs`.
+The shareable client is measured with `client_s3` (`put`, `get`,
+`download`, and `check` for correctness), against a bucket or, to measure the
+client's own cost on one machine, against `s3_serve`, the in-tree object
+server as a program; `results/m39-client-local-ab.md` shows how to run the two
+in containers and compare two builds.
 
 ## File I/O (`file_bench`)
 

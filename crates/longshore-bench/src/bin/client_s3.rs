@@ -20,6 +20,12 @@
 //! client's multipart calls, with an object's parts in flight together,
 //! and checks every part with a ranged fetch.
 //!
+//!   client_s3 download [--parts N] [--size BYTES] [--callers N] [--conns N] [--secs S]
+//!
+//! measures the download stream: each caller stores one object of
+//! `--parts` buffers and downloads it again and again, every object read
+//! to its end and checked against the stored checksum.
+//!
 //!   client_s3 check [--size BYTES] [--conns N]
 //!
 //! is a correctness run of the client's own forms, step by step: stat,
@@ -46,6 +52,10 @@ fn main() {
 #[cfg(target_os = "linux")]
 #[path = "client_s3/check.rs"]
 mod check;
+
+#[cfg(target_os = "linux")]
+#[path = "client_s3/download.rs"]
+mod download;
 
 #[cfg(target_os = "linux")]
 #[path = "client_s3/multipart.rs"]
@@ -94,15 +104,16 @@ struct Args {
 impl Args {
     fn parse() -> Self {
         let mut args = std::env::args().skip(1);
-        let cmd = args
-            .next()
-            .unwrap_or_else(|| die("usage: client_s3 put|get|mix|multipart|check [flags]"));
+        let cmd = args.next().unwrap_or_else(|| {
+            die("usage: client_s3 put|get|mix|multipart|download|check [flags]")
+        });
         let (put, mix) = match cmd.as_str() {
             "put" => (true, false),
             "get" => (false, false),
             "mix" => (false, true),
             "multipart" => (true, false),
             "check" => (false, false),
+            "download" => (false, false),
             other => die(&format!("unknown command {other}")),
         };
         // A check stores one object of `--conns` + 1 buffers: keep it small.
@@ -155,6 +166,11 @@ fn main() {
     // S3_CLIENT_CHECKSUM=0 sends bodies without a checksum, as `s3_uring put` does.
     let checksums = !std::env::var("S3_CLIENT_CHECKSUM").is_ok_and(|v| v == "0");
     let client = build(&a, checksums);
+    if a.cmd == "download" {
+        download::run(&client, &a);
+        drop(client);
+        std::process::exit(0);
+    }
     if a.cmd == "check" {
         let ok = check::run(&client, a.size as usize, a.conns);
         drop(client);

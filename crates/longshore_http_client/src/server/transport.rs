@@ -114,8 +114,7 @@ impl Server {
         }
         if let Some(slot) = self.conns[i].reply_object.take() {
             let o = &self.objects[slot as usize];
-            let _: &mut HeadWriter<'_> =
-                w.header("ETag", &multipart::tag(&o.data[..o.len as usize]));
+            let _: &mut HeadWriter<'_> = w.header("ETag", &o.tag);
             let _: &mut HeadWriter<'_> = w.header("Last-Modified", describing::LAST_MODIFIED);
             for (name, value) in describing::lines(&o.describing[..o.describing_len]) {
                 let _: &mut HeadWriter<'_> = w.header(name, value);
