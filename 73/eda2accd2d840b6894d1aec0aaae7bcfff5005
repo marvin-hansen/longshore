@@ -1,0 +1,54 @@
+crates/longshore_s3/tests/client/upload.rs
+  s_cb91250eaedb7c::t_80376a463463a1 27-28
+  s_cb91250eaedb7c::t_92d89c62e5be5e 13-15,22-23,29
+crates/longshore_s3/tests/client/portable.rs
+  s_cb91250eaedb7c::t_e610480873437d 17-20
+crates/longshore_s3/tests/client/dropped_stream.rs
+  s_cb91250eaedb7c::t_d3a6ad2bfa4756 161-165
+  s_cb91250eaedb7c::t_8bf7194023fef0 170-172
+  s_cb91250eaedb7c::t_f4688bc3acc860 1-160,166-169,173-180
+crates/longshore_s3/tests/client/download.rs
+  s_cb91250eaedb7c::t_8ec9e065373b4e 17-19,23-24
+crates/longshore_s3/tests/client/returned.rs
+  s_cb91250eaedb7c::t_0332a9fd7b8cf6 1-23,29-38,41-51,54-98
+  s_cb91250eaedb7c::t_4b38971d6fad65 39-40,52-53
+  s_cb91250eaedb7c::t_cd325e82fb80e5 24-28
+crates/longshore_s3/tests/client/upload/dropped.rs
+  s_cb91250eaedb7c::t_f97fd6a4f6490f 1-12,15,18,20-180,182-305,311-329,335-336
+  s_cb91250eaedb7c::t_67a0771b3f1a94 13-14,16-17,19
+  s_cb91250eaedb7c::t_8ec9e065373b4e 306-310,330-334
+  s_cb91250eaedb7c::t_6aab4383898024 181
+openspec/changes/add-high-level-client/tasks.md
+  s_cb91250eaedb7c::t_fe17e3a952831d 22
+crates/longshore_s3/tests/client/upload/settle.rs
+  s_cb91250eaedb7c::t_8bf7194023fef0 55-56
+  s_cb91250eaedb7c::t_67a0771b3f1a94 1-54,57-99
+crates/longshore_s3/tests/client/upload/ends.rs
+  s_cb91250eaedb7c::t_0fb00724496595 115-125
+  s_cb91250eaedb7c::t_20368b3c673cb4 57-66
+  s_cb91250eaedb7c::t_80376a463463a1 12
+  s_cb91250eaedb7c::t_d16408ab8c9a82 130-131
+  s_cb91250eaedb7c::t_19781e5909f1d1 20,23-24
+  s_cb91250eaedb7c::t_4e182adf87b7e8 156-165
+  s_cb91250eaedb7c::t_b8954f84f123e2 73,77-78
+crates/longshore_s3/tests/client/download/dropped.rs
+  s_cb91250eaedb7c::t_4d83cd9ab6c0bd 20
+  s_cb91250eaedb7c::t_8bc63d7ca9c942 1-19,21-52,55-198
+  s_cb91250eaedb7c::t_8bf7194023fef0 53-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "73eda2accd2d840b6894d1aec0aaae7bcfff5005",
+  "prompts": {},
+  "sessions": {
+    "s_cb91250eaedb7c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85561ab2-6f01-42b5-b9cb-0a09c47358cf",
+        "model": "unknown"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
