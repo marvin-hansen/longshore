@@ -1,0 +1,37 @@
+openspec/changes/add-high-level-client/proposal.md
+  s_cb91250eaedb7c::t_41affa2e9708d5 11-12,14-19,22-26,30-31,33,37-40
+openspec/changes/add-high-level-client/design.md
+  s_cb91250eaedb7c::t_87efa7c60ed76f 10-11,31-32,47-50,66-171,184-188
+openspec/changes/add-driven-client/design.md
+  s_cb91250eaedb7c::t_1ac21bbf15c940 1-41
+openspec/changes/add-driven-client/tasks.md
+  s_cb91250eaedb7c::t_1ac21bbf15c940 1-9
+openspec/changes/add-driven-client/specs/high-level-client/spec.md
+  s_cb91250eaedb7c::t_1ac21bbf15c940 1-15
+openspec/changes/add-driven-client/proposal.md
+  s_cb91250eaedb7c::t_1ac21bbf15c940 1-24
+openspec/changes/update-gcs-xml-coverage/tasks.md
+  s_cb91250eaedb7c::t_1ac21bbf15c940 22
+openspec/changes/add-high-level-client/specs/high-level-client/spec.md
+  s_cb91250eaedb7c::t_3f143e11676673 20-21,39-41,51-76,102-124,126-129,131-132,135-140,146-148,154-157,160,164,170-177,179-181,187-191,194,196-203
+  s_cb91250eaedb7c::t_9cc968bb8f9acd 141
+  s_cb91250eaedb7c::t_1a5d7cc2f983ae 142
+openspec/changes/add-high-level-client/tasks.md
+  s_cb91250eaedb7c::t_a0cad67d588e53 7,14-19,22,25,30-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b8bd98c46762fb7c48e4f92f539774aa4500ba3b",
+  "prompts": {},
+  "sessions": {
+    "s_cb91250eaedb7c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85561ab2-6f01-42b5-b9cb-0a09c47358cf",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
