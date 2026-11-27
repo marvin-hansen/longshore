@@ -1,0 +1,19 @@
+crates/longshore-bench/src/bin/client_uring/exact.rs
+  s_390f9f1f503ba6::t_051bef16b3208d 109-112,114-115,132-156,159
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a950dcb1ccd001dddba7f8928d7d17e21f3d03fb",
+  "prompts": {},
+  "sessions": {
+    "s_390f9f1f503ba6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "975a37af-281a-4698-bfb0-ebb3d2c994ce",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
