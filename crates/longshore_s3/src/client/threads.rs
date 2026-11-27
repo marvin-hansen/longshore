@@ -141,8 +141,13 @@ impl Builder {
         if self.connections == 0 || self.buffers == 0 || self.operations == 0 || self.waiters == 0 {
             return bad("connections, buffers, operations and waiters must be at least 1");
         }
-        if self.streams == 0 || self.streams > 1024 {
-            return bad("streams must be 1 to 1024");
+        if self.streams > 1024 {
+            return bad("streams must be 0 to 1024");
+        }
+        if self.streams > 0 && self.operations < 2 {
+            // A begun stream keeps one slot for its abort, which would
+            // leave its own requests none: every stream would wait forever.
+            return bad("operations must be at least 2 unless streams is 0: an upload stream keeps an operation slot for its abort");
         }
         if self.buffer_size < 8192 {
             return bad("buffer_size must be at least 8192");

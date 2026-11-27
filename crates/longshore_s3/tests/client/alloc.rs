@@ -75,6 +75,8 @@ mod threaded {
             // Fewer buffers and slots than callers to force slot/buffer waiter contention.
             .buffers(1)
             .operations(1)
+            // One slot leaves none for an upload stream beside its abort's.
+            .streams(0)
             .waiters(32);
 
         let client = b.build().expect("client build on portable backend");
