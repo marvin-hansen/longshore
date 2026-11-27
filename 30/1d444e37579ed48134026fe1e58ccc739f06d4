@@ -1,0 +1,27 @@
+bench/results/m36-file-bench-macos.md
+  s_0a7ba2e6f2f96f::t_03a9592107fd76 197-198
+  s_0a7ba2e6f2f96f::t_1f147e91cce2c1 251-255
+  s_0a7ba2e6f2f96f::t_8b3ff12a52e114 99-102,108-110
+  s_0a7ba2e6f2f96f::t_5cd47d49d7b631 1-32,34-98,111-159,165-196,199-250,256-266
+  s_0a7ba2e6f2f96f::t_db4c43dbf45515 103-107
+  s_0a7ba2e6f2f96f::t_395f7b8249f7b9 160-164
+  s_0a7ba2e6f2f96f::t_7abf220185711f 33
+bench/results/m36-file-bench-macos.jsonl
+  s_0a7ba2e6f2f96f::t_0e7b0160ac005d 1-1296
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "301d444e37579ed48134026fe1e58ccc739f06d4",
+  "prompts": {},
+  "sessions": {
+    "s_0a7ba2e6f2f96f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c517f0a0-79b2-4d0f-9cba-ad663c206d98",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marvin Hansen <marvin.hansen@gmail.com>"
+    }
+  }
+}
