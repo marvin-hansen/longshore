@@ -159,6 +159,10 @@ the store keeps one, and SHALL fail if the object changes while it is read.
 - **WHEN** a caller opens an upload stream on a client whose buffer size is below the store's 5 MiB minimum part size
 - **THEN** opening the stream fails with an error that names the minimum part size
 
+#### Scenario: Streams that could wait for ever
+- **WHEN** a client is built with as many upload streams as operation slots per thread, or more
+- **THEN** building fails with `BuildError::Setting`, since each begun stream keeps a slot for its abort and every stream may be on one thread; when streams are not set they default to one fewer than the slots, at most 4
+
 #### Scenario: Upload stream dropped
 - **WHEN** an upload stream is dropped before it is finished
 - **THEN** its multipart upload is aborted after its last part in flight has ended
